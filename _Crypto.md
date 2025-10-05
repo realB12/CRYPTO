@@ -2,10 +2,16 @@
 
 ## Schlüssel-Docs
 
+* **[Crypto News](_KEY/CryptoNews.md)**: Aktuelle und kommentierte News aus der Cryptowelt die es zu beachten und noch zu verarbeiten gilt.   
+
+* **[Crypto Plan](_KEY/CryptoPlan.md)**: Mein persönlicher und konkreter Vorgehensplan in Sachen Crypto: Was muss ich lernen und trainieren wie z.B. die sichere [eMail](../PRIV/08_COLAB/eMail/_eMail-Konzept.md) und [PasswortVerwaltung](../PRIV/_KEY/Admin/PW/_PasswortManagement.md), erstes  Engagement an Cryptobörsen (Swissborg, Binance) und [ SelfCustody](b$/PROC/myBTC/_BTC%20SelfCustody.md) mit [Relai](../PRIV/_KEY/Assets/Services/R/Relai/_Relai.md)
+
 ### Services
 * **Swissborg**: [KontoZugriff](../PRIV/_KEY/Services/S/Swissborg_KontoZugriff.md) /  [Uebersicht](SERVICES/S/Swissborg/Swissborg.md)
 
 * **Binance**: [Konto](../PRIV/_KEY/Services/B/BinanceKonto.md) / 
+
+* **[Relai](../PRIV/_KEY/Assets/Services/R/Relai/_Relai.md)**  
 
 ### Portfolio
 
