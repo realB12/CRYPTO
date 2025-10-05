@@ -1,0 +1,167 @@
+<html>
+
+<head>
+<title>Y2K Validation Testing Overview</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+</head>
+
+<body>
+
+<h1 align="center">Y2K Validation Testing Overview</h1>
+
+<p align="center">bucSD112.htm / DRAFT Version 1.0 1998-01-22</p>
+
+<p align="center">How to define a minimum set of test points</p>
+
+<h2><strong><b>Testing Levels for Validation Test</b></strong></h2>
+
+<p><strong><b>Validation Test Definition</b></strong></p>
+
+<p>Validation Test are the planned &quot;Screen&quot; Tests which will be done during the
+Y2K projects local validation phase to verify that a certain business activity is
+compliant. This tests are done by experianced users of the application. The responsibility
+for proving a successful test lies in the application owner whereas sign off
+responsibility for all the TestCycle is carried by the OrgMan. The sign off for the over
+all&nbsp; application compliance stil remains with the OrgHead.</p>
+
+<p>To start Validation Testing makes only sense when previous<a
+href="file:///C:/bucSD111.htm"> assessment tests </a>have shown that no conversion is
+needed before.</p>
+<b>
+
+<hr>
+</b>
+
+<p>Validation Testing splits up in <a href="#Dynamic Testing Levels">dynamic testing
+levels</a></p>
+<b>
+
+<h2><a name="Dynamic Testing Levels">Dynamic Testing Levels</a></h2>
+
+<h3>Components</h3>
+
+<p></b>An Assessment Component is an idependant piece of code not containing external
+calles nor includes of other components. A component normally is used as an include or as
+an external function by modules and units. Sometimes a component is written in another
+language (ASSEMBLER) or bought from a vendor. 
+
+<ul>
+  <li>(Date) routines</li>
+  <li>Sorting Routines</li>
+  <li>Data Access modules (SQL Statements, Called Procedures)<b></li>
+  <li></b>Vendor code<b></li>
+  <li></b>Vendor application skeletons (4GL Components)<b></li>
+</ul>
+</b>
+
+<p>So Component testing is testing a single Component in isolation. Unit testing verifies
+that the unit works correctly based on some predefined minimal set of requirements.</p>
+
+<p>A change in a Component may heavily trigger recompilation of dependent modules and
+units</p>
+
+<h3><b><strong>Modules</strong></h3>
+
+<p></b>A Module is piece of code repeatetly called or included by other modules or units.
+A Modul can contain external calles or includes other moduls or components<b> 
+
+<ul>
+  <li></b>Called Functions, Procedures, SubRoutines</li>
+  <li>Screen Handling / Verification procedures<b></li>
+</ul>
+
+<p></b>A change in a Component may heavily trigger recompilation of dependent modules and
+units</p>
+<b>
+
+<h3><strong>Unit </strong></h3>
+
+<p></b>Compilation Unit, normally a program with a user interface or batch job designed to
+handle a certain activity<b></p>
+
+<h3>Sequence</h3>
+
+<p></b>Testing a collection of&nbsp;Units belonging to the same application including
+services and non &quot;testable&quot; or not tested entieties to check logical behaviour
+and user acceptance for the appication. This test may be repeated by the user as part of
+the Validation Tests. Often a seqence test shows whether Interfaces have to be tested.<b></p>
+
+<h3>Internal Interface</h3>
+
+<p></b>Testing the dataexchange between&nbsp; Units of the same application&nbsp; via
+datasources or buffers which belong exclusivly to this application<b></p>
+
+<p></b><font size="2">Simulating interfaces and linkages with other items and/or units to
+validate that information is being passed correctly. This is useful if additional
+interfaces will be added to the system during the conversion process or if problems
+between two or more modules cannot be isolated</font><font size="3"><br>
+</font><font size="2">The purpose is to find out whether the interfaces data is written
+correctly to the buffer and read again correctly from the other side<br>
+Interface testing normally is performed by the developers</font><b></p>
+
+<h3>External Interface</h3>
+
+<p></b>Testing that writing/reading data to the interface of an external application is
+correct. <b></p>
+
+<h3><a name="System Testing"><strong>System</strong></a>, </h3>
+
+<p></b>testing a unit or component on the final, compliant system (software, &nbsp;
+utilities, network and hardware). It is used as a baseline for performance, load and
+stress testing.<br>
+System&nbsp; Testing normally is done by a team consisting of application specialist,
+technical experts and&nbsp; usesr.<b></p>
+
+<h3>Field</h3>
+
+<p></b>Testing a collection of&nbsp;Units that constitute a complete business activity.
+This includes foreign units (belonging to a different application or system), services and
+non &quot;testable&quot; or not tested entieties within the same application.<br>
+Activity test will prove logical correctnes and user acceptance within your organisaiton.
+This test may be repeated by the user as part of the Validation Tests.<b></p>
+
+<h3>Group </h3>
+
+<p></b>Cluster testing over WAN within the KUONI Group<b></p>
+
+<h3>Street</h3>
+
+<p></b>Coordination of this kind of testing will be done be the Programme Office<b><font</p> </p>
+
+<p></b>Applications are frequently connected with other applications to provide a higher
+or deeper level of functionality. Data may be shared between applications or systems.
+Multiple applications or systems may be involved in such an environment. This is the
+typical environment for Year2000 projects. Intersystem testing is required to confirm that
+the connection functions properly between the applications. This test determines that the
+proper parameters and data are correctly passed between applications, and proper
+coordination and timing of each function exists between applications. </p>
+
+<hr>
+
+<h2>CONDITIONAL COMPLIANCE TESTING</h2>
+
+<p><small><small>see bucSD092.pdf page 17</small></small></p>
+
+<p>The ideal environment for compliance testing is to have a complete platform i. e.
+hardware, operating system software and application software available at the same time.
+The reality is that all the environment components may not be available until too late in
+the process to provide adequate time to perform compliance testing. When this situation
+occurs, the concept of conditional compliance testing should be considered. Conditional
+compliance testing implies that a logical system can be tested and certified in an
+environment that is not yet certified as long as the interface to the non-compliant
+component can be controlled in such a manner as to provide the necessary date information.
+The diagram below depicts the conditional compliance testing for a logical system
+utilizing a date application programming interface (API) in an environment where the
+operating platform is not yet compliant.</p>
+
+<p>When testing of the logical system is completed, it can be certified conditionally on
+the compliance testing of the operating platform and the date API. When the platform is
+complete and has been certified, the date API can be tested and certified. When the date
+API is certified, the logical system can be considered fully tested for Year 2000
+compliance. </p>
+
+<p>Utilizing this approach, compliance testing of logical systems and operating platforms
+can be done in parallel.<font FACE="Arial"></p>
+</font>
+</body>
+</html>

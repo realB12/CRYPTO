@@ -1,0 +1,2 @@
+# Optimism (OP)
+Optimism zählt zu einer der erfolgreichsten Layer-2-Netzwerken Ethereums. Die **Coinbase Blockchain Base, die World Chain und die L2s von Sony, Uniswap und Kraken bauen auf der Technologie von Optimism auf** und gehören damit zum sogenannten "Superchain"-Ökosystem. **So prägt Optimism die [Ethereum Blockchain](../E/ETH/_Ethereum-ETH.md)** und könnte die Zukunft der Smart-Contract-Plattform maßgeblich beeinflussen.

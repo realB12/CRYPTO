@@ -1,0 +1,353 @@
+<html>
+
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<meta NAME="GENERATOR" CONTENT="Microsoft FrontPage 3.0">
+<title>Assessment: Business Activity Checklist</title>
+</head>
+
+<body LINK="#0000ff" VLINK="#800080">
+
+<p ALIGN="CENTER"><img SRC="images/y2klogo1.gif" WIDTH="67" HEIGHT="65"><img
+SRC="images/y2klogo2.gif" WIDTH="69" HEIGHT="57"><font SIZE="2"> Item Analysis </p>
+</font>
+
+<p ALIGN="CENTER"><font size="6"><strong>Business Activity Checklist</strong></font></p>
+<font SIZE="1">
+
+<p ALIGN="CENTER">(</font><font SIZE="2">KUONI Y2K Certification Methodology&nbsp; /
+bucSD316.htm / buc / 1998-08-12 / Draft Version 0.1)<br>
+<img SRC="images/menuproc.gif" WIDTH="30" HEIGHT="18" ALT="menuproc.gif (339 bytes)"></font><small><strong><br>
+</strong></p>
+
+<hr>
+</small>
+
+<p>Use this list to 
+
+<ol>
+  <li>check whether all your business activity is covered by inventory.</li>
+  <li>describe the function and business relevance of you item (in analysis report)</li>
+</ol>
+<div align="left">
+
+<table border="1" width="600" height="1470">
+  <tr>
+    <td width="33%" height="20" align="center"><strong>Business Activity</strong></td>
+    <td width="33%" height="20" align="center"><strong>Items involved</strong></td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Billing </td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Bookkeeping</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Accounting</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Statistics</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Management Information Handling (MIS)</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Advertising</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">ad hoc Calculation, Spreadsheets</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Planning</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Monitoring</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Ordering</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Selling</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">automated reminding system</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Printing</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Telephony</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">e-mailing</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Internet Access</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Personal Management, Human Resources</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Salary Systems</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">(Online) Banking</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Fall Back, Emergency Operation</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Reporting</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Archives</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Information Retrieval (Reuters)</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Time reporting</td>
+    <td width="33%" height="19">..</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Workflow systems</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Document Management&nbsp; (Version Control)</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Cycle processing (end of month, end of year)</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Forecasting</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Backup &amp; Data restauration (from backup)</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">JIT (Just in Time Processing / Production)</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="38">Security (physical access, entrance control, passwords,
+    antivirus, backup, restore etc.)</td>
+    <td width="33%" height="38">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Data reorganisation (purging of old data)</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Tax reporting</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Incentive, Bonus system, comission control</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Ticketing</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Reservation (CRS)</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Contract Managing</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Organizing</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Decision Support</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Direct Mail</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Help Desk</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Distribution</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Follow up</td>
+    <td width="33%" height="19">..</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Marketing</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Order processing</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Operational</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Payroll</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Personnel</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Retail</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Sales</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Stock Control</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Advertising / Printing</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+  <tr>
+    <td width="33%" height="19">Supervision &amp; Monitoring (by Camera)</td>
+    <td width="33%" height="19">.</td>
+  </tr>
+</table>
+</div>
+
+<h3>This activities can roughly be grouped. in</h3>
+
+<ol>
+  <li>activity before or to prepare customer contact</li>
+  <li>supporting customer contact, suporting sales</li>
+  <li>support after sales contact</li>
+  <li>control, supervising, optimizing the process</li>
+  <li>after printing the documents: bookkeeping</li>
+  <li>others</li>
+</ol>
+
+<h3>Other supporting Activity</h3>
+<div align="left">
+
+<table border="1" width="600">
+  <tr>
+    <td width="33%">Air conditioning</td>
+    <td width="33%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="33%">Antivirus Protection</td>
+    <td width="33%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="33%">Backup, Archive</td>
+    <td width="33%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="33%">Software Development</td>
+    <td width="33%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="33%">Entry Control</td>
+    <td width="33%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="33%">Power Supply units</td>
+    <td width="33%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="33%">Data encryption, Data copression </td>
+    <td width="33%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="33%">Alarm Organisation (Fire, Water, Workload, )</td>
+    <td width="33%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="33%">Other</td>
+    <td width="33%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="33%">&nbsp;</td>
+    <td width="33%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="33%">&nbsp;</td>
+    <td width="33%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="33%">&nbsp;</td>
+    <td width="33%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="33%">&nbsp;</td>
+    <td width="33%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="33%">&nbsp;</td>
+    <td width="33%">&nbsp;</td>
+  </tr>
+</table>
+</div>
+
+<hr>
+
+<p><strong>Note</strong>: <small>A checklist is NOT, however, a specification. Evaluators
+should not take the attitude that they will evaluate an item in accordance with or against
+the checklist. The checklist is used to ensure thoroughness and consistency in the
+assessment. It does not indicate what constitutes compliance</small>.</p>
+<small>
+
+<hr>
+<font SIZE="1">
+
+<p ALIGN="CENTER">This is a living document and will&nbsp; be updated periodically as new
+information and/or Best Practices become available</p>
+</font></small><div align="left">
+
+<table BORDER="1" CELLSPACING="1" WIDTH="624" height="50">
+  <tr>
+    <td WIDTH="44" VALIGN="MIDDLE" height="19"><p ALIGN="CENTER"><small>0.1</small></td>
+    <td WIDTH="474" VALIGN="MIDDLE" height="19"><small>Working on draft version </small></td>
+    <td WIDTH="88" VALIGN="MIDDLE" height="19"><small>1998-08-12 buc</small></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

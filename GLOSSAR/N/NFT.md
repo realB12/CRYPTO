@@ -1,0 +1,2 @@
+# Non-Fungible Token (NFT) 
+NFTs ermöglichen die eindeutige Identifizierung und den Handel von digitalen sowie physischen Vermögenswerten wie zum Beispiel Kunstwerke, Musik oder Grundstücke. Non-fungible heisst «nicht ersetzbar», was bedeutet, dass es sich bei NFTs um einzigartige Vermögenswerte handelt – anders als beispielsweise bei Tokens oder Coins, die mehrfach in gleicher Form vorkommen können. NFTs nutzen die Blockchain-Technologie, um die Eigentumsrechte und die Echtheit des Tokens sowie der damit korrespondierenden Vermögenswerte zu belegen.

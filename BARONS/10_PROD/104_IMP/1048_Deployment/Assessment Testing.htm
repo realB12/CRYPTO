@@ -1,0 +1,430 @@
+<html>
+
+<head>
+<title>Y2K Assessment Testing&nbsp; Overview</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+</head>
+
+<body>
+
+<h1 align="center">Y2K Assessment Testing&nbsp; Overview</h1>
+
+<p align="center">bucSD111.htm / DRAFT Version 1.0 1998-01-27</p>
+
+<p align="center">&nbsp;</p>
+
+<h1><b><strong>Testing Levels for Assessment Test</strong></h1>
+
+<h3>Assessment Test Definition</h3>
+
+<p></b>Assessment Test is done mainly during the Y2K projects Assessment phase to verify
+in a pragmatic and quick approach that no major conversion is needed. Normally it is
+performed by the developer. <b></p>
+
+<p></b>Assessment Testing splits up in <a href="#Static Testing Components">static
+component analysis</a> and <a href="#Dynamic Testing Levels">dynamic testing levels</a></p>
+
+<h2><b><a name="Static Testing Components">Static Component Analysis</a></h2>
+
+<h3>Database Definition</h3>
+
+<p>Database Contents</p>
+
+<p>Interfaces, Buffers</p>
+
+<p>System Clock</p>
+
+<p>Compiler, Generator</p>
+
+<p>Code Inspection</p>
+
+<p>Date Routines</p>
+
+<p>Variable Declaration</p>
+
+<p>Screens and other Output</p>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<h2><a name="Dynamic Testing Levels">Dynamic Testing Levels</a></h2>
+
+<h3>Components</h3>
+
+<p></b>An Assessment Component is an idependant piece of code not containing external
+calles nor includes of other components. A component normally is used as an include or as
+an external function by modules and units. Sometimes a component is written in another
+language (ASSEMBLER) or bought from a vendor. 
+
+<ul>
+  <li>(Date) routines</li>
+  <li>Sorting Routines</li>
+  <li>Data Access modules (SQL Statements, Called Procedures)<b></li>
+  <li></b>Vendor code<b></li>
+  <li></b>Vendor application skeletons (4GL Components)<b></li>
+</ul>
+</b>
+
+<p>So Component testing is testing a single Component in isolation. Unit testing verifies
+that the unit works correctly based on some predefined minimal set of requirements.</p>
+
+<p>A change in a Component may heavily trigger recompilation of dependent modules and
+units</p>
+
+<h3><b><strong>Modules</strong></h3>
+
+<p></b>A Module is piece of code repeatetly called or included by other modules or units.
+A Modul can contain external calles or includes other moduls or components<b> 
+
+<ul>
+  <li></b>Called Functions, Procedures, SubRoutines</li>
+  <li>Screen Handling / Verification procedures<b></li>
+</ul>
+
+<p></b>A change in a Component may heavily trigger recompilation of dependent modules and
+units</p>
+<b>
+
+<h3><strong>Unit </strong></h3>
+
+<p></b>Compilation Unit, normally a program with a user interface or batch job designed to
+handle a certain activity<b></p>
+
+<h3>Sequence</h3>
+
+<p></b>Testing a collection of&nbsp;Units belonging to the same application including
+services and non &quot;testable&quot; or not tested entieties to check logical behaviour
+and user acceptance for the appication. This test may be repeated by the user as part of
+the Validation Tests. Often a seqence test shows whether Interfaces have to be tested.<b></p>
+
+<h3>Internal Interface</h3>
+
+<p></b>Testing the dataexchange between&nbsp; Units of the same application&nbsp; via
+datasources or buffers which belong exclusivly to this application<b></p>
+
+<p></b><font size="2">Simulating interfaces and linkages with other items and/or units to
+validate that information is being passed correctly. This is useful if additional
+interfaces will be added to the system during the conversion process or if problems
+between two or more modules cannot be isolated</font><font size="3"><br>
+</font><font size="2">The purpose is to find out whether the interfaces data is written
+correctly to the buffer and read again correctly from the other side<br>
+Interface testing normally is performed by the developers</font><b></p>
+
+<h3>External Interface</h3>
+
+<p></b>Testing that writing/reading data to the interface of an external application is
+correct. <b></p>
+
+<h3><a name="System Testing"><strong>System</strong></a>, </h3>
+
+<p></b>testing a unit or component on the final, compliant system (software, &nbsp;
+utilities, network and hardware). It is used as a baseline for performance, load and
+stress testing.<br>
+System&nbsp; Testing normally is done by a team consisting of application specialist,
+technical experts and&nbsp; usesr.<b></p>
+
+<h3>Field</h3>
+
+<p></b>Testing a collection of&nbsp;Units that constitute a complete business activity.
+This includes foreign units (belonging to a different application or system), services and
+non &quot;testable&quot; or not tested entieties within the same application.<br>
+Activity test will prove logical correctnes and user acceptance within your organisaiton.
+This test may be repeated by the user as part of the Validation Tests.<b></p>
+
+<h3>Group </h3>
+
+<p></b>Cluster testing over WAN within the KUONI Group<b></p>
+
+<h3>Street</h3>
+
+<p></b>Coordination of this kind of testing will be done be the Programme Office<b><font</p> </p>
+
+<p></b>Applications are frequently connected with other applications to provide a higher
+or deeper level of functionality. Data may be shared between applications or systems.
+Multiple applications or systems may be involved in such an environment. This is the
+typical environment for Year2000 projects. Intersystem testing is required to confirm that
+the connection functions properly between the applications. This test determines that the
+proper parameters and data are correctly passed between applications, and proper
+coordination and timing of each function exists between applications. </p>
+
+<hr>
+
+<h2>CONDITIONAL COMPLIANCE TESTING</h2>
+
+<p><small><small>see bucSD092.pdf page 17</small></small></p>
+
+<p>The ideal environment for compliance testing is to have a complete platform i. e.
+hardware, operating system software and application software available at the same time.
+The reality is that all the environment components may not be available until too late in
+the process to provide adequate time to perform compliance testing. When this situation
+occurs, the concept of conditional compliance testing should be considered. Conditional
+compliance testing implies that a logical system can be tested and certified in an
+environment that is not yet certified as long as the interface to the non-compliant
+component can be controlled in such a manner as to provide the necessary date information.
+The diagram below depicts the conditional compliance testing for a logical system
+utilizing a date application programming interface (API) in an environment where the
+operating platform is not yet compliant.</p>
+
+<p>When testing of the logical system is completed, it can be certified conditionally on
+the compliance testing of the operating platform and the date API. When the platform is
+complete and has been certified, the date API can be tested and certified. When the date
+API is certified, the logical system can be considered fully tested for Year 2000
+compliance. </p>
+
+<p>Utilizing this approach, compliance testing of logical systems and operating platforms
+can be done in parallel.<font FACE="Arial"></p>
+</font>
+
+<hr>
+
+<h3>Possible Dynamic Test to be executed during the Assessment Phase</h3>
+
+<p>When for example an Application is said to be component tested that means all the
+components identified for this application have been successfully tests</p>
+
+<table border="1" cellpadding="2">
+  <tr>
+    <td valign="top">Item Class</td>
+    <td>Component</td>
+    <td>Modules</td>
+    <td>Unit</td>
+    <td>Sequence</td>
+    <td>Internal<br>
+    Interface</td>
+    <td>External<br>
+    Interface</td>
+    <td>System</td>
+    <td>Field</td>
+    <td>Street</td>
+  </tr>
+  <tr>
+    <td valign="top"><a name="Application"><font color="#0000FF" size="3" face="Arial"><strong>Application</strong></font></a></td>
+    <td>O</td>
+    <td>O</td>
+    <td>O</td>
+    <td>X</td>
+    <td>O</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td valign="top"><a name="Vendor Package"><font color="#0000FF" size="3" face="Arial"><strong>COTS</strong></font></a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td valign="top"><a name="System Software"><font color="#0000FF" size="3" face="Arial"><strong>System
+    Software</strong></font></a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td valign="top"><a name="Network"><font color="#0000FF" size="3" face="Arial"><strong>Network</strong></font></a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>O</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td>O</td>
+    <td>X</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td valign="top"><a name="External System"><font color="#0000FF" size="3" face="Arial"><strong>External
+    System</strong></font></a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td valign="top"><a name="Bought &amp; Modified"><font color="#0000FF" size="3"
+    face="Arial"><strong>Bought &amp; Modified</strong></font></a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+  </tr>
+  <tr>
+    <td><a name="Service"><font color="#0000FF" size="3" face="Arial"><strong>Service</strong></font></a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="Facility"><font color="#0000FF" size="3" face="Arial"><strong>Facility</strong></font></a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="Interface"><font color="#0000FF" size="3" face="Arial"><strong>Interface</strong></font></a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="Hardware"><font color="#0000FF" size="3" face="Arial"><strong>Hardware</strong></font></a></td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="Embedded System"><font color="#0000FF" size="3" face="Arial"><strong>Embedded
+    System</strong></font></a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><a name="Database"><font color="#0000FF" size="3" face="Arial"><strong>Database</strong></font></a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><font color="#0000FF" size="3" face="Arial"><strong><a name="Tool">Tool</a>s</strong></font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><font color="#0000FF" size="3" face="Arial"><strong>Program</strong></font></td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>X</td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><font color="#0000FF" size="3" face="Arial"><strong>Routine</strong></font></td>
+    <td>X</td>
+    <td>X</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><font color="#0000FF" size="3" face="Arial"><strong>Modules</strong></font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><font color="#0000FF" size="3" face="Arial"><strong>Machine</strong></font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td valign="top"><font color="#0000FF" size="3" face="Arial"><strong>Transformation<br>
+    Compilation</strong></font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<p><font size="2">Status to be tracked</font></p>
+<font size="3">
+
+<p ALIGN="JUSTIFY">X = must be done, O = can be done</p>
+</font>
+</body>
+</html>

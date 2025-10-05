@@ -1,0 +1,4 @@
+# Exchange Traded Notes (ETN)
+Exchange-traded notes (ETNs), like ETFs, generally track an underlying index and trade on major exchanges; however, they track unsecured debt securities and are issued as bonds. ETNs are issued as bonds, which pay the return of their original invested amount—the principal—at maturity and any returns generated. ETNs do not pay periodic interest payments (called coupon payments). As a result, the likelihood that investors will be paid back the principal and the returns from the underlying index depends on the issuer's creditworthiness.
+
+Different tax treatments apply to the various types of ETPs. Investors should speak with a tax professional for any potential tax ramifications from investing in ETPs.

@@ -1,0 +1,9 @@
+# Ripple’s Survey Signals Massive WILLINGNESS for Blockchain Payment Adoption Across Middle East and Africa
+
+Crypto is transforming finance across the Middle East and Africa, with payments, digital assets, and cross-border transactions leading the charge, Ripple’s survey reveals.
+
+The most cited application for blockchain technology among respondents in the MENA region was “enabling customers to make payments using blockchain-based currencies (52%).” He noted that “accepting payment in the form of blockchain-based currencies (47%)” ranked as the second most common focus for regional leaders. The executive also highlighted the increasing interest in digital asset markets, emphasizing that “buying/selling/trading other types of digital assets (e.g., other token types like tokenized securities or real-world assets) (42%)” emerged as a key priority for a notable share of respondents.
+
+Reflecting the global push for more efficient international transactions, Merrick also pointed out that “Making cross-border payments in blockchain-based currencies (38%)” remains a priority for many institutions.
+
+Highlighting progressive regulations, blockchain advancements, and stablecoin growth, the UAE as a global hub for digital assets. Merrick pointed to dirham-backed stablecoins and supportive legal frameworks as pivotal in streamlining cross-border payments and remittances. He also noted the rising importance of asset tokenization, with the GCC driving economic innovation. By 2025, Merrick predicts blockchain will be deeply integrated into MENA’s banking systems, transforming finance across Saudi Arabia, Bahrain, Qatar, and Morocco.

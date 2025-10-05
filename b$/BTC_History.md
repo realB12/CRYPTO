@@ -1,0 +1,12 @@
+# History of Bitcoin
+
+* <- [BitCoin Overview ](_BitCoin.md)
+* <- [BitCoin Tech Intro](b$TECH/BitCoin-Intro.md)
+
+Bitcoin was **invented in 2008** with the publication of a paper titled **"Bitcoin: A Peer-to-Peer Electronic Cash System,"** written under the alias of **Satoshi Nakamoto** (see [satoshi_whitepaper](https://cypherpunks-core.github.io/bitcoinbook/ch01.html#satoshi_whitepaper)). 
+
+Nakamoto combined several prior inventions such as [b-money]() and [HashCash]() to create a completely decentralized electronic cash system that does not rely on a central authority for currency issuance or settlement and validation of transactions. The key innovation was to use a distributed computation system (called a "**Proof-of-Work**" algorithm) to conduct a global "election" every 10 minutes, allowing the decentralized network to arrive at consensus about the state of transactions. This elegantly solves the issue of double-spend where a single currency unit can be spent twice. Previously, the double-spend problem was a weakness of digital currency and was addressed by clearing all transactions through a central clearinghouse.
+
+**The bitcoin network started in 2009**, based on a reference implementation published by Nakamoto and since revised by many other programmers. The implementation of the Proof-of-Work algorithm (mining) that provides security and resilience for bitcoin has increased in power exponentially, and now exceeds the combined processing power of the world’s top supercomputers. The largest transaction processed so far by the network was $400 million US dollars, transmitted instantly and processed for a fee of $1.
+
+**Satoshi Nakamoto withdrew from the public in April 2011**, leaving the responsibility of developing the code and network to a thriving group of volunteers. **The identity of the person or people behind bitcoin is still unknown**. However, neither Satoshi Nakamoto nor anyone else exerts individual control over the bitcoin system, which operates based on fully transparent mathematical principles, open source code, and consensus among participants. The invention itself is groundbreaking and has already spawned new science in the fields of distributed computing, economics, and econometrics.

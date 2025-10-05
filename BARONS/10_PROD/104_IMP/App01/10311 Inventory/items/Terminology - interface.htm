@@ -1,0 +1,154 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Terminology: Interface Definition</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+</head>
+
+<body>
+<font color="#004080" size="6"><strong>
+
+<p align="center"></strong></font><font size="2"><img SRC="images/y2klogo1.gif" WIDTH="67"
+HEIGHT="65"> <img SRC="images/y2klogo2.gif" WIDTH="69" HEIGHT="57"> Guidelines</font></p>
+
+<h1 align="center">Terminology: Interface</h1>
+
+<p align="center"><img src="images/undercon.gif" width="40" height="38"
+alt="undercon.gif (286 bytes)"></p>
+
+<p align="center"><font size="1">(KUONI Y2K Certification Methodology&nbsp; / bucSD128.htm
+/ buc / 1998-01-26 / Version 1.0)<br>
+</font><img src="images/menuproc.gif" width="30" height="18"
+alt="menuproc.gif (339 bytes)"><small><small>&nbsp;&nbsp;&nbsp;&nbsp; <a
+href="bucSD072.htm">Assessment</a> (72), <a href="bucSD075.htm">Planning</a> (75),
+Conversion , <a href="bucsd083.htm">Local Verification</a> (83), <a href="bucSD089.htm">Global
+Verification</a> (89), QA<strong><br>
+</strong></small></small><img src="images/menuup.gif" width="30" height="18"
+alt="menuup.gif (359 bytes)"><small><small>&nbsp;&nbsp; <a href="bucSD123.htm">Item
+Analysis</a> (118)</small></small><br>
+<strong>&nbsp; <small><a href="#Definition">Definition</a> ,<a href="#Example"> Example</a>,
+<a href="#Testing">Testing</a>, <a href="#Drawing">Drawing</a>, <a href="#Further Reading">Further
+Reading</a></small> <br>
+</strong><img src="images/menurigt.gif" width="30" height="18"
+alt="menurigt.gif (327 bytes)"><small><small>&nbsp;&nbsp;&nbsp;&nbsp; <a
+href="bucSD162.htm">Database Analysis</a> (162), <a href="bucSD123.htm">Application
+Analysis</a> (123), <a href="bucsd163.htm">Vendor Analysis</a> (135)</small></small><br>
+<img src="images/menudown.gif" width="30" height="18" alt="menudown.gif (350 bytes)"></p>
+
+<hr>
+
+<h2><a name="Definition">Definition</a></h2>
+<font size="3">
+
+<p>In the context of Y2K Certification Process an interface between a &quot;start item&quot;
+S and an &quot;end item&quot; E is understood as the well defined flow of data between the
+two which triggers a well defined action on either side. </p>
+
+<p>Therefore for a more practical approach an interface here is defined as the collection
+of items involved and responisble to provide all action needed to complete the successful
+datatransfer&nbsp; between the two ends of the interface.</p>
+
+<h2></font><a name="Example">Example</a><font size="3"></h2>
+
+<p>Let's assume that the Telex Application (C401) has an interface (II07) to the PTT Telex
+Network (N722). Then the Interface (II07) includes action provided by 
+
+<ol TYPE="a">
+  <li>the starting item (C401)</li>
+  <li>the end item (N722 )</li>
+  <li>all other items between (LU15, LU14,WW16,LU10)</font></li>
+</ol>
+
+<p><font size="3">Interface<b> II07</b></font></p>
+
+<table BORDER="1" CELLSPACING="1" CELLPADDING="7" WIDTH="734">
+  <tr>
+    <td WIDTH="13%" VALIGN="TOP" BGCOLOR="#ffffff"><font size="3"><p ALIGN="CENTER">D401</font></p>
+    <p ALIGN="CENTER"><font size="3">Telex/400</font></td>
+    <td WIDTH="10%" VALIGN="TOP" BGCOLOR="#ffffff"><font size="3"><p ALIGN="CENTER">Synapses</font></td>
+    <td WIDTH="15%" VALIGN="TOP" BGCOLOR="#ffffff"><font size="3"><b><p ALIGN="CENTER">LU15</b><br>
+    Inhouse LAN</font></td>
+    <td WIDTH="17%" VALIGN="TOP" BGCOLOR="#ffffff"><font size="3"><b><p ALIGN="CENTER">LU14</b><br>
+    Telex Gateway Server</font></td>
+    <td WIDTH="12%" VALIGN="TOP"><font size="3"><b><p ALIGN="CENTER">WW16<br>
+    </b>Wire</font></td>
+    <td WIDTH="15%" VALIGN="TOP" BGCOLOR="#ffffff"><font size="3"><b><p ALIGN="CENTER">LU10</p>
+    </b></font><p ALIGN="CENTER"><font size="3">PTT Switchboard</font></td>
+    <td WIDTH="12%" VALIGN="TOP" BGCOLOR="#ffffff"><font size="3"><p ALIGN="CENTER"><b>N722</b></font></p>
+    <p ALIGN="CENTER"><font size="3">PTT Telex<br>
+    Network</font></td>
+  </tr>
+</table>
+<font size="3">
+
+<h2></font><a name="Testing">Testing</a><font size="3"></h2>
+
+<p>To prove that an interface is compliant you&nbsp;have to prove that all&nbsp; items in
+between (and therefore, by definition, all ther supporting items as well) are compliant
+as. Therefore for a clock forward test&nbsp; you need to warp both sides of the interface
+and all items between simultaniously.</p>
+
+<p>Under the assumption that when&nbsp; items between are compliant and all of them are
+warped simultaniously, then item screens for testing may be defined just at the both ends
+of the interface so that testing between the interface may be skiped.</p>
+
+<h2></font><a name="Drawing">Drawing</a><font size="3"></h2>
+
+<p>Interfaces, which make up the real complexity of the environment, are not shown in the
+item map, since the complexity of all interfaces may be confusing. </p>
+
+<p>Interfaces are documented separately for every item where they start from during the
+Item Analysis process and will show up later in every item's Interface Diagram (which is
+part of the detailed Item Analysis Report).</p>
+
+<p>When drawing the interface diagram&nbsp; this will be a good crosschek where you will
+find out that your data highway is broken and that you have to complete the Item Map by
+adding additional items.</p>
+<b>
+
+<p>Tip</b>: The interface's items (the items between two items) you will find naturally
+when you just follow the interface's data path through the item map. Further the Programme
+Office's Inventory Database (Web2000) is supporting this kind of &quot;research&quot; once
+the Inventory is complete.</font></p>
+
+<h2>Item Number</h2>
+
+<p><font size="3">The Item Number of an Interface is <strong>IInn</strong> and must be
+unique within the organisation.</font></p>
+
+<h2><a name="Further Reading">Further Reading</a></h2>
+
+<blockquote>
+  <ul>
+    <li><a href="bucsd095.htm">Test Categories</a> (95)</li>
+  </ul>
+</blockquote>
+
+<hr>
+
+<p align="center"><font size="1">This is a living document and will&nbsp; be updated
+periodically as new information and/or Best Practices become available</font></p>
+
+<p><font size="1">The World Wide Web version of this document contains links to many of
+the resources available at the KUONI Y2K Programme Office. This guidelines are constructed
+to be generic, with referenced to practical implementation and best practice models found
+at reviewed organisations. This is a living document and will&nbsp; be updated
+periodically by the Y2K Programme Office as new information and/or Best Practices become
+available. Where a process activitey has proven to be helpful, it is included in its
+entienty</font></p>
+
+<table border="1" width="100%">
+  <tr>
+    <td width="8%" align="center">&nbsp;</td>
+    <td width="29%" align="center">&nbsp;</td>
+    <td width="63%" align="center">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="8%" align="center"><small><small><small>1.0</small></small></small></td>
+    <td width="29%" align="center"><small><small><small>Working on draft version </small></small></small></td>
+    <td width="63%" align="center"><small><small><small>1998-02-16 buc</small></small></small></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,2 @@
+# Token
+Im Gegensatz zu Coins die auf ihrer eigenen Blockchain gehalten werden, **basieren Tokens auf einer bereits bestehenden Blockchain** und machen sich deren Technologie zunutze, um gewisse Anwendungen anzubieten. So gibt es Token, welche auf der Ethereum Blockchain basieren und Dienstleistungen im Bereich von [De Fi](../D/DeFi.md) anbieten.

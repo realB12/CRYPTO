@@ -1,0 +1,4 @@
+# Exchange-Traded Commodities (ETCs)
+Exchange-traded commodities (ETCs) are financial instruments designed to offer investors exposure to commodity prices such as metals, oil or coffee. These instruments can be structured as either ETFs or ETNs. ETCs are traded on stock exchanges, allowing investors to easily access and trade them just like they were individual stocks.
+
+**The underlying assets of ETCs typically include a range of commodities such as precious metals, agricultural products, energy resources, or a combination thereof**. ETCs let investors buy and sell commodities without holding or owning any of the underlying commodities. This means investors can capitalize on specific commodities, commodity indices, or commodity futures contracts without ever having to store or hold a tangible commodity.

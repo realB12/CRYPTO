@@ -1,0 +1,458 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>Tasklist: Assessment - Item Environment Analysis</title>
+</head>
+
+<body>
+<font color="#004080" size="6"><strong>
+
+<p align="center"></strong></font><font SIZE="2"><img SRC="images/y2klogo1.gif" WIDTH="67"
+HEIGHT="65"> <img SRC="images/y2klogo2.gif" WIDTH="69" HEIGHT="57"> Guidelines</font></p>
+
+<h1 align="center">Item Environment Analysis</h1>
+
+<p align="center"><font size="1">(KUONI Y2K Certification Methodology&nbsp; / bucSD213.htm
+/ buc / 1998-01-26 / Version 1.0)<br>
+</font><img src="images/menuproc.gif" width="30" height="18"
+alt="menuproc.gif (339 bytes)"><small><small>&nbsp;&nbsp;&nbsp;&nbsp; <a
+href="bucSD072.htm">Assessment</a> (72), <a href="bucSD075.htm">Planning</a> (75),
+Conversion , <a href="bucsd083.htm">Local Verification</a> (83), <a href="bucSD089.htm">Global
+Verification</a> (89), QA<strong><br>
+</strong></small></small><img src="images/menuup.gif" width="30" height="18"
+alt="menuup.gif (359 bytes)"><small><small>&nbsp;&nbsp; <a href="bucSD123.htm">Item
+Analysis</a> (118)</small></small><br>
+<strong>&nbsp; <small><a href="#Abstract">Abstract</a> <a href="#Deliverables">Deliverables</a>,
+<a href="#General Guidelines">General Guidelines</a>, <a href="#Process Description">Process</a></small>
+<br>
+</strong><img src="images/menurigt.gif" width="30" height="18"
+alt="menurigt.gif (327 bytes)"><small><small>&nbsp;&nbsp;&nbsp;&nbsp; <a
+href="bucSD162.htm">Database Analysis</a> (162), <a href="bucSD123.htm">Application
+Analysis</a> (123), <a href="bucsd163.htm">Vendor Analysis</a> (135)</small></small><br>
+<img src="images/menudown.gif" width="30" height="18" alt="menudown.gif (350 bytes)"></p>
+
+<hr>
+
+<h2><a name="Abstract">Abstract</a></h2>
+
+<p>During Detailed Item Analysis, Item Environment Analysis is the first step to be
+undertaken.. </p>
+
+<p>The goal of this process is to understand how the item is linked to its environment. </p>
+
+<p>By drawing the item's Environment Diagram we show all supporting items in isolation. </p>
+
+<p>The item's Interface Diagrams show the dataflow from/to the item in a detail, so that
+we are sure that nothing is forgotten what is relevant to make the interface running..</p>
+
+<p>Both diagrams will support all following activities like detailed assessment, test
+planning and testing and both diagrams are created by (re)arranging all
+supporting/interfacing&nbsp; itmes on the itemmap (by resolving all locigal units) so that
+the new drawing is from the item's point of view.</p>
+
+<p>The results of these process must be part of the detailed item analysis report.</p>
+
+<hr>
+
+<h2><a name="Deliverables">Process Overview</a></h2>
+<div align="left">
+
+<table border="1" width="639" height="301">
+  <tr>
+    <td height="19" width="104"></td>
+    <td height="19" width="125"><em><strong>Input</strong></em></td>
+    <td height="19" width="99"><em><strong>Output</strong></em></td>
+    <td height="19" width="267"><em><strong>Description</strong></em></td>
+    <td height="19" width="17"></td>
+  </tr>
+  <tr>
+    <td height="19" width="104"><a href="#Describe the Item"><small>Assess the item</small></a></td>
+    <td height="19" width="125"><small>exising documentation, userguides, handbooks, printouts
+    fo online help etc..</small></td>
+    <td height="19" width="99"><small>Item Analysis Report</small></td>
+    <td height="19" width="267"><small>Describe here at least in short what the purpose of the
+    item is or add reference to describing documents (user guides, programming guidelines
+    etc.). </small><p><small>The goal here is to summarize in few words the scope and function
+    of the item from a users point of view so that the scope of the following steps are clear
+    and we are sure what belongs to the item and where its boundaries are (expecially this
+    supports further testplanning).</small></p>
+    <p><small>Perhaps you add her some brainstormed info and keywords describing the items
+    issues concerning Y2K.</small></p>
+    <p><small>In general the separate instructions for Detailed Item Analysis should be
+    followed.</small></td>
+    <td height="19" width="17"><small>1.0</small></td>
+  </tr>
+  <tr>
+    <td height="19" width="104"><small>Draw the item's <a href="#Draw Interface Diagram">Environment
+    &nbsp; Diagram</a></small></td>
+    <td height="19" width="125"><small>ItemMap</small><br>
+    <small>Web2000</small></td>
+    <td height="19" width="99"><small>Item's Environment Diagram (part of Item Analysis
+    Report)</small><br>
+    <small></small><p><small>completed itemmap and itemlist</small></td>
+    <td height="19" width="267"><small>Draw the item in isolation. This helps to define
+    clearly the scope of the&nbsp; analysis you will undertake.</small><p><small>Summarize on
+    one sheet all supporting items, that means, redraw all the&nbsp; items&nbsp; which are
+    required to keep the item running per se or which must be installed before you can install
+    your item.</small></p>
+    <p><small>In practical therms, you start with your item and then by&nbsp; following the
+    dependencies you go through your item map&nbsp; by resolving all&nbsp;Logical Units (LUs).
+    </small></p>
+    <p><small>For example: For an Application draw the Database, the Generated Data, the
+    System Software, the Hardware, Network and all Wires required that the item works fine (so
+    that at least the software can be installed and can be started successfully).</small></p>
+    <p><small>Tip: Follow the installation instructions for a complete reinstallation. Besides
+    consider reinstallation as an emergency&nbsp; procedure which is part of the contingency
+    plan.</small></td>
+    <td height="19" width="17"><small>1.0</small></td>
+  </tr>
+  <tr>
+    <td height="19" width="104"><small><a href="#Add the Interfaces to the Diagram">Add the
+    Interface's EndPoints</a> to the Environment &nbsp; Diagram</small></td>
+    <td height="19" width="125"><small>ItemMap</small><br>
+    <small>Web2000</small><p><small>Items Environment Diagram</small></td>
+    <td height="19" width="99"><small>Item's Environment Diagram</small><br>
+    <small></small><p><small>completed itemmap and itemlist</small></td>
+    <td height="19" width="267"><small>Now think about the interfaces: Which are the final
+    datasources at the very end points of&nbsp; your item's&nbsp; interfaces ?. </small><p><small>Draw
+    a rectangle arround the items envrionement diagram and put now all these datasources
+    arround this environment box . </small></p>
+    <p><small>For instance these end points may be considered:</small><ul>
+      <li><small>Data generated by other internal or external systems (CRS).</small></li>
+      <li><small>Faxes which are received by your clients</small></li>
+    </ul>
+    </td>
+    <td height="19" width="17"><small>1.0</small></td>
+  </tr>
+  <tr>
+    <td height="19" width="104"><small>Add Item ID and deseription if Interfaces into the <a
+    href="#Compile Interfaces List">Item List</a></small></td>
+    <td height="19" width="125"><small>current environment diagram</small><p><small>Item List</small></td>
+    <td height="19" width="99"><small>Item List</small></td>
+    <td height="19" width="267"><small>Insert all found Interfaces into the Item List (116).</small></td>
+    <td height="19" width="17"><small>1.0</small></td>
+  </tr>
+  <tr>
+    <td height="19"><small>Draw&nbsp; <a href="#Draw Interface Diagram">Interface Diagrams</a></small></td>
+    <td height="19"><ul>
+      <li><small>Item Map</small></li>
+      <li><small>current environment diagram</small></li>
+      <li><small>Item List</small></li>
+      <li><small>Web2000</small></li>
+    </ul>
+    </td>
+    <td height="19"><small>Interface Diagrams</small></td>
+    <td height="19"><small>For every interface draw all supporting items, that means, redraw
+    all the parts of the Item Map in isolation which are relevant to the interface.</small></td>
+    <td height="19"><small>1.0</small></td>
+  </tr>
+  <tr>
+    <td height="19" width="104"><small>Create the&nbsp; <a href="#Draw Interface Diagram">Environment
+    &nbsp; Matrix</a></small></td>
+    <td height="19" width="125"><small>Items Environment Diagram</small><p><small>Web2000</small></td>
+    <td height="19" width="99"><small>Items Environment List</small></td>
+    <td height="19" width="267"><small>List here all supporting items (direct and from
+    interfaces) with their compliance status and describe how they impact the behaviour of
+    your item.</small></td>
+    <td height="19" width="17"><small>1.0</small></td>
+  </tr>
+</table>
+</div>
+
+<hr>
+
+<h2><a name="General Guidelines">General Guidelines</a> and Additional Hints</h2>
+
+<h3>Tools to be used</h3>
+
+<ol>
+  <li>Your Item Map</li>
+  <li>Your Item List</li>
+  <li>Win/Web2000: The programme offices Global Inventory database</li>
+</ol>
+
+<h3>Further Reading</h3>
+
+<blockquote>
+  <ul>
+    <li><a href="bucsd128.htm">Interface Definition</a> (128)</li>
+    <li><a href="bucsd116.htm">Item List Definition</a> (116)</li>
+  </ul>
+</blockquote>
+
+<hr>
+
+<h2><a name="Draw the items Environment Diagram">Draw the Item's Environment Diagram</a></h2>
+
+<p><small>Draw the item in isolation:</small></p>
+
+<p><small>This process is only required for&nbsp; items in a conplex environment. For
+simpler environments the environment matrix may be enough.</small></p>
+
+<p><small>Summarize on one sheet all the supporting items, that means, redraw all
+the&nbsp; items&nbsp; which are required to keep the item running per se or which must be
+installed before you can install your item.</small></p>
+
+<p><small>In practical you start with your item and then by&nbsp; following the
+dependencies you go through your item map&nbsp; by resolving all&nbsp;Logical Units (LUs).
+</small></p>
+
+<p><small>For example: For an Application draw the Database, the Generated Data, the
+System Software, the Hardware, Network and all Wires required that the item works fine (so
+that at least the software can be installed be started to have a first look).</small></p>
+
+<p><small>For example: For an Application draw the Database, the Generated Data, the
+System Software, the Hardware, Network and all Wires required that the item works fine
+(can be installed and can be booted).</small></p>
+
+<p><small><strong>Tip</strong>: The Inventory Database (Web2000) is quite a good help but
+it is required that your&nbsp; complete Item Map and Item List&nbsp; which has been given
+to the programme office for review first.</small></p>
+
+<p><small>Template: <a href="files/item_map/st_604a1.flo">files\item_map\st_604A1.flo</a></small></p>
+
+<hr>
+
+<h2><a name="Add the Interfaces to the Diagram">Add the Interface's EndPoints to the
+Environment Diagram</a></h2>
+
+<h4>Add the Endpoint<small>s</small></h4>
+
+<p><small>Now think about the interfaces: Which are the final datasources at the very end
+points of&nbsp; your item's&nbsp; interfaces ?. </small></p>
+
+<p><small>Draw a rectangle arround the itmes envrionement and put now&nbsp; all these
+Datasources (Interfaces) arround this environment box . </small></p>
+
+<p><small>For instance these end points may be considered:</small> 
+
+<ul>
+  <li><small>Generated Date on other internal or external systems</small></li>
+  <li><small>Faxes which are received by your clients etc.</small></li>
+</ul>
+
+<p><strong>Tip</strong>: Instead of drawing all interfaces in one diagram, group some
+interfaces and draw them in separate diagrams.</p>
+
+<p><small>Template: <a href="files/item_map/st_604a1.flo">files\item_map\st_604A1.flo</a></small></p>
+
+<hr>
+
+<h2>Insert the Interfaces into the <a name="Compile Interfaces List">Item List</a></h2>
+
+<p>For every new interface get the unique Item number (<strong>IIxx</strong>) from your
+Y2K Project Manager and insert it into the Item List. , together with a short description
+of the interface and how it supports your current item under investigation.</p>
+
+<h3><small>Hints about how to fill in Interface relevant data into the&nbsp; <a
+href="bucsd116.htm">Item List</a> (116)</small></h3>
+
+<p>Below you find the description for the itemlist's&nbsp; relevant columns for interfaces</p>
+
+<table BORDER="1" CELLSPACING="1" CELLPADDING="7" WIDTH="640">
+  <tr>
+    <td WIDTH="14%" VALIGN="TOP" align="center"><font SIZE="2"><strong>Column Name</strong></font></td>
+    <td WIDTH="32%" VALIGN="TOP" align="center"><font SIZE="2"><strong>Column Description</strong></font></td>
+    <td WIDTH="24%" VALIGN="TOP" align="center"><font SIZE="2"><strong>Example</strong></font></td>
+    <td WIDTH="7%" VALIGN="TOP" align="center">&nbsp;</td>
+  </tr>
+  <tr>
+    <td WIDTH="14%" VALIGN="TOP"><font size="1">IID </font></td>
+    <td vAlign="top" width="283"><font size="1">The unique item ID as given by the Inventory
+    Process for Interfaces by considering the naming conventions for <a
+    href="file://D:\!USER.$\!BUC.$\PROJECT\Y2K\web\Y2K\bucSD116.htm/bucSD095.htm">test
+    categories</a> as defined by the Programme Office</font></td>
+    <td vAlign="top" width="131"><ul>
+      <li><font size="1">II01</font></li>
+      <li><font size="1">IIA2</font></li>
+    </ul>
+    </td>
+    <td WIDTH="7%" VALIGN="TOP" align="center"><font size="1">1.0</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="14%" VALIGN="TOP"><font size="1">Item Description</font></td>
+    <td vAlign="top" width="283"><font size="1">A short Description of the Interface and how
+    it is supporting the item under your current investigation</font></td>
+    <td vAlign="top" width="131"><ul>
+      <li><small>Link to TopCall the Host based fax and telex interface</small></li>
+    </ul>
+    </td>
+    <td WIDTH="7%" VALIGN="TOP" align="center"><font size="1">1.0</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="14%" VALIGN="TOP"><font size="1">CS </font></td>
+    <td WIDTH="32%" VALIGN="TOP"><small><small><a href="terms/complian.htm">Compliance Status</a>
+    </small><br>
+    <small>The Compliance Status is the lowest level of compliance of&nbsp; an item involved.</small></small><p><small><small>it
+    goes from 1 = not addressed to 100 = &nbsp; Compliant Certified</small></small></td>
+    <td WIDTH="24%" VALIGN="TOP"><ul>
+      <li><small><small>1</small></small></li>
+      <li><small><small>10</small></small></li>
+      <li><small><small>60</small></small></li>
+    </ul>
+    </td>
+    <td WIDTH="7%" VALIGN="TOP" align="center"><font size="1">1.0</font></td>
+  </tr>
+  <tr>
+    <td WIDTH="14%" VALIGN="TOP"><font size="1">Owner </font></td>
+    <td WIDTH="32%" VALIGN="TOP"><font size="1">The Owner of the Interface is normally the
+    owner of the starting item. It is his responsibility that all items in between are
+    addressed and someone makes them compliant.</font></td>
+    <td WIDTH="24%" VALIGN="TOP"><small><small>BUCHLE Rene<br>
+    1998-02-22, ________</small></small></td>
+    <td WIDTH="7%" VALIGN="TOP" align="center"><font size="1">1.0</font></td>
+  </tr>
+</table>
+
+<p>Note:</p>
+
+<p>From this moment the Interface has become an item per se and will be undertaken to a
+detailed item analysis by its own. In other words, as soon as the interface is part of the
+item list, its further investigation is closed here till it is analysed during its own
+item analyisis process.</p>
+
+<hr>
+<font size="1">
+
+<h2></font><a name="Draw Interface Diagram">Draw the Item's Interface Diagram</a>(s)<font
+size="1"></h2>
+
+<p></font><small>Starting with the item under investigation draw all the items which are
+supporting this interface. Perhaps&nbsp; you will find out that some items in between are
+missing and that you have to add them to the item map.</small></p>
+
+<p><small>Template: <a href="files/item_map/st_604a1.flo">files\item_map\st_II01A1.flo</a></small></p>
+<font size="1">
+
+<hr>
+</font>
+
+<h2><a name="Compile the Items Environment List">Compile the Items Environment Matrix</a></h2>
+
+<p>Have a list with at least the ItemNumber, the actual compliant status and the person in
+charge to deliver compliance of the supporting items and the supporting items of
+interfaces . Since the owner of the item is in charge to make sure that all supporting
+items (direct and those of&nbsp; interfaces) are compliant as well (and when not he is
+responisble to&nbsp;rise the issue to the Programme Office) the following list will be
+used to check the status of these.</p>
+
+<p><a name="Environement Marix Definition"><strong>Environment Matrix Definition</strong></a></p>
+
+<table BORDER="1" CELLSPACING="1" CELLPADDING="7" WIDTH="640">
+  <tr>
+    <td WIDTH="14%" VALIGN="TOP" align="center"><font SIZE="2"><strong>Column Name</strong></font></td>
+    <td WIDTH="32%" VALIGN="TOP" align="center"><font SIZE="2"><strong>Column Description</strong></font></td>
+    <td WIDTH="24%" VALIGN="TOP" align="center"><font SIZE="2"><strong>Example</strong></font></td>
+    <td WIDTH="7%" VALIGN="TOP" align="center"><small>&nbsp;</small></td>
+  </tr>
+  <tr>
+    <td WIDTH="14%" VALIGN="TOP"><font size="1">IID *</font></td>
+    <td vAlign="top" width="283"><font size="1">The unique item ID from the item list as given
+    by the Inventory Process for Interfaces by considering the naming conventions for <a
+    href="file://D:\!USER.$\!BUC.$\PROJECT\Y2K\web\Y2K\bucSD116.htm/bucSD095.htm">test
+    categories</a> as defined by the Programme Office</font></td>
+    <td vAlign="top" width="131"><ul>
+      <li><font size="1">II01</font></li>
+      <li><font size="1">IIA2</font></li>
+    </ul>
+    </td>
+    <td WIDTH="7%" VALIGN="TOP" align="center"><small>1.0</small></td>
+  </tr>
+  <tr>
+    <td WIDTH="14%" VALIGN="TOP"><font size="1">CS *</font></td>
+    <td WIDTH="32%" VALIGN="TOP"><small><small><a href="terms/complian.htm">Compliance Status</a>
+    </small><br>
+    <small>The Compliance Status is the lowest level of compliance of&nbsp; an item involved.</small></small><p><small><small>it
+    goes from 1 = not addressed to 100 = &nbsp; Compliant Certified</small></small></td>
+    <td WIDTH="24%" VALIGN="TOP"><ul>
+      <li><small><small>1</small></small></li>
+      <li><small><small>10</small></small></li>
+      <li><small><small>60</small></small></li>
+    </ul>
+    </td>
+    <td WIDTH="7%" VALIGN="TOP" align="center"><small>1.0</small></td>
+  </tr>
+  <tr>
+    <td WIDTH="14%" VALIGN="TOP">...</td>
+    <td WIDTH="32%" VALIGN="TOP">&nbsp;</td>
+    <td WIDTH="24%" VALIGN="TOP">&nbsp;</td>
+    <td WIDTH="7%" VALIGN="TOP" align="center"><small>&nbsp;</small></td>
+  </tr>
+  <tr>
+    <td WIDTH="14%" VALIGN="TOP"><font size="1">Owner *</font></td>
+    <td WIDTH="32%" VALIGN="TOP"><font size="1">The Owner of the Interface is normally the
+    owner of the starting item. It is his responsibility that all items in between are
+    addressed and someone makes them compliant.</font></td>
+    <td WIDTH="24%" VALIGN="TOP"><small><small>BUCHLE Rene<br>
+    1998-02-22, ________</small></small></td>
+    <td WIDTH="7%" VALIGN="TOP" align="center"><small>1.0</small></td>
+  </tr>
+  <tr>
+    <td WIDTH="14%" VALIGN="TOP"><font size="1">Kind of Support</font></td>
+    <td WIDTH="32%" VALIGN="TOP"><font size="1">describe here the kind of support this item
+    provided for the item under investigation</font></td>
+    <td WIDTH="24%" VALIGN="TOP">&nbsp;</td>
+    <td WIDTH="7%" VALIGN="TOP" align="center"><small>1.0</small></td>
+  </tr>
+  <tr>
+    <td WIDTH="14%" VALIGN="TOP"><font size="1">IInn</font></td>
+    <td WIDTH="32%" VALIGN="TOP"><font size="1">insert here a short description of the action
+    proivided by the Item to asssist Interface IInn.</font></td>
+    <td WIDTH="24%" VALIGN="TOP">&nbsp;</td>
+    <td WIDTH="7%" VALIGN="TOP" align="center"><small>1.0</small></td>
+  </tr>
+  <tr>
+    <td WIDTH="14%" VALIGN="TOP"><font size="1">IInn+1</font></td>
+    <td WIDTH="32%" VALIGN="TOP"><font size="1">insert here a short description of the action
+    proivided by the Item to asssist Interface IInn.</font></td>
+    <td WIDTH="24%" VALIGN="TOP">&nbsp;</td>
+    <td WIDTH="7%" VALIGN="TOP" align="center"><small>1.0</small></td>
+  </tr>
+  <tr>
+    <td WIDTH="14%" VALIGN="TOP"><font size="1">IInn+2</font></td>
+    <td WIDTH="32%" VALIGN="TOP"><font size="1">insert here a short description of the action
+    proivided by the Item to asssist Interface IInn +2.</font></td>
+    <td WIDTH="24%" VALIGN="TOP">&nbsp;</td>
+    <td WIDTH="7%" VALIGN="TOP" align="center"><small>1.0</small></td>
+  </tr>
+  <tr>
+    <td WIDTH="14%" VALIGN="TOP"><font size="1">...</font></td>
+    <td WIDTH="32%" VALIGN="TOP">&nbsp;</td>
+    <td WIDTH="24%" VALIGN="TOP">&nbsp;</td>
+    <td WIDTH="7%" VALIGN="TOP" align="center"><small>1.0</small></td>
+  </tr>
+  <tr>
+    <td WIDTH="14%" VALIGN="TOP"><font size="1">IInn+x</font></td>
+    <td WIDTH="32%" VALIGN="TOP"><font size="1">insert here a short description of the action
+    proivided by the Item to asssist Interface IInn + x.</font></td>
+    <td WIDTH="24%" VALIGN="TOP">&nbsp;</td>
+    <td WIDTH="7%" VALIGN="TOP" align="center"><small>1.0</small></td>
+  </tr>
+</table>
+
+<hr>
+<font size="1">
+
+<p>The World Wide Web version of this document contains links to many of the resources
+available at the KUONI Y2K Programme Office. This guidelines are constructed to be
+generic, with referenced to practical implementation and best practice models found at
+reviewed organisations. Therefore this is a living document and will be updated
+periodically by the Y2K Programme Office as new information and/or Best Practices become
+available. Where a process activity has proven to be helpful, it is included in its entity</font></p>
+
+<table border="1" width="100%">
+  <tr>
+    <td width="8%" align="center">1.1</td>
+    <td width="29%" align="center">reviewing the process as part of the general review process
+    (BUC,DL)</td>
+    <td width="63%" align="center">1998-09-15</td>
+  </tr>
+  <tr>
+    <td width="8%" align="center"><small><small><small>1.0</small></small></small></td>
+    <td width="29%" align="center"><small><small><small>Working on draft version </small></small></small></td>
+    <td width="63%" align="center"><small><small><small>1998-02-16 buc</small></small></small></td>
+  </tr>
+</table>
+</body>
+</html>

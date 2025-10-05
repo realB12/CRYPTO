@@ -1,0 +1,4 @@
+# MultiParty Computation Technologie (MPC) 
+MPC Technologie - wie sie z.B. von [Swissborg](../../SERVICES/S/Swissborg/Swissborg.md) verwendet wird - schützt Konten und Transaktionen in dem ihr Zugang durch das Zusammenspiel verschiedener Transaktionspartner, bei denen keiner den GANZEN Privaten Schlüssel hat, resp. wird erst gar kein [Private Key](../P/PrivateKey.md) verwendet der damit auch nicht gestolen oder erraten werden kann. 
+
+[Swissborg](../../SERVICES/S/Swissborg/Swissborg.md) verwendet z.B. Fireblocks: die gemäss eigenen Angaben sicherst Platform um digitale Assets mittels "multiparty computation technology" zu schützen. 

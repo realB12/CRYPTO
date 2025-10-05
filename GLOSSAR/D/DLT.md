@@ -1,0 +1,4 @@
+# Ditributed Ledger Technology (DLT)
+Mit Distributed Ledger Technology (DLT) werden i.d.R. elektronische «Verzeichnisse» als sogenannte Blockchains implementiert, welches sämtliche, jemals erfolgten Transaktionen eingetragen sind. 
+
+Die der Distributed Ledger Technology (DLT) zu Grunde liegende Blockchain bietet ein fälschungssicheres, read-only «Verzeichnis» welches dezentral über verschiedene anonyme Personen und Standorte hinweg verwaltet wird, ohne dass dazu eine zentrale Instanz und oder Server benötigt wird. Damit kann auf einen Intermediär, wie beispielsweise eine Bank beim Durchführen und Ueberprüfen von Bezahlungen, verzichtet werden. 

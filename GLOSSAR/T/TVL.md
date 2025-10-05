@@ -1,0 +1,2 @@
+# Total Value Locked (TVL)
+Total Value Locked (TVL) is a crucial metric in crypto and DeFi, representing the total amount of funds locked in protocols. TVL growth reflects the increasing popularity and adoption of a crypto project or the broader DeFi ecosystem

@@ -1,0 +1,4 @@
+# ASICs
+ASIC ist die Abkürzung für Application Specific Integrated Circuit. Anders gesagt ist ein ASIC ein Stück Hardware, das darauf optimiert ist, nur eine Aufgabe zu erledigen. Im Fall der Bitcoin Mining Hardware ist diese Aufgabe das Hashen.
+
+Weil ein ASIC wirklich nur diese eine Funktion hat, kann alles Weitere entsprechend optimiert werden. ASICs haben so einen relativ niedrigen Energieverbrauch für eine vergleichsweise hohe Hashrate. Mit einem handelsüblichen ASIC lässt sich eine Hashrate von bis zu 140 TH/s erzielen. Ausgeschrieben entspricht das: 140.000.000.000.000 Hashes in der Sekunde. Und das ist nur ein einzelner ASIC.

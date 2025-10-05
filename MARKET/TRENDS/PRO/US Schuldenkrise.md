@@ -1,0 +1,2 @@
+# U.S. Schuldenkrise
+am 7. Januar 2024 hatte Elon Musk's "Doge department of government efficiency" wiederholft vor einem Zusammenbruch des hoch überschuldeten Dollars - und damit wörtlich vor einer "U.S. bankruptcy" - gewarnt!

@@ -1,0 +1,765 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>Handling Y2K Test Environment</title>
+</head>
+
+<body>
+
+<h1 align="center">Y2K Test Environment</h1>
+
+<p align="center"><a href="#WARNING">Warning</a>,&nbsp; <a
+href="#Testing System/390 Platforms">OS/390</a>,&nbsp; <a href="#Testing AS/400 Platforms">AS/400</a>,
+&nbsp; <a href="#Testing on PC">PC's</a>, <a href="bucSD129.htm">Tools</a>,<font SIZE="2"></p>
+
+<p><br>
+By their very nature, Year2000 exposures are time-sensitive and time-driven. Basic
+Year2000 testing requires that you set the system date and time to a point where Year2000
+exposures can be detected, then removed.</font></p>
+<font SIZE="2">
+
+<p>Therefore to the extent possible, define the test environment(s) and the environment
+control. Procedures for the test environment setup and co-ordination should be developed.
+In particular, describe how system clock testing (<a href="terms.htm#Time Warping">Time
+warping</a>) will take place. </font></p>
+
+<p>Set up a Testing Environment</p>
+
+<p>You need an isolated, non-production system with a duplicated image of your system and
+application software. In large systems, this could be an LPAR (logical partition) of the
+mainframe, or for other platforms consider dedicating a separate machine, segregated (in
+either time or place) from any other system(s). This segregation is crucial to guarantee
+that you will avoid contamination due to system clock advancement or untested, and yet
+imperfect, modified code.</p>
+
+<p>Ideally, a test environment can be set up with the required versions of Hardware and
+software that are YEAR 2000 compliant. If a compliant architecture cannot be achieved at
+this early stage, it is equally valid to conduct tests on application logic on the current
+Hardware configuration and to plan Future clock forware tests in a compliant environment
+at a later date.</p>
+
+<p>&nbsp;</p>
+
+<h1>Compliant Infrastructure</h1>
+
+<p>Verify that the infrastructure for the year 2000 conversion of the application in
+question is year 2000 compliant. These include:<br>
+
+<ul>
+  <li><i>Operating systems</i>: machines (clients and servers), networks, etc.<br>
+  </li>
+  <li><i>Development and productivity tools</i>: Language compilers, language pre-compilers,
+    language interpreters, integrated development environments (IDE), form generators, report
+    writers, job schedulers, etc.<br>
+  </li>
+  <li><i>Database engines</i>: These involve any SQL data servers (relational database
+    management systems) <br>
+  </li>
+  <li><i>Vendor software</i>: This involves software components that are only a part of the
+    application, but are vendor supplied, and will not be subject to year 2000 conversion at
+    Huntington, e.g., class libraries, frameworks, tool kits, etc.<br>
+  </li>
+</ul>
+
+<p>Should any part of the infrastructure for an application not be year 2000 compliant, it
+is highly recommended that the conversion be put on hold until such time when the whole
+environment is year 2000 compliant. In practice, this contingency can be revisited, and
+different plans can be developed on a case-by-case basis. </p>
+
+<h1>Testing and Development regions</h1>
+
+<p>Establish solid testing and development regions for the year 2000 conversion effort.
+Three regions need to be set up for every application:<br>
+
+<ul>
+  <li><i>Alpha region</i>: This is where unit testing will be conducted.<br>
+  </li>
+  <li><i>Beta region</i>: This is where subsystem, module integration, system, and regression
+    testing will be conducted.<br>
+  </li>
+  <li><i>Production-like region</i>: This is not exactly the application's production region,
+    but for all practical purposes its goal mimics that of the &quot;real&quot; production
+    region. This is where the initial acceptance testing will be conducted. <br>
+  </li>
+</ul>
+
+<p>Each year 2000 region should be set up with its own sets of test data (using possibly a
+data extracting tool). Initially, all three regions will have identical test data beds.
+After several tests are run, the test beds would no longer be similar. In this case, they
+may get corrupted and may require rebuilding. Ideally, test data is refreshed minimally
+once a week and/or as often as necessary for all test beds. A baseline snapshot of the
+originally extracted test bed is kept aside for this purpose. Test data is always
+refreshed to the baseline.</p>
+
+<hr>
+
+<h1>Changing System Time</h1>
+
+<p ALIGN="CENTER"><font SIZE="2">&nbsp;</p>
+
+<p ALIGN="JUSTIFY">System clock can be changed&nbsp; in several ways:<font SIZE="3"></p>
+
+<ol>
+  <li><p ALIGN="JUSTIFY"></font>Set the system clock to the future date. </p>
+  </li>
+  <li><p ALIGN="JUSTIFY">Simulate a future date using third products which intercept calls to
+    the system clock. Here it is critical to understand the limitations of the simulation and
+    weigh the risk that Year 2000 problems remain undiscovered. Not all platforms or operating
+    systems will have simulators available.</font></p>
+    <font SIZE="2"></li>
+  <li><p ALIGN="JUSTIFY">Set the clock forward in an LPAR (logical partition) of a mainframe. </p>
+  </li>
+</ol>
+
+<p align="center"><big><a name="! WARNING !"><font color="#FF0000"><big>! WARNING !</big></font></a></big></p>
+
+<p align="center"><font color="#FF0000"><big><big>Testing may <a
+href="bucSD071.htm#WARNING">Crash</a> your system !</big></big></font></p>
+
+<p align="center"><img src="images/notebomb.gif" alt="notebomb.gif (8627 bytes)"
+WIDTH="234" HEIGHT="60"></p>
+
+<p>Be <b>extremely</b> <b>careful</b> before resetting the system timer.&nbsp; Turning the
+system clock forward to the Year 2000 can have major and lasting unintended side effects
+on computer systems, from mainframes to PC&#146;s. Determining how to test how the system
+will run with the clock set past the Year 2000 requires significant planning. Setting the
+system clock forward or backward can unexpectedly activate or de-activate system
+resources. Some resources may need to be re-installed if they detect that the system clock
+has passed the license expiration date - setting the clock back will not restore them.
+Password and other security expirations may cause the loss of system programmer or end
+user access. Files may be deleted by utilities used to scratch files untouched for a given
+period of time. It is imperative that you discuss and research possible effects with your
+hardware and software vendors.</font></p>
+
+<p><font SIZE="2">Affected items may be</font> 
+
+<ul>
+  <li>User Ids</li>
+  <li>Passwords</li>
+  <li>Data files and databases</li>
+  <li>Authoization / protection</li>
+  <li>Licences / services (for example Windows 95 betas)</li>
+  <li>Network access</li>
+  <li>Automation functions (as well as unexpected activation</li>
+  <li>Hierarchical storage management<br>
+  </li>
+</ul>
+
+<p><small>Make sure that the battery used to backup CMOS settings, memory, and/or
+applications software is operational</small><font size="1"> </font><font SIZE="2">and
+again, the risk of not uncovering defects due to the subtle differences between setting a
+clock offset for the LPAR and setting the base system clock must be understood and
+assessed.</font></p>
+
+<p><font SIZE="2">Security products (such as RACF) and other date-dependent functions
+require particular attention. <br>
+Setting the system clock ahead can cause immediate loss of system programmer or end-user
+access and data expiration. <br>
+Further, to maintain security in this environment, consider implementing an installation
+exit (available in RACF) to disable expiration date processing. </font></p>
+<font SIZE="2">
+
+<p>Alternatively, or additionally, a complete Year2000 test set should include leaving
+date-dependent functions on and using &quot;aged&quot; data that will not cause loss of
+access and expiration problems. When you implement your new Year2000-ready system in a
+production environment, that is not the time to introduce new, untested system or
+application code. </p>
+
+<p>Ensure that you do not contaminate your production system or production databases when
+running various test scenarios. Be sure that data is not unexpectedly deleted from the
+system. For example, if your system is set up to scratch all files that are 1-year old,
+all files that are created prior to 1999/01/01 will be scratched when the system clock is
+change to 2000/01/01 or later. Because time stamps are saved when new data is created, be
+sure to remove data created before moving the system clock back to an earlier time.
+Unpredictable results might occur because programming might not be in place to handle
+normally improbable conditions, such as when the creation date of a data set is later than
+the current time. </font><font SIZE="6"></p>
+</font>
+
+<h3>Databases</h3>
+<font SIZE="2">
+
+<p>Be aware that Date Simulators (as marketed by Solution Developers) should only be
+installed on a test version of DB2 (DATABASE 2) and Language Environment. These tools
+corrupt a module in both the DB2 and Language Environment products. This is acceptable for
+your Year2000 testing purposes, but the product is no longer warranted by IBM after you
+install such Date Simulator products. Therefore, install a separate copy of DB2 and
+Language Environment or both for use in Date Simulation testing than the copy used for
+production or final 'Time Machine' testing. </p>
+<b>
+
+<h3></font><font size="4">Network Considerations</b></h3>
+
+<p></font><font SIZE="2">We made a conscious decision not to isolate our test TCP/IP and
+SNA networks from our global network. We recommend you make a conscious decision, one way
+or the other, about whether to isolate your test networks. To make the decision, you
+should review each application that communicates across the network to determine if data
+containing dates might flow from your Year2000 systems back to systems that are in the
+present. You can think of your Year2000 systems as a black hole into which date
+information can flow, but out of which you do not want date information to escape.
+Otherwise Year2000 data could corrupt your production environment. In our case, we found
+that one-way communications, such as remote logon to the sysplex, sending files to the
+sysplex using ftp, and NJE were the type of applications we were running across the
+network, and these applications would not cause a problem. Our decision not to isolate our
+test networks turned out to be correct--we did not experience any network-related
+problems.</font></p>
+
+<hr>
+
+<h2><a name="Testing System/390 Platforms">Testing on System/390 Platforms</a></h2>
+
+<p><font SIZE="2">&nbsp;</p>
+
+<p><a
+HREF="http://ppdbooks.pok.ibm.com/cgi-bin/bookmgr/bookmgr.cmd/books/y2kpaper/2.5.3.1">http://ppdbooks.pok.ibm.com/cgi-bin/bookmgr/bookmgr.cmd/books/y2kpaper/2.5.3.1</a></font></p>
+
+<pre>
+Requirements: 
+Provide a separate, isolated test system (such as a separate logical partition (LPAR) for large operating systems
+Provide a separate set of test data 
+Turn off RACF or other date-dependent functions.
+</pre>
+
+<p><font SIZE="2">&nbsp;</p>
+
+<p>If resources allow, you can also provide separate storage devices (DASD) as a further
+measure to protect your production system and data. </p>
+
+<p>Each LPAR or VM guest has its own logical clock which is separate and distinct from
+both the hardware TOD clocks and from the clocks of all other LPARs or guests running on
+the same physical machine. Any program, application, or system running in the image gets
+the same future date. </p>
+
+<p>Any of the S/390 operating systems with a clock set to a future date can be run in a
+Processor Resource/Systems Manager (PR/SM) LPAR, as a VM guest, or on a dedicated machine.
+This is also true for images in LPARs, guests on VM, or when running a native OS/390 or
+MVS system. Refer to the individual operating systems below for details. </p>
+
+<p><b>&nbsp;</p>
+
+<p>Note:</b> Non-IBM systems that have features similar to PR/SM might not function in the
+same way as an IBM PR/SM LPAR. </p>
+
+<p>You can change the system date through either of the following methods: 
+
+<ol>
+  <li>Set the system timer on a test system image. <b>However,</b> <b>never</b> <b>share</b> <b>data</b>
+    <b>or</b> <b>data</b> <b>sets</b> <b>between</b> <b>such</b> <b>a</b> <b>test</b> <b>system</b>
+    <b>and</b> <b>any</b> <b>other</b> <b>system</b> <b>unless</b> <b>all</b> <b>clocks</b> <b>are</b>
+    <b>synchronized</b> <b>to</b> <b>that</b> <b>same</b> <b>date.</b> For example, </li>
+</ol>
+
+<ul>
+  <ul>
+    <b>
+    <li>On</b> <b>OS/390</b> <b>or</b> <b>MVS:</b> </li>
+    <ul>
+      <b>
+      <li>Year2000</b> <b>Testing</b> <b>within</b> <b>a</b> <b>Single-System</b> <b>Sysplex</b> <b>Environment</b>
+      </li>
+    </ul>
+  </ul>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <p>You can set the clock in an MVS image to a future date. To set the clock, reply to the
+            TOD clock prompt message IEA888A </font><tt>[GMT</tt><font SIZE="2"> </font><tt>DATE=...,CLOCK=...]</tt><font
+            SIZE="2"> </font><tt>LOCAL</tt><font SIZE="2"> </font><tt>DATE=...,CLOCK=...</tt><font
+            SIZE="2"> </font><tt>REPLY</tt><font SIZE="2"> </font><tt>U,</tt><font SIZE="2"> </font><tt>OR</tt><font
+            SIZE="2"> </font><tt>GMT/LOCAL</tt><font SIZE="2"> </font><tt>TIME</tt><font SIZE="2"> in
+            the test LPAR image. You must include </font><tt>,GMT</tt><font SIZE="2"> on your response
+            to ensure that the clock is set correctly; issue: </font><tt>CLOCK=hh.mm.ss,DATE=yyyy.ddd,GMT</tt><font
+            SIZE="2">. (Do not set the time of day (TOD) using the Sysplex Timer.) </p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<ul>
+  <blockquote>
+    <blockquote>
+      <ul>
+        <b>
+        <li>Year2000</b> <b>Testing</b> <b>within</b> <b>a</b> <b>Multi-System</b> <b>Sysplex</b> <b>Environment</b>
+        </li>
+      </ul>
+    </blockquote>
+  </blockquote>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <b><p>Note:</b> Testing your system using the following test techniques is seldom
+            required; you need to do this testing only for those applications that you consider truly
+            multisystem (that is, those applications which you cannot test under a single-system
+            sysplex image). </p>
+            <p>A multi-system sysplex, Year2000-test environment requires that you dedicate at least
+            an entire physical machine to the test system. <b>The</b> <b>Year2000</b> <b>test</b> <b>machine</b>
+            <b>cannot</b> <b>include</b> <b>LPARs</b> <b>which</b> <b>contain</b> <b>members</b> <b>of</b>
+            <b>a</b> <b>different</b> <b>sysplex</b> <b>with</b> <b>a</b> <b>different</b> <b>date.</b>
+            This is because it is not possible to set manually different dates (and times) in the
+            several LPARs which are accurate enough to allow the sysplex to function correctly. </p>
+            <p>There are two ways you can set a future date for the test sysplex. </p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<ol>
+  <ol>
+    <blockquote>
+      <blockquote>
+        <ol>
+          <b>
+          <li>Using</b> <b>a</b> <b>Sysplex</b> <b>Timer</b> </li>
+          <p>Set the date ahead on a dedicated (to the test sysplex) Sysplex Timer and then IPL your
+          sysplex images. The images, which are part of the Year2000 test sysplex, can be on a
+          single physical machine or on multiple physical machines, but you cannot include sysplex
+          images on these machines which are not in the Year2000 test sysplex. Be sure to set the
+          ETR network ID on this Sysplex Timer to a value different from the ETR network ID used by
+          other Sysplexes. </p>
+          <p>For more information on Sysplex timers as related to Year2000 testing in an S/390
+          environment, refer to: <cite>S/390</cite> <cite>Time</cite> <cite>Management</cite> <cite>and</cite>
+          <cite>IBM</cite> <cite>9037</cite> <cite>Sysplex</cite> <cite>Timer</cite> (SG24-2070). </p>
+          <b>
+          <li>Without</b> <b>Using</b> <b>a</b> <b>Sysplex</b> <b>Timer</b> </li>
+        </ol>
+      </blockquote>
+    </blockquote>
+  </ol>
+</ol>
+
+<ul>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <ul>
+                <li>Bi-polar machines: </li>
+              </ul>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <blockquote>
+                <blockquote>
+                  <blockquote>
+                    <p>If the sysplex images all reside on a single physical machine, you can can set the
+                    Process Controller clock to the future date using the SYSDEF frame. </p>
+                  </blockquote>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<ul>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <ul>
+                <li>CMOS machines: </li>
+              </ul>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <blockquote>
+          <blockquote>
+            <blockquote>
+              <blockquote>
+                <blockquote>
+                  <blockquote>
+                    <p>Set the service element clock to the future date using the &quot;Service Element
+                    Option&quot; menu on the hardware master console. </p>
+                  </blockquote>
+                </blockquote>
+                <p>Then Power_On_Reset the machine, activate PR/SM, and IPL your sysplex images with
+                CLOCKxx parmlib members which specify SIMETRID=xx. </p>
+                <b><p>Note:</b> Be certain that the SIMETRID is different from the ETR network ID used by
+                other Sysplexes. </p>
+              </blockquote>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<ul>
+  <ul>
+    <b>
+    <li>On</b> <b>VM/ESA:</b> systems will IPL correctly with a year of 2000 or later. For
+      VM/ESA Version 1 Releases 2.1 and 2.2, you must apply APAR VM57927. Beginning with VM/ESA
+      Version 2 Release 1, this capability is included in the base VM system. </li>
+  </ul>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <p>In order to change the date of your VM/ESA system, reply 'Yes' to the </font><tt>Change</tt><font
+        SIZE="2"> </font><tt>TOD</tt><font SIZE="2"> </font><tt>clock</tt><font SIZE="2"> </font><tt>(Yes|No)</tt><font
+        SIZE="2"> prompt during IPL, and change the date and time to the desired date and time. To
+        specify a year of 2000, simply enter </font><tt>00</tt><font SIZE="2"> as the year (</font><tt>01</tt><font
+        SIZE="2"> for 2001, </font><tt>02</tt><font SIZE="2"> for 2002, and so forth). </p>
+        <p>If you change the system date, unless you have applied APAR VM60324 (this APAR is
+        available for Version 1 Release 2.2 and Version 2 Release 1), issue a SHUTDOWN REIPL
+        command immediately after completion of the system IPL as indicated in message HCPITM1161I
+        (this message is displayed only on Version 2 systems). This is required because by the
+        time VM issues the </font><tt>Change</tt><font SIZE="2"> </font><tt>TOD</tt><font SIZE="2">
+        </font><tt>clock</tt><font SIZE="2"> </font><tt>(Yes|No)</tt><font SIZE="2"> prompt,
+        components of the control program (CP) have already developed sensitivities to the actual
+        value of the TOD (time of day) clock. These sensitivities might cause irregular scheduling
+        and dispatching behavior if the value of the TOD clock is changed by more than several
+        minutes. </p>
+        <p>For more information on VM/ESA as related to Year2000 testing, refer to: <cite>VM/ESA</cite>
+        <cite>Year</cite> <cite>2000</cite> <cite>Migration</cite> <cite>-</cite> <cite>A</cite> <cite>Case</cite>
+        <cite>Study</cite> <cite>(SG24-2042).</cite> </p>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+
+<ul>
+  <ul>
+    <b>
+    <li>On</b> <b>VSE/ESA:</b> <cite>use</cite> <cite>command</cite> </font><tt>SET</tt><font
+      SIZE="2"> </font><tt>DATE=,</tt><font SIZE="2"> </font><tt>CLOCK=,</tt><font SIZE="2"> </font><tt>ZONE=</tt><font
+      SIZE="2"> <cite>to</cite> <cite>initialize</cite> <cite>the</cite> <cite>system</cite> <cite>timer</cite>
+      <cite>during</cite> <cite>IPL</cite> <cite>time.</cite> <cite>The</cite> <cite>DATE</cite>
+      <cite>parameter</cite> <cite>is</cite> <cite>specified</cite> <cite>in</cite> <cite>the</cite>
+      <cite>format</cite> <cite>mm/dd/yy,</cite> <cite>whereby</cite> <cite>yy</cite> <cite>is</cite>
+      <cite>interpreted</cite> <cite>as</cite> <cite>20yy,</cite> <cite>when</cite> <cite>yy</cite>
+      <cite>&lt;</cite> <cite>50,</cite> <cite>and</cite> <cite>as</cite> <cite>19yy</cite> <cite>otherwise.</cite>
+    </li>
+    <b>
+    <li>On</b> <b>TPF:</b> <cite>use</cite> <cite>the</cite> <cite>ZATIM</cite> <cite>(alter</cite>
+      <cite>time)</cite> <cite>functional</cite> <cite>message</cite> <cite>to</cite> <cite>change</cite>
+      <cite>the</cite> <cite>system</cite> <cite>time-of-day</cite> <cite>(TOD)</cite> <cite>clock,</cite>
+      <cite>change</cite> <cite>the</cite> <cite>subsystem</cite> <cite>local</cite> <cite>standard</cite>
+      <cite>time</cite> <cite>(LST)</cite> <cite>clock,</cite> <cite>and</cite> <cite>synchronize</cite>
+      <cite>the</cite> <cite>TOD</cite> <cite>clock</cite> <cite>to</cite> <cite>a</cite> <cite>Sysplex</cite>
+      <cite>Timer.</cite> <cite>Do</cite> <cite>so</cite> <cite>as</cite> <cite>follows:</cite> </li>
+    <ul>
+      <cite>
+      <li>Issue</cite> <cite>the</cite> <cite>ZDTIM</cite> <cite>functional</cite> <cite>message</cite>
+        <cite>to</cite> <cite>determine</cite> <cite>the</cite> <cite>time</cite> <cite>base</cite>
+        <cite>before</cite> <cite>you</cite> <cite>issue</cite> <cite>this</cite> <cite>functional</cite>
+        <cite>message.</cite> </li>
+      <cite>
+      <li>If</cite> <cite>you</cite> <cite>issue</cite> <cite>this</cite> <cite>functional</cite> <cite>message</cite>
+        <cite>when</cite> <cite>the</cite> <cite>TPF</cite> <cite>system</cite> <cite>is</cite> <cite>above</cite>
+        <cite>1052</cite> <cite>state,</cite> <cite>you</cite> <cite>must</cite> <cite>cycle</cite>
+        <cite>the</cite> <cite>TPF</cite> <cite>system</cite> <cite>to</cite> <cite>1052</cite> <cite>state</cite>
+        <cite>to</cite> <cite>complete</cite> <cite>the</cite> <cite>time</cite> <cite>adjustments.</cite>
+      </li>
+      <cite>
+      <li>You</cite> <cite>can</cite> <cite>issue</cite> <cite>this</cite> <cite>functional</cite>
+        <cite>message</cite> <cite>with</cite> <cite>the</cite> <cite>TOD</cite> <cite>parameter</cite>
+        <cite>only</cite> <cite>in</cite> <cite>1052</cite> <cite>state.</cite> </li>
+      <cite>
+      <li>In</cite> <cite>a</cite> <cite>loosely</cite> <cite>coupled</cite> <cite>system,</cite> <cite>all</cite>
+        <cite>other</cite> <cite>active</cite> <cite>processors</cite> <cite>must</cite> <cite>be</cite>
+        <cite>in</cite> <cite>1052</cite> <cite>state</cite> <cite>in</cite> <cite>order</cite> <cite>to</cite>
+        <cite>change</cite> <cite>the</cite> <cite>TOD</cite> <cite>clock</cite> <cite>without</cite>
+        <cite>the</cite> <cite>BP</cite> <cite>option.</cite> </li>
+      <cite>
+      <li>The</cite> <cite>ZATIM</cite> <cite>functional</cite> <cite>message</cite> <cite>does</cite>
+        <cite>not</cite> <cite>adjust</cite> <cite>time-initiated</cite> <cite>functions</cite> <cite>(that</cite>
+        <cite>is,</cite> <cite>functions</cite> <cite>that</cite> <cite>were</cite> <cite>started</cite>
+        <cite>by</cite> <cite>using</cite> <cite>the</cite> <cite>CRETC</cite> <cite>macro).</cite>
+      </li>
+    </ul>
+  </ul>
+</ul>
+
+<ol>
+  <li>Intercept the call to date and time routines or system timer services. Change the date
+    and time value returned from the routines/services to a specific value that will cause
+    exposures. For example, </li>
+</ol>
+
+<ul>
+  <ul>
+    <li>On OS/390 or MVS, trap the MVS TIME macro (SVC 11) and the STCKSYNC macro. </li>
+  </ul>
+</ul>
+
+<blockquote>
+  <blockquote>
+    <b><p>Notes:</b> </p>
+  </blockquote>
+</blockquote>
+
+<ol>
+  <li>There are Solution Developer tools available that provide the function of time
+    simulation. Refer to <a
+    HREF="../../../../../../progl/ntw40e/front98e/temp/2.7.8#HDRISVTOOL">&quot;Solution
+    Developer Tools&quot;</a> <a
+    HREF="../../../../../../progl/ntw40e/front98e/temp/2.7.8#HDRISVTOOL">in topic 2.7.8 </a>for
+    a list of Solution Developer tools. For any time simulation tool, the change of time
+    should be on application-level programs and should not affect the system functions and
+    operations. The tool should allow the users to specify the scope of the applications with
+    time change. Once the scope is specified, the change of time should be within that
+    pre-defined scope and transparent to others applications. </li>
+  <li>When you request full coverage of time references, you must ensure that all forms of
+    time references are intercepted. For example, some date/time service routines use hardware
+    instructions to reference time. Such tools will not intercept the STCK on OS/390 or MVS
+    and control block references. </font></li>
+</ol>
+<font SIZE="6">
+
+<p></font>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><i><font SIZE="2">&nbsp;</p>
+
+<h3></font><font size="4">Preparing</i> <i>to</i> <i>Travel</i> <i>Back</i> <i>to</i> <i>the</i>
+<i>Year</i> <i>1998</i>: </font><font SIZE="2"></h3>
+
+<p>To make sure you can go back to the year 1998 and protect ourselves from data loss, do
+the following <em>before</em> <em>setting</em> <em>the</em> <em>clock</em> <em>ahead</em>:
+</font></p>
+
+<pre> Dumping DASD
+We set up a special dump class and used DFSMShsm to dump all our DASD. 
+Copying control
+We made copies of the DFSMShsm control data sets data sets so DFSMShsm could use those copies to restore all our DASD volumes once we were back in 1996. 
+Turning off automatic space management
+We turned off DFSMShsm automatic primary and secondary space management to avoid migrating or deleting any DASD data sets that would expire in 1999.  We did so by changing YYYYYYY to NNNNNNN  on the following statements in our ARCCMDxx      parmlib member: 
+DEFINE PRIMARYSPMGMTCYCLE(NNNNNNN    CYCLESTARTDATE(1996/05/13))         
+DEFINE SECONDARYSPMGMTCYCLE(NNNNNNN
+CYCLESTARTDATE(1996/05/13
+Note:  We did run space management manually using selected test volumes.                     | 
+
+Recycling tapes:
+We did not automatically recycle any of our tapes while the clock was in the year 2000, to avoid losing any expired data sets that were on tape. 
+Note:  We did manually recycle selected tapes. </pre>
+
+<p>&nbsp;</p>
+
+<h3>Stepping into the Future</h3>
+
+<p><font SIZE="2">&nbsp;</p>
+
+<p>See <a
+HREF="http://ppdbooks.pok.ibm.com/cgi-bin/bookmgr/bookmgr.cmd/books/y2kpaper/2.5.4.2.3">http://ppdbooks.pok.ibm.com/cgi-bin/bookmgr/bookmgr.cmd/books/y2kpaper/2.5.4.2.3</a>
+for a detailed test scenario to test rollover for an IBM Mainframe.<br>
+</font></p>
+
+<h3>Back to the Present</h3>
+<font SIZE="2">
+
+<p>Once we completed our testing in the future, we had to restore our computing
+environment to the present. Depending on how you conduct your testing, you won't have to
+restore to the present. You might avail yourself of external services and create your test
+environment off-site; once testing is completed, you just walk away. Or you might have a
+process whereby you can create a new test bed whenever you need to. If so, you could
+complete your Year2000 testing just as you would any other set of test scenarios, and then
+start over for the next required test. </p>
+
+<p>If you have a test bed that you treat more like a production environment, such as we
+have, then you might need to restore it. Our recommendation is that you <em>avoid</em> <em>attempting</em>
+<em>to</em> <em>restore</em> <em>back</em> <em>to</em> <em>an</em> <em>earlier</em> <em>date</em>,
+if at all possible, to simplify your testing and minimize your risks. In fact, if you have
+a contingency plan to return your systems to an earlier date once the year 2000 actually
+occurs (if, for example, you encounter problems so severe that you think returning to an
+earlier date will allow you to keep running while you debug the problems) we would caution
+you that such a contingency plan is not foolproof. You are much better off devoting the
+resources ahead of time to adequately address this testing so that you will not encounter
+severe problems once the date arrives. </p>
+
+<p>Having said that, we'll tell you what we did to return to the present: 
+
+<ul>
+  <ul>
+    <li>We printed any output we needed from our JES2 and JES3 spools and ensured no output that
+      we needed remained on those spools (that way we could cold start our JES2 and JES3
+      subsystems without having to do a spool offload/reload). </li>
+    <li>We reset the clock. </li>
+    <li>We brought up a single system with only MVS, JES, and DFSMShsm. (We didn't bring up any
+      other subsystems or attempt to process any workloads yet.) </li>
+    <li>We started restoring data. Remember we had dumped all our data before we set the clock
+      ahead; after we set the clock back, we restored <em>most</em> of our data using the
+      DFSMShsm full-volume restore function. Here's what we <em>did</em> <em>not</em> restore: </li>
+    <li>Data sets that were read-only in the year 2000 (such as those on the SYSRES volume) </li>
+    <li>Data sets that are normally reset, such as page data sets </li>
+    <li>The master catalog. </li>
+    <li>Once our data was restored, we brought up our remaining systems and subsystems and
+      resumed our workloads. </li>
+  </ul>
+</ul>
+
+<p>A word of caution about not restoring the master catalog: if you are like us and have a
+master catalog containing more entries than absolutely necessary (&quot;absolutely
+necessary&quot; being those entries required early in the IPL process, along with aliases
+to user catalogs), you need to be careful. Consider this scenario: you delete data sets
+while the clock is set to the future. Then when you perform the full-volume restore after
+returning to the present, you restore the deleted data sets, but they are no longer
+cataloged. This is particularly messy for SMS-managed volumes, which require that all data
+sets be cataloged.</font></p>
+
+<hr ALIGN="RIGHT">
+
+<h1><a name="Testing AS/400 Platforms">Testing on AS/400 Platforms</a></h1>
+
+<p><font SIZE="2">&nbsp;</p>
+
+<p><a
+HREF="http://ppdbooks.pok.ibm.com/cgi-bin/bookmgr/bookmgr.cmd/books/y2kpaper/2.5.3.2">http://ppdbooks.pok.ibm.com/cgi-bin/bookmgr/bookmgr.cmd/books/y2kpaper/2.5.3.2</a></font></p>
+
+<p><font SIZE="2">&nbsp;</p>
+
+<p><br>
+Use the CL command (change system value (CHGSYSVAL) ) with the QDATE parameter. For
+example, CHGSYSVAL QDATE('101300') changes the system date to October 13, 2000 on a system
+using MMDDYY date formats (QDATFMT). To make sure all jobs on the AS/400 are using this
+new date, you should then power down the AS/400 (PWRDWNSYS) and conduct your testing after
+the subsequent IPL. </font><font SIZE="6"></p>
+
+<p>&nbsp;</p>
+
+<p></font>&nbsp;</p>
+
+<h1><a name="Testing on PC">Testing on PCs</a></h1>
+
+<p><font SIZE="2">&nbsp;</p>
+
+<p><a
+HREF="http://ppdbooks.pok.ibm.com/cgi-bin/bookmgr/bookmgr.cmd/books/y2kpaper/2.5.3.3">http://ppdbooks.pok.ibm.com/cgi-bin/bookmgr/bookmgr.cmd/books/y2kpaper/2.5.3.3</a></font></p>
+
+<p><font SIZE="2">&nbsp;</p>
+
+<p><br>
+Use the configuration utility that sets the time and date or execute the DATE command in
+DOS Version 3 Release 3 or later. </p>
+
+<p></font>&nbsp;</p>
+
+<h4>Basic Scenarios to Test Your PC System Clock</h4>
+
+<p><font SIZE="2">&nbsp;</p>
+
+<p><br>
+Some older models of the PC may not have the capability to set or roll over the system
+clock beyond the year 2000 because the Basic Input/Output System (BIOS) is unaware of the
+century digits. Refer to the IBM Product Year2000 Database at URL: </font><tt>http://www.ibm.com/year2000</tt><font
+SIZE="2"> or contact the IBM Technical Support Center (TSC) for your geography for
+PC-specific, internal clock setting information. (See <a
+HREF="../../../../../../progl/ntw40e/front98e/temp/PREFACE#HDRABOUT">&quot;About This
+Book&quot; in</a> <a HREF="../../../../../../progl/ntw40e/front98e/temp/PREFACE#HDRABOUT">topic
+PREFACE</a> for TSC address and contact information.) Some suggested scenarios for testing
+for Year2000-readiness of your PC system clock follow: </p>
+
+<p>Be certain to heed relevant cautions as noted in <a
+HREF="../../../../../../progl/ntw40e/front98e/temp/2.5.3#HDRDATECH">&quot;How to Change
+Date and</a> <a HREF="../../../../../../progl/ntw40e/front98e/temp/2.5.3#HDRDATECH">Time
+for Testing&quot; in topic 2.5.3</a> before proceeding with resetting a system clock. 
+
+<ul>
+  <li>Test if the system clock can be set beyond the year 2000 </li>
+</ul>
+
+<ol>
+  <ol>
+    <li>Set the system clock to 2000/01/01, 00:01:00 </li>
+    <li>Check the date </li>
+    <li>If the date is set correctly, power off, power on, and then re-check the date </li>
+  </ol>
+</ol>
+
+<ul>
+  <li>Test the system clock automatic update function </li>
+</ul>
+
+<ol>
+  <ol>
+    <li>Test the system clock automatic update function when the power is on </li>
+    <ol>
+      <li>Set the system clock to 1999/12/31, 23:58:00 </li>
+      <li>Keep power on </li>
+      <li>Wait until the clock reaches the year 2000 </li>
+      <li>Check the date </li>
+      <li>If it is set correctly, power off, and re-check the date </li>
+    </ol>
+    <li>Test the system clock automatic update function when the power is off </li>
+    <ol>
+      <li>Set the system clock to 1999/12/31, 23:58:00 </li>
+      <li>Power off </li>
+      <li>Wait until the clock reaches the year 2000 </li>
+      <li>Power on </li>
+      <li>Check the date </li>
+    </ol>
+  </ol>
+</ol>
+
+<ul>
+  <li>Test the time update by the operating system </li>
+</ul>
+
+<ol>
+  <li>Test the time update after suspension of a time-sensitive program </li>
+  <ol>
+    <li>Set the system clock to 1999/12/31, 23:58:00 </li>
+    <li>Suspend a time-display program without a 'wake-up' timer </li>
+    <li>Keep the power on </li>
+    <li>Wait until the clock reaches the year 2000 </li>
+    <li>Resume time-display program and check the date </li>
+  </ol>
+  <li>Test time update after suspension and 'wake-up' of time-sensitive program </li>
+  <ol>
+    <li>Set system clock to 1999/12/31, 23:58:00 </li>
+    <li>Suspend a time-display program with the 'wake up' timer set at 2000/01/01, 00:01:00 </li>
+    <li>Keep the power on </li>
+    <li>Wait until the time display program 'wakes up' </li>
+    <li>Check the date </font></li>
+  </ol>
+</ol>
+</body>
+</html>

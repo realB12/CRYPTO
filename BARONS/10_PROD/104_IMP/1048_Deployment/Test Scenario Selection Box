@@ -1,0 +1,1686 @@
+<html>
+
+<head>
+<title>Y2K Test Scenario Selection Box</title>
+</head>
+
+<body>
+
+<h1 align="center">Y2K Test Scenario Selection Box</h1>
+
+<p align="center">bucSD113.htm / DRAFT Version 1.0 1998-01-22</p>
+
+<p align="left">Regression, Future, Time Warping, Static, Scenarios</p>
+
+<p align="left"><a href="bucSD048.htm">Problem Collection</a></p>
+
+<h1 align="left">Introduction</h1>
+
+<p align="left">Test Cases define certain testing procedures you may applay on certain
+testpoints to prove that they are Y2K compliant.</p>
+
+<p align="left">The following tables contain a list of Test Cases and how the apply to <a
+href="bucSD053.htm">test item classes</a></p>
+
+<h1>Test Scenarios</h1>
+
+<p>Several test scenarios have been developed as a result of problems identified with the
+year 2000. This limited set of tests cannot prove a Component/System to be Year 2000
+compliant, but using them will help identify several frequently observed problems. These
+test procedures are written as general instructions. Specific knowledge of the systems or
+components under test is required in addition to apply these test cases. </p>
+
+<p>A brief description of each test is provided for guidance.</p>
+
+<p>The following test procedures provide step by step instructions for performing each
+test. The results should be recorded step by step as the test is performed to insure
+accurate records of the test are documented on the &quot;Year 2000 Test Report&quot; form.
+The test results should be retained locally for future reference and a copy returned to
+the Year 2000 programme office for sharing with other organisations..</p>
+<font FACE="Arial" SIZE="4"><b>
+
+<h1></b></font>Dedicated Test Procedures</h1>
+
+<p><font FACE="Arial" SIZE="4"><b>T001<a NAME="_Ref391979890"> Critical Date Values for
+Year 2000 Testing</a></b></font></p>
+
+<p>The following dates can be tested for proper operation: 
+
+<ol>
+  <ol>
+    <li>0000-00-00 Special Value</li>
+    <li>1998-12-31 Rollover, Reboot</li>
+    <li>1999-01-01 Special Value</li>
+    <li>1999-09-09 Special Value</li>
+    <li>1999-12-31 Special Value, Rollover, Reboot</li>
+    <li>2000-01-01 Day of Week, Day of Year</li>
+    <li>2000-02-28 Rollover, Reboot</li>
+    <li>2000-02-29 Rollover, Reboot, Day of Week</li>
+    <li>2000-03-01 Day of Week</li>
+    <li>2000-12-31 Rollover, Reboot, Day of Week, Day of Year</li>
+    <li>2001-01-01 Day of Week, Day of Year</li>
+    <li>2027-12-31 Rollover, Reboot, Day of Week, Day of Year</li>
+  </ol>
+</ol>
+<font FACE="Arial" SIZE="4"><b>
+
+<p>T002&nbsp;&nbsp;&nbsp; <a NAME="_Toc399080681">Rollover, Reboot, Day of Week Test</a>s <a
+NAME="_Toc397484931"></p>
+</a></b></font>
+
+<p>The rollover test checks for proper handling of the date transition from 1999 to 2000
+without manual intervention. Based on actual tests several different results have been
+observed as examples of incorrect handling of the transition from 1999 to 2000. Many
+systems used 2-digit dates and the result may be a rollover to year 100, sometimes the 19
+is assumed and the result is the year 19100. For other unknown reasons the years 2001,
+2028, and non-printable characters have been observed. The effect of incorrect date
+calculations may include negative numbers. </p>
+
+<p>The reboot test checks for correct date &amp; time storage during power cycles of the
+system. The system may function correctly when the time is set ahead, but revert to
+another time and date when the power is cycled. Many PC&#146;s revert to 1980 or 1984 when
+rebooted after the year 2000.</p>
+
+<p>The day of the week may be incorrectly calculated. Systems should display the day of
+the week of January 1, 2000 as Saturday, not Monday which may mean January 1, 1900.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393250829"></a><a NAME="_Toc394131219"></a><a NAME="_Toc395664227"></a><a
+NAME="_Toc397484932"></a><a NAME="_Toc399080682">T002.1 Rollover - 1999 to 2000 - Power on</a></b></font></p>
+
+<p>Test: </p>
+
+<p>Set the date to 31 Dec. 1999.</p>
+
+<p>Set the time to 23:59 (11:59 p.m.). </p>
+
+<p>Observe the system date after 00:00 am</p>
+
+<p>Expected Result:</p>
+
+<p>The system clock advances into the year 2000 and continues normally.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p>T002.2<a NAME="_Toc399080683"> Day of Week</a></b></font></p>
+
+<p>Test:</p>
+
+<p>The clock is set to 1 Jan 2000.</p>
+
+<p>Observe the system day of week display.</p>
+
+<p>Expected Result: </p>
+
+<p>The system displays the day of week as Saturday.</p>
+
+<p>(1 Jan 1900 was a Monday)</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p>T002.3<a NAME="_Toc399080684"> Reboot - Date retention</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Set the date to 1 Jan 2000.</p>
+
+<p>Power down the system.</p>
+
+<p>Power up the system.</p>
+
+<p>Observe the system date</p>
+
+<p>Expected Result:</p>
+
+<p>The system clock still displays the year 2000 and operates normally.</p>
+
+<p><i><b>&nbsp;</p>
+
+<p>Note</b>: Many personal computers fail either both or the first of these tests and
+reset themselves to 04 January 1980, or some other past date, whenever they reboot, if the
+CMOS real time clock says the year is 00.</i><font FACE="Arial" SIZE="4"><b></p>
+
+<p><a NAME="_Ref393625648"></a><a NAME="_Ref393625665"></a><a NAME="_Toc394131222"></a><a
+NAME="_Toc395664230"></a><a NAME="_Toc397484935"></a><a NAME="_Toc386686310"></a><a
+NAME="_Toc389192440"></a><a NAME="_Toc389544013">T002.4 </a><a NAME="_Toc399080685">Rollover
+- 1999 to 2000 - Power Off</a><a NAME="_Toc389544013"></p>
+</a></b></font>
+
+<p>The procedure specifies 10 minutes before mid-night, a smaller time may be appropriate,
+however be sure you can shutdown the system before the rollover occurs.</p>
+
+<p>Test:</p>
+
+<p>Set the date to 31 Dec. 1999.</p>
+
+<p>Set the time to 23:50 (11:50 p.m.). </p>
+
+<p>Power down the system before it can roll over to year 2000</p>
+
+<p>Wait until after midnight with the power off.</p>
+
+<p>Power up the system.</p>
+
+<p>Observe the system date</p>
+
+<p>Expected Result:</p>
+
+<p>The system clock advances into the year 2000 and operates normally.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p>T003<a NAME="_Toc399080686"> Manual Date Set Test</a></b></font></p>
+
+<p>This test checks for correct date &amp; time entry to initialize the system clock. The
+&quot;set system date&quot; function may operate incorrectly when the time is set ahead,
+not allow entry over a certain date range, revert to another time and date when set. Some
+PC&#146;s revert to a default date (1980 or 1984) when set to a date in the year 2000.
+Some systems have multiple date set functions; for a PC the date may be set using the CMOS
+Setup program at power on, using a DOS date function, using a windows clock or control
+panel interface. The tests in this section should be executed on all date set functions
+for the system.</p>
+
+<p>The date set function may also be accessed through an application programming interface
+(API), an example failure of this type was found in an Allen-Bradley PLC &quot;C
+language&quot; co-processor module. The set date function would not accept a value less
+than 32, returned an error message and hung. The SCO XENIX operating system
+&quot;asktime&quot; command only functions correctly for dates from 1970 through 1999,
+while the &quot;date&quot; function accepts 2000. Certain early versions of DOS do not
+update the RTC when the date is set using the DOS date command. </p>
+
+<p>If the equipment has a battery backed up clock, the date set test may include removing
+both battery power and external power to completely initialize the system clock and
+attempting to set the date to 1 Jan 2000. Exercise caution to document all system
+configuration when attempting this test because the configuration may be lost upon removal
+of the battery.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p>T00T001<a NAME="_Toc399080687"> Date Set - 1 Jan 2000</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Set the date to 1 Jan 2000.</p>
+
+<p>Observe the system date</p>
+
+<p>Expected Result:</p>
+
+<p>The date should be Saturday, 1 Jan 2000.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p>T00T002<a NAME="_Toc389544014"> Date Set - Date retention</a></b></font></p>
+
+<p>Check to insure that the date set function sets the real-time clock not just the
+systems virtual clock.</p>
+
+<p>Test:</p>
+
+<p>With the Date still in the year 2000 power down the system.</p>
+
+<p>Power up the system.</p>
+
+<p>Observe the system date</p>
+
+<p>Expected Result:</p>
+
+<p>The system clock still displays the year 2000 and operates normally.</p>
+
+<p>Note: Some PC&#146;s which fail the Reboot - Date retention test will pass the manual
+date retention test. This is a possible fix for those PC&#146;s.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p>T00T00<a NAME="_Toc399080689">3 Date Set - 29 Feb. 2000</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Set the date to 29 Feb. 2000.</p>
+
+<p>Observe the system date</p>
+
+<p>Expected Result:</p>
+
+<p>The date should be Tuesday 29 Feb. 2000.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p>T004 Leap Year Test</b></font></p>
+
+<p>The leap year test checks the logic which calculates valid dates for leap year. An
+example of a failure on leap year was published on the Internet which told of 66
+industrial controllers in a steel mill all locking up when the date calculation for leap
+year 1996 occurred. A 2-digit year representation presents a possible divide by zero
+problem. The year 2000 leap year calculation is more complex because multiple exceptions
+apply to the calculation leading to greater opportunities for error. </p>
+
+<p><i>&nbsp;</p>
+
+<p>It is a leap year</i> 
+
+<ul>
+  <blockquote>
+    <blockquote>
+      <ul>
+        <i>
+        <li>if the year is divisible by four, </li>
+        <li>if the year ends in 00, it is not a leap year,</li>
+        <li>if the year is divisible by 400, then it is a leap year, </li>
+        <li>if the year is 3600, it is not a leap year.</i></li>
+      </ul>
+    </blockquote>
+  </blockquote>
+</ul>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393626067"></a><a NAME="_Ref393626115"></a><a NAME="_Toc394131228"></a><a
+NAME="_Toc395664236"></a><a NAME="_Toc397484941"></a><a NAME="_Toc399080691">T004.1 Leap
+Year - Rollover 2/28</a> - Power On</b></font></p>
+
+<p>Test:</p>
+
+<p>Set the date to Monday 28 Feb. 2000.</p>
+
+<p>Set the time to 23:59 (11:59 p.m.).</p>
+
+<p>Observe the system date after midnight</p>
+
+<p>Expected Result:</p>
+
+<p>The date should be Tuesday 29 Feb. 2000.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393626083"></a><a NAME="_Ref393626129"></a><a NAME="_Toc394131229"></a><a
+NAME="_Toc395664237"></a><a NAME="_Toc397484942"></a><a NAME="_Toc399080692">T004.2 Leap
+Year - Reboot 2/29</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Set the date to 29 Feb. 2000.</p>
+
+<p>Power down the system.</p>
+
+<p>Power up the system.</p>
+
+<p>Observe the system date</p>
+
+<p>Expected Result:</p>
+
+<p>The date should be Tuesday 29 Feb. 2000.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393626095"></a><a NAME="_Ref393626146"></a><a NAME="_Toc394131230"></a><a
+NAME="_Toc395664238"></a><a NAME="_Toc397484943"></a><a NAME="_Toc399080693">T004.3 Leap
+Year - Rollover 2/29</a> - Power On</b></font></p>
+
+<p>Test:</p>
+
+<p>Set date to 29 Feb 2000</p>
+
+<p>Set the time to 23:59 (11:59 p.m.).</p>
+
+<p>Observe the system date after 00:00 am</p>
+
+<p>Expected Result:</p>
+
+<p>The date should be Wednesday 1 March 2000.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393623245"></a><a NAME="_Ref393623280"></a><a NAME="_Toc394131232"></a><a
+NAME="_Toc395664240"></a><a NAME="_Toc397484944"></a><a NAME="_Toc399080694">T005 Date
+Window Tests</a></b></font></p>
+
+<p>Windowing date systems assume the first 2 digits of a 4-digit year to be 20 for values
+below the switch value and 19 for values above the switch value. An example switch value
+of 50 provides for a range of 1951 to 2049. If the 2-digit year is greater than 50 the
+year is assumed to be 19xx. That is, 84 is greater than the switch value so the year is
+1984. If the 2-digit year is less than 50 the year is assumed to be 20xx. That is, 34 is
+less than the switch value so the year is 2034. When two integrated systems share date
+information in this format be sure to test the interface at the boundary conditions. Is
+the behavior specified when the year is the switch value? Do both sides of an interface
+switch the same way?</p>
+
+<p>Systems using date windowing should consider testing:</p>
+
+<p>Creation of date data at the switch boundary dates, above and below.</p>
+
+<p>Modification of configurable windowing parameters, change the switch value.</p>
+
+<p>Re-test the switch boundary dates, above, and below.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393626211"></a><a NAME="_Ref393626250"></a><a NAME="_Toc394131233"></a><a
+NAME="_Toc395664241"></a><a NAME="_Toc397484945"></a><a NAME="_Toc399080695">T005.1 Date
+Window Test - Below Limit</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Observe the configured date limit.</p>
+
+<p>Change the current date to one year below the limit</p>
+
+<p>Observe a 4-digit date</p>
+
+<p>Expected Result:</p>
+
+<p>The date assumes 20xx </p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393626226"></a><a NAME="_Ref393626262"></a><a NAME="_Toc394131234"></a><a
+NAME="_Toc395664242"></a><a NAME="_Toc397484946"></a><a NAME="_Toc399080696">T005.2 Date
+Window Test - Above Limit</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Observe the configured date limit.</p>
+
+<p>Change the current date to one year above the limit</p>
+
+<p>Observe a 4-digit date</p>
+
+<p>Expected Result:</p>
+
+<p>The date assumes 19xx </p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393626238"></a><a NAME="_Ref393626275"></a><a NAME="_Toc394131235"></a><a
+NAME="_Toc395664243"></a><a NAME="_Toc397484947"></a><a NAME="_Toc399080697">T005.3 Date
+Window Test - Change Limit</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Change the configurable date limit to 2004</p>
+
+<p>Observe the configured date limit </p>
+
+<p>Expected Result:</p>
+
+<p>Limit has been changed to 2004</p>
+
+<p>(repeat the above (2005) and below (2003) limit tests to confirm the limit has changed)</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393623317"></a><a NAME="_Ref393623335"></a><a NAME="_Toc394131236"></a><a
+NAME="_Toc395664244"></a><a NAME="_Toc397484948">T006 </a><a NAME="_Toc399080698">Other
+Date Representation Tests</a><a NAME="_Toc397484948"></p>
+</a></b></font>
+
+<p>The following date formats occur often enough that a brief description is included to
+stimulate thinking about possible date related functions and interface definitions. 
+
+<ol>
+  <li>Julian Date (JD) - is a real number where the integer part represents the number of days
+    since 12:00 Noon 1 January -4712 ( Julian day zero ) and the fraction part is the part of
+    the 24 hour day past Noon.</li>
+  <li>Modified Julian Date (MJD) - is the Julian Date minus 2,400,000.5 shifting the reference
+    date to Midnight 17 November 1858. This reduces the number to 5 digits for the next 150
+    years. In 1997 the MJD = 50448 + DOY.</li>
+  <li>Gregorian Date in Day of Year formats (DOY)</li>
+</ol>
+
+<p>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<p>Dates represented using a YYDOY or YYYYDOY format where Y is the Year in 2-digit or
+4-digit format and DOY is the day of the year from 001 to 365 (or 366 on a leap year)
+should be tested for correct operation.</p>
+
+<p>The following DOY dates should be checked:</p>
+
+<p>29 February 2000 should be 00060 or 2000060 </p>
+
+<p>31 December 2000 should be 00366 or 2000366</p>
+
+<p>Invalid Dates like 98000, 98367, 00000, 2000000</p>
+
+<p>Special Codes 99365</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p>T006<a NAME="_Toc399080699">.1 DOY - 29 February 2000</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Set the date to 29 February 2000</p>
+
+<p>Observe the DOY date by function call or system display.</p>
+
+<p>Expected Result:</p>
+
+<p>29 February 2000 should be 00060 or 2000060</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393626623"></a><a NAME="_Ref393626682"></a><a NAME="_Toc394131238"></a><a
+NAME="_Toc395664246"></a><a NAME="_Toc397484950"></a><a NAME="_Toc399080700">T006.2 DOY -
+31 December 2000</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Set the date to 31 December 2000</p>
+
+<p>Observe the date by function call or system display.</p>
+
+<p>Expected Result:</p>
+
+<p>31 December 2000 should be 00366 or 2000366</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393626636"></a><a NAME="_Ref393626695"></a><a NAME="_Toc394131239"></a><a
+NAME="_Toc395664247"></a><a NAME="_Toc397484951"></a><a NAME="_Toc399080700">T006</a><a
+NAME="_Toc399080701">.3 DOY - Invalid Dates</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Attempt to set the DOY date to 2000000</p>
+
+<p>Observe the DOY date function call return value.</p>
+
+<p>Attempt to set the DOY date to 98367</p>
+
+<p>Observe the DOY date function call return value.</p>
+
+<p>Expected Result:</p>
+
+<p>Error code or message as documented by vendor</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393623368"></a><a NAME="_Ref393623387"></a><a NAME="_Ref393623397"></a><a
+NAME="_Toc394131240"></a><a NAME="_Toc395664248"></a><a NAME="_Toc397484952"></a><a
+NAME="_Toc399080702">T007 Arithmetic Date Tests</a></b></font></p>
+
+<p>If dates are used in any calculations, test for correct operation. The following list
+is intended to help identify functions which should be checked:</p>
+
+<p>Period calculations</p>
+
+<p>Financial functions based on a time period</p>
+
+<p>Shelf life calculations</p>
+
+<p>Time Remaining</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393626757"></a><a NAME="_Ref393626797"></a><a NAME="_Toc394131241"></a><a
+NAME="_Toc395664249"></a><a NAME="_Toc397484953"></a><a NAME="_Toc399080702">T007</a><a
+NAME="_Toc399080703">.1 Days in 2000</a> </b></font></p>
+
+<p>Test:</p>
+
+<p>Create a period calculation using 1-Jan-2000 as the start date and 31-Dec-2000 as the
+end date.</p>
+
+<p>Expected Result:</p>
+
+<p>The year 2000 has 366 days.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393626771"></a><a NAME="_Ref393626813"></a><a NAME="_Toc394131242"></a><a
+NAME="_Toc395664250"></a><a NAME="_Toc397484954"></a><a NAME="_Toc399080702">T007</a><a
+NAME="_Toc399080704">.2 Days across 1999/2000 Boundary</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Create a period calculation using 1-Dec-1999 as the start date and 31-Jan-2000 as the
+end date.</p>
+
+<p>Expected Result:</p>
+
+<p>The period ( (31 January 2000)- (1 December 1999) ) has 61 days.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Toc399080702">T007</a><a NAME="_Toc399080705">.3 Days across leap year</a> </b></font></p>
+
+<p>Test:</p>
+
+<p>Create a period calculation using 1-Feb-2000 as the begin date and 1-Mar-2000 as the
+end date.</p>
+
+<p>Expected Result:</p>
+
+<p>The month of February has 29 days.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Toc384807887"></a><a NAME="_Toc386686313"></a><a NAME="_Toc389192443"></a><a
+NAME="_Toc389544016"></a><a NAME="_Ref391980114"></a><a NAME="_Ref393623447"></a><a
+NAME="_Ref393623462"></a><a NAME="_Ref393623488"></a><a NAME="_Toc394131244"></a><a
+NAME="_Toc395664252"></a><a NAME="_Toc397484956"></a><a NAME="_Toc399080706">T008 Upload /
+Download Test</a>s</b></font></p>
+
+<p>The upload and download tests check for logic which prevents new files from replacing
+old files when the date comparison uses only 2 digits. The logic must be reversed when the
+dates cross the year 2000 boundary. Test to see if a file created in (19)99 is considered
+older than a file created in (20)00. Systems have failed to download new programs because
+they were assumed to be older that the current program on the system.</p>
+
+<p ALIGN="center">&nbsp;</p>
+<div align="center"><center>
+
+<table BORDER="1" CELLSPACING="1" CELLPADDING="7" WIDTH="510">
+  <tr>
+    <td WIDTH="23%" VALIGN="TOP"><p ALIGN="CENTER">Old File Date</td>
+    <td WIDTH="25%" VALIGN="TOP"><p ALIGN="CENTER">New File Date</td>
+    <td WIDTH="28%" VALIGN="TOP"><p ALIGN="CENTER">2-digit difference</td>
+    <td WIDTH="25%" VALIGN="TOP"><p ALIGN="CENTER">4-digit difference</td>
+  </tr>
+  <tr>
+    <td WIDTH="23%" VALIGN="TOP"><p ALIGN="CENTER">July 4, 1998</td>
+    <td WIDTH="25%" VALIGN="TOP"><p ALIGN="CENTER">July 4, 1999</td>
+    <td WIDTH="28%" VALIGN="TOP"><p ALIGN="CENTER">+1</td>
+    <td WIDTH="25%" VALIGN="TOP"><p ALIGN="CENTER">+1</td>
+  </tr>
+  <tr>
+    <td WIDTH="23%" VALIGN="TOP"><p ALIGN="CENTER">July 4, 1999</td>
+    <td WIDTH="25%" VALIGN="TOP"><p ALIGN="CENTER">July 4, 2000</td>
+    <td WIDTH="28%" VALIGN="TOP"><p ALIGN="CENTER">-99</td>
+    <td WIDTH="25%" VALIGN="TOP"><p ALIGN="CENTER">+1</td>
+  </tr>
+  <tr>
+    <td WIDTH="23%" VALIGN="TOP"><p ALIGN="CENTER">July 4, 2000</td>
+    <td WIDTH="25%" VALIGN="TOP"><p ALIGN="CENTER">July 4, 2001</td>
+    <td WIDTH="28%" VALIGN="TOP"><p ALIGN="CENTER">+1</td>
+    <td WIDTH="25%" VALIGN="TOP"><p ALIGN="CENTER">+1</td>
+  </tr>
+</table>
+</center></div>
+
+<p>&nbsp;</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393626876"></a><a NAME="_Ref393626918"></a><a NAME="_Toc394131245"></a><a
+NAME="_Toc395664253"></a><a NAME="_Toc397484957"></a><a NAME="_Toc399080707"></a><a
+NAME="_Ref393626893"></a><a NAME="_Ref393626907">T008.1 Upload</a> </b></font></p>
+
+<p>Test:</p>
+
+<p>Set the date of the control system to the date of January 11, 2000.</p>
+
+<p>Attempt to upload the test file.</p>
+
+<p>Expected Result:</p>
+
+<p>Verify that the new file was uploaded.</p>
+
+<p>&nbsp;</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393682972"></a><a NAME="_Ref393682984"></a><a NAME="_Toc394131246"></a><a
+NAME="_Toc395664254"></a><a NAME="_Toc397484958"></a><a NAME="_Toc399080708">T008.2
+Download</a> </b></font></p>
+
+<p>Preparation:</p>
+
+<p>Download the existing test file with a date prior to January 1, Year 2000</p>
+
+<p>Create a new version of the test file to download with the file date January 5, 2000.</p>
+
+<p>Test:</p>
+
+<p>Set the date of the control system under test to a date January 10, 2000.</p>
+
+<p>Attempt to download the January 5, 2000 test file.</p>
+
+<p>Expected Result:</p>
+
+<p>Verify that the new file was downloaded.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Toc386686308"></a><a NAME="_Toc389192438"></a><a NAME="_Toc389544011"></a><a
+NAME="_Ref391979862"></a><a NAME="_Ref393623519"></a><a NAME="_Ref393623539"></a><a
+NAME="_Toc394131247"></a><a NAME="_Toc395664255"></a><a NAME="_Toc397484959"></a><a
+NAME="_Toc399080709"></a><a NAME="_Toc386686314"></a><a NAME="_Toc389192444"></a><a
+NAME="_Toc389544017">T009 Special Value Test</a></b></font></p>
+
+<p>The special value test checks for usage of values in date fields for special purposes
+that are not dates. An example is special handling of the date September 9, 1999 which may
+be used as a special code for software license expiration dates, or never expires codes,
+and/or errors. Systems integrated to higher level systems should include the special value
+tests. The special values should include the date values 9-9-99, 0-0-00, x-x-9999. This
+test applies to applications which create records containing the current date as a time or
+data field, such as database applications or systems which maintain historical data .</p>
+
+<p>Test:</p>
+
+<p>Set the current date to a special value ( 9-9-99, 9-9-1999, 0-0-00, 0-0-0000 )</p>
+
+<p>Observe the number of records in a test file at the start of the test</p>
+
+<p>Using the application under test, create a new record that contains the current date. </p>
+
+<p>Expected Result:</p>
+
+<p>Observe that the application was able to create the test record.</p>
+
+<p>Observe that the test record is included in displays or reports as applicable.</p>
+
+<p>Observe that the end of file continues to function correctly. ( number of records
+correct? )</p>
+
+<p>Observe that the test record can be deleted from the system.</p>
+
+<p>Example:</p>
+
+<p>Not terminating an expired software license.</p>
+
+<p>Failing to age backup tapes for recycling as scratch tapes.</p>
+
+<p>End-of-file markers which use the date field with a value of (9/9/99; 0/0/00; 9999;
+etc.) function correctly.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref391980646"></a><a NAME="_Toc394131248"></a><a NAME="_Toc395664256"></a><a
+NAME="_Toc397484960">T010 </a><a NAME="_Toc399080710">File or Directory Creation Test</a><a
+NAME="_Toc397484960"></p>
+</a></b></font>
+
+<p>These tests check for observed problems with file or directory creation when the file
+name is based on an incorrect year date. These tests apply to any system which can store
+information collected from the manufacturing process, or allow for editing and creating
+new files. Errors can occur when the system attempts to create data files after the year
+2000 and the date roll over is incorrect. Systems which create file names based on the
+time and date have been observed to lockup when the file name contained non-printable or
+illegal characters. Another possibility exists when the file already exists and is being
+updated. Most user interfaces prompt for verification, &quot;Do you wish to replace file
+foo.dat 12/30/99 with file foo.dat 01/03/00?&quot;, will the newest file replace the older
+file in both the prompt and the actual replacement?</p>
+
+<p>Is the file identifier &quot;FILE00&quot; assumed to be older than &quot;FILE99&quot;?</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393627016"></a><a NAME="_Ref393627092"></a><a NAME="_Toc394131249"></a><a
+NAME="_Toc395664257"></a><a NAME="_Toc397484961"></a><a NAME="_Toc399080711">T010.1 File -
+Creation 2000</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Set the date of the system under test to a date beyond January 1, 2000.</p>
+
+<p>Create an event or choose a time such that the system will attempt to create a file.</p>
+
+<p>Expected Result:</p>
+
+<p>Verify that the new file was created.</p>
+
+<p>Verify that time stamped information is valid inside any history or log files.</p>
+
+<p>Verify that any history or log file scan be used by the application or system</p>
+
+<p>Examples:</p>
+
+<p>Systems which store historical data may create files using a name based on the date.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393627035"></a><a NAME="_Ref393627105"></a><a NAME="_Toc394131250"></a><a
+NAME="_Toc395664258"></a><a NAME="_Toc397484962"></a><a NAME="_Toc399080712">T010.2 File -
+Replacement 1999-2000</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Create an old test file in 199X with data identifiable for 199X.</p>
+
+<p>Set the date of the system under test to a date beyond January 1, 2000.</p>
+
+<p>Create a new test file with the same name and <i>new data</i>.</p>
+
+<p>Expected Result:</p>
+
+<p>Observe the prompt for the correct order, replace old with new file</p>
+
+<p>Verify that the old file was replaced with the new file.</p>
+
+<p>Verify that the file contains the new data.</p>
+
+<p>Examples:</p>
+
+<p>Systems which prompt for confirmation on file update, like the Windows file manager.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393627060"></a><a NAME="_Ref393627123"></a><a NAME="_Toc394131251"></a><a
+NAME="_Toc395664259"></a><a NAME="_Toc397484963"></a><a NAME="_Toc399080713">T010.3 File -
+Replacement 2000-2000</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Create an old test file in 2000 with data identifiable for 2000.</p>
+
+<p>Set the date of the system under test to a date beyond the creation date.</p>
+
+<p>Create a new test file with the same name and <i>new data</i>.</p>
+
+<p>Expected Result:</p>
+
+<p>Observe the prompt for the correct order, replace old with new file</p>
+
+<p>Verify that the old file was replaced with the new file.</p>
+
+<p>Verify that the file contains the new data.</p>
+
+<p>Examples:</p>
+
+<p>Systems which prompt for confirmation on file update, like the Windows file manager.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393623614"></a><a NAME="_Ref393623636"></a><a NAME="_Toc394131252"></a><a
+NAME="_Toc395664260"></a><a NAME="_Toc397484964"></a><a NAME="_Toc399080714">T011 Audit
+Log Test</a></b></font></p>
+
+<p>This test checks for problems with audit logging systems. This test applies to systems
+which include the capability to audit user activity or network transactions.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Toc394131253"></a><a NAME="_Toc395664261"></a><a NAME="_Toc397484965"></a><a
+NAME="_Toc399080715">T011.1 Audit Log</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Set the date of the system under test to a date beyond January 1, 2000.</p>
+
+<p>Create an event or choose a time such that the system will attempt to create a file.</p>
+
+<p>Expected Result:</p>
+
+<p>Verify that the new file was created.</p>
+
+<p>Verify that time stamped information is valid inside the audit log file.</p>
+
+<p>Examples:</p>
+
+<p>Systems which incorporate a DBMS with roll back capability.</p>
+
+<p>Operating systems which record usage by account.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Toc384807888"></a><a NAME="_Toc386686315"></a><a NAME="_Toc389192445"></a><a
+NAME="_Toc389544018"></a><a NAME="_Ref391980254"></a><a NAME="_Ref393623653"></a><a
+NAME="_Ref393623673"></a><a NAME="_Toc394131254"></a><a NAME="_Toc395664262"></a><a
+NAME="_Toc397484966"></a><a NAME="_Toc399080716">T012 Report Test</a>s</b></font></p>
+
+<p>The report test should include sorting and retrieving, sorting and merging, searching,
+indexing on either disk file or database table. The report tests apply to manufacturing
+systems which display data sorted by time and date, examples include alarm fault reports
+or production reports. The tests should include creating faults or alarms after the year
+2000 and observing the alarm display pages or reports for correct ordering of the alarm
+data. Failure examples include monitoring packages which place <i>new alarms</i> at the
+end of the list after 2000. One test is to query for all items from now until 12-31-1999
+and observe the results, then query for all items from now until 1-2-2000 and observe the
+results, example failures observed returned no records on the second query.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393627196"></a><a NAME="_Ref393627262"></a><a NAME="_Toc394131255"></a><a
+NAME="_Toc395664263"></a><a NAME="_Toc397484967"></a><a NAME="_Toc399080717">T012.1 Report
+</a>- Query </b></font></p>
+
+<p>Test:</p>
+
+<p>Set the date of the control system under test to a date beyond January 10, 2000.</p>
+
+<p>Create new data by forcing a fault or some system event which will create test records.</p>
+
+<p>Set the date of the control system under test to a date beyond March 1, 2000.</p>
+
+<p>Create a new report containing the Year 2000 data by choosing four time spans:</p>
+
+<p>a) November 15, 1999 to December 31, 1999. ( 1999 data )</p>
+
+<p>b) November 15, 1999 to March 1, 2000. ( all data )</p>
+
+<p>c) January 1, 2000 to March 1, 2000. ( 2000 data )</p>
+
+<p>d) February 1, 2000 to March 1, 2000. ( no data )</p>
+
+<p>Expected Result:</p>
+
+<p>Verify that the report with all data, b) contained all the data in the report.</p>
+
+<p>Verify that the data was ordered correctly in the report.</p>
+
+<p>Verify that the report with no data, d) executed correctly and no data was printed in
+the report.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393627211"></a><a NAME="_Ref393627276"></a><a NAME="_Toc394131256"></a><a
+NAME="_Toc395664264"></a><a NAME="_Toc397484968"></a><a NAME="_Toc399080718">T012.2 Report
+- Sort</a> </b></font></p>
+
+<p>Test:</p>
+
+<p>Set the date of the control system under test to a date beyond January 1, 2000.</p>
+
+<p>Create new data by forcing a fault or some system event which will create test records.</p>
+
+<p>Create a new report containing the Year 2000 data by choosing a valid time span.</p>
+
+<p>Expected Result:</p>
+
+<p>Verify that the new data was ordered correctly in the report.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393627234"></a><a NAME="_Ref393627292"></a><a NAME="_Toc394131257"></a><a
+NAME="_Toc395664265"></a><a NAME="_Toc397484969"></a><a NAME="_Toc399080719">T012.3 Report
+- Merge</a> </b></font></p>
+
+<p>Test:</p>
+
+<p>Set the date of the control system under test to a date beyond January 1, 2000.</p>
+
+<p>Create new data by forcing a fault or some system event which will create test records.</p>
+
+<p>Create a new report containing the Year 2000 data by merging new data.</p>
+
+<p>Expected Result:</p>
+
+<p>Verify that the new data was merged correctly in the report.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393627248"></a><a NAME="_Ref393627309"></a><a NAME="_Toc394131258"></a><a
+NAME="_Toc395664266"></a><a NAME="_Toc397484970"></a><a NAME="_Toc399080720">T012.4 Report
+- Search</a> </b></font></p>
+
+<p>Test:</p>
+
+<p>Query or Search for an existing record created in the year 1999 with the current time
+in the year 1999</p>
+
+<p>Query or Search for an existing record created in the year 1999 with the current time
+in the year 2000</p>
+
+<p>Query or Search for an existing record created in the year 2000 with the current time
+in the year 2000</p>
+
+<p>Expected Result:</p>
+
+<p>Verify that all records are found as expected.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Toc389544019"></a><a NAME="_Ref391980271"></a><a NAME="_Ref393623700"></a><a
+NAME="_Ref393623716"></a><a NAME="_Toc394131259"></a><a NAME="_Toc395664267"></a><a
+NAME="_Toc397484971"></a><a NAME="_Toc399080721">T013 Log file purge Test</a></b></font></p>
+
+<p>The log file purge test applies to manufacturing systems which periodically purge old
+data to maintain file system space usage by deleting the oldest data. The problem
+identified occurs when after the year 2000, files with year data lower than other files (
+1998 is less than 1999 ) are removed. Does the system consider data with a year date of
+2000 to be less than 1999? If the comparison is only considering 2-digit years, this will
+happen and newer data can be purged.</p>
+
+<p>Test:</p>
+
+<p>Verify that log data backups are available.</p>
+
+<p>Set the date of the system under test to a date beyond January 10, 2000.</p>
+
+<p>Create new data for the log file or rename some existing data.</p>
+
+<p>Attempt to purge data from the system older than 7 days.</p>
+
+<p>Expected Result:</p>
+
+<p>Verify that only data from before the purge date was removed.</p>
+
+<p>Examples:</p>
+
+<p>VAX/VMS RMS purge command</p>
+
+<p>Database products which support a purge function.</p>
+
+<p>&nbsp;</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref391980285"></a><a NAME="_Toc394131260"></a><a NAME="_Toc395664268"></a><a
+NAME="_Toc397484972">T014 </p>
+
+<p></a><a NAME="_Toc399080722">Timer Test</a></b></font></p>
+
+<p>This test verifies the creation and operation of event timers in systems or software
+which provide these capabilities. </p>
+
+<p>Test:</p>
+
+<p>Set the date of the control system under test prior to 2000.</p>
+
+<p>Create new timer to wake up or alarm to trigger at 10:01 AM, January 3, 2000</p>
+
+<p>Set the date of the control system under test to January 2, 2000.</p>
+
+<p>Create new timer to wake up or alarm to trigger at 10:02 AM, January 3, 2000</p>
+
+<p>Set the date of the control system under test to January 3, 2000.</p>
+
+<p>Set the time to 10:00 AM.</p>
+
+<p>Wait for the alarms to trigger</p>
+
+<p>Expected Result:</p>
+
+<p>Verify that the alarm or timer created before 2000 operates correctly.</p>
+
+<p>Verify that the alarm or timer created after 2000 operates correctly.</p>
+
+<p>Examples:</p>
+
+<p>Unix chron scheduling software.</p>
+
+<p>SCADA package timer functions.</p>
+
+<p>HVAC Controls for starting and stopping ventilation or cooling equipment.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Toc389544020"></a><a NAME="_Ref391980302"></a><a NAME="_Ref393623791"></a><a
+NAME="_Ref393623810"></a><a NAME="_Toc394131261"></a><a NAME="_Toc395664269"></a><a
+NAME="_Toc397484973"></a><a NAME="_Toc399080723">T015 Input Data Test</a></b></font></p>
+
+<p>The input data test applies to manufacturing systems which read date information from
+labels or other manufacturing control systems.</p>
+
+<p>Test:</p>
+
+<p>Set the date of the control system under test to January 2, 2000.</p>
+
+<p>Create input labels or simulate input from other systems with a date beyond 1-1-2000. </p>
+
+<p>(or in 2-digit year format 00 )</p>
+
+<p>Attempt to read the input data.</p>
+
+<p>Expected Result:</p>
+
+<p>Verify that the system correctly reads the input data.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Toc389544021"></a><a NAME="_Ref391980320"></a><a NAME="_Ref393623827"></a><a
+NAME="_Ref393623840"></a><a NAME="_Toc394131262"></a><a NAME="_Toc395664270"></a><a
+NAME="_Toc397484974"></a><a NAME="_Toc399080724">T016 Output Data Test</a></b></font></p>
+
+<p>The output data test applies to manufacturing systems which write date information to
+labels or other manufacturing control systems. Systems which print results to a printer or
+operator display have been found to lock up or fail to display data after the year 2000.
+The cause is that from the year date rollover, invalid characters can be produced. </p>
+
+<p>Test:</p>
+
+<p>Set the date of the control system under test to a date beyond January 1, 2000.</p>
+
+<p>Attempt to output data.</p>
+
+<p>Expected Result:</p>
+
+<p>Verify that the data was output correctly.</p>
+
+<p>Examples:</p>
+
+<p>Printed labels or product markings</p>
+
+<p>Transfer data to other systems</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Toc389544022"></a><a NAME="_Ref391980328"></a><a NAME="_Ref393623858"></a><a
+NAME="_Toc394131263"></a><a NAME="_Toc395664271"></a><a NAME="_Toc397484975"></a><a
+NAME="_Toc399080725">T017 Activation/Deactivation Test</a>s</b></font></p>
+
+<p>This test applies to manufacturing systems which contain passwords, accounts, or
+complex software license systems which contain expiration functions.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393627383"></a><a NAME="_Ref393627418"></a><a NAME="_Toc394131264"></a><a
+NAME="_Toc395664272"></a><a NAME="_Toc397484976"></a><a NAME="_Toc399080726">T017.1 Valid
+access</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Check that the expiration date extends past January 1, 2000</p>
+
+<p>Set the date of the system under test to a date beyond January 1, 2000.</p>
+
+<p>Attempt to execute the software licensed, or use the affected password, account, etc.</p>
+
+<p>Expected Result:</p>
+
+<p>Verify that the software executes properly after January 1, 2000.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393627399"></a><a NAME="_Ref393627432"></a><a NAME="_Toc394131265"></a><a
+NAME="_Toc395664273"></a><a NAME="_Toc397484977"></a><a NAME="_Toc399080727">T017.2
+Expired access</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Check the expiration date.</p>
+
+<p>Set the date of the system under test to a date beyond the expiration date in the year
+2000 or beyond.</p>
+
+<p>Attempt to execute the software licensed, or use the affected password, account, etc.</p>
+
+<p>Expected Result:</p>
+
+<p>Verify that the software does not execute after the expiration date.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Toc389544023"></a><a NAME="_Ref391980339"></a><a NAME="_Ref393623919"></a><a
+NAME="_Toc394131266"></a><a NAME="_Toc395664274"></a><a NAME="_Toc397484978"></a><a
+NAME="_Toc399080728">T008 Display Data Test</a>s</b></font></p>
+
+<p>The display data test applies to manufacturing systems which display date information
+on several different pages. The test must include moving the date ahead to the year 2000
+and observing every screen which the controller contains. The non-compliance can range
+from partial display to complete control system lockup. Many industrial controllers have
+unique software for each display screen, and may behave differently on any screen.
+Examples of this include CNC controllers which may have one set of display pages for tool
+management, another set of display pages for fault annunciation, another for the file
+system all of which may have software written by different persons or teams of persons
+over the product development life cycle.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Toc394131267"></a><a NAME="_Toc395664275"></a><a NAME="_Toc397484979"></a><a
+NAME="_Toc399080729">T018.1 Display Data Test</a></b></font></p>
+
+<p>Test:</p>
+
+<p>Create a list of all the date fields on all the display screens.</p>
+
+<p>Set the date of the system under test to a date beyond January 1, 2000.</p>
+
+<p>Create new files or fault records.</p>
+
+<p>Attempt to display all date fields on all display screens for file dates or fault time
+stamps.</p>
+
+<p>Expected Result:</p>
+
+<p>Verify that each date field displays correctly.</p>
+
+<p>Examples:</p>
+
+<p>SCO XENIX displays file dates using 4 digit years correctly, but the AVAIL software
+package displays file dates incorrectly; the year field of the file date during a year
+2000 test displayed &quot;00:08&quot; as the year.</p>
+
+<p>A software application supports 4-digit dates in the 20xx range using a DBMS but only
+passes 2-digit years to the DBMS which defaults to 19xx and stores the wrong date.</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p><a NAME="_Ref393623953"></a><a NAME="_Ref393623969"></a><a NAME="_Toc394131268"></a><a
+NAME="_Toc395664276"></a><a NAME="_Toc397484980"></a><a NAME="_Toc399080730">T019 Indirect
+Date Usage Tests</a></b></font></p>
+
+<p>These tests apply to systems which use date information in an indirect manner. The
+following list is intended to stimulate questions about a system which could use the date
+in functions which do not require date information, but may have been implemented using a
+date function.</p>
+
+<p>Test:</p>
+
+<p>Identifying functions which use the date indirectly may be very difficult.</p>
+
+<p>Expected Result:</p>
+
+<p>Where identified, verify correct operation in the year 2000.</p>
+
+<p>Examples:</p>
+
+<p>Encryption/Decryption algorithms</p>
+
+<p>Random Number generators</p>
+
+<p>Communications protocols</p>
+
+<p>Firmware</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><b><font FACE="Arial" SIZE="4">Basic Testing Scenarios</font></b></p>
+
+<p><br>
+The scenarios for Year2000 testing depend heavily on the system environment and
+applications. Some basic Year2000 testing scenarios that are common for most installations
+are suggested here: 
+
+<ul>
+  <ul>
+    <li>Set the clock to test process cycles and automatic functions that are activated on a
+      regular basis. These scenarios can be used to identify Year2000 exposures that need to be
+      fixed as well as to validate programs after applying Year2000 solutions. </li>
+    <li>Daily </li>
+    <li>Weekly </li>
+    <li>Semi-monthly </li>
+    <li>Monthly </li>
+    <li>Bi-monthly </li>
+    <li>Quarterly </li>
+    <li>Semi-annually </li>
+    <li>Annual </li>
+    <li>Automatic archiving </li>
+    <li>Automatic restart/restore </li>
+    <li>On demand </li>
+    <li>Test the setting and display of special dates, including: </li>
+    <li>1900/2/29 - should fail - the year 1900 is not a leap year </li>
+    <li>1996/2/29 - should succeed - the year 1996 is a leap year </li>
+    <li>2000/2/29 - should succeed - the year 2000 is a leap year </li>
+    <li>00/01/01 - should display an unambiguous 4-digit-year date, the value of which depends
+      on the application. For example, 1900/01/01, 2000/01/01, and so on </li>
+    <li>1999/12/31 - should be able to distinguish between a regular end-of-year 1999 date and a
+      special meaning date. For example, a never-expiring date indicator. </li>
+    <li>Test the processing of time-sensitive data with different combinations of data and time </li>
+  </ul>
+</ul>
+
+<ol>
+  <li>Use the current system clock and then test data with dates: </li>
+</ol>
+
+<ul>
+  <ul>
+    <li>before 2000/01/01 </li>
+    <li>after 2000/01/01 </li>
+  </ul>
+</ul>
+
+<ol>
+  <li>Set system clock before the year 2000, for example 1999/12/31, and then test data with
+    dates: </li>
+</ol>
+
+<ul>
+  <ul>
+    <li>before 2000/01/01 </li>
+    <li>after 2000/01/01 </li>
+  </ul>
+</ul>
+
+<ol>
+  <li>Set the system clock after 2000/01/01 and then test data with dates: </li>
+</ol>
+
+<ul>
+  <ul>
+    <li>before 2000/01/01 </li>
+    <li>after 2000/01/01 </li>
+  </ul>
+</ul>
+
+<h3 ALIGN="JUSTIFY"><b>Data/Logic Tests</b></h3>
+
+<p ALIGN="JUSTIFY">Test that the system functions properly with new-format data. Test that
+the system is able to compare and sort dates both within a century and across the century
+boundary. Some test conditions include:<font size="3"></p>
+
+<p ALIGN="JUSTIFY">19xx forward: Transactions which allow the entry of future dates
+correctly process 21<sup>st</sup> century dates in the 20<sup>th</sup> century.</p>
+
+<p ALIGN="JUSTIFY">20xx backward: Transactions which allow entry of past dates correctly
+process 20<sup>th</sup> century dates in the 21<sup>st</sup> century.</p>
+
+<p ALIGN="JUSTIFY">Leap Year tests: 2/29/2000 is accepted as a valid date.</p>
+
+<p ALIGN="JUSTIFY">20xx tests: All transactions accept 21<sup>st</sup> century dates in
+the 21<sup>st</sup> century.</p>
+
+<p ALIGN="JUSTIFY">Beware of problems caused by programmers using the numbers
+&quot;99&quot; or &quot;00&quot; to be special codes in the Year field.</font></p>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<p><font SIZE="5"><b>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">Appendix B <a NAME="_Toc401730932">Types of Errors and Issues</a>
+(Orgigin DLSD011.doc)</b></font><font size="3"></p>
+
+<p ALIGN="JUSTIFY">There are a number of different errors or issue that may occur as we
+approach and pass the Year 2000.</font><b></p>
+
+<p ALIGN="JUSTIFY">1 Incorrect century</b><font size="3"></p>
+
+<p ALIGN="JUSTIFY">Problems can occur when the first two digits in a year are assumed to
+be 19 or 20 and:</p>
+
+<ul>
+  <ul>
+    <li>Ignored during data entry and update, or</li>
+    <li>Hard-coded for output.</font></li>
+  </ul>
+</ul>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<p><b>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">2 Dates used as a special value</b><font size="3"></p>
+
+<p ALIGN="JUSTIFY">Special values of the last two digits in a year might be used for
+special purpose, for example 99, 365/99, or 31/12/99 might be used to indicate &quot;no
+expiration date&quot; or 00 to indicate an &quot;unknown year&quot;. For example 9/9/99.</p>
+
+<p ALIGN="JUSTIFY"></font><b>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">3 The 21st Century</b><font size="3"></p>
+
+<p ALIGN="JUSTIFY">In which century is the year 2000? Should be the 20th.</p>
+
+<p ALIGN="JUSTIFY"></font><b>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">4 Incorrect field format determination:</b><font size="3"></p>
+
+<p ALIGN="JUSTIFY">Some programs may determine the date-time format (that is, MMDDYY,
+DDMMYY, YYMMDD) by testing an appropriate part of the date field.</p>
+
+<p ALIGN="JUSTIFY"></font><b>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">5 Sums</b><font size="3"></p>
+
+<p ALIGN="JUSTIFY">The sums on dates with 2-digit year representations might be wrong.</p>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<p ALIGN="JUSTIFY">Check on screens, spreadsheets, reports, interfaces, etc.</font></p>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<p><b>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">6 Sequence</b><font size="3"></p>
+
+<p ALIGN="JUSTIFY">When only two digits are used to represent a year, programs that
+collate year data will sort that data out of sequence. For example, searching, printing,
+screens, etc.</font></p>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<p><b>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">7 Data integrity</b><font size="3"></p>
+
+<p ALIGN="JUSTIFY">In programs where historical dates are used, all events occurring in,
+for example, 1800, 1900, and 2000 are not distinguishable when only 2 digits represent the
+years. For example: Pensions systems</font></p>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<p><b>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">8 Leap year calculation</b><font size="3"></p>
+
+<p ALIGN="JUSTIFY">The year 2000 is a leap year. </p>
+
+<p ALIGN="JUSTIFY">Implications:</p>
+
+<ul>
+  <ul>
+    <li>Day-in-year calculations. The year 2000 has 366 days, not 365.</li>
+    <li>Day-of-the-week calculations. </li>
+    <li>28 Feb 2000 is a Monday</li>
+    <li>29 Feb 2000 is a Tuesday </li>
+    <li>1 March is a Wednesday.</li>
+    <li>Week-of-the-year calculations. The 11th week of the year 2000 is 13-19/3/2000, not
+      14-20/3/2000.</font></li>
+  </ul>
+</ul>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<p><b>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">9 Date fields on hard paper</b><font size="3"></p>
+
+<p ALIGN="JUSTIFY">The format used on paper to record dates may require change. Examples
+include the date field on a bank cheque that is typically printed as follows: 19__</p>
+
+<p ALIGN="JUSTIFY">The century, &quot;19&quot;, is pre-printed, and the format for day and
+month is non-restrictive, allowing any day-month ordering and any month indication
+(numeric, abbreviated or full spelling, Roman numeral, or any other indication of date
+provided at the writer's whim). Minimally, the &quot;19&quot; must be changed or deleted.
+But the non-restrictive date field only helps propagate non-standard date formats and
+might cause misinterpretation when the data is later input into a database. Therefore, if
+we are changing, consider structuring the date fields they contain to match any proposed
+database changes. Day____Month____Year____ would be better.</p>
+
+<p ALIGN="JUSTIFY"></font><b>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">10 Performance</b><font size="3"></p>
+
+<p ALIGN="JUSTIFY">Any changes that we make to the systems may degrade performance. Does
+the end-of-day still fit?</font></p>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<p><b>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">11 Ambiguity</b><font size="3"></p>
+
+<p ALIGN="JUSTIFY">The following display or print formats will be ambiguous after the Year
+2000:</p>
+
+<blockquote>
+  <blockquote>
+    <p ALIGN="JUSTIFY">2/1 2nd Jan</p>
+    <p ALIGN="JUSTIFY">2/1 Feb 2001</p>
+    <p ALIGN="JUSTIFY">2/1 1st Feb</p>
+    <p ALIGN="JUSTIFY">2/1 Jan 2002</p>
+  </blockquote>
+</blockquote>
+
+<p ALIGN="JUSTIFY">We need to check selection facilities, screens and reports. Is there a
+standard for date screens?</font><b></p>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<p ALIGN="JUSTIFY">13 Viruses</b><font size="3"></p>
+
+<p ALIGN="JUSTIFY">Many viruses may be waiting to greet us in the Year 2000. We should
+ensure that we run the virus checking software on the desktop as part of the Year 2000
+testing, using the most current virus signature files. </font></p>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<h1>Regression Testing</h1>
+
+<table border="1" width="82%">
+  <tr>
+    <td width="12%"><strong>Test Case Nr</strong></td>
+    <td width="35%"><strong>Explanation</strong></td>
+    <td width="20"><strong>Screen</strong></td>
+    <td width="20"><strong>Application</strong></td>
+    <td width="20"><strong>COTS</strong></td>
+    <td width="20"><strong>System</strong></td>
+    <td width="20"><strong>Hardware</strong></td>
+    <td width="20"><strong>BIOS</strong></td>
+  </tr>
+  <tr>
+    <td width="12%">&nbsp;</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12%">&nbsp;</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12%">R001</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12%">R002</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12%">R003</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+</table>
+
+<h1>Future Date Testing</h1>
+
+<p>&nbsp;</p>
+
+<table border="1" width="82%">
+  <tr>
+    <td width="12%"><strong>Test Case Nr</strong></td>
+    <td width="35%"><strong>Explanation</strong></td>
+    <td width="20"><strong>TestPoint</strong></td>
+    <td width="20"><strong>Application</strong></td>
+    <td width="20"><strong>COTS</strong></td>
+    <td width="20"><strong>System</strong></td>
+    <td width="20"><strong>Hardware</strong></td>
+    <td width="20"><strong>BIOS</strong></td>
+  </tr>
+  <tr>
+    <td width="12%">&nbsp;</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12%">&nbsp;</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12%">F001</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12%">F002</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12%">F003</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+</table>
+
+<h1>Time Warping</h1>
+
+<table border="1" width="82%">
+  <tr>
+    <td width="12%"><strong>Test Case Nr</strong></td>
+    <td width="35%"><strong>Explanation</strong></td>
+    <td width="20"><strong>TestPoint</strong></td>
+    <td width="20"><strong>Application</strong></td>
+    <td width="20"><strong>COTS</strong></td>
+    <td width="20"><strong>System</strong></td>
+    <td width="20"><strong>Hardware</strong></td>
+    <td width="20"><strong>BIOS</strong></td>
+  </tr>
+  <tr>
+    <td width="12%">&nbsp;</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12%">&nbsp;</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12%">W001</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12%">W002</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12%">W003</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+</table>
+
+<h1>Static Testing</h1>
+
+<table border="1" width="82%">
+  <tr>
+    <td width="12%"><strong>Test Case Nr</strong></td>
+    <td width="35%"><strong>Explanation</strong></td>
+    <td width="20"><strong>TestPoint</strong></td>
+    <td width="20"><strong>Application</strong></td>
+    <td width="20"><strong>COTS</strong></td>
+    <td width="20"><strong>System</strong></td>
+    <td width="20"><strong>Hardware</strong></td>
+    <td width="20"><strong>BIOS</strong></td>
+  </tr>
+  <tr>
+    <td width="12%">&nbsp;</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12%">&nbsp;</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12%">S001</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12%">S002</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="12%">S003</td>
+    <td width="35%">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+    <td width="20">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Crypto Stores
+
+**The Crypto Industry Finally Gets Its Own App Stores, and Discovery**
+
+When crypto apps get blocked by centralized platforms like Apple’s App Store or Google Play, it limits their top-of-funnel user acquisition. But we’re now seeing newer app stores and marketplaces provide this kind of distribution and discovery, and without gating. For instance, Worldcoin’s World App marketplace — which not only stores proof-of-personhood but allows access to “mini apps” — enabled 100,000s of users for several apps within just a few days. Another example is the fee-free dApp Store for Solana mobile phone users. Both of these examples also show how hardware, not just software — phones, orbs — may be the key advantage for crypto app stores… just like Apple devices were for early app ecosystems. 
+
+Meanwhile, there are other stores with 1000s of decentralized applications and web3 developer tools across popular blockchain ecosystems (e.g., Alchemy); as well as blockchains acting as both publisher and distributor for gaming (c.f. Ronin). However, it’s not all fun and games: If a product has existing distribution — like on messaging apps — it’s hard to port that over onchain (exception: Telegram/TON network). The same is true of apps with significant web2 distribution. But we may see more of this porting happening in 2025.

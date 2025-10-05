@@ -1,0 +1,203 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>Planning Phase: Test Planning</title>
+</head>
+
+<body>
+<font FACE="Arial" SIZE="4"><b>
+
+<p align="center"></b></font>&nbsp;</p>
+
+<table width="100%" border="0">
+  <tr>
+    <td width="430"><font color="#004080" size="6"><strong><p align="center"></strong></font><font
+    SIZE="2"><img SRC="images/y2klogo1.gif" WIDTH="67" HEIGHT="65"> <img
+    SRC="images/y2klogo2.gif" WIDTH="69" HEIGHT="57"> </font></p>
+    <p align="center"><a href="bucSD072.htm"><font color="#004080" size="2">Assessment</font></a><br>
+    <u><big><big><big><font color="#004080"><strong><big><a href="bucSD078.htm">Test Planning</a>
+    Overview</big></strong></font></big></big></big></u></p>
+    <p align="center"><font color="#004080" size="2">Conversion<br>
+    Local Verification<br>
+    Global Verification<br>
+    QA<br>
+    </font></td>
+  </tr>
+</table>
+
+<p align="center"><font color="#FF0000"><big><big><big><strong>DRAFT</strong></big></big></big></font></p>
+
+<p align="center"><font color="#000000">bucSD078.htm Version 2.0 1998-12-09</font></p>
+
+<p align="center"><font face="Arial" size="1">(source bucSD055.doc)</font></p>
+
+<h1>Abstract</h1>
+
+<p>Many experts are in agreement that future date testing should be done in isolation with
+no possibility of corrupting or destroying production files. Organisations will need to
+establish such a test environment, which may require procurements for additional
+mainframes, PC's, LAN's, DASD, etc. </p>
+
+<p>There are also numerous technical issues to be considered in developing a validation
+strategy, such as how files will be aged, or how testing can be conducted if critical
+vendor products are not yet Year 2000 compliant. Each organisation needs to begin to
+address these issues, now. </p>
+
+<p>Testing for year 2000 compliance yields other problems. Even if a single application is
+compliant, its testing must be synchronized with companion applications which may pass
+date information to assure the overall system of applications is safe to run. This problem
+is non-trivial. Worse, production systems can not be shut down for testing. Even where
+possible, testing with the year 2000 change can create unexpected havoc among existing
+production data. In most cases a parallel system is utterly prohibitive by cost or
+practical considerations.</p>
+
+<p>Testing Year 2000 software will require an isolated, dedicated test environment on
+which conditions prior, during, and after the change of century can be simulated including
+the leap year condition in the year 2000. Although there are tools on the market that help
+simulate the year 2000 in a testing environment, test cases that validate that the
+software will function correctly in the new century must be designed and created. While
+the need for a test environment seems obvious, there may be organisations without the
+hardware capacity to create an isolated test environment within their existing resources. </p>
+
+<p>The primary goal of the Planning Phase is to develop the test strategy, which defines
+the method of coordination and control for all validation tests to be done. Further it
+defines the amount and kind of test which will be undertaken. The process, measurable and
+repeatable techniques, tools, and sequences of tests are designed to minimize risks. An
+important testing principle is that testing should be staged (different types of testing)
+and layered (different levels of complexity at each stage). Testing at each stage
+addresses different concerns. Testing in each layer builds on the confidence gained in
+previous layers. </p>
+
+<p><a href="bucSD053.htm#Component testing">Component</a> and <a
+href="bucSD053.htm#Unit testing">Unit testing</a> addresses the smallest division for
+which tests are reasonable, the number of test cases is smaller and the likelihood of
+finding all the errors is increased. Once a component or unit has been tested, <a
+href="bucSD053.htm#Interface Integration testing">integration testing</a> begins by
+assembling larger systems from tested components and units. At this level the number of
+test cases may increase and the likelihood of finding all the Year 2000 errors decreases.
+Balance and judgment are required of the test designer to select the system boundaries and
+appropriate test cases. Applications which are unique may share many common programs and
+moduls and similar platforms. Two systems using identical hardware may have different
+applications and use date related functions in completely different ways requiring
+separate testing.</p>
+
+<p>The Y2K Programme Office spent a lot of time to study piles of testing methodology on
+the INTERNET to compile and advise for a common testing approaches. But always it turned
+out to becomes complex and not practical. <b></p>
+</b>
+
+<p>So we decided to focus all tests &quot;just&quot; on screens in the opinion that when
+all &quot;screens&quot; which are used by business activity apply to the Y2K test cases we
+should be on the save side. </p>
+
+<p>Still, if your organisation has not yet embraced any test automation, the Y2K project
+&nbsp; may not be a good candidate for embarking on new initiatives. Using current best
+practices and adapting them to support the Y2K process will yield the best returns. </p>
+
+<hr>
+
+<h1><a name="What to Test"><b>What to Test</b></a></h1>
+<font FACE="Arial">
+
+<p></font>Testing is one of those areas where you can always do more. But, there comes a
+point where the testing must stop and the application must go live. The Cost of Quality
+concept is useful is determining how much testing is appropriate.We want to arrive at the
+Point of Optimal Testing. We have essentially balanced the Cost of Testing with the Cost
+of Failure to achieve the lowest Total Cost of Quality. The testing effort associated with
+the Year 2000 renovation must be chosen appropriately for each application. A &quot;one
+size fits all&quot; approach will result in inappropriate levels of testing thereby
+placing the overall Year 2000 project in danger of not being completed in time.</p>
+<font FACE="Arial">
+
+<p></font>Y2K Validation Testing is not an exact science. It is imperative that everyone
+understands what is meant by compliance. Refer to the Year 2000 Compliance Definition
+document in the Y2K Kick Off Package. It is the responsibility of the application owners
+to decide what tests must be performed to assure compliance of their applications.
+Understand that outside contractors cannot be responsible for assurance of application
+Year 2000 compliance, but have been engaged to facilitate the assurance process desired by
+the owner.<font FACE="Arial"></p>
+</font>
+
+<p>Prioritize test scheduling based on the item list. </p>
+
+<p>Unique systems which have been locally built and programmed must be tested
+individually, test results for commercial off the shelf software can be shared on group
+level.</p>
+
+<hr>
+
+<h1>Prepare Test Scripts </h1>
+
+<blockquote>
+  <p>Test scripts capturing the functionality of the application should be designed with the
+  users and developers' assistance. These scripts are documented, run, and captured (using
+  possibly an automated testing tool) against the actual current production release. Special
+  consideration is given to those test scenarios that are date sensitive. Moreover, metrics
+  need to be set for ways to ensure maximum code coverage in setting up these tests scripts.
+  In the event that application review uncovers some existing test scripts, cases, or plans,
+  these should be revised and reused where applicable.</p>
+  <p ALIGN="JUSTIFY">Test scripts specify the test in finer detail. Typical contents of a
+  test script will contain the following:</p>
+  <ul>
+    <li>test number (to be cross-referenced to the test logs),</li>
+    <li>items to be tested - identifying all the areas to be tested in logical grouping order.
+      Combinations of business flows should be mentioned in the groupings. For each area to be
+      tested, the reason for testing should be given, i.e. if an attempt is made to test the
+      exception handling of a function,</li>
+    <li>test data (Input Specifications) - explicitly specifying each input required to execute
+      the test case. This will be any test data required to feed into the system with any data
+      tables if necessary. The source and version numbers can noted here if applicable,</li>
+    <li>expected results - specifying all of the expected outputs and features required for the
+      test areas, </li>
+    <li>actual results - the exact expected result should be noted with any specific features.
+      The pass or fail criteria will also be specified in this section so that the output can be
+      used as a gauge,</li>
+    <li>test environment - specify any Hardware, software and other environmental needs not
+      covered in the higher level test documents. Configurations of hardware and software should
+      also be covered in this section such as operating systems being set to certain levels etc.
+      Constraints on the test environment and dependencies on other external factors should also
+      be documented in this section,</li>
+    <li>test procedure/method - describe the steps and motions to execute the test case. This
+      should include references to setting up and using testing tools. Methods should also be
+      included for collating and logging the test results.</li>
+    <li>The greatest knowledge and insight into the operation and use of your applications will
+      come from the business users within the organization. Use the business knowledge of these
+      users and the technical knowledge of application developers and database administrators to
+      create test cases representing real-world business life-cycle processing of an
+      application.</li>
+  </ul>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+
+<hr>
+<b>
+
+<h1 ALIGN="JUSTIFY">Build Test Plan</b></h1>
+
+<p ALIGN="JUSTIFY">see dedicated document <a href="bucSD137.htm">bucsd137.htm</a> (Item
+Level Testplan)</p>
+
+<hr>
+
+<h1 ALIGN="JUSTIFY"><a NAME="_Toc398704234">Test Reporting</a></b></h1>
+
+<p ALIGN="JUSTIFY">A level of test reporting is required in YEAR 2000 tests which will:</p>
+
+<ul>
+  <li>give a sufficient level of management control,</li>
+  <li>allow internal and external bodies to audit the tests as proof that testing has been
+    carried out. </li>
+</ul>
+
+<p ALIGN="JUSTIFY">Documents that support test reporting include test logs and incident
+reports, and should be filled in appropriate to the level of testing carried out <b>and in
+line with practices in the local business unit</b>. A typical specification for these
+documents is shown below: </p>
+
+<hr>
+
+<p>end of document</p>
+</body>
+</html>

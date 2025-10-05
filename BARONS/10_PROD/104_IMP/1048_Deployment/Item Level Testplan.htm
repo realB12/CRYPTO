@@ -1,0 +1,554 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Planning Phase: High Level Test Plan (Guideline)</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+</head>
+
+<body>
+
+<p align="center">Document Definition: Planning - Test Plan</p>
+
+<p align="center">&nbsp;</p>
+<font color="#004080" size="6"><strong>
+
+<p align="center"></strong></font><font SIZE="2"><img SRC="images/y2klogo1.gif" WIDTH="67"
+HEIGHT="65"> <img SRC="images/y2klogo2.gif" WIDTH="69" HEIGHT="57"> Guidelines</font></p>
+
+<h1 align="center">Item Level Test Plan</h1>
+
+<p align="center"><font size="1">(KUONI Y2K Certification Methodology&nbsp; / bucSD137.htm
+/ buc / 1998-01-26 / Version 1.0)</font></p>
+
+<p align="center"><font size="1">(source bucIN079.pdf)<br>
+</font><img src="images/menuproc.gif" width="30" height="18"
+alt="menuproc.gif (339 bytes)"><small><small>&nbsp;&nbsp;&nbsp;&nbsp; <a
+href="bucSD072.htm">Assessment</a> (72), <a href="bucSD075.htm">Planning</a> (75),
+Conversion , <a href="bucsd083.htm">Local Verification</a> (83), <a href="bucSD089.htm">Global
+Verification</a> (89), QA<strong><br>
+</strong></small></small></p>
+
+<h1 align="left">Summary</h1>
+<font SIZE="3">
+
+<p ALIGN="JUSTIFY">A Test Plan describes in detail the scope, approach, and resources for
+the testing activities. Scope of an item level testplan is normally one single item.
+Typical contents of a test plan are:</p>
+
+<ul>
+  <li>detailed test scope - which areas of the item are to be tested, and which not, and the
+    level of detail required for each series of test,</li>
+  <li>form of test deliverables - any test documentation, electronic test results, test data
+    and any testing tools,</li>
+  <li>test environment - details the test conditions, including hardware, software, and
+    special test tools to be used complete with the relevant version numbers. If any parts of
+    the environment are loaned by third parties (suppliers/vendors) then these sources must be
+    stated,</li>
+  <li>resource &amp; responsibilities - outline who will be managing, designing, preparing,
+    executing, witnessing, and checking the tests. This will be related to overall project
+    plan. Any specialist training needed to undertake the testing activities should be
+    mentioned here against the relevant resources,</li>
+  <li>schedule - with direct reference to the overall project plan, the schedule will outline
+    the relevant sections from the plan. Any assumed risks to the overall test plan and
+    milestones must be identified with a specific contingency proposal attached to it.
+    Contingencies will be complete with dates and resources,</li>
+  <li>an outline of test scripts - the intended coverage of the test scripts to be written,
+    their objectives, and the procedures used to execute these tests.</li>
+</ul>
+
+<p>Key Outcome (needed resources, schedule for milestones)&nbsp; should be inserted into
+the Itemlist for overall planning</p>
+
+<p><strong>Note</strong>: This document is NOT, however, a specification. Evaluators
+should not take the attitude that they will evaluate a item in accordance with or against
+the checklist. The checklist is used to ensure thoroughness and consistency in the
+assessment. It does not indicate what constitutes compliance.</p>
+</font>
+
+<hr>
+
+<h1>TESTPLAN HEADER INFO</h1>
+
+<p>Item ID (according to Itemlist)</p>
+
+<p>Item Description of Item(s) under test which are covered by this test plan.</p>
+
+<p>author, date and location fo this document</p>
+
+<p>other key information</p>
+<font FACE="Arial" SIZE="4"><b>
+
+<p>Document History</b></font></p>
+
+<p>The following table summarizes changes to this document.</p>
+
+<table BORDER="1" CELLSPACING="1" CELLPADDING="7" WIDTH="697">
+  <tr>
+    <td WIDTH="25%" VALIGN="TOP"><b><p ALIGN="CENTER">Date of Revision</b></td>
+    <td WIDTH="25%" VALIGN="TOP"><b><p ALIGN="CENTER">Revision </b></td>
+    <td WIDTH="51%" VALIGN="TOP"><b><p ALIGN="CENTER">Summary</b></td>
+  </tr>
+  <tr>
+    <td WIDTH="25%" VALIGN="TOP"><p ALIGN="CENTER">May 30, 1997</td>
+    <td WIDTH="25%" VALIGN="TOP"><p ALIGN="CENTER">0.0</td>
+    <td WIDTH="51%" VALIGN="TOP"><p ALIGN="CENTER">buc / Initial Draft Release for comments</td>
+  </tr>
+  <tr>
+    <td WIDTH="25%" VALIGN="TOP"><p ALIGN="CENTER">July 15, 1997</td>
+    <td WIDTH="25%" VALIGN="TOP"><p ALIGN="CENTER">0.1</td>
+    <td WIDTH="51%" VALIGN="TOP"><p ALIGN="CENTER">buc / Release for comments after Test Pilot</td>
+  </tr>
+  <tr>
+    <td WIDTH="25%" VALIGN="TOP"><p ALIGN="CENTER">August 8, 1997</td>
+    <td WIDTH="25%" VALIGN="TOP"><p ALIGN="CENTER">1.0</td>
+    <td WIDTH="51%" VALIGN="TOP"><p ALIGN="CENTER">buc / Release to All Suborganisations</td>
+  </tr>
+</table>
+
+<p>&nbsp;<font FACE="Arial" SIZE="4"><b>Document Comments</b></font></p>
+
+<table BORDER="1" CELLSPACING="1" CELLPADDING="7" WIDTH="686">
+  <tr>
+    <td WIDTH="28%" VALIGN="TOP"><b>Date</b></td>
+    <td WIDTH="72%" VALIGN="TOP">May 5, 1997</td>
+  </tr>
+  <tr>
+    <td WIDTH="28%" VALIGN="TOP"><b>Name of Editor</b></td>
+    <td WIDTH="72%" VALIGN="TOP">Rene BUCHLE</td>
+  </tr>
+  <tr>
+    <td WIDTH="28%" VALIGN="TOP"><b>Internet Email Address</b></td>
+    <td WIDTH="72%" VALIGN="TOP">rene.buchle@kuoni.ch</td>
+  </tr>
+  <tr>
+    <td WIDTH="28%" VALIGN="TOP"><b>Phone direct</b></td>
+    <td WIDTH="72%" VALIGN="TOP">+41 (1)&nbsp; 325 23 25</td>
+  </tr>
+  <tr>
+    <td WIDTH="28%" VALIGN="TOP"><b>Fax</b></td>
+    <td WIDTH="72%" VALIGN="TOP">+41 (1) 321 19 09</td>
+  </tr>
+</table>
+<font FACE="Arial" SIZE="2">
+
+<h1></font>Scope of Testing</h1>
+
+<h2>Define the conversion Strategy</h2>
+
+<p>replace, upgrade, assumed to be ready ?</p>
+
+<h2>Type and Scope summary of Testing needed</h2>
+
+<p>Testing needed at all ? Why / Why not ? </p>
+
+<p>When yes: Does the plan cover all the Y2K testing that will need to be done, or does
+the plan cover the Y2K testing for a particular project, a particular module, or a group
+of modules ? Does the plan cover functional testing, performance testing, systems testing,
+Y2K date testing, or a combination of testing?</p>
+
+<h2>Define the item's final Platform</h2>
+
+<p>1. Is there new hardware being installed concurrently with Y2K changes? If so, consider
+the impact this will have on continued compatibility. If possible, plan to upgrade the
+hardware prior to making the Y2K changes. Then perform regression testing on the current
+utilities, tools and applications to verify they continue to work with the new hardware.
+Doing this prior to the Y2K changes will minimize the variables when trying to debug Y2K
+problems encountered.</p>
+
+<p>2. Is there a new Operating System being installed concurrently with Y2K changes? If
+so, will the current applications continue to work with the new OS, or will changes have
+to be made to the applications? If changes are needed, OS compatibility testing needs to
+be performed and it is recommended this be done prior to Y2K changes being made.</p>
+
+<p>3. Is there a mix of platforms currently in operation or is there a single platform
+that the organization uses? If there is a mix of platforms, this increases the scope of
+testing significantly. Identify each of the applications running on each of the platforms.
+Plan to perform platform-specific application testing.</p>
+
+<p>4. To cover the specific changes that were made during the conversion, Y2K date testing
+will need to be performed. Evaluate the impact of the changes prior to refining the test
+plan, as it may be possible to cover several Y2K changes with a single test case.</p>
+
+<p>5. For each application that was changed to be Y2K compliant, evaluate whether or not
+regression testing needs to be performed to ensure the functionality was not adversely
+affected.</p>
+
+<p>6. There may be issues with vendor software not being Y2K compliant. Vendor contact may
+be necessary to acquire a status of their plans to become Y2K compliant. The test strategy
+will need to include vendor software testing.</p>
+
+<p>7. There may be issues with vendor software not being Y2K compliant. Vendor contact may
+be necessary to acquire a status of their plans to become Y2K compliant. The test strategy
+will need to include vendor software testing.</p>
+
+<h2>Define Warp stops and critical dates</h2>
+
+<p>Define Anticipated failure date</p>
+
+<p>Testing should include using dates which span forward across the century boundary and
+regressively back across this boundary For example, a time span might consist of the years
+1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004. Testing should also include crossing leap
+year boundaries (i.e. 2004) and calculations using leap years. Consider whether fiscal
+years or julien dates (i.e. YYMMM) are applicable and should be tested. For a list of
+possible test dates see bucsd113.htm (Test Scenario Selection Box).</p>
+
+<p>Many organizations have expiration dates enabled or set in software. If this is a
+potential problem area, you may want to consider the following list in determining the
+scope of expiration date testing needed:</p>
+
+<p>· system password expiration dates</p>
+
+<p>· user ID password expiration dates</p>
+
+<p>· demo software expiration dates</p>
+
+<p>· data files or databases</p>
+
+<p>· authorization/protection</p>
+<font FACE="Symbol" SIZE="2"><b>
+
+<p></b></font>· network access</p>
+
+<p>· automation functions (such as nightly backups, cleanup programs)</p>
+
+<p>· hierarchical storage management</p>
+
+<h2>Exceptions</h2>
+
+<p>The conversion team may follow a specific standard or set of rules when converting the
+code to be Y2K compliant. There may be a few exceptions made to the conversion rules or
+there may be cases where a particular application gets a waiver from the standard. Consult
+the conversion team for known exceptions, if any. The test plan should include testing of
+all exceptions and waivers to ensure no adverse effects result.</p>
+
+<p>Planned testing should cover any known Y2K problems in the software.</p>
+
+<h1>Define the System Clock(s) you want (have) to warp</h1>
+
+<p>Clock forward testing involving the manipulation of the all system Clock of all
+components involved (client - server, network !)</p>
+
+<h1>PILOT</h1>
+
+<ul>
+  <li>Will I run a pilot first ?</li>
+</ul>
+
+<p>Practice has shown that it is good idea to run a test pilot first which included all
+test steps and documentation you want to have. This gives you an idea about the time and
+skills you might need. Further a complete test book with all deliverables you want to
+produce is the best guidelines for test users to describe their job. For you this will be
+the best tool to&nbsp; check quality and for the Managing Director it will be the best
+tool to make sure that testing will produce the output he wants before bulk work starts.</p>
+
+<h1>TESTING APPROACH</h1>
+
+<ul>
+  <li>Black box / White Box testing ?</li>
+  <li>Full test or testing just some procedures to conclude the others to be compliant as well
+    ?</li>
+</ul>
+
+<h1>Involvement of Business User</h1>
+
+<ul>
+  <li>Business User / Technical Testing</li>
+</ul>
+
+<h1>RISKS, CONSTRAINTS, AND CONTINGENCIES</h1>
+
+<p>Identify all the risks associated with the Y2K test effort. Apply a rating or priority
+to each which clearly shows the high risks versus the low risks. For the high risk areas,
+develop contingency plans. State how risks will be managed or mitigated. Also, note any
+constraints associated with the test effort.</p>
+
+<p>Mention here the risk that remain after the tests have been successfully completed.</p>
+
+<h1>DEPENDENCIES</h1>
+
+<p>This section describes what the test organization is depending on to complete the Year
+2000 testing. For each dependency (See Envrionment and Interface Diagrams), the name of
+the individual or group responsible should be indicated, as well as when it is needed. The
+following questions can be used to aid in defining the dependencies:</p>
+
+<p>· Are key documents needed for planning?</p>
+
+<p>· Is there equipment on order that is needed to perform the testing?</p>
+
+<p>· Is technical consulting needed from the development staff?</p>
+
+<p>· Is training needed?</p>
+
+<p>· Is additional staff needed?</p>
+
+<h1>TEST ENVIRONMENT</h1>
+
+<p>This section contains a list of the hardware and test requirements. 
+
+<ul>
+  <li>Will existing test equipment be used, or will new equipment have to be ordered?</li>
+  <li>If existing equipment is used, can it be uses as is, or will modifications be necessary?</li>
+  <li>Will additional disk capacity or peripherals be needed for the test effort?</li>
+  <li>Will the location of the testing be the same as it is today, or will that change?</li>
+  <li>Will existing test tools be utilized or changed, or will new tools need to be developed</li>
+</ul>
+
+<p>for more specific details about how to build a test environment see <a
+href="http://bucsd071.htm">bucsd071.htm</a> (Y2K Test Environment)</p>
+
+<h1>TEST DATA</h1>
+
+<p>Decide whether you will type in all testdata manually, or whether you use productive
+data ev. combined with a data ager tool. Define how you will keep your testdata for later
+use (test repetition in case of future problems).</p>
+
+<h1>TEST SCRIPS</h1>
+
+<p>How do they look like. </p>
+
+<p>Which degree of details</p>
+
+<p>Self explanatory or need test user special training</p>
+
+<p>Will template test script be created ?</p>
+
+<h1>RESPONSIBILITIES</h1>
+
+<p>This section lists the staff that will be utilized for the Y2K testing, and a brief
+summary of the responsibilities of each staff member.</p>
+
+<h1>RESOURCE AVAILABILITY AND TRAINING REQUIREMENTS</h1>
+
+<p>This section defines the requirements for personnel resources and any applicable
+training which will be needed to achieve Year 2000 testing.</p>
+
+<h2>Technical Resources</h2>
+
+<ul>
+  <li>Appropriate personnel are available to oversee and conduct the testing</li>
+  <li>External Systems interfaces can be disconnected, simulated, or modified for testing
+    purposes</li>
+  <li>Backup has been performed prior to testing</li>
+  <li>Support personnel are available as required.</li>
+</ul>
+
+<p>Consider that you need to create input data for future date scenarios. Next this data
+needs to be aged. Finally, the operating system date on which the application/database
+resides must be advanced to match the input and database future dates.&nbsp; </p>
+
+<h2>Business Users</h2>
+
+<p>The greatest knowledge and insight into the operation and use of your applications will
+come from the business users within the organization. Use the business knowledge of these
+users and the technical knowledge of application developers and database administrators to
+create test cases representing real-world business life-cycle processing of an
+application.</p>
+
+<h2>Additional Resources and skills</h2>
+
+<p>Will existing staff be utilized, or will additional staff be needed?</p>
+
+<h1>DELIVERABLES AND APPROVALS</h1>
+
+<p>This section lists each of the test deliverables and which individual or organization
+will be responsible for reviewing and approving the deliverable.</p>
+
+<p>Define whether and on which medium&nbsp; you will archive and keep your testdata for
+legal&nbsp; evidence that testing work has been carried out and as a mean to trace
+problems in case of Year 2000 failure.</p>
+
+<p>&nbsp;</p>
+
+<p ALIGN="JUSTIFY"><b><a NAME="_Toc398704235">Define Layout of&nbsp; Test Logs</a></b></p>
+
+<p ALIGN="JUSTIFY">The test log records all the results and outputs from the actual test
+execution. Normally entered on a standard form the tester will fill in the relevant boxes
+resulting from the tests. A typical test log will contain:</p>
+
+<ul>
+  <li>the test number (referring to the relevant test specification number),</li>
+  <li>pass/fail indicator,</li>
+  <li>comments.</li>
+</ul>
+
+<p ALIGN="JUSTIFY"><a NAME="_Toc397504818"></a><a NAME="_Toc398701635"></a><b><a
+NAME="_Toc398704236">Define Layout of Incident Report</a>s</b><a NAME="_Toc398704236"></p>
+</a>
+
+<p ALIGN="JUSTIFY">The purpose of the incident report is to formally document any events
+during the tests that require further investigation. This will include any test failures.
+All test incident reports will be held on a test incident log or repository. This will
+normally be in the form of a spreadsheet/database or paper file, where incident reports
+can be viewed if they are still opened or closed. A typical incident report form
+(electronic or paper based) will contain:</p>
+
+<ul>
+  <li>Incident Report Number;</li>
+  <li>Incident Report Title - Brief Title;</li>
+  <li>Status of Incident Report - Open, Deferred or Closed;</li>
+  <li>Date of Incident and Name of Person ;</li>
+  <li>Observation Description - instructions on how to repeat the incident; </li>
+  <li>Version - Hardware and software versions. Any test tools used should also be noted;</li>
+  <li>Severity - How urgent is incident (Show stopper, functional defect, minor defect or
+    cosmetic);</li>
+  <li>Person Assigned to Investigate - Who is responsible to determine whether it is a valid
+    fault;</li>
+  <li>Investigation Results - Authoritative opinion to determine whether the incident warrants
+    a further action such as fixing. This should be fully backed up with the reasons to
+    arriving at the conclusion;</li>
+  <li>Action Implementation Comments - Filled in by the actionee;</li>
+  <li>Retest Required - Y/N;</li>
+  <li>Date Closed;</li>
+  <li>Signatures To Authorise Sign-Off.</li>
+</ul>
+
+<h1>CLEAN MANAGEMENT</h1>
+
+<p>&nbsp;</p>
+
+<h1>SCHEDULE</h1>
+
+<p>A schedule should be included which describes each of the major testing milestones that
+will be completed. It is useful to put the schedule in a separate document or as an
+attachment, so that it can be updated easily.</p>
+
+<p>To get to a realistic schedule, it is recommended that a detailed work breakdown is
+generated to show the tasks that need to be completed by the test organization for the Y2K
+testing.</p>
+
+<p>The tasks should cover activities related to test planning, test setup, test
+automation, test case development, test tracking, test execution and test reporting. An
+approximate estimate for each of the tasks is necessary in order to estimate the overall
+effort for the testing. The Itemlist could be used to show this, or a project tracking
+tool can be used. You can include the work breakdown of tasks as an attachment. The
+following are typical tasks youwould see in a work breakdown for a Y2K test effort:</p>
+
+<p>· Conduct review of draft test plan</p>
+
+<p>· Order equipment</p>
+
+<p>· Set up test environment</p>
+
+<p>· Hire new staff</p>
+
+<p>· Conduct Y2K specific training</p>
+
+<p>· Create a set of date related tests for each hardware platform, if applicable. (NT,
+MS DOS, Win95, AS/400, etc.)</p>
+
+<p>· Create a set of generic date-related tests which could be run on every screen</p>
+
+<p>· Create the regression tests which should be run on every screen under test</p>
+
+<p>· Create a suite of application specific &quot;date tests&quot; for each screen under
+test</p>
+
+<p>· Perform test trial of date related testing (this will aid in the design of the
+automated tests). &quot;Practice&quot; manipulating system clocks, changing application
+clocks, etc.</p>
+
+<p>· Design automated tests.</p>
+
+<p>· Develop automated tests.</p>
+
+<p>· Conduct a demo of the tests to appropriate application engineer(s).</p>
+
+<p>· Acquire final approval on test plan and test specifications.</p>
+
+<p>· Test automated tests.</p>
+
+<p>· Test vendor software</p>
+
+<p>· Conduct or attend weekly status meetings</p>
+
+<p>· Perform periodic tracking activities, such as updating schedules, updating test
+coverage sheets, etc.</p>
+
+<p>· Provide tracking information to project leader(s) periodically/weekly/etc.</p>
+
+<p>· Build a test coverage matrix showing testing which is being completed.</p>
+
+<p>· Generate the final test report.</p>
+
+<p>· Plan/conduct the final meeting where the decision is made to move s/w to itemion.</p>
+
+<h2>Timemachines</h2>
+
+<p>Practice has shown, that it is a good idea to make a plan for which (real) dates the
+test machine(s) are running which warp dates:<br>
+<br>
+for ex.</p>
+<div align="center"><center>
+
+<table border="1" width="42%">
+  <tr>
+    <td width="32%">1999: Week 02 - 04 </td>
+    <td width="68%">Mo = 1999-12-30 </td>
+  </tr>
+  <tr>
+    <td width="32%">&nbsp;</td>
+    <td width="68%"><p align="left">Tue = 1999-12-31</td>
+  </tr>
+  <tr>
+    <td width="32%">&nbsp;</td>
+    <td width="68%">We = 2000-01-01</td>
+  </tr>
+  <tr>
+    <td width="32%">&nbsp;</td>
+    <td width="68%">Thu = 2000-01-02</td>
+  </tr>
+  <tr>
+    <td width="32%">&nbsp;</td>
+    <td width="68%">Fr = Turn clock back to 1999-12-29</td>
+  </tr>
+</table>
+</center></div>
+
+<p>Communicate this plan to the technical and business users, so that they can schedule
+their &quot;private&quot; test session.<br>
+</p>
+
+<h1>Layered Testing</h1>
+
+<p>It is not always possible to test an item while it is in its operational configuration.
+The best way to test such an item is to use a layered approach. That is, the item is
+tested as a stand-alone application, then in an isolated system, then finally in a
+system-of-systems environment.</p>
+
+<p>Evaluating an item as an isolated application has the advantage that scheduling is
+relatively easy and test cases can be targeted specifically to functions performed by the
+item. The disadvantage is that the vulnerability of the item to non-Y2K information from
+another item cannot be completely determined since it is usually impossible to explore a
+really wide range of erroneous input that an interfacing application or system might
+provide.</p>
+
+<p>Evaluating an item in a system environment provides some information on the effects it
+has on external systems. In particular is allows an evaluation of the compatibility of the
+item's Y2K approach with those of the other items in the same system. However the
+functioning of interfaces to remote systems is still a question, and it may be difficult
+to schedule time on a mission critical system for an extensive test.</p>
+
+<p>Testing an item in a system-of-systems environment, particularly with life-like data,
+can be the ultimate source of compliance information. But it is difficult to coordinate
+and usually is expensive since the efforts of the remote systems often must be funded as
+part of the local testing effort (although in the case of Y2K, where everyone is in the
+same boat, this may not be true). Also, the functionality of the item being evaluated must
+be carefully examined. If the System under test provides services that are, to a high
+degree, internal to a system, the knowledge gained by a system-of-systems evaluation may
+not add sufficiently to the item evaluation to justify the high cost.</p>
+
+<h1>OPEN ISSUES</h1>
+
+<p>&nbsp;</p>
+
+<p>List the open issues affecting the test effort, the date when each issue was opened,
+and the date it needs to be resolved by. For each issue, assign a person responsible for.
+Track these issues to closure, and update the issues lists periodically to indicate they
+are closed. It is recommended the list of issues be a separate document or an attachment,
+so that it is easily maintainable.</p>
+
+<p>Define the escalation Procedure --&gt; Internal --&gt; MD --&gt; PrOf --&gt; Koni Iten
+--&gt; Group Management</p>
+</body>
+</html>

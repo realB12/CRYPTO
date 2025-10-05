@@ -1,0 +1,2 @@
+# Automatisierte Handelsplattformen
+Automatisierte Handelsplattformen bieten Werkzeuge für den algorithmischen Handel, die es Schweizer Händlern ermöglichen, vordefinierte Regeln für den automatischen Kauf und Verkauf von Kryptowährungen festzulegen. Diese Plattformen sind ideal für diejenigen, die rund um die Uhr Marktchancen nutzen möchten, ohne den Markt ständig überwachen zu müssen.

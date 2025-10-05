@@ -1,0 +1,468 @@
+<html>
+
+<head>
+<title>Y2K Test Methods Overview</title>
+</head>
+
+<body>
+
+<h1 align="center">Y2K Test Methods Overview</h1>
+
+<p align="center">bucSD053.htm / DRAFT Version 1.0 1998-01-22</p>
+
+<p align="center">How to define a minimum set of test points</p>
+
+<h1 align="left">Introduction</h1>
+
+<p>Industry consultants and users report that testing of applications for the Year 2000
+will be more than 50% of the project's time and expense. However, many organisations do
+not have project experience with testing of this order of magnitude. The results will
+often be significant cost over-runs and missed commitments that could lead to failure.</p>
+
+<p>Why is testing so difficult? The reason is that the number of conditions that can be
+tested is unbounded (infinite). As a result, testing is often done in a haphazard and
+arbitrary way. The Year 2000 project team is faced with a challenge that will not yield a
+single ideal solution. They must deal with &quot;the facts on the ground.&quot; The logic
+of the application can not be determined by examining individuals' claims, but on the
+behavior of executing programs. Most of the programmers who wrote the application have
+likely moved on to new assignments, many left the company long ago. There may be knowledge
+of some applications that is typically limited to the enterprise's &quot;critical
+applications&quot; which are run daily. However, there are likely hundreds more that are
+run on demand, or infrequently. Furthermore, for many programs the source code is missing
+or not up to date. Decompiling, disassembling and translation is at best, a semi-automatic
+process. There is no fully automated way to make applications Year 2000 compliant.</p>
+
+<p>This document describes one testing discipline that has evolved at KUONIs Y2K Programme
+Office. It contains discussion of a test discipline that uses criteria which bounds the
+number of conditions to be tested, and makes testing subject to objective measurements.
+The use of this methodology should be helpful in developing a better understanding of the
+testing process. This pages also defines the different types of testing and how each type
+of testing differs from the others. There is also a description of tools that can be used
+to help discipline the process. The objective is to take an &quot;impossible task&quot;
+and reduce it to a set of manageable parts. </p>
+
+<p>With the use of the correct tools applied at the right time, and in the hands of the
+right people, the problems of testing for Year 2000 compliance can be successful. However,
+a strong project management discipline and a great deal of hard work will be required,
+regardless of the solution that is chosen. </p>
+
+<p>Testing becomes the art of making tradeoffs between quality, resources, and time.
+Lacking an understanding of the underlying principles and discipline leads to wasted
+resources, irrational decision making, and can result in catastrophic failure. A favorite
+practice of some organizations is to amass a tremendous amount of data early in the
+development cycle and throw it at the application. Some IT teams find this re-assuring.
+However, it does little to ensure the quality of the application or find the bugs that a
+more disciplined test of boundary conditions would have found. </p>
+
+<p><u>What's Required?</u> </p>
+
+<p>What is required is a discipline that provides criteria to bound the test conditions.
+Testing experience has shown that part of the answer lies in mathematics, that is, the
+theory of sets. In practical terms, that means if criteria are established that define
+sets of test conditions, it is possible to completely test the subsets(possible, but not
+necessarily cost-effective) even it is not feasible to test all the conditions that may
+arise.</p>
+
+<p>One way to characterize the testing subsets is to define testing into groups that
+experience has shown are useful as the application evolves from the earliest unit of code
+to a full system. </p>
+
+<h1>High Level Testing Approach</h1>
+
+<p>&nbsp;</p>
+
+<blockquote>
+  <p><strong><font color="#FF0000">Assessment Phase</font></strong><ul>
+    <li>Do the complete <a href="bucSD072.htm">Technical Inventory</a> showing all itmes within
+      your organisation grouped by <a href="bucSD095.htm">Testing Categories</a> </li>
+    <li>Chunk and analyse the items.</li>
+    <li>Ev. do assessment test (Future, Time Warping) and find out about conversion needs</li>
+  </ul>
+  <p><strong>Conversion Phase</strong><ul>
+    <li>When needed, Do conversion</li>
+  </ul>
+  <p><font color="#FFFF00"><strong>Planning</strong></font><ul>
+    <li>Synthesis test scripts based on &quot;screens&quot; and provide the necessary resources</li>
+  </ul>
+  <p><font color="#008000"><strong>Validation</strong></font><ul>
+    <li>Do the validation tests (Regression, Future, Time Warping)</li>
+  </ul>
+  <p><strong>Clean Managmen</strong>t<ul>
+    <li>stay clean</li>
+  </ul>
+</blockquote>
+
+<p>Keep in mind that all this steps must be priorisized accroding to Business risk, and
+therefor must be planned. </p>
+
+<h3>Test Drivers</h3>
+
+<p>Keep in mind that all tests must be proritizes by the Business critically which will be
+defined during the Assessment Phase on the basis of completed Technical Inventory and
+Business Analysis. Since you might find yourself already in the position where you are
+running out of time, careful test prioritising and planning according to business risk
+will be&nbsp; the major criteria for success. Further,&nbsp; all steps must be
+documented&nbsp; and should regularly be reviewed by the Quality Assurance Team..</p>
+
+<h3>Scope of Testing</h3>
+
+<p>Whereas the scope of testing must cover every item we just focus on application here.
+Different documentation will be provides soon to cover the remaining item classes as well.</p>
+
+<hr>
+
+<h1>High Level Test Categories</h1>
+
+<p>This high level Test Categories have been identified: 
+
+<ul>
+  <li><strong>Purpose</strong> (<a href="#Assessment Testing">Assessment</a> or Validation
+    Testing)</li>
+  <li><strong>Time Configuration</strong> (Regression Testing,&nbsp; Future Date Testing or
+    Time Warping)</li>
+  <li><strong>Static</strong> Code Analysis or <strong>Dynamic</strong> Execution</li>
+  <li><strong>Not Y2K related Focus</strong> (Performance, Load, Acceptance, </li>
+</ul>
+
+<p>The <a href="file:///D:/!USER.$/!BUC.$/PROJECT/Y2K/web/year2000/bucSD113.htm">Test
+Selection Box</a> will provide a series of Test Cases</p>
+
+<hr>
+
+<h3><a name="Assessment Testing">Assessment Testing</a></h3>
+
+<p>As part of the Assessment Phase, Assessment Testing must prove as soon as possible
+whether major conversion is needed or not. This will reduce the risk that you might find
+that you have to do major conversion work too late - too late to fix and test all your
+programs in time.</p>
+
+<p>Assessment Testing splits up in <a
+href="file:///C:/bucSD111.htm#Static Testing Components">static testing components</a> and
+<a href="file:///C:/bucSD111.htm#Dynamic Testing Levels">dynamic testing levels</a> and is
+noramlly performed by the developers of the application.</p>
+
+<p>For the moment Assessment Testing focuses on Applications only.</p>
+
+<hr>
+
+<h3><a name="Validation Testing">Validation Testing</a></h3>
+
+<p>When Assessment Testing has proven that no major conversion must be done you are ready
+for the next step.</p>
+
+<p>With the help of previous defined Test scripts the user will prove by that his
+application will be compliant </p>
+
+<p>Validation Test are the planned &quot;Screen&quot; Tests which will be planned during
+Y2K projects planning phase and performed during validation phase. It is to verify that a
+certain business activity is compliant. This tests are done by experienced users knowwing
+the details of the application(s). The responsibility for proving a successful test lies
+in the application owner whereas sign off responsibility for all the TestCycle is carried
+by the OrgMan. The sign off for the over all&nbsp; application compliance stil remains
+with the OrgHead.</p>
+
+<p>Validation Testing splits up in dynamic testing levels</p>
+
+<p>For the moment Validation Testing focuses on Applications only.</p>
+
+<hr>
+<b>
+
+<h3 ALIGN="JUSTIFY"><a NAME="Reference Testing">Reference Testing (19xx)</a></b></h3>
+<font size="3">
+
+<p ALIGN="JUSTIFY">Reference testing is used to baseline a set of fixed test data against
+the existing system in its present state. A copy of the live application should be placed
+the test environment, and test data that has not been rolled forward to future dates run
+through it and test results recorded. Key functions of this are:</p>
+</font>
+
+<ul>
+  <li><p ALIGN="JUSTIFY">Verify that the system continues to operate normally at the current
+    time after changes have been made to the system.</p>
+  </li>
+  <li><p ALIGN="JUSTIFY">Dates appearing in outputs appear in a new format if so required.</p>
+  </li>
+  <li><p ALIGN="JUSTIFY">Modules receiving output directly from modified systems function
+    properly.</p>
+  </li>
+  <li><p ALIGN="JUSTIFY">Modules receiving output through bridging programs from modified
+    systems function properly<font size="3">.</font></p>
+  </li>
+</ul>
+<font size="3"><b>
+
+<p ALIGN="JUSTIFY">Key functions</b></p>
+
+<ul>
+  <li>as a benchmark for future tests (resulting from changes to the application), </li>
+  <li>to generate test data which can be amended for use in future date tests, </li>
+  <li>to validate that interfaces between application modules and linked systems are properly
+    integrated in the test system,</li>
+  <li>to clearly define the scope and boundaries of the tests undertaken,</li>
+  <li>to understand test sizing and performance under normal and peak workloads.</li>
+</ul>
+<b>
+
+<p ALIGN="JUSTIFY">Test Data </b></p>
+
+<p ALIGN="JUSTIFY">Reference test data can be gathered in two main ways:</p>
+
+<ul>
+  <li>For on-line processes, test packs can be generated by documenting a set of sample
+    transactions for each business function to be tested. Coverage in these test packs must be
+    sufficient to ensure that all functions identified by the users as mandatory in the test
+    design phase are covered.</li>
+  <li>Major batch runs can be tested by taking a back-up of the test system before and after
+    major batch runs. These can be used as a baseline that can be rerun later to test that
+    results have not changed. </font></li>
+</ul>
+
+<hr>
+<b>
+
+<h3 ALIGN="JUSTIFY"><a name="Future Date Testing">Future Date Testing</a> (20xx)</b></h3>
+
+<p ALIGN="JUSTIFY">System functionality must be verified for future dates. Future date
+testing involves two elements: system clock testing and data testing. System clock testing
+verifies that events or transactions relying on the system clock are not adversely
+affected by a system clock set to a future date. Data/logic testing verifies that date
+inputs and outputs are correctly processed with future dates.<font size="3"></p>
+<b>
+
+<p ALIGN="JUSTIFY">Key Functions</b></p>
+
+<ul>
+  <li>The main function of future date testing is to test applications with data that is aged
+    beyond the YEAR 2000. If a compliant architecture can be built and system clocks rolled
+    forward, it is preferable to combine these tests with clock testing outlined below. </li>
+  <li>Validating the performance of the system in using normal and large measures of data to
+    measure response time, database I/O, network throughput, etc</li>
+  <li>Running a standard set of YEAR 2000 date conditions through the application - see <b>Appendix
+    C. </li>
+</ul>
+
+<p ALIGN="JUSTIFY">Test data</p>
+
+<ul>
+  </b>
+  <li>The aged data used in this test should, if possible, be the original reference test data
+    rolled forward to cover all the YEAR 2000 test conditions that are outlined later in this
+    document.</font></li>
+</ul>
+
+<hr>
+<b>
+
+<h3 ALIGN="JUSTIFY"><a name="Time Warping">Time Warping</a></b></h3>
+
+<p ALIGN="JUSTIFY">System clock tests may be performed by running the test suite in
+several ways:<font size="3"></p>
+
+<ol>
+  <li><p ALIGN="JUSTIFY">Set the system clock to the future date. </p>
+  </li>
+  <li><p ALIGN="JUSTIFY">Simulate a future date using third products which intercept calls to
+    the system clock. </font></p>
+    <font size="3"></li>
+  <li><p ALIGN="JUSTIFY">Set the clock forward in an LPAR (logical partition) of a mainframe,</p>
+  </li>
+</ol>
+
+<p align="center"></font><font color="#FF0000" SIZE="3"><a name="! WARNING !"><big><big>!
+WARNING !</big></big></a></font><font size="3"></p>
+
+<p align="center"></font><font SIZE="2" color="#FF0000"><big><big>This may <a
+href="bucSD071.htm#WARNING">Crash</a> your system !</big></big></font><font size="2"></p>
+
+<p align="center"><img src="images/notebomb.gif" alt="notebomb.gif (8627 bytes)"
+WIDTH="234" HEIGHT="60"></p>
+</font>
+
+<p ALIGN="JUSTIFY">Testing should verify that the system correctly rolls over to the Year
+2000, and in addition to normal processing, all month, quarter and year-end processing
+function correctly past 2000.&nbsp; Click <a href="bucSD049.htm">here</a> for a list of
+critical dates</p>
+<font size="3"><b>
+
+<p ALIGN="JUSTIFY">Key Functions</p>
+
+<ul>
+  </b>
+  <li>Time Warping requires internal harDware dates to be set to critical values before and
+    after the millennium change. Ideally, this can be combined with future date testing. If a
+    compliant architecture cannot be built at this point, however, it is possible to conduct
+    these tests at a later date when compliant infrastructure is available. </li>
+</ul>
+<b>
+
+<p ALIGN="JUSTIFY">Test data</p>
+
+<ul>
+  </b>
+  <li>The data used should be the same as that used in the future date test, amended if
+    necessary to include any processing that is directly derived from the system date. <a
+    NAME="_Toc397504811"></li>
+</ul>
+</a></font>
+
+<hr>
+
+<h1>Not Y2K related <a name="Focus">Focus</a></h1>
+
+<h4>TS01&nbsp;&nbsp;&nbsp; Operations Testing</h4>
+<font size="2">
+
+<p>ensures that prior to production, your IS staff can properly administer the
+applications using the new support mechanisms, documentation, procedures and training<br>
+Apply operations testing to determine whether the system is ready for normal production
+operations. In contrast, recovery processing (discussed below) is intended for abnormal
+system operations. Considering the potential scope and magnitude of your Year2000
+transition, every aspect of the normal operation might be impacted to some extent as you
+revise programs and/or data for Year2000 readiness. Operations testing enables, prior to
+production, your IS staff to properly administer the applications using the new support
+mechanisms, documentation, procedures, and training as you complete your Year2000
+transition. </p>
+</font>
+
+<h4>TS02&nbsp;&nbsp;&nbsp;&nbsp; Stress Testing</h4>
+<font size="2">
+
+<p>Apply stress testing to determine if the system can function when transaction volumes
+are larger than normally expected. The typical areas that are stressed include disk space,
+transaction rates, output generation, computer capacity, and interaction with people. When
+testing Year2000 changes, it is essential to verify that the existing resources can handle
+the normal and abnormal volumes of transactions after the restructuring of the code and
+the possible expansion of the data fields. For example, apply stress tests to determine: 
+
+<ul>
+  <li>if existing CPU capacity is sufficient to meet expected user turnaround time when your
+    uses more CPU cycles and processing time for code conversion. </li>
+  <li>if existing disk capacity is sufficient to accommodate the additional disk space and
+    provide acceptable disk access time when your solution expands the year data field from
+    two to four digits. </li>
+  <li>Network capacity (LAN / WAN) </li>
+  </font>
+</ul>
+
+<h4>TS03&nbsp;&nbsp;&nbsp;&nbsp; Recovery Testing</h4>
+<font size="2">
+
+<p>Apply recovery testing to enable the system to restart processing after losing system
+integrity. This is essential for systems in which the continuity of operation is critical
+to end users. Recovery processing normally involves the ability to go back to the last
+checkpoint, then reprocess up to the point of failure. The success of the recovery depends
+heavily on complete backup data and checkpointing. Any data integrity or unresolved
+exposures that lead to inconsistent data or code after you have implemented appropriate
+Year2000 solutions will affect the completeness of backup data. On the other hand,
+checkpointing is very time oriented and sensitive. Any mis-handling of the time-related
+data might invalidate system checkpointing. The recovery testing is thus critical in a
+Year2000 testing environment. It can also involve manual functions (such as hardware or
+operating system failure), loss of data base integrity, operator error, or loss of input
+capability. Recovery testing should include all aspects of the recovery processing. </p>
+</font>
+
+<h4>TS04&nbsp;&nbsp;&nbsp; Disaster testing </h4>
+
+<p><font size="2">validates alternate processing in case of a system failure. Useful in
+testing redundant systems and programming as well as disaster recovery routines.</font></p>
+
+<hr>
+
+<h4>TF01&nbsp;&nbsp;&nbsp; Requirements Testing</h4>
+<font size="2">
+
+<p>Apply requirements testing to verify that the system performs its function correctly
+and that it remains functional over a continuous period of time. Functional checklists
+such as user requirements, design specifications, compliance of organization's polices and
+procedures are used to create test cases to enable these requirements to be satisfied
+following your Year2000 transition. Note that if the Year2000 solutions are merely
+restructuring code and reformatting data without major redesign of the applications or
+systems, most requirements testing can be covered by another method, regression testing. </p>
+</font>
+
+<h4>TF02&nbsp;&nbsp;&nbsp; Regression Testing</h4>
+
+<p>Apply regression testing to confirm that all aspects of a system remain functionally
+correct after changes have been made to a program in the system. Because the potential
+exists for a tremendous amount of data and programs to be involved in your Year2000
+transition, any change to an existing program in the system can have a snowballing or
+cascading effect on other areas in the system. A change that introduces new data or
+parameters, or an incorrectly implemented change can cause a problem in previously tested
+parts of the system, simply because of the way data can be shared between software
+entities. </p>
+
+<p>Regardless of how an error was introduced or propagated, regression testing needs to be
+conducted to retest even unchanged parts or programs of the system. Normally, tests that
+have been previously run are reused to verify that the same results are achieved. In most
+cases, regression testing is automated because the test cases and the results are already
+known. </p>
+
+<h4>TF03&nbsp;&nbsp;&nbsp; Error Handling Testing</h4>
+
+<p>A normal error-handling cycle is an iterative process that either prevents errors from
+occurring, or recognizes and corrects errors that have occurred. Error-handling testing is
+necessary to determine the ability of the system to properly process incorrect
+transactions that can be reasonably expected as types of error conditions. For example,
+programs that accept only 4-digit-year-data-entry format need to provide error messages
+for data entry in 2-digit-year format, and vice versa for programs that accept only
+2-digit-year-data-entry format. When changing from 2-digit-year format to 4-digit-year
+format, you need to apply error-handling testing to verify the appropriate error-handling
+functions. </p>
+
+<h4>TF04&nbsp;&nbsp;&nbsp; Manual Support Testing</h4>
+
+<p>Apply manual support testing to evaluate the adequacy of the processes used by people
+(end users) who must handle the new data generated from the automated applications with
+Year2000 support. Types of data from these applications include data entry and report
+generation. Any new data format should be easy to understand and not ambiguous. This
+method includes testing the interfaces (for example screens, procedures, operation
+manuals, and online HELP panels) between end users and the application program. End users
+should be trained and use procedures provided by the system personnel. Testing should be
+conducted without any other assistance. </p>
+
+<h4>TF05 Parallel Testing</h4>
+
+<p>Parallel testing is used to determine whether the processing and results of a new
+version of an application are consistent with the processing and results of the previous
+version of the application. It should be applied when the old and new versions of the
+application are similar. For Year2000 solutions without any major function redesign, this
+is the ideal technique. Parallel testing requires that the same input data be run through
+the two versions of the application. However, if the new application changes data formats,
+such as reformatting the year-date notation to 4-digit format, you must modify test input
+data before testing. </p>
+
+<p>The efficiency and effectiveness of parallel processing is highly dependent on the
+degree of difficulty encountered in verifying output results and preparing common input.
+It may be difficult to automatically verify the results of processing by comparing the
+results on a tape or disk file. Some automated test tools or customized solutions can be
+used to prepare input and verify output more quickly. </p>
+
+<h4>TF06&nbsp;&nbsp;&nbsp; Usability testing</h4>
+
+<p>validates that the system&#146;s functions, reports and forms integrate with the
+business processes.</p>
+
+<h4>TF07&nbsp;&nbsp;&nbsp; Pilot testing </h4>
+
+<p>validates production operating environment for a limited number of users, before
+full-scale implementation. Useful for testing new applications and procedures.</p>
+
+<h4>TF08&nbsp;&nbsp;&nbsp; Conversion testing</h4>
+
+<p>validates that the conversion programs operate correctly. Useful in identifying and
+resolving conversion issues before conversion programs operate on all applications.</p>
+
+<h4>TF09&nbsp;&nbsp;&nbsp; Acceptance testing</h4>
+
+<p>used to validate that the system functions properly in its operational environment,
+usually conducted by the end-user.</p>
+
+<h4>TF10&nbsp;&nbsp;&nbsp; Documentation testing</h4>
+
+<p>used to validate procedural documentation intended for end-users, system operational
+staff and system programming staff.</p>
+
+<hr>
+</body>
+</html>

@@ -1,0 +1,660 @@
+<html>
+
+<head>
+<title>Testing Tool Evaluation</title>
+</head>
+
+<body>
+
+<h1><a NAME="_Toc378752792"><font SIZE="3"><i>Year 2000 Testing Tool Evaluation</i></font></a></h1>
+<font SIZE="1">
+
+<p><b>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">Purpose</b></p>
+
+<p ALIGN="JUSTIFY">To determine the appropriate tools that will facilitate the testing
+process and improve productivity and efficiency. Testing tools range from the very simple
+(such as a database package (e.g.; Microsoft Access) to perform requirements traceability)
+to the very complex (such as code analyzers that determine all executable paths of a
+program). </p>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<p ALIGN="JUSTIFY">Regardless of the dynamics of the testing tasks, the proper application
+of testing tools can enhance the testers ability to satisfy the scope and objectives of
+the testing effort while improving the tester&#146;s efficiency by assisting in analytical
+and verification tasks.</p>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<p ALIGN="JUSTIFY">There is an abundance of testing tools that are available to the IS
+professional. Tools are available for every aspect of software testing process. They
+support:</p>
+
+<ul>
+  </font><font SIZE="3">
+  <li>the test planning process</li>
+  <li>the test case and scripts development process</li>
+  <li>the test execution process</li>
+  <li>the test validation process</font></li>
+</ul>
+
+<p><font SIZE="1"><b><i>&nbsp;</p>
+
+<p></i>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">Tool Classifications</b></p>
+
+<p ALIGN="JUSTIFY">The different types of testing tools are as follows:</p>
+
+<p><u>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">Capture/Playback Utilities</u>: used to record the initial execution of
+a test script and subsequently automatically re-execute the test script. Most of these
+tools come with comparison utilities which automates a portion of the validation process.</p>
+
+<p><u>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">Code Analysers</u>: used to determine code complexity and perform path
+analysis. These tools are very helpful in the development of individual test cases. Some
+of the more sophisticated tools can evaluate the test cases and scripts to determine which
+paths in a program have been tested and which have not been tested.</p>
+
+<p><u>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">Database Package</u>: used for performing requirements traceability and
+serving as a testing repository for storing business scenarios, test cases and test
+scripts. The Test Case Administration System which accompanies this document and is
+provided on diskette, is an example of a test case and test script development tool and
+repository developed in a database package (Microsoft Access). </p>
+
+<p><u>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">Debugging Tools</u>: used to assist the tester in the performance of
+problem resolution tasks. These tools are mainly used during unit and integration testing,
+but their use is not limited to these activities.</p>
+
+<p><u>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">File Comparison Utilities</u>: used to compare test result files and
+different versions of the same programs for the purposes of identifying deltas.</p>
+
+<p><u>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">Performance Monitors</u>: used to monitor system utilization and
+through-put, and to benchmark the performance of the system. These tools are most
+beneficial for fine-tuning the application and for identifying inefficient processes,
+database and network contentions and deadlock conditions.</p>
+
+<p><u>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">Test Case and Script Generators</u>: used to generate and maintain in
+an automated fashion test cases and scripts in a central repository. Many of these tools
+come with their own scripting language and require a considerable amount of hands-on
+experience to become proficient.</p>
+
+<p><u>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">Test Data Generators</u>: used to generate test transactions and test
+data to seed test databases.</p>
+
+<p><u>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">Transaction Processors</u>: used to simulate batch processing and
+network transaction processing. These tools are typically used to simulate multiple user
+sessions and terminals for the purpose of executing performance testing and determining
+application benchmarks.</p>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<p><b>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">The Evaluation Process</b></p>
+
+<p ALIGN="JUSTIFY">A methodical approach needs to be followed when performing the tool
+evaluation and selection process. Never determine the tool suite based upon intuition,
+past experiences (good or bad) of co-workers, or the promises of a tool vendor who is in
+marketing mode. A comprehensive evaluation and selection process usually takes between 3-4
+weeks and should be performed by the practitioner who will use the tools enough to warrant
+that they become proficient in its use, or is responsible for managing the staff that will
+be utilising the tools.</p>
+
+<p ALIGN="JUSTIFY">The testing tool evaluation and selection process can be broken down
+into the following tasks:</p>
+
+<ul>
+  </font><font SIZE="3">
+  <li>Obtain the operating system platform (MVS, UNIX, etc.) and the environment
+    specifications</li>
+  <li>Determine the programming language</li>
+  <li>Determine the types of testing to be performed (such as unit, system, regression,
+    performance, etc.)</li>
+  <li>Determine which organisational entity will be responsible for executing the tests and
+    their skill levels</li>
+  <li>Gather information on the tools (their advantages and disadvantages, software and
+    hardware requirements, training requirements, etc.)</li>
+  <li>Determine the tool budget</font></li>
+</ul>
+
+<p><font SIZE="1"><b><i>&nbsp;</p>
+
+<p ALIGN="JUSTIFY"></i>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">Critical Decisions</b></p>
+
+<p ALIGN="JUSTIFY">Many of the factors that go into the equation of selecting testing
+tools are constants and at times uncontrollable, such as hardware, operating system
+software, and the programming language.</p>
+
+<p ALIGN="JUSTIFY">The factors that are more consequential in nature and require
+thoughtful analysis include the types of testing to be performed and the skill level of
+the individuals that will execute the tests.</p>
+
+<p ALIGN="JUSTIFY">For example, the acquisition of debugging utilities would not be
+appropriate for an SAP implementation that requires extensive customisation for which only
+integration and system testing is planned. However, debugging utilities are a necessity
+for a custom system implementation which has extensive software development activities. </p>
+
+<p ALIGN="JUSTIFY">Be aware that some of the testing tools come with their on proprietary
+languages and require significant training to development the skills necessary to use the
+tools. This is most important when selecting testing tools. Determine the skill level
+required to use the tool and evaluate whether the tool is too complex to warrant its use
+and the additional training required. Given the tight schedule necessary for a Year 2000
+compliance project and the learning curve associated with new automated testing tools, the
+use of tools must be carefully weighed.</p>
+
+<p><b>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">Tool Information</b></p>
+
+<p ALIGN="JUSTIFY">Independent information on the capabilities of the tools is essential
+to the selection process. Because of the number of tools currently available and the
+frequency with which new tools are being introduced, industry trade journals are an
+excellent source of information on testing tools. In addition, research services such as <i><b>Datapro</b></i>
+are an excellent source of information.</p>
+
+<p ALIGN="JUSTIFY">Tool vendors are also a source of information. They are more than happy
+to provide you with marketing material and perform on-site demonstrations on the
+capabilities of their tools. </p>
+
+<p><b>&nbsp;</p>
+
+<p ALIGN="JUSTIFY">Take a Test Drive</b> </p>
+
+<p ALIGN="JUSTIFY">Many tool vendors will provide trial periods (typically 30 days) to use
+the tool in a hand-on setting for evaluation purposes. Because of the high cost of many of
+these tools it is recommended that you &quot;test drive&quot; the tool to devaluate
+it&#146;s complexity, usefulness, and its compatibility with the development and
+production environments. </font></p>
+
+<p>Testing, Code Analysis, Data Aging</p>
+
+<p><font size="+1"><b>Automated Testing Tools <br>
+</b></font>This section describes the need for the use of an automated testing tool for
+application year 2000 conversions. It also covers other testing tools that should aid in
+the year 2000 conversion effort. </p>
+
+<p><b>The need for automation</b><br>
+An additional concern in developing mission critical applications using the wide variety
+of newly available GUI front-end, object-based development tools is the thorough testing
+of the resulting applications. In a year 2000 conversion effort, the testing complexity
+gets compounded by the fact that documenting and baselining the functional behavior of a
+given application need to be performed prior to and after the conversion. Traditionally,
+there aren't many ways this can be performed. Essentially, it can be accomplished by using
+one or a combination of the following methods: </p>
+
+<p>&nbsp; 
+
+<ul>
+  <li>Have the developers run thorough tests, manually saving the results (before and after
+    images). The results are then reviewed by a team of end users and QA personnel. This is a
+    very people-intensive option and requires the developers to have a deep understanding of
+    the functional behavior of the application. </li>
+  <li>Put together a QA team to enter and evaluate all results. This is also a very
+    people-intensive option. </li>
+  <li>Develop test scripts using the development tools' macro or script writing capabilities.
+    This is an expensive programming effort and requires modifications by the developer every
+    time the application is changed. </li>
+  <li>Use an automated testing tool. If this is available for the used development platforms
+    and development tools (and often is), it represents the best alternative. Essentially, a
+    select group of representative users is gathered. They are then asked to perform their
+    normal business functions using the application. The users actions (key strokes, mouse
+    movements, mouse clicks, etc.) are captured by the automated testing tool, and are stored
+    as test scripts. This solution usually carries a heavy overhead, but it pays off by
+    offering repeatability, accuracy, and non-ambiguity of test scripts and their outcomes.</li>
+</ul>
+
+<p><br>
+</p>
+
+<p>Automated testing tools can generally automate tests for GUI-based and character-based
+applications on several platforms by simulating the input from a human user and recording
+results. Some of the tools have capabilities to:<br>
+
+<ul>
+  <li>Try every permutation that is possible in a feature set </li>
+  <li>Reproduce tests many times over </li>
+  <li>Test a program continuously and repeatedly over a period of time </li>
+</ul>
+
+<p>Using these options will allow the year 2000 conversion team to re-run test scripts for
+different dates and date ranges, and to compare the behaviors of a business function as
+dates change. Automated testing also serves as an excellent method for documenting the
+fact that the year 2000 conversion did not adversely affect or change the functional
+behavior of the converted application. </p>
+
+<p><b>Required features of automated testing tools </b>The following are lists of required
+and desired features that form the metrics by which automated testing tools are evaluated.
+These features are necessary for controlling the multi-platform and vendor software-based
+development environments that are common nowadays. </p>
+
+<p>&nbsp; 
+
+<ul>
+  <li><b>Multi-platform support</b>: The chosen automated testing tool needs to have the
+    capability to run and test applications on several platforms and their associated
+    operating systems. </li>
+  <li><b>Scripting language</b>: The automated testing tool of choice must have a high-level,
+    easy-to-use test scripting language. The language must also support fast and easy
+    modifications to existing test cases in the repository. </li>
+  <li><b>Object driven</b>: The tool of choice must be object driven as opposed to pixel
+    driven. This entails support for object-level recording and playback. This way, when
+    objects are modified and moved around on a screen, test scripts are still valid. This
+    includes such changes as window and object sizes and locations, object attributes, color
+    shades, presentation fonts, etc. </li>
+  <li><b>Integration with current development tools</b>: The tool of choice must provide test
+    drivers to work smoothly with the current development tools as well as those widely used
+    tools in the industry that can be adopted in the near future. </li>
+  <li><b>Unattended playback</b>: Regression testing is repetitive and, for the most part,
+    should be uneventful. Since the automated testing tool is used mostly for regression
+    testing, it must then provide a robust, flexible capability for unattended playback of
+    test scripts. Unattended playback introduces a few features that need to be addressed.
+    These are: <br>
+    <ul>
+      <li>Generation of detailed test log and audit trails </li>
+      <li>Trapping and automated recovery from crashes (e.g., GPFs, ABENDs)</li>
+    </ul>
+  </li>
+  <li><b>User Interface</b>: One of the necessary features of a successful automated testing
+    tool is user friendliness. In general, if a tool is not user friendly, only a few persons
+    will use it, and most will resist it. A good tool is a useful tool. It is generally futile
+    to have a tool that has all the &quot;bells and whistles,&quot; but only a few can figure
+    out how to use it! Moreover, since it is imperative that an automated testing tool be used
+    in year 2000 conversion, the application setup time (recording its test scripts for the
+    first time) must not become resource and time intensive. User friendliness features to
+    look for include:<br>
+    <ul>
+      <li>GUI based </li>
+      <li>Support for flexible record/playback features </li>
+      <li>Support for easy updates </li>
+      <li>Ad-hoc query capabilities regarding current test logs and results</li>
+    </ul>
+  </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>Listed below are a few products currently available: 
+
+<ul>
+  <li>QA Run, QA Playback, &amp; QA Hyperstation by Compuware<br>
+  </li>
+  <li>WinRunner &amp; XRunner by Mercury Interactive<br>
+  </li>
+  <li>Auto Tester by Auto Tester<br>
+  </li>
+  <li>QA Partner by Segue Software</li>
+</ul>
+
+<p><b>5.3 Other testing aiding tools </b>This subsection presents a list of tools that
+will inevitably aid in the testing process as well as in the preparation and maintenance
+of tests in general. </p>
+
+<p>&nbsp; 
+
+<ul>
+  <li><b>Test management tools</b>: There are several test management tools available that
+    provide support for a multitude of platforms and operating systems. A successful test
+    management tool allows for:<br>
+    <ul>
+      <li>Test plan development<br>
+      </li>
+      <li>Test case design<br>
+      </li>
+      <li>Test script creation<br>
+      </li>
+      <li>Test execution<br>
+      </li>
+      <li>Test result analysis<br>
+      </li>
+      <li>Bug tracking<br>
+      </li>
+      <li>Listed below are a few currently available products:<br>
+      </li>
+      <li>QA Director by Compuware<br>
+      </li>
+      <li>Test Director by Mercury Interactive<br>
+      </li>
+      <li>Pure Test Expert by Pure Atria<br>
+      </li>
+      <li>QA Organizer by Segue Software</li>
+    </ul>
+  </li>
+  <li><b>Defect tracking tools</b>: Most test management tools offer an integrated defect
+    tracking system. However, when this is not available and the only need is for a defect
+    tracking system, the following are options that can be further investigated:<br>
+    <ul>
+      <li>Pure DDTS by Pure Atria<br>
+      </li>
+      <li>CCC/Harvest by Platinum</li>
+    </ul>
+  </li>
+  <li><b>Data extractors</b>: Test data extractors help in the labor-intensive process of
+    preparing and manipulating data in a variety of file and database formats. With test data
+    extractors, the extraction of relational data becomes a routine while it maintains the
+    integrity of the complex relational constructs such as tables, keys, indexes, foreign
+    keys, referential integrity, triggers, etc. Note that for data extractors to work
+    properly, data integrity must be enforced at the declarative level (i.e., during data
+    definition using DDL scripts) as opposed to the procedural level (i.e., during data
+    manipulation using DML scripts in stored procedures and triggers). Possible products to
+    consider are:<br>
+    <ul>
+      <li>Extract by Evolutionary Technologies<br>
+      </li>
+      <li>File-Aid by Compuware</li>
+    </ul>
+  </li>
+  <li><b>Date and time simulation tools</b>: Date and time simulation tools allow testers to
+    change the date and time of their working environment without adversely affecting other
+    users or their operating environment. The benefits to a date and time simulation tool are:<br>
+    <ul>
+      <li>It eliminates (up to a certain point) risky resets of whole system clocks.<br>
+      </li>
+      <li>It allows tester flexibility to administer any test at any given time.<br>
+      </li>
+      <li>Possible products to consider are:<br>
+      </li>
+      <li>Hour Glass by Mainware<br>
+      </li>
+      <li>Xpeditor/Xchange by Compuware</li>
+    </ul>
+  </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><b><font size="2">TESTING TOOLS</font></b> </p>
+
+<p><font size="2">Test Data Generators </font></p>
+
+<p><font size="2">Test Data Generators automate some of the tedious task of generating
+test data based upon parameters identified by an analyst. Theses tools are also useful for
+adding/ updating date values that reflect future events. </font></p>
+
+<p><font size="2">On-Line Capture and Playback</font> </p>
+
+<p><font size="2">On-line capture and playback tools create reusable test scripts that are
+used in an online environment. Specific scripts are generated that guarantee predictable
+results when used as input for testing applications. These tools capture the data input to
+an on-line system and place the data in a test script. The playback portion of the tool
+directs the on-line screen inputs into the test application over and over again. </font></p>
+
+<p><font size="2">Test Coverage Analyzers</font> </p>
+
+<p><font size="2">Test coverage analyzers are used to perform comprehensive testing by
+determining how much code in an application has been tested. Dynamic analyzers report on
+the percentage of program logic that has been executed during a test by tracing execution
+paths based on predetermined test data. This tells the analyst whether or not the test
+cases should be expanded to improve coverage. Static analyzers examine source code paths
+and also tell the analyst where specific areas of logic should be covered by test data. </font></p>
+
+<p><font size="2">Virtual Data Utility</font> </p>
+
+<p><font size="2">Virtual data utilities intercept and reset the current date used by
+applications so the mainframe system dates don't have to be reset to perform date testing.
+These tools allow batch and online systems to be tested without affecting other
+applications on the same system. This is an alternative to an isolated, stand-alone test
+environment.</font> </p>
+
+<p><font size="2">Environment Simulators</font> </p>
+
+<p><font size="2">These tools enable unit testing to be conducted by simulating the
+environment on a work station. This is useful because an analyst can quickly set up and
+execute multiple preliminary tests to identify and correct problems prior to testing the
+applications in the mainframe environment.</font> </p>
+
+<p><font size="2">Execution Simulators and Debuggers</font> </p>
+
+<p><font size="2">Execution simulators step through source code and don't actually execute
+the program to follow control flow. Since they don't execute the program, they don't
+require data. The user is queried at each decision point and must enter information for
+execution to continue. This is a quick verification of program changes. Debuggers actually
+use test data to monitor the program's execution and allow the programmer/analyst to set
+breakpoints to examine the data. Both tools are available in mainframe and PC versions.</font>
+</p>
+
+<p><font size="2">Comparison Facility</font> </p>
+
+<p><font size="2">These tools enable the analyst to compare results from a system prior to
+year 2000 modifications to the updated year 2000 compliant system to be sure they are
+identical.</font> </p>
+
+<h2>Code Analysis Tools</h2>
+
+<h3>General Consideration</h3>
+
+<p>Who has the time or money to play &quot;Find and Fix&quot; games. I am of the belief<br>
+you must find the date fields in order to fix them. Most of the vendor<br>
+renovation tools do not claim to find more that 95% of the date fields in<br>
+Cobol programs. Don't even ask about Assembler. It's the 5% that bothers<br>
+me. If you are lucky, you will find 5%of the missing date fields one at a<br>
+time during system intergration testing sometime in 1999. Even if you use<br>
+two products, the second product might only find 1 or 2% more date field or<br>
+maybe none. These tools typically use search files that contain synonym<br>
+date names, which your programs may or may not contain. You must remember,<br>
+there are no ANSI standards for the set of names in these search files like<br>
+Cobol or SQL. My approach is to access the physical data files with a<br>
+robust tool like the Gladstone Date Package which finds the dates in the<br>
+data and creates the search file. I think finding 99.?% of the date fields<br>
+is achievable. So you don't have use multiple tools for analysis and you<br>
+eliminate most of the false positives. From a date auditing and legal point<br>
+of view, the &quot; Data Centric approach&quot; is the only way to go. And it's<br>
+inexpensive to implement. Our company can provide date auditing services.<br>
+</p>
+
+<p><font size="+1"><b>Automated Testing Tools <br>
+</b></font>This section describes the need for the use of an automated testing tool for
+application year 2000 conversions. It also covers other testing tools that should aid in
+the year 2000 conversion effort. </p>
+
+<p><b>The need for automation</b><br>
+An additional concern in developing mission critical applications using the wide variety
+of newly available GUI front-end, object-based development tools is the thorough testing
+of the resulting applications. In a year 2000 conversion effort, the testing complexity
+gets compounded by the fact that documenting and baselining the functional behavior of a
+given application need to be performed prior to and after the conversion. Traditionally,
+there aren't many ways this can be performed. Essentially, it can be accomplished by using
+one or a combination of the following methods: </p>
+
+<p>&nbsp; 
+
+<ul>
+  <li>Have the developers run thorough tests, manually saving the results (before and after
+    images). The results are then reviewed by a team of end users and QA personnel. This is a
+    very people-intensive option and requires the developers to have a deep understanding of
+    the functional behavior of the application. </li>
+  <li>Put together a QA team to enter and evaluate all results. This is also a very
+    people-intensive option. </li>
+  <li>Develop test scripts using the development tools' macro or script writing capabilities.
+    This is an expensive programming effort and requires modifications by the developer every
+    time the application is changed. </li>
+  <li>Use an automated testing tool. If this is available for the used development platforms
+    and development tools (and often is), it represents the best alternative. Essentially, a
+    select group of representative users is gathered. They are then asked to perform their
+    normal business functions using the application. The users actions (key strokes, mouse
+    movements, mouse clicks, etc.) are captured by the automated testing tool, and are stored
+    as test scripts. This solution usually carries a heavy overhead, but it pays off by
+    offering repeatability, accuracy, and non-ambiguity of test scripts and their outcomes.</li>
+</ul>
+
+<p><br>
+</p>
+
+<p>Automated testing tools can generally automate tests for GUI-based and character-based
+applications on several platforms by simulating the input from a human user and recording
+results. Some of the tools have capabilities to:<br>
+
+<ul>
+  <li>Try every permutation that is possible in a feature set </li>
+  <li>Reproduce tests many times over </li>
+  <li>Test a program continuously and repeatedly over a period of time </li>
+</ul>
+
+<p>Using these options will allow the year 2000 conversion team to re-run test scripts for
+different dates and date ranges, and to compare the behaviors of a business function as
+dates change. Automated testing also serves as an excellent method for documenting the
+fact that the year 2000 conversion did not adversely affect or change the functional
+behavior of the converted application. </p>
+
+<p><b>Required features of automated testing tools </b>The following are lists of required
+and desired features that form the metrics by which automated testing tools are evaluated.
+These features are necessary for controlling the multi-platform and vendor software-based
+development environments that are common nowadays. </p>
+
+<p>&nbsp; 
+
+<ul>
+  <li><b>Multi-platform support</b>: The chosen automated testing tool needs to have the
+    capability to run and test applications on several platforms and their associated
+    operating systems. </li>
+  <li><b>Scripting language</b>: The automated testing tool of choice must have a high-level,
+    easy-to-use test scripting language. The language must also support fast and easy
+    modifications to existing test cases in the repository. </li>
+  <li><b>Object driven</b>: The tool of choice must be object driven as opposed to pixel
+    driven. This entails support for object-level recording and playback. This way, when
+    objects are modified and moved around on a screen, test scripts are still valid. This
+    includes such changes as window and object sizes and locations, object attributes, color
+    shades, presentation fonts, etc. </li>
+  <li><b>Integration with current development tools</b>: The tool of choice must provide test
+    drivers to work smoothly with the current development tools as well as those widely used
+    tools in the industry that can be adopted in the near future. </li>
+  <li><b>Unattended playback</b>: Regression testing is repetitive and, for the most part,
+    should be uneventful. Since the automated testing tool is used mostly for regression
+    testing, it must then provide a robust, flexible capability for unattended playback of
+    test scripts. Unattended playback introduces a few features that need to be addressed.
+    These are: <br>
+    <ul>
+      <li>Generation of detailed test log and audit trails </li>
+      <li>Trapping and automated recovery from crashes (e.g., GPFs, ABENDs)</li>
+    </ul>
+  </li>
+  <li><b>User Interface</b>: One of the necessary features of a successful automated testing
+    tool is user friendliness. In general, if a tool is not user friendly, only a few persons
+    will use it, and most will resist it. A good tool is a useful tool. It is generally futile
+    to have a tool that has all the &quot;bells and whistles,&quot; but only a few can figure
+    out how to use it! Moreover, since it is imperative that an automated testing tool be used
+    in year 2000 conversion, the application setup time (recording its test scripts for the
+    first time) must not become resource and time intensive. User friendliness features to
+    look for include:<br>
+    <ul>
+      <li>GUI based </li>
+      <li>Support for flexible record/playback features </li>
+      <li>Support for easy updates </li>
+      <li>Ad-hoc query capabilities regarding current test logs and results</li>
+    </ul>
+  </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<p>Listed below are a few products currently available: 
+
+<ul>
+  <li>QA Run, QA Playback, &amp; QA Hyperstation by Compuware<br>
+  </li>
+  <li>WinRunner &amp; XRunner by Mercury Interactive<br>
+  </li>
+  <li>Auto Tester by Auto Tester<br>
+  </li>
+  <li>QA Partner by Segue Software</li>
+</ul>
+
+<p><b>5.3 Other testing aiding tools </b>This subsection presents a list of tools that
+will inevitably aid in the testing process as well as in the preparation and maintenance
+of tests in general. </p>
+
+<p>&nbsp; 
+
+<ul>
+  <li><b>Test management tools</b>: There are several test management tools available that
+    provide support for a multitude of platforms and operating systems. A successful test
+    management tool allows for:<br>
+    <ul>
+      <li>Test plan development<br>
+      </li>
+      <li>Test case design<br>
+      </li>
+      <li>Test script creation<br>
+      </li>
+      <li>Test execution<br>
+      </li>
+      <li>Test result analysis<br>
+      </li>
+      <li>Bug tracking<br>
+      </li>
+      <li>Listed below are a few currently available products:<br>
+      </li>
+      <li>QA Director by Compuware<br>
+      </li>
+      <li>Test Director by Mercury Interactive<br>
+      </li>
+      <li>Pure Test Expert by Pure Atria<br>
+      </li>
+      <li>QA Organizer by Segue Software</li>
+    </ul>
+  </li>
+  <li><b>Defect tracking tools</b>: Most test management tools offer an integrated defect
+    tracking system. However, when this is not available and the only need is for a defect
+    tracking system, the following are options that can be further investigated:<br>
+    <ul>
+      <li>Pure DDTS by Pure Atria<br>
+      </li>
+      <li>CCC/Harvest by Platinum</li>
+    </ul>
+  </li>
+  <li><b>Data extractors</b>: Test data extractors help in the labor-intensive process of
+    preparing and manipulating data in a variety of file and database formats. With test data
+    extractors, the extraction of relational data becomes a routine while it maintains the
+    integrity of the complex relational constructs such as tables, keys, indexes, foreign
+    keys, referential integrity, triggers, etc. Note that for data extractors to work
+    properly, data integrity must be enforced at the declarative level (i.e., during data
+    definition using DDL scripts) as opposed to the procedural level (i.e., during data
+    manipulation using DML scripts in stored procedures and triggers). Possible products to
+    consider are:<br>
+    <ul>
+      <li>Extract by Evolutionary Technologies<br>
+      </li>
+      <li>File-Aid by Compuware</li>
+    </ul>
+  </li>
+  <li><b>Date and time simulation tools</b>: Date and time simulation tools allow testers to
+    change the date and time of their working environment without adversely affecting other
+    users or their operating environment. The benefits to a date and time simulation tool are:<br>
+    <ul>
+      <li>It eliminates (up to a certain point) risky resets of whole system clocks.<br>
+      </li>
+      <li>It allows tester flexibility to administer any test at any given time.<br>
+      </li>
+      <li>Possible products to consider are:<br>
+      </li>
+      <li>Hour Glass by Mainware<br>
+      </li>
+      <li>Xpeditor/Xchange by Compuware</li>
+    </ul>
+  </li>
+</ul>
+</body>
+</html>

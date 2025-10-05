@@ -1,0 +1,9 @@
+# ChainLink (LINK)
+
+Chainlink ist der führende Anbieter von [Oracle Networks](../../GLOSSAR/O/Oracle.md) für die Tokenisierung von Real World Assets [RWAs](../../GLOSSAR/R/RWA.md) wie z.B. Immobilien, Aktien, Cryptos, NFTs, FIAT Geld, Schuldscheinen, Auszeichnungen, etc. 
+
+With the potential for hundreds of trillions of dollars worth of assets to move onchain, blockchain technology is transforming financial markets, global trade, insurance, gaming, and many other industries. Together, blockchains, smart contracts, and **oracles underpin the verifiable web**, where users can understand exactly what’s going on within an application and remain in control of their assets at all times. 
+
+Oracles play a foundational role in the creation of the verifiable web, connecting blockchains that would otherwise be isolated to offchain data and compute, and enabling interoperability between blockchains. Initially, the Chainlink oracle network enabled the creation of the DeFi space and then grew to become the industry standard oracle solution for all of Web3. To date, Chainlink has enabled over $9T in transaction value. Now, Chainlink is collaborating with some of the world’s largest financial institutions, including Swift, the global messaging network for 11K+ banks, DTCC, the world’s largest securities settlement system processing $2+ quadrillion annually, and Australia and New Zealand Banking Group Limited (ANZ), a leading institution bank with $1T+ in AUM. 
+
+With an entire suite of services that enable developers to build advanced, secure, cross-chain, and verifiable applications, the Chainlink platform is set to help scale blockchain technology to billions of users.

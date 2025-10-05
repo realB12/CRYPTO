@@ -1,0 +1,310 @@
+<html>
+
+<head>
+<title>General testing procedures</title>
+</head>
+
+<body>
+
+<p align="center"><font SIZE="2"><img SRC="images/y2klogo1.gif" WIDTH="67" HEIGHT="65"> <img
+SRC="images/y2klogo2.gif" WIDTH="69" HEIGHT="57"> Guidelines</font></p>
+
+<p align="center"><font color="#004080" size="7"><strong>General Testing Procedures</strong></font></p>
+
+<p align="center"><font size="1">(KUONI Y2K Certification Methodology&nbsp; / bucSD077.htm
+/ buc / 1998-01-26 / Version 1.0)</font><br>
+<font face="Arial" size="1">(ogigianl source bucSD055.doc)</font></p>
+
+<p align="center"><img src="images/menuproc.gif" width="30" height="18"
+alt="menuproc.gif (339 bytes)"><small><small>&nbsp;&nbsp;&nbsp;&nbsp; <a
+href="bucSD072.htm">Assessment</a> (72), <a href="bucSD075.htm">Planning</a> (75),
+Conversion , <a href="bucsd083.htm">Local Verification</a> (83), <a href="bucSD089.htm">Global
+Verification</a> (89), QA</small></small><font size="1"><br>
+</font></p>
+
+<p>&nbsp;</p>
+
+<h1><font FACE="Arial" SIZE="4"><b>Purpose of the Document</b></font></h1>
+
+<p>This document is used alongside the Assessment and Validation Testing. It supports the
+Test Planning Phase but it is not essential to it. It assumes that all conversion work is
+done already.</p>
+
+<p>Pre-Test, Post-Test, Documentation, Reporting and some test imperatives are explained
+here in detail.</p>
+
+<h1><font FACE="Arial" SIZE="4"><b>General <a NAME="_Toc395664212">Test</a><a
+NAME="_Toc397484917"> </a><a NAME="_Toc399080667">Procedures</a></b></font></h1>
+
+<p>This section describes several actions to consider before, during, and after testing.
+These general guidelines apply to all testing. Modify the test parameters as necessary for
+the specific system under test. Be sure to record the set up for the test. It is best to
+conduct testing on a non-production system, but this is not always possible. When using
+production systems make sure that adequate backup procedures are followed prior to testing
+and the backup media is readily available for reinstallation. If the time window for
+conducting the test is limited, include an amount of time for reinstalling the system when
+determining the total required time for testing.</p>
+
+<p align="center"><font color="#FF0000"><big><big>! WARNING !</big></big></font></p>
+
+<p align="center"><font color="#FF0000"><big><big>Testing may <a
+href="bucSD071.htm#WARNING">Crash</a> your system !</big></big></font></p>
+
+<p align="center"><img src="images/notebomb.gif" alt="notebomb.gif (8627 bytes)"
+width="234" height="60"></p>
+<font FACE="Arial" SIZE="4"><b>
+
+<p></b></font>&nbsp;</p>
+
+<h5>Test Interactions Among Applications </h5>
+
+<p><font size="2">Existing systems are usually part of a complex environment of
+interfacing applications to accomplish agency missions. To adequately test a renovated
+system all relevant interfaces must be identified and tested to determine that the proper
+parameters and data are correctly passed among applications. Often interfacing systems are
+also being changed, probably on different schedules. This means that testing must be
+synchronized among interrelating systems. This will require large test environments that
+can accommodate a variety of applications and technologies. </font></p>
+
+<h2><font FACE="Arial" SIZE="4"><b><a NAME="_Toc399080668">Pre-Test</a> </b></font></h2>
+
+<p>Prior to conducting tests: 
+
+<ul>
+  <li>Locate and validate the system backups, or create new backups</li>
+  <li>Document the CMOS or Configuration parameters before testing</li>
+  <li>Verify the inventory of the system for correctness and completeness</li>
+  <li>Diagram control system architecture where appropriate</li>
+  <li>Identify all date inputs, outputs, displays, internal clocks</li>
+  <li>Dry cycle the equipment to insure correct operation prior to the tests</li>
+  <li>Reboot the equipment and note any abnormalities prior to the tests</li>
+  <li>Modify the test parameters as necessary for the specific system under test, be sure to
+    record the set up for the test</li>
+  <li>Disconnect the computer or computer based equipment from any network or other system
+    that might reset the date as it boots or connects</li>
+  <li>Age data for tests which involve history and reporting</li>
+  <li>Reuse available test data sets</li>
+</ul>
+<font FACE="Arial" SIZE="4"><b>
+
+<h2><a NAME="_Toc399080669">Testing</a></b></font></h2>
+
+<p>For each unit selected for testing: 
+
+<ul>
+  <li>Use the guidelines provided to select the appropriate tests based on the nature of the
+    itmes and your knowledge of the system </li>
+  <li>Document the sequence of test procedures for repeatability</li>
+  <li>Be prepared for unexpected results with someone at the ready on the system
+    Emergency-stop</li>
+  <li>Understand the function of communications with remote systems with time stamp
+    information</li>
+  <li>Understand how retained information is manipulated by the system based on dates. Make
+    sure the data can be restored if necessary after testing</li>
+  <li>Reconnect networks as required by particular tests</li>
+</ul>
+<font FACE="Arial" SIZE="4"><b>
+
+<h2><a NAME="_Toc399080670">Post-Test</a></b></font></h2>
+
+<p>After the tests are completed: 
+
+<ul>
+  <li>If the test fails, save the setup data for working with the supplier for resolution of
+    the errors</li>
+  <li>Return clocks to the correct time</li>
+  <li>Reconnect any network or system</li>
+  <li>Remove any test files and restore the system to pre-test conditions</li>
+  <li>Reboot the equipment and observe correct operation</li>
+  <li>Dry cycle the equipment and observe correct operation</li>
+  <li>Be prepared to support production startup following any tests </li>
+</ul>
+
+<p>Ensure that detailed test results are available for review and audit</p>
+
+<h1>Documentation</h1>
+
+<p>It is a must to prove testing by accurate documentation to cover the following needs 
+
+<ul>
+  <li>Project Planning, Monitoring and supervising progress </li>
+  <li>Provide synergy for repeated testing </li>
+  <li>Baseline to prove &quot;claimed compliancy by deduction&quot;</li>
+  <li>legal issues</li>
+  <li>support and prove compliance statments given to our business partners, press and share
+    holders</li>
+</ul>
+
+<h3 ALIGN="JUSTIFY"><a NAME="_Toc398704234">Test Reporting</a></h3>
+
+<p ALIGN="JUSTIFY">A level of test reporting is required in YEAR 2000 tests which will:</p>
+
+<ul>
+  <li>give a sufficient level of management control,</li>
+  <li>allow internal and external bodies to audit the tests as proof that testing has been
+    carried out. </li>
+</ul>
+
+<p ALIGN="JUSTIFY">Documents that support test reporting include test logs and incident
+reports, and should be filled in appropriate to the level of testing carried out and in
+line with practices in the local business unit. A typical specification for these
+documents is shown below: </p>
+<a NAME="_Toc398704235">
+
+<h3 ALIGN="JUSTIFY">Test Logs</a></h3>
+
+<p ALIGN="JUSTIFY">The test log records all the results and outputs from the actual test
+execution. Normally entered on a standard form the tester will fill in the relevant boxes
+resulting from the tests. A typical test log will contain:</p>
+
+<ul>
+  <li>the test number (referring to the relevant test specification number),</li>
+  <li>pass/fail indicator,</li>
+  <li>comments.</li>
+</ul>
+
+<p ALIGN="JUSTIFY"><a NAME="_Toc397504818"></a><a NAME="_Toc398701635"></a><a
+NAME="_Toc398704236">Incident Report</a>s<a NAME="_Toc398704236"></p>
+</a>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<p ALIGN="JUSTIFY">The purpose of the incident report is to formally document any events
+during the tests that require further investigation. This will include any test failures.
+All test incident reports will be held on a test incident log or repository. This will
+normally be in the form of a spreadsheet/database or paper file, where incident reports
+can be viewed if they are still opened or closed. A typical incident report form
+(electronic or paper based) will contain:</p>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<ul>
+  <li>Incident Report Number;</li>
+  <li>Incident Report Title - Brief Title;</li>
+  <li>Status of Incident Report - Open, Deferred or Closed;</li>
+  <li>Date of Incident and Name of Person ;</li>
+  <li>Observation Description - instructions on how to repeat the incident; </li>
+  <li>Version - HarDware and software versions. Any test tools used should also be noted;</li>
+  <li>Severity - How urgent is incident (Show stopper, functional defect, minor defect or
+    cosmetic);</li>
+  <li>Person Assigned to Investigate - Who is responsible to determine whether it is a valid
+    fault;</li>
+  <li>Investigation Results - Authoritative opinion to determine whether the incident warrants
+    a further action such as fixing. This should be fully backed up with the reasons to
+    arriving at the conclusion;</li>
+  <li>Action Implementation Comments - Filled in by the actionee;</li>
+  <li>Retest Required - Y/N;</li>
+  <li>Date Closed;</li>
+  <li>Signatures To Authorise Sign-Off.</li>
+  <li>&nbsp;</li>
+</ul>
+
+<h3 ALIGN="JUSTIFY">Tests data</h3>
+
+<p ALIGN="JUSTIFY">Tests data should be kept when pratical as evidence that testing work
+has been carried out and as a mean to trace problems in case of Year 2000 failure.</p>
+
+<p ALIGN="JUSTIFY"><a NAME="_Toc397504808"></a><a NAME="_Toc398543215"></a><a
+NAME="_Toc401471329"></p>
+</a>
+
+<p ALIGN="JUSTIFY">&nbsp;</p>
+
+<p><font FACE="Arial" SIZE="4"><b>&nbsp;</p>
+
+<p align="center"><font color="#FF0000"><big><big>! WARNING !</big></big></font></p>
+
+<p align="center"><font color="#FF0000"><big><big>Testing may <a
+href="bucSD071.htm#WARNING">Crash</a> your system !</big></big></font></p>
+
+<p align="center"><img src="images/notebomb.gif" alt="notebomb.gif (8627 bytes)"
+width="234" height="60"></p>
+</b></font>
+
+<p>Several test scenarios have been developed as a result of problems identified with the
+year 2000. This limited set of tests cannot prove a Component/System to be Year 2000
+compliant, but using them will help identify several frequently observed problems. These
+test procedures are written as general instructions. Specific knowledge of the systems or
+components under test is required in addition to apply these test cases. </p>
+
+<p>A brief description of each test is provided for guidance in conducting tests on custom
+control systems and other systems with unknown status.</p>
+
+<p>The following test procedures provide step by step instructions for performing each
+test. The results should be recorded step by step as the test is performed to insure
+accurate records of the test are documented on the &quot;Year 2000 Test Report&quot; form.
+The test results should be retained locally for future reference and a copy returned to
+the Year 2000 programme office for sharing with other organisations..</p>
+
+<p><font SIZE="6">&nbsp;</p>
+</font>
+
+<h2><u>Testing Imperatives:</u> </h2>
+
+<p>Before beginning the testing process, it is necessary to recognize some of the potholes
+and land-mines that might be encountered along the way. . 
+
+<ul>
+  <li>Don't think that testing for the Year 2000 can be done as a byproduct of normal
+    programming maintenance. </li>
+  <li>Don't underestimate the system resources that testing will require. </li>
+  <li>Don't assume that production will be shut down to permit testing. </li>
+  <li>Don't assume that &quot;running production&quot; is a cost effective way to test
+    applications. </li>
+  <li>Do a thorough inventory of what has to be tested. Your survey should address your JCL
+    and Copy Book Libraries. Include the source programs for all the languages you use. Are
+    you a 100% COBOL shop? Don't be surprised to find legacy applications that are written in
+    Assembler, PLI, and C Source Code. These programs may be the ones with outdated, little,
+    or no source code that will have to be tested. Make certain to include your macro and
+    subroutine libraries, REXX procs, CLIST and ISPF dialogs and sort parameters. </li>
+  <li>Don't overlook: IMS DBDLIBs and DB2 CREATE's, data files and databases, as well as
+    archived and active data. </li>
+  <li>Include testing for your 3GL and 4GL Languages, distributed, &amp; PC applications,
+    screen images, reports and data entry processes. </li>
+  <li>Do not overlook the need to test public domain and shareware libraries your company
+    uses. </li>
+  <li>Do include provisions for testing the data feeds which come to you from sources outside
+    your enterprise, particularly if the data is processed by your applications. </li>
+  <li>Do include performance measurements as a work product of system and production testing. </li>
+  <li>Do regression test your applications with the &quot;manufacturer's&quot; Year 2000
+    compliant operating systems, compilers, and utilities. </li>
+  <li>Do test to confirm that your ISV vendor's software is Year 2000 compliant and that your
+    applications will work with them. </li>
+  <li>Do make provisions for evaluating test tools and training the staff in their use. </li>
+  <li>Do pilot test your migration process, including the use of your test tools. </li>
+  <li>Do allocate resources to develop and perform the tests. </li>
+</ul>
+
+<p>&nbsp;</p>
+
+<h4>General</h4>
+
+<ul>
+  <li>Tests should be specified and recorded to ensure objectivity, consistency,
+    reproducibility and impartiality. </li>
+  <li>Test environments should be fully specified with details (version/serial numbers) of all
+    interoperating components and products (e.g. hardware platforms, operating systems,
+    networking hardware and software, test tools, compilers) </li>
+  <li>All tests should be specified in advance of any modification or development to the
+    software. </li>
+  <li>Tests should be derived from user or product requirements. </li>
+  <li>All tests specified should indicate expected results. </li>
+  <li>Tests should be specified and performed by suitably qualified personnel. </li>
+  <li>Wherever possible tests should not be performed by the author of the software. </li>
+  <li>Test records should be annotated with pass/fail against expected results and any
+    deviations or side effects fully documented. </li>
+  <li>Where deviations or faults have been identified during testing fault records/logs should
+    be kept and any subsequent changes and/or corrective actions fully documented. </li>
+  <li>All changes to the software should be managed and controlled. </li>
+  <li>It should be possible to demonstrate that the software under test has been derived from
+    a clearly defined set of source and data files. </li>
+  <li>Test data sets should be based on &#145;typical&#146; (and where possible actual) data
+    for the software in normal use. </li>
+  <li>All tests should be repeated for each possible date format supported by the product or
+    underlying platform or used in operation. </li>
+  <li>Tests need to be devised to ascertain whether the system handles year 2000 dates
+    correctly; these tests will usually be functional but may in addition need the support of
+    tests to see which parts of the date-handling code have been exercised. </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>Scope Management</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<h1><font size="2" face="Arial"><a href="#Scope Terminology">Scope Terminology</a> ¦ <a href="#Nature Codes">Test Categorys</a> ¦ <a href="#Definition of Detailed Inventory">Definition
+of Detailed Inventory</a> ¦ <a href="#Filling the Database">Filling the Database</a></font></h1>
+
+<h1>Scope Management</h1>
+
+<p>bucSD015.htm / buc Draft Version 1.4 / 1997-11-29</p>
+
+<p>&nbsp;</p>
+
+<p><font size="2" face="Arial">Project Scope Management includes the processes required to
+ensure that the Y2K programme includes all the work required, and only the work required,
+to complete the programme successfully. It is primarily concerned with defining and
+controlling what is or is not included in the Y2K programme and what is under the scope of
+a specific Sub-Group and what is left without subvising to the organisations. </font></p>
+
+<h2><font size="2" face="Arial">Overview </font></h2>
+
+<p><font size="2" face="Arial"><a href="#Initiation">Initiation</a>&#151;committing the
+organisation to begin the next phase of the programme.</font></p>
+
+<p><font size="2" face="Arial">Scope <a href="#Planning">Planning</a>&#151;developing a
+written scope statement as the basis for future programme decisions.</font></p>
+
+<p><font size="2" face="Arial">Scope <a href="#Definition">Definition</a>&#151;subdividing
+the major programme deliverables into smaller, more manageable components
+(projects,Units,Products and Items).</font></p>
+
+<p><font size="2" face="Arial">Scope <a href="#Verification">Verification</a>&#151;formalizing
+acceptance of the project scope.</font></p>
+
+<p><font size="2" face="Arial">Scope <a href="#Change_Control">Change Control</a>&#151;Controlling
+changes to project scope</font></p>
+
+<hr>
+
+<h2><a name="Scope Terminology"><font size="5" face="Arial">Scope Terminology</font></a></h2>
+
+<table border="1" cellpadding="2">
+  <tr>
+    <td valign="top"><font color="#0000FF" size="3" face="Arial"><strong>Project Scope<br>
+    (PJ)</strong></font></td>
+    <td valign="top"><font size="2" face="Arial">the work that must be done by a Sub-Group in
+    order to deliver compliance for assigned units.</font><p><font size="2">Code = </font><font color="#008000" size="3"><strong>PJ</strong>nnn</font><font size="2"> ( nnn= Project
+    number)</font></td>
+  </tr>
+  <tr>
+    <td valign="top"><font color="#0000FF" size="3" face="Arial"><strong>Unit<br>
+    (U)</strong></font></td>
+    <td valign="top"><font size="2">Sign Off or Testing Unit<br>
+    A bunch of items at a dedicated Organisation, forming a logical unit in addressing the
+    smallest division for which tests are reasonable and for which the ProgMan has to sign for
+    progressive compliance.</font><p><font size="2">So called &quot;Covered Units&quot; are
+    defined by the Organisation and/or PrOf with the goal to allocate identical units above
+    several organisations for providing synergies. <br>
+    For all remaining, so called &quot;Non Covered Units&quot; (which are not defined by the
+    PrOf) the OrgMan's is not supported to have them compliant.<br>
+    The OrgHead is responsible that all items within his organization are part of such well
+    defined units. </font></p>
+    <p><font size="2">Code = </font><strong><font color="#008000" size="3">U<em>oooooooooo</em>_uuu</font></strong><font size="2"> (<em>oooooooooo</em>=Organisation Code +<em> uuu</em> = Unit Code (where 001
+    -499 = covered, 500-999 = non covered ) ) </font></td>
+  </tr>
+  <tr>
+    <td valign="top"><font color="#0000FF" size="3" face="Arial"><strong>Atom<br>
+    (A)</strong></font></td>
+    <td valign="top"><font size="2">whereas an item must be understood as a <strong>Set</strong>
+    of all installaed products at a dedicated organisation, an atom is its installation on a
+    dedicated device<br>
+    example: MS Access 97 running on a specific PC.</font><p><font size="2">Atoms are beyond
+    the scope of the PrOf but within the scope of Sub-groups</font></td>
+  </tr>
+  <tr>
+    <td valign="top"><font color="#0000FF" size="3" face="Arial"><strong>Item<br>
+    (I)</strong></font></td>
+    <td valign="top"><font size="2">an item is everything which can be seen within a dedicated
+    <a href="#organisation">organisation</a>. Sometimes an item is related exactly to one well
+    defined <a href="#Product">Product</a>. Responisbility and control upon an item is up to
+    the organisation where it is located..</font><p><font size="2">Code = </font><font color="#008000" size="3"><strong>I</strong>oooooooooo_iiii</font><font size="2"> (
+    oooooooooo=OrganisationCode &amp; iiii = Item Code )</font></p>
+    <p><font size="2">For the 1st level classification of items see the &quot;Category&quot;
+    Attribute.<br>
+    The <a href="#Nature">Category</a> classificat of <a href="#Item">Item</a>s and <a href="#Product">Product</a>s are the same</font></td>
+  </tr>
+  <tr>
+    <td valign="top"><font color="#0000FF" size="3" face="Arial"><strong>Product<br>
+    (P)</strong></font></td>
+    <td valign="top"><font size="2">Is a product which can be defined precisely in terms of
+    scope and function.<br>
+    Responisbility for an item is a dedicates Sub-Group and is handled under the control of
+    the PrOf.</font><p><font size="2">The same product can be installed in various
+    Organisations. Such an installation is then called &quot;Item&quot;)</font></p>
+    <p><font size="2">For the 1st level classification of Products see the
+    &quot;Category&quot; Attribute<br>
+    The <a href="#Nature">Category</a> classification of <a href="#Item">Item</a> and <a href="#Product">Product</a> are the same</font></p>
+    <p><font size="2">Code = </font><font color="#008000" size="3"><strong>P</strong>pppppppppp</font><font size="2"> ...</font></td>
+  </tr>
+  <tr>
+    <td valign="top"><font color="#0000FF" size="3" face="Arial"><strong>Device</strong></font></td>
+    <td><font size="2">a device is a well defined, singular piece of equipement that can be
+    moved by hand:<br>
+    examples:&nbsp; Faxmachine at a dedicated location or organisation</font></td>
+  </tr>
+  <tr>
+    <td valign="top"><font color="#0000FF" size="3" face="Arial"><strong>Equipment</strong></font></td>
+    <td>Logical set of devices to serve a business process</td>
+  </tr>
+  <tr>
+    <td><font color="#0000FF" size="3" face="Arial"><strong>Chunking</strong></font></td>
+    <td><font size="2">The procedure for subdividing the major programme into smaller, more
+    manageable entities.</font></td>
+  </tr>
+  <tr>
+    <td><font color="#0000FF" size="3" face="Arial"><strong>Kernel</strong></font></td>
+    <td><font size="2">A Kernel is a work unit that consist of those programs and data stores
+    that will be changed simultaneously. </font><p><font size="2">Cirteria for composition of
+    a Kernel are:<br>
+    </font><ul>
+      <li><font size="2">Interaction of data between applications components</font></li>
+      <li><font size="2">Application component inventory &amp; relationships </font></li>
+      <li><font size="2">&#145;Intuitive&#146; information from application users and subject
+        matter experts </font></li>
+      <li><font size="2">Production schedules&quot;</font></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><font color="#0000FF" size="3" face="Arial"><strong>Progressive Compliance</strong></font></td>
+    <td><font size="2">Attribute the PrOfMan gives to a (sign off) <strong>unit</strong> of a
+    specific organisation when the the OrgMan has signed and has prooven that&nbsp; it is
+    compliant.</font></td>
+  </tr>
+  <tr>
+    <td><font color="#0000FF" size="3" face="Arial"><strong>Final Compliance</strong></font></td>
+    <td><font size="2">Attribute the ProgMan gives to an organisation when the the OrgHead has
+    signed that all the items within his organisation are compliant. Final Compliance required
+    Progressive Compliance of all units.</font></td>
+  </tr>
+  <tr>
+    <td><font color="#0000FF" size="3" face="Arial"><strong>System</strong></font></td>
+    <td><font size="2">Set of <a href="#System Software">System Software</a>,<a href="#Hardware">hardware</a>, <a href="#Tool">Tool</a>,<a href="#Application">Applications</a>,
+    <a href="#Vendor Package">Vendor Packages </a>tobuild the platform where the business
+    processes can be executed.</font></td>
+  </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>Figure 1: Overview Items of Scope Management (</p>
+
+<hr>
+
+<p>&nbsp;</p>
+</body>
+</html>

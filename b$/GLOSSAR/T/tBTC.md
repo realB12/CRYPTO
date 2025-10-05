@@ -1,0 +1,2 @@
+# Threshold Bitcoin (tBTC)
+tBTC, or Threshold Bitcoin, is a protocol that allows users to mint a tokenized version of Bitcoin (BTC) on the Ethereum blockchain. This token, called tBTC, is backed 1:1 by Bitcoin, meaning that 1 tBTC is always redeemable for 1 BTC
