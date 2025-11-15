@@ -79,9 +79,8 @@ Für diese Einfarbeitung habe ich dir ein paar Links auf Artikel, Vids und Büch
 Siehe dazu ->[Seed Verwaltung](../../PRIV/_KEY/Admin/PW/SeedVerwaltung.md)
 
 
-## 3. Relai Abo
+## 3. Relai Abo (done, but needs review and Training)
 Setup eins monatlichen [Relai](../../PRIV/_KEY/Assets/Services/R/Relai/_Relai.md) Einzahlabo über CHF 250.--. In diesem Zuge Update der Dokumente für [Credential Management](../../PRIV/_KEY/Admin/PW/_Credential-Management.md)(läuft) resp. die sichere [Verwaltung von von PROTON Alias eMailAdressen](../../PRIV/08_COLAB/eMail/_eMail-Konzept.md) und Passwörtern. Erstellen eins Dokuments zum Thema [Seed Verwaltung](../../PRIV/_KEY/Admin/PW/SeedVerwaltung.md) auf der Stufe PaperWallet und Verwendung der [Tangem-Karten].
-
 
 
 ## 4. Akutelles Binance Konto checken

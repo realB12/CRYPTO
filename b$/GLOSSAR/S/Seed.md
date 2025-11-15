@@ -1,4 +1,4 @@
-# Seed and Seed-Phrase
+# Seed and Seed-Phrase (Glossar)
 
 * [Private Key](../P/Private%20Key.md) // [Public Key](../P/Public%20Key.md)
 
