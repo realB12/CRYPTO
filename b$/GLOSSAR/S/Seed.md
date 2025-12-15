@@ -1,27 +1,43 @@
-# Seed and Seed-Phrase (Glossar)
+# Seed-Phrase im DETAIL mit Focus auf BITCOIN
+
+* [**CRYPTO-Verwaltung**](../../../../PRIV/_KEY/Assets/Crypto/_CryptoVerwaltung.md): SPE Doc zu meinen Crypto-Assets. 
+
+* [**Seed-Verwaltung**](../../../../PRIV/_KEY/Admin/PW/SeedVerwaltung.md)  
+
+* [Seedphrases im CRYPTO Glossar](Seed.md): mit einer abstrakten und kurzen Definition was Seedphrases sind und wofür sie eingesetzt werden ohne - wie hier - in die Details zu gehen.  
 
 * [Private Key](../P/Private%20Key.md) // [Public Key](../P/Public%20Key.md)
 
-* [Seed Verwaltung](../../../../PRIV/_KEY/Admin/PW/SeedVerwaltung.md)
-* [Risiken von Cryptobörsen](../../PROC/TRAIN/1_INTRO/Risiken%20von%20Cryptobörsen.md)
-* [SelfCustody](../../PROC/myBTC/_BTC%20SelfCustody.md)
-* [Wallets](../W/Wallet.md)
+* [Risiken von Cryptobörsen](../../PROC/TRAIN/1_INTRO/Risiken%20von%20Cryptobörsen.md)  
 
-> **not your keys not your coins**
+* [SelfCustody](../../PROC/myBTC/_BTC%20SelfCustody.md)  
+
+* [**Wallets**](../W/Wallet.md): mit den Unterschieden von pragmatischen [**Mini Wallets**](../../../GLOSSAR/M/MiniWallet.md) für den täglichen Gebaruch und [**Life Wallets**](../../../GLOSSAR/L/LifeWallet.md) für die langfristige Vermögensbildung. 
+
+> <p style="color:red; font-weight:bold; text-align:center; font-size:24px">not your keys not your coins</p>
+
 
 ## Intro
-Bei der SeedPhrase (kurz Seed) geht es um die 24 englischen Wörter zur Wiederherstellung des [Privaten Schlüssels](../P/Private%20Key.md) für den Zugriff auf ein [eigenes, selbst verwaltetes](../../PROC/myBTC/_BTC%20SelfCustody.md) BitCoin-"Konto".
+Bei der SeedPhrase (kurz Seed) in Kontext von Cryptowährungen geht es um die 12, 18 oder 24 englischen Wörter zur Wiederherstellung des [Privaten Schlüssels](../P/Private%20Key.md), resp. einer für dessen Vewaltung benötigten [Wallet](../../../GLOSSAR/W/Wallet.md) für den Zugriff auf ein [eigenes, selbst verwaltetes](../../PROC/myBTC/_BTC%20SelfCustody.md) Crypto-"Konto".
 
-<p style="color:olive; margin:20px">
-<small>Zum besseren Verständnis sei nochmals erwähnt, dass das "BitCoin-Konto" (technisch gesehen eine Menge von [UTXO](../U/UTXO.md)) transparent und auf ewig Teil DER BitCoin-Blockchain ist um deren Update man sich NICHT zu sorgen braucht, resp. geht es hier "ledigich" und immer um die <b>Sicherung der Schlüssel zum Konto und nicht um die Sicherung von Bitcons per se!</b> </small></p>
+<p style="color:olive; margin:20px"><small>
+Zum besseren Verständnis sei nochmals erwähnt, dass das "BitCoin-Konto", technisch gesehen, eine Menge von [UTXOs](../U/UTXO.md)) ist, welche transparent und auf ewig Teil DER dezentral selbstverwalteten, überaus sicheren BitCoin-Blockchain ist, um deren Erhalt, Wartung und Sicherheit man sich grundsätzlich bis anhin NIE zu sorgen brauchte, und zwar genau so wenig, wie man sich jemals Sorgen machte, dass die Hausbank abbrennen oder ausgeraubt werden könnte.
 
-Diese SeedPhrase umfasse i.d.R 24 englische Wörter die man in einer beliebigen Wallet auf einem beliebigen Gerät in der richtigen Reihenfolge eingeben muss, um mittels Walletsoftware wieder den PrivatenSchlüssel zu erstellen, welche die Wallet benötigt, um im Folgenden wieder auf das BitCoin-"Konto" zugreifen zu können. Dieser Private Schlüssel wird lokal in der WalletApp gespeichert. Er dient lediglich der lokal in der App ablaufenden Verschlüsselungen und Entschlüsselungen von Blockchaindaten, verlässt aber niemals die lokaleApp genauso wie es praktisch unmöglich ist, von aussen auf diesen lokal gespeicherten Schlüssel zugreifen zu können.   
+Denn, worum es hier eigentlich geht ist nicht das Konto und das "Geld" darauf, sondern es geht um die konkrete, hands-on Verwaltung und <b>Sicherung der privaten Zugangs-Schlüssel zu diesen CryptoKonten!</b></small></p>
 
+Auch ist die **SeedPhrase per se ist NICHT der Schlüssel zu diesem Konto**, sondern dient lediglich zur Wiederherstellung der für den Zugang zu diesem Schlüssel und dem damit verbundenen CryptoKonto erforderlichen [Wallet](../../../GLOSSAR/W/Wallet.md). 
 
+Die Seephrase **umfasst i.d.R 12, 18 oder 24 englische Wörter**, die man in einer beliebigen Wallet auf einem beliebigen Gerät in der richtigen Reihenfolge eingeben muss, um mittels Walletsoftware wieder AppIntern und von aussen i.d.R. nicht zugreifbar den PrivatenSchlüssel zu erstellen, welche die Wallet benötigt, um im Folgenden wieder auf das BitCoin-"Konto" zugreifen zu können. 
+
+Dieser Private Schlüssel wird lokal in der WalletApp (Als Hash verschlüsselt) gespeichert. Er dient lediglich der lokal in der Wallet-App ablaufenden Verschlüsselungen und Entschlüsselungen von Blockchaindaten und verlässt niemals die lokaleApp, genauso wie es praktisch unmöglich ist, von aussen auf diesen lokal verschlüsselt gespeicherten Schlüssel zuzugreifen. Dieser Private Schlüssel ist damit physich mit der auf diesem Gerät installierten WalletAppInstanz verbunden. 
+
+<span style="color:red; font-weight:bold">ACHTUNG</span>: Wird diese WalletApp vom Handy entfernt, ist auch der darin gespeichert Schlüssel weg. Und natürlich ist der dort gespeichert Schlüssel auch dann weg, wenn das ganze Handy gestohlen wird, resp. hat dann, sollte das Handy nicht entsprechend gesichert sein, ev. über dieses Handy jemand anders Zugriff.  
+
+Aus diesen Gründen ist es logisch, dass SeedPhrases IMMER OFFLINE und möglichst redundant an verschiedenen geografischen Orten physisch hinterlegt werden müssen: auf SpezialPapier oder Cold-/HardwareWallets. 
 
 ---
 
-<span style="color:red; font-weight:bold">ACHTUNG</span>: Hier geht es explizit **NICHT um die Passwörter für den Zugriff auf Online-Bitcoin-Börsen** (bei denen auch nicht um die Verwaltung eigener Bitcoins geht, sondern lediglich um das Verwalten eines virtuellen BitCoin-Kontos bei dem dir die Bank mittels Quittung (IOU = I Owe You) verpflichtet, dir jederzeit den aktuellen Gegenwert wieder in FIAT auszuzahlen. Wieviel von deinem Geld die Börse tatächlich in Bitcoin anlegt und ob überhaupt, bleibt allein ihr Geheimnis -> [Risiken von Cryptobörsen](../../PROC/TRAIN/1_INTRO/Risiken%20von%20Cryptobörsen.md)
+<span style="color:red; font-weight:bold">ACHTUNG</span>: Hier geht es explizit **NICHT um die Passwörter für den Zugriff auf Online-Bitcoin-Börsen** (bei denen es auch nicht um die Verwaltung eigener Bitcoins geht, sondern lediglich um das Verwalten eines virtuellen BitCoin-Kontos bei dem sich die Bank mittels Quittung (IOU = I Owe You) verpflichtet, dir jederzeit den aktuellen Gegenwert der Cryptowährung wieder in FIAT auszuzahlen. Wieviel von deinem Geld die Börse tatächlich in Bitcoin anlegt und ob überhaupt, bleibt allein ihr Geheimnis -> Sieh hierzug mein Artikel [Risiken von Cryptobörsen](../../PROC/TRAIN/1_INTRO/Risiken%20von%20Cryptobörsen.md)
 
 ---
 ## Sichere Aufbewahrung

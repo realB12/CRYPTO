@@ -1,3 +1,11 @@
 # Cold Storage
-Mit ColdStorage bezeichnet man physische Speicher mit denen man PrivateKeys Offline (also im Internet getrennt um Hackern keine Angriffsfläche zu bieten) speichert. 
-Dies kann ein PapierDokument (-> [Paper Wallet](../P/PaperWallet.md)), ein Flash-Drive, ein USB-Stick, oder eine Harddisk oder auch andere Formen annehmen, wie z.B. Metallplatten, auf denen die Keys als [Seed Phrase](../S/SeedPhrase.md) eingraviert sind.
+Mit **ColdStorage** bezeichnet man physische Speicher mit denen man **PrivateKeys Offline** (also im Internet getrennt um Hackern keine Angriffsfläche zu bieten) speichert. 
+
+Coldstorage kann alles Mögliche sein:
+* **PapierDokument** (-> [Paper Wallet](../P/PaperWallet.md)) - meist aus feuer- und wasserrestistentem Spezialpapier
+* Flash-Drive
+* USB-Stick
+* Harddisk
+* spezielle HardwareWallet
+* Metallplatten, auf denen die Seedphrases mittels Schablone und Spezialstift eingraviert werden.
+
