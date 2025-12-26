@@ -4,8 +4,8 @@
 
 ## Aktuelles Crypto Konto
 
-## Warum ein separates Crypto Konto
-Es empfielt sich aus verschiedenen Gründen bei einer Bank ein eigenes Krypto-Konto anzulegen: 
+## Warum ein separates Crypto Konto? 
+Es empfielt sich aus verschiedenen Gründen für Transaktionen auf und von Crypto-Konten bei einer Bank ein spezifisches Krypto-Kontokorrent-Konto anzulegen: 
 
 1. Bei der **Rückführung von Geldern** aus Cryptobörsen kann das Konto bis zum Nachweis der Herkunft dieser Gelder auch mal ein paar Wochen lang **blockiert werden**. Blöd wäre das, wenn es sich um da Kontokorrentkonto handeln würde. 
 

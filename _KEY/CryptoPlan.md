@@ -2,14 +2,12 @@
 
 **Konkreter und persönlicher Vorgehensplan um mit Cryptos Geld zu verdienen**, 
 
-* STAND = **November 2025**
-
 > Mit diesem **KONKRETEN VorgehensPlan**, skizziere ich   
 > 1. mein persönliches, "KONKRETES Einarbeiten ins Crypto-Thema
-> 2. die damit zu erreichenden **Ziele**
+> 2. die damit zu erreichenden Lern- und Finanz-**Ziele**
 > 3. Konkret zu verwendende Services (Relai, Swissborg, Binance)
 
-**Dieser Plan wird laufend aktualisiert**. Letzter Stand: November 2025
+**Dieser Plan wird laufend aktualisiert**. Letzter Stand: Dezember 2025
 
 ---
 
@@ -29,22 +27,30 @@
 
 ---
 
+## Zusammenfassung
+
+### Aktuelle Tasks
+1. [Alternative BTC Wallet aufsetzen](#4-alternative-btc-wallet-aufsetzen) um damit auf das Relai-Konto zugreifen zu können (PC-Backup falls Relai nicht mehr funzt). 
+
+2. Wiederherstellung der Relai-Seedphrase in die List der wöchentlichen Aktivitäten aufnehmen
+
+
 ## Cryptoziele
 **ZIEL** meines Engagements ins Crypto-Thema, ist es: 
-1. **möchtlichst bald** einen Teil meines Vermögens in Cryptowährungen sicher anzulegen  
+1. **möchtlichst bald** einen Teil meines Vermögens in Cryptowährungen sicher anzulegen: -> Relai und SwissBorg -> done  
 
-2. **mittelfristig** den Handel mit letzteren entweder direkt, oder als "collagoral Asset" hobbymässig zu betreiben und   
+2. **mittelfristig** den Handel mit letzteren entweder direkt, oder als "collagoral Asset" hobbymässig zu betreiben    
 
-3. **langfristig** mich CryptoBerater, Coach und Verwalter/Assistent für die Cryptoassets zum empfehlen um so aufs Alter einen Zustupf zu verdienen. 
+3. **langfristig** mich CryptoBerater, Coach und Verwalter/Assistent für die Cryptoassets zum empfehlen, um so aufs Alter einen Zustupf zu verdienen. 
 
 ## 1. Framework für Anonyme Zugangsdaten
 Leider wird die Notwendigkeit auch heute immer noch unterschätzt, sich im CryptoSpace möglichst nur noch anonym zu bewegen, möglichst wenig Spuren zu hinterlassen, und möglichst keine auffällige Muster oder unnötigen Verbindungen oder Abhängigkeiten zu erzeugen.
 
-Die Verwaltung der jeweils eigenen und damit unterschiedlichen Credentials - also jeweils unterschiedliche Passwörter UND eMail-Adressen für die verschiedenen Crypto-Services - ist für Menschen, die breits schon mit Steuererklärung und ihren Bankkonten Mühe überfordert sind, eine Herausforderung. 
+Die Verwaltung der jeweils eigenen und damit unterschiedlichen Credentials - also jeweils unterschiedliche Passwörter UND eMail-Adressen für die verschiedenen Crypto-Services - ist für Menschen, die breits schon mit Steuererklärung und ihren Bankkonten Mühe überfordert sind, eine Herausforderung. Dazu kommt jetzt noch die Verwaltung verschiedener HotWallets und ColdStorage-Geräte. 
 
-Nichtdestotrotz müssen SeedPhrasen, Passwörter und eMail-Adressen zuverlässig diebstahl-, katastrophen- und zukunftssicher abgehandelt werden: denn Passwörter und SeedPhrasen sind im Cryptospace die Essenz von allem, und damit macht deren sichere Verwahrung den Unterschied zwischen generationenübergreifender Wertschöpfung und möglichem Totalverlust durch Diebstahl und noch häufiger durch simples "Verlieren" der Schlüssel wegen Unordnung.  
+Nichtdestotrotz müssen SeedPhrasen, Passwörter und eMail-Adressen zuverlässig diebstahl-, katastrophen- und zukunftssicher abgehandelt werden: denn **Passwörter und SeedPhrasen sind im Cryptospace die Essenz von allem, und damit macht deren sichere Verwahrung den Unterschied zwischen generationenübergreifender Wertschöpfung und möglichem Totalverlust** durch Diebstahl und noch häufiger durch simples "Verlieren" der Schlüssel wegen Unordnung oder Unachtsamkeit.  
 
-> Am Anfang war das Passwort  <p style="text-align:right;">die Biebel</p>
+> Am Anfang war das Passwort  <p style="text-align:right;">die Bibel</p>
 
 Zu glauben, dass Wissen um die sichere Verwahrung der Schlüssel einfach vorausgesetzt werden kann, ist  naiv. Genauso falsch ist zu glauben, dass man Sicherheit auch noch nachträglich nachrüsten kann (kann man, aber nützt nichts, wenn der Hacker schon drin ist und seine Tools parkiert hat oder er mit deiner Identität unterwegs ist - inlusive Passphoto von Dir, deiner Familie und Freunden). 
 
@@ -79,11 +85,21 @@ Für diese Einfarbeitung habe ich dir ein paar Links auf Artikel, Vids und Büch
 Siehe dazu ->[Seed Verwaltung](../../PRIV/_KEY/Admin/PW/SeedVerwaltung.md)
 
 
-## 3. Relai Abo (done, but needs review and Training)
+## 3. Relai Abo (done, but needs reviewed and Training)
 Setup eins monatlichen [Relai](../../PRIV/_KEY/Assets/Services/R/Relai/_Relai.md) Einzahlabo über CHF 250.--. In diesem Zuge Update der Dokumente für [Credential Management](../../PRIV/_KEY/Admin/PW/_Credential-Management.md)(läuft) resp. die sichere [Verwaltung von von PROTON Alias eMailAdressen](../../PRIV/08_COLAB/eMail/_eMail-Konzept.md) und Passwörtern. Erstellen eins Dokuments zum Thema [Seed Verwaltung](../../PRIV/_KEY/Admin/PW/SeedVerwaltung.md) auf der Stufe PaperWallet und Verwendung der [Tangem-Karten].
 
 
-## 4. Akutelles Binance Konto checken
+## 4. Alternative BTC Wallet aufsetzen
+Eine (zu Relai) Alternative PC/Desktop-Wallet aufsetzen um damit auf die über Relai aufgesetzte Addresse zu verfügen resp. auf die dort registrierten BTCs zugreifen zu können. 
+
+## 5. Kommandozeilen & Programmierinterface
+Versuchen die wichtigsten BTC-Transaktionen über ein KommandozeilenTool oder eine GO-App auszuführen mit den Zielen: 
+
+a) Batchverarbeitung: Auch unter Zeitdruck automatisierte und damit schnellere, besser dokumentiert, standardisierte, selbstverwaltete und damit sichere Transaktionen auch unter Zeit zu ermöglichen. 
+
+b) über den Code ein tieferes hands-on Verständnis der Basistechnologie erlangen. 
+
+## 6.  Akutelles Binance Konto checken
 Ich habe mir gegen 100.-- Cash bei einem privaten Trader Tether auf mein Binance-Konto überweisen lassen. Das muss überprüft werden.
 
 ## 6. Lightning

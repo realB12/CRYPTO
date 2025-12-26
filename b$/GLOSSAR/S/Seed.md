@@ -18,18 +18,17 @@
 
 
 ## Intro
-Bei der SeedPhrase (kurz Seed) in Kontext von Cryptowährungen geht es um die 12, 18 oder 24 englischen Wörter zur Wiederherstellung des [Privaten Schlüssels](../P/Private%20Key.md), resp. einer für dessen Vewaltung benötigten [Wallet](../../../GLOSSAR/W/Wallet.md) für den Zugriff auf ein [eigenes, selbst verwaltetes](../../PROC/myBTC/_BTC%20SelfCustody.md) Crypto-"Konto".
+Bei der SeedPhrase (kurz Seed) in Kontext von Cryptowährungen geht es um die 12, 18 oder 24 englischen Wörter zur Wiederherstellung des [Privaten Schlüssels](../P/Private%20Key.md), resp. einer für dessen Vewaltung benötigten [Wallet](../../../GLOSSAR/W/Wallet.md) für den Zugriff auf ein [bestimmtes](../../PROC/myBTC/_BTC%20SelfCustody.md) Crypto-"Konto".
 
-<p style="color:olive; margin:20px"><small>
 Zum besseren Verständnis sei nochmals erwähnt, dass das "BitCoin-Konto", technisch gesehen, eine Menge von [UTXOs](../U/UTXO.md)) ist, welche transparent und auf ewig Teil DER dezentral selbstverwalteten, überaus sicheren BitCoin-Blockchain ist, um deren Erhalt, Wartung und Sicherheit man sich grundsätzlich bis anhin NIE zu sorgen brauchte, und zwar genau so wenig, wie man sich jemals Sorgen machte, dass die Hausbank abbrennen oder ausgeraubt werden könnte.
 
-Denn, worum es hier eigentlich geht ist nicht das Konto und das "Geld" darauf, sondern es geht um die konkrete, hands-on Verwaltung und <b>Sicherung der privaten Zugangs-Schlüssel zu diesen CryptoKonten!</b></small></p>
+Denn, worum es bei der Wiederherstellung geht, ist nicht das Konto und das "Geld" darauf, sondern um die Wiederherstellung der Zugangs-Schlüssel zu diesen CryptoKonten!
 
-Auch ist die **SeedPhrase per se ist NICHT der Schlüssel zu diesem Konto**, sondern dient lediglich zur Wiederherstellung der für den Zugang zu diesem Schlüssel und dem damit verbundenen CryptoKonto erforderlichen [Wallet](../../../GLOSSAR/W/Wallet.md). 
+Auch ist die **SeedPhrase per se NICHT der Schlüssel zu diesem Konto**, sondern dient lediglich zur Wiederherstellung der für den Zugang zu diesem Schlüssel und dem damit verbundenen CryptoKonto erforderlichen [Wallet-App](../../../GLOSSAR/W/Wallet.md) und den darin implizit verwalteten CrypoSchlüssel. 
 
-Die Seephrase **umfasst i.d.R 12, 18 oder 24 englische Wörter**, die man in einer beliebigen Wallet auf einem beliebigen Gerät in der richtigen Reihenfolge eingeben muss, um mittels Walletsoftware wieder AppIntern und von aussen i.d.R. nicht zugreifbar den PrivatenSchlüssel zu erstellen, welche die Wallet benötigt, um im Folgenden wieder auf das BitCoin-"Konto" zugreifen zu können. 
+Die Seephrase **umfasst i.d.R 12, 18 oder 24 englische Wörter**, die man **bei der Neuinstallation einer HD-Wallet** (ACHTUNG: Nur sogenannten HD-Wallets können über Seedphrasen wiederherstellt werden) auf einem neuen Gerät **in der richtigen Reihenfolge** eingeben muss, um so bei Verlust der WalletApp (z.B. durch Diebstahl des Handys) wieder auf das BitCoin-"Konto" zugreifen zu können. 
 
-Dieser Private Schlüssel wird lokal in der WalletApp (Als Hash verschlüsselt) gespeichert. Er dient lediglich der lokal in der Wallet-App ablaufenden Verschlüsselungen und Entschlüsselungen von Blockchaindaten und verlässt niemals die lokaleApp, genauso wie es praktisch unmöglich ist, von aussen auf diesen lokal verschlüsselt gespeicherten Schlüssel zuzugreifen. Dieser Private Schlüssel ist damit physich mit der auf diesem Gerät installierten WalletAppInstanz verbunden. 
+Der mit der Seed wieder hergestellte Private Schlüssel wird lokal in der WalletApp gespeichert und ist in der Regel aus Sicherheitsgründen nicht sichtbar. Er dient lediglich der lokal in der Wallet-App ablaufenden Verschlüsselungen und Entschlüsselungen von Blockchaindaten und verlässt niemals die lokaleApp, genauso wie es praktisch unmöglich ist, von aussen auf diesen lokal verschlüsselt gespeicherten Schlüssel zuzugreifen. Dieser Private Schlüssel ist damit physich mit der auf diesem Gerät installierten WalletAppInstanz verbunden. 
 
 <span style="color:red; font-weight:bold">ACHTUNG</span>: Wird diese WalletApp vom Handy entfernt, ist auch der darin gespeichert Schlüssel weg. Und natürlich ist der dort gespeichert Schlüssel auch dann weg, wenn das ganze Handy gestohlen wird, resp. hat dann, sollte das Handy nicht entsprechend gesichert sein, ev. über dieses Handy jemand anders Zugriff.  
 
@@ -37,11 +36,11 @@ Aus diesen Gründen ist es logisch, dass SeedPhrases IMMER OFFLINE und möglichs
 
 ---
 
-<span style="color:red; font-weight:bold">ACHTUNG</span>: Hier geht es explizit **NICHT um die Passwörter für den Zugriff auf Online-Bitcoin-Börsen** (bei denen es auch nicht um die Verwaltung eigener Bitcoins geht, sondern lediglich um das Verwalten eines virtuellen BitCoin-Kontos bei dem sich die Bank mittels Quittung (IOU = I Owe You) verpflichtet, dir jederzeit den aktuellen Gegenwert der Cryptowährung wieder in FIAT auszuzahlen. Wieviel von deinem Geld die Börse tatächlich in Bitcoin anlegt und ob überhaupt, bleibt allein ihr Geheimnis -> Sieh hierzug mein Artikel [Risiken von Cryptobörsen](../../PROC/TRAIN/1_INTRO/Risiken%20von%20Cryptobörsen.md)
+<span style="color:red; font-weight:bold">ACHTUNG</span>: Bei SeedPhrasen geht es explizit **NICHT um die Passwörter für den Zugriff auf Online-Bitcoin-Börsen** (bei denen es auch nicht um die Verwaltung eigener Bitcoins geht, sondern lediglich um das Verwalten eines virtuellen BitCoin-Kontos bei dem sich die Bank mittels Quittung (IOU = I Owe You) verpflichtet, dir jederzeit den aktuellen Gegenwert der Cryptowährung wieder in FIAT auszuzahlen. Wieviel von deinem Geld die Börse tatächlich in Bitcoin anlegt und ob überhaupt, bleibt allein ihr Geheimnis -> Sieh hierzug mein Artikel [Risiken von Cryptobörsen](../../PROC/TRAIN/1_INTRO/Risiken%20von%20Cryptobörsen.md)
 
 ---
 ## Sichere Aufbewahrung
-Die grösstes Herausforderung im Umgang mit Seephrases ist deren SICHERE Aufbewahrung, welchem wir ein [eigenes Dokument]() widmen, in dem die sichere Verwahrung von Seedphrases im Kontext der allgemeinen Verwaltung von Passwörtern steht. 
+Die grösstes Herausforderung im Umgang mit Seephrases ist deren SICHERE Aufbewahrung, welchem wir ein [eigenes Dokument zur **Seed Verwaltung**](../../../../PRIV/_KEY/Admin/PW/SeedVerwaltung.md) widmen, in dem die sichere Verschlüsselung und Verwahrung von Seedphrases im Kontext der allgemeinen Verwaltung von Passwörtern steht. 
 
 ## Wallets
 In a deterministic [wallet](../W/Wallet.md), **all its private/public key/pairs and adresses are derived from a single master key**, the so called [seed pharase](../S/Seed.md) or "seed" in short. 
@@ -147,3 +146,7 @@ Conversely, if the owner backs up the passphrase in the same place as the seed, 
 <span style="color:red; font-weight:bold">ACHTUNG</span>: 
 While passphrases are very useful, they should only be used in combination with a carefully planned process for backup and recovery, considering the possibility of surviving the owner and allowing his or her family to recover the cryptocurrency estate.
 
+
+## Wiederherstellungsprozess mittels Seed
+
+![Wiederherstellung der Schlüssel mittels Seed](../zPIC/Wiederherstellung%20der%20Schlüssel%20mittels%20Seed.png)

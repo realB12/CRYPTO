@@ -5,11 +5,20 @@
 * [Satoshis Version v0.1 Code on Github Mirror](https://github.com/Maguines/Bitcoin-v0.1)
 * [Bitcoin Whitepaper](https://bitcoin.org/bitcoin.pdf)
 
+* [A Hacker’s Guide to Bitcoin: Exploring Bitcoin by Command Line](https://dev.to/kniraj/a-hackers-guide-to-bitcoin-exploring-bitcoin-by-command-line-part-1-536i)
+
 * [The Bitcoin Source Code: A Guided Tour - Part 1, Block Time and Spacing](https://www.youtube.com/watch?v=duAcEElZpNk&list=PLGIz-blhWiP80wXffE1nDQz_BKMhUSBDF)
 
 Erste Anlaufstelle und Quelle der Wahrheit für Entwickler ist immer das öffentlich zugängliche [BitCoin GitHub Repo](https://github.com/bitcoin/bitcoin)
 
 The contribution workflow is described in [CONTRIBUTING.md](https://github.com/bitcoin/bitcoin/blob/master/CONTRIBUTING.md) and useful hints for developers can be found in [doc/developer-notes.md](https://github.com/bitcoin/bitcoin/blob/master/doc/developer-notes.md).
+
+## Warum selber entwickeln
+Most developers first encounter Bitcoin through polished mobile wallets or sleek web interfaces and so they miss the fundamental mechanics that make everything work.
+
+As programmers, we understand that true mastery comes from getting our hands dirty with the underlying systems. When you run your own Bitcoin node and interact with it directly via the command line, you're not just using Bitcoin — you're speaking its native language.
+
+This guide will take you from spinning up your first Bitcoin node to understanding UTXOs, crafting transactions, and managing multiple wallets. By the end, you'll have the foundation needed to build Bitcoin applications.
 
 ## BitCoin Core (Version 0.11)
 Bitcoin Core is the GitHub hosted OpenSource sofware, that connects to the Bitcoin peer-to-peer network to download and fully validate blocks and transactions. It also includes a wallet and graphical user interface, which can be optionally built.
@@ -18,7 +27,7 @@ Further information about Bitcoin Core is available in the [GitHub Repo](https:/
 
 BitCoin Core is written in "flat" C++ (without extensive use of classes, inheritance and other typical object oriented stuff), whereas the data is stored as binary-raw and - for faster accessibility - in LevelDB datasets.
 
-#### Setup
+### Setup
 Bitcoin Core is the original Bitcoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Bitcoin transactions, which requires several hundred gigabytes or more of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to several days or more.
 
 To download Bitcoin Core, visit bitcoincore.org.

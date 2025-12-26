@@ -7,9 +7,9 @@
 
 **Ein Private Key - oft mit einem kleinen "k" dargestellt - ist eine zufällig generierte 256 Bit lange Binärzahl, über die JEDERMANN auf die "Coins" einer bestimmten BitCoin Adresse (Public Key) zugreifen kann, und deshalb unter ALLEN UMSTAENDEN und von Anfang an geschützt werden muss**
 
-Der Private Key die die einzige Quelle für die Generierung
+Der Private Key die die einzige Quelle für die Generierung von
 
-a) des [Public Keys](Public%20Key.md) den Du als eine Art KontoNumemr mit Leuten teilst, die dir darauf Geld überweisen. 
+a) des [Public Keys](Public%20Key.md) aus dem dann die öffentliche [BTC-Konto-Adresse](../A/Address.md) generiert wird, die Du als eine Art KontoNummer mit Leuten teilst, die dir darauf Geld überweisen. 
 
 b) von **Signaturen** mit denen Du dich als Besitzer von auf der Blockchain verbuchten BitCoins ausweist. 
 
@@ -17,15 +17,16 @@ Private Schlüssel leben in der Regel **nur versteckt in der Wallet und sind dam
 
 > **Hinweis**: Private Keys können NICHT von Public Keys abgeleitet werden (was ja der eigentliche Trick bei der Sache ist). 
 
-Deshalb müssen Private Schlüssel auch super safe auf speziellen Hardware  ("Cold Wallets") oder [Paper Wallet](PaperWallet.md)  gesichert werden. 
+Deshalb sollten Private Schlüssel auch super safe auf speziellen Hardware  ("Cold Wallets") oder [Paper Wallet](PaperWallet.md)  gesichert werden. 
 
-Spätestens dann wenn die Wallet-App, resp. das dazugehörige iPhone mal verloren geht, gehackt wird oder nicht mehr funktioniert wird der Private Key wieder benötigt um eine neue Wallet auf einem neuen Gerät so zu konfigurieren damit man mit ihr wieder auf das BitCoin-"Konto" zugreifen kann.
+Spätestens dann wenn die Wallet-App, resp. das dazugehörige iPhone mal verloren geht, gehackt wird oder nicht mehr funktioniert wird die Seedphrase wieder benötigt um in einer neu installierten WalletApp auf einem neuen Gerät wieder den Privaten Schlüssel herstellen zu können, den wir brauchen um damit wieder den Public Key und daraus die BTC-Adresse generieren zu können um über diese wieder auf das ursprüngliche BitCoin-"Konto" zugreifen zu können.
+
+![Wiederherstellung der Schlüssel mittels Seed](../zPIC/Wiederherstellung%20der%20Schlüssel%20mittels%20Seed.png)
 
 ## Einen Privaten Schlüssel selber generieren  
 
 ### Würfeln
 You can pick your private keys randomly using just a coin, pencil, and paper: toss a coin 256 times and you have the BINARY digits of a random private key you can use in a bitcoin wallet. 
-
 Alternativ kannst Du auch mit einem 16-ner Würfel 64 mal eine Hexadezimale-Zahl würfeln und aufschreiben: 
 
 `1E99423A4ED27608A15A2616A2B0E9E52CED330AC530EDCC32C8FFC6A526AEDD`
@@ -33,7 +34,7 @@ Alternativ kannst Du auch mit einem 16-ner Würfel 64 mal eine Hexadezimale-Zahl
 ### SeedPhrases
 Da das elektronische Kopieren dieses Schlüssels nicht sicher ist (Memoryleak, Spoofing, etc. ) und eine manuelle Uebertragung dieser 64 Zahlen höchst fehleranfällig ist, hat sich die Verwendung sogenannter [SeedPhrases](../S/Seed.md) - eine Folge von 12, 18 oder 24 Wörtern aus denen sich der Private Key Generieren lässt, insbesondere für das Erstellen von [Paper Wallets](PaperWallet.md) als zuverlässiger und praktikabler herausgestellt. 
 
-[SeedPhrases](../S/Seed.md)SeedPhrases erstellt man nicht manuell, sondern werden i.d.R. beim Einrichten von Wallets generiert und bergen damit das Risiko, dass sie bereits bei der Genererierung - selbst im im Offline-Modus -  "gehackt" werden könnten. 
+[SeedPhrases](../S/Seed.md) erstellt man nicht manuell, sondern werden i.d.R. beim Einrichten von Wallets generiert und bergen damit das Risiko, dass sie bereits bei der Genererierung - selbst im Offline-Modus - potentiell "gehackt" werden könnten. 
 
 ### Sich mit einer App einen Schlüssel generieren
 The first and most important step in generating keys is to find a secure source of entropy, or randomness. Creating a bitcoin key is essentially the same as "Pick a number between 1 and 2256." The exact method you use to pick that number does not matter as long as it is not predictable or repeatable. Bitcoin software uses the underlying operating system’s random number generators to produce 256 bits of entropy (randomness). Usually, the OS random number generator is initialized by a human source of randomness, which is why you may be asked to wiggle your mouse around for a few seconds.

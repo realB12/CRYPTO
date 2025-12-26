@@ -1,19 +1,18 @@
 # Public Key (K) = Kontonummer mit Verschlüsselung für Dritte
 
-Der öffentliche Schlüssel ist wie eine Bankkontonummer die ich an Dritte gebe damit sie a) wissen wohin sie das Geld senden müssen und b) sie die Transaktion damit so verschlüsseln können, dass nur ich diese wieder mit meinem Privaten Schlüssel (engl. = [privat/secret key](Private%20Key.md)) wieder entschlüsseln kann.  
+* [BTC Addresse](../A/Address.md)
+* [Private Key](Private%20Key.md)
 
-Bei Bitcoin ist die [Blockchain Addresse](../A/Address.md) aber nicht identisch mit dem PublicKey sondern wird lediglich mittels einer Hashfunktion vom Public Key abgeleitet!
+Der öffentliche Schlüssel ist wie eine Bankkontonummer die ich an Dritte gebe damit sie 
+a) wissen wohin sie das Geld senden müssen und 
+b) sie die Transaktion damit so verschlüsseln können, dass nur ich diese wieder mit meinem Privaten Schlüssel (engl. = [privat/secret key](Private%20Key.md)) wieder entschlüsseln kann.
+
+Bei Bitcoin ist **die [Blockchain Addresse](../A/Address.md) NICHT mit dem Public Key identisch**! Die [Address](../A/Address.md) ist kürzer und damit bessesr lesbar als der Public Key. Sie wird mittels einer Hashfunktion vom Public Key abgeleitet!
 
 Public Keys sind länger als [Addressen](../A/Address.md) und beginnen mit **02** (even compressed), **03** (odd compressed) oder **04** (long format), währenddem [Addressen](../A/Address.md) mit  **1**, **3**, oder **bc1** und damit immer ohne führende 0 beginnen.
 
 ## SchlüsselMathematik
-Ein öffentlicher Schlüssel - engl. **Public Key genannt und deshalb oft mit einem GROSSEN `K` dargestellt - wird immer von einem [Private Key](Private%20Key.md)** abgeleitet (bzw. unumkehrbar mit Hilfe der Eliptischen Kurven Mathematik so abgeleitet dass die folgende Formel stimmt: 
-
-    K = k * G
-    
-where k is the private key, G is a constant point called the generator point, and K is the resulting public key. 
-
-Die Umkehrfunktion würde darauf hinauslaufen alle möglichen Kombinationen durchzuprobieren wofür die heutige Rechenpower aller Computer (noch) nicht reichen würde. 
+Ein öffentlicher Schlüssel - engl. **Public Key genannt und deshalb oft mit einem GROSSEN `K` dargestellt - wird immer von einem [Private Key](Private%20Key.md)** abgeleitet (bzw. unumkehrbar mit Hilfe der Eliptischen Kurven Mathematik abgeleitet. Die Umkehrfunktion würde darauf hinauslaufen alle möglichen Kombinationen durchzuprobieren wofür die heutige Rechenpower aller Computer (noch) nicht reichen würde. 
 
 Der öffentliche Schlüssel dient der VERSCHLUESSELUNG von Daten durch Dritte, die anschliessend nur noch mit meinem eigenen PRIVATE KEY wieder entschlüsselt werden können. 
 

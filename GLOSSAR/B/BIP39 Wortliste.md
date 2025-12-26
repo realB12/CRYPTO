@@ -1,4 +1,4 @@
-# BIP39 Wortliste
+# BIP39 Wortliste (Crypto-Glossar)
 
 * [SeedPhrase](../S/SeedPhrase.md)
 
