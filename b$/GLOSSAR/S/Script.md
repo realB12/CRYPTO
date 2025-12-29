@@ -2,29 +2,33 @@
 
 * [Bitcont Script 101](https://kingslanduniversity.com/bitcoin-script-101/)
 
-Script ist ist die "Mini"-Programmiersprache der Bitcoin Technologie, um den Zugriff auf die darin gespeicherten "Bitcoins" zu verwalten.
+Script ist die "Mini"-Programmiersprache der Bitcoin Technologie, um den Zugriff auf die in der Blockchain gespeicherten "Bitcoins" zu verwalten.
 
 Scriptcode ist i.d.R. nicht Teil des Sourcecodes, sondern Teil der in der Blockchain gespeicherten Daten, und wird nur ausgeführt, um letztere zu verschlüsseln, zu entschlüsseln und/oder zu transferieren. 
 
 ## Abstract: 
-Bitcoin transaction validation is not based on a static pattern, but instead is achieved through the execution of a scripting language running that scripts which are embedded in the transaction. This allows for a nearly infinite variety of conditions to be expressed that can be defined "on the fly" when a transaction is submittes and therefore are not required to be "baked" into the otherweise static Bitcoin Core code. This is how bitcoin gets the power of "programmable money."
+Die Logik mit der Bitcoin-Transaktionen ausgeführt werden, ist nicht statisch im Code von Bitcoin-Core gespeichert, sondern in Form eines Scripts ein Bestandteil der BitCoin-Transaktion. Die "Ausführung" resp. die "Verifikation" einer Transaktion besteht  darin, das Script dieser Transaktion auszuführen und das Endresultat zu testen: Nur bei "TRUE" ist die Transaktion gültig, sonst nicht. 
+
+Dies erlaubt die Definition einer schier unendliche Anzahl verschiedener Scripts "on the fly" im Sinne von "programmierbarem Geld" ohne die ansonsten statische Transaction-Engine von BitCoin-Core anpassen zu müssen.
+
+Diese sogenannte stack-based Scriptsprache erinnert an die Programmiersprache Forth welche Zwischenwerte auf dem Stack speichert, kombiniert und wieder löscht.
 
 ## Intro 
 
 ### Generic Smart Contract programming in BitCoin 
-Hereby term “smart contract” was coined by Nick Szabo in 1994, and they were made popular with the introduction of Ethereum in 2015, but many people don’t realize that Bitcoin also has them – in fact, the only type of transaction that Bitcoin supports is a scripted transaction!
+Da der Ausdruck “smart contract” erst 2015 mit Etherum bekannt geworden ist, vergessen wir oft dass auch Bitcoin auf scripted transactions implementiert und ermöglichen Multi-Signature Wallets, das Lightning Network, Escrow, etc.
 
-Multi-signature wallets, Lightning Network, escrow, all rely on this feature, and so does every Bitcoin transaction ever made – it’s just that this is hidden “under the hood” of wallet software.
-
-The bitcoin transaction script language, called "Script", is a stack-based execution language similar to the Forth language (created in the 60s). 
+"Script" eine stack-basierte Forth-ähnliche Programmiersprache. 
 
 ### Stack Based programming principles
 “Stack-based” means instead of defining variables that act like named memory locations, and passing them around like that to functions, we use a stack data structure: functions take their parameters from the top of the stack, and return their results at the top of the stack.
 
-This is similar to calculators that use “RPN” (Reverse Polish Notation):
-
 ---
-**Example**: 
+**Example 1 **: 
+![Transaction Script Example2](../zPIC/TransactionScriptExample2.png)
+---
+
+**Example 2 **: 
 
 To calculate the expression `(2 + 3) * (6 + 1)`: 
 
@@ -44,6 +48,8 @@ When a transaction is validated, the unlocking script in each input is executed 
 Today, most transactions processed through the bitcoin network have the form "Payment to Bob’s bitcoin address" and are based on a script called a `Pay-to-Public-Key-Hash` script. 
 
 However, bitcoin transactions are not limited to this. In fact, **locking scripts can be written to express a vast variety of complex conditions**. 
+
+---
 
 ## Bitcoin Transaction Scripts
 

@@ -16,9 +16,23 @@ The contribution workflow is described in [CONTRIBUTING.md](https://github.com/b
 ## Warum selber entwickeln
 Most developers first encounter Bitcoin through polished mobile wallets or sleek web interfaces and so they miss the fundamental mechanics that make everything work.
 
-As programmers, we understand that true mastery comes from getting our hands dirty with the underlying systems. When you run your own Bitcoin node and interact with it directly via the command line, you're not just using Bitcoin — you're speaking its native language.
+As a programmers, I am convinced that true mastery comes from getting hands dirty with the underlying code and systems. When you run your own Bitcoin node and interact with it directly via the command line, you're not just using Bitcoin — you're speaking its native language and you have the chance to improve it or create and even new features or you can use it in a completly different way.
 
 This guide will take you from spinning up your first Bitcoin node to understanding UTXOs, crafting transactions, and managing multiple wallets. By the end, you'll have the foundation needed to build Bitcoin applications.
+
+### Why Command Line Bitcoin Matters
+With command-line Bitcoin, you gain:
+
+* Unfiltered **access to Bitcoin's data structures** as your node stores them
+* Complete **sovereignty**: **no third-party APIs**, no rate limits, no downtime
+* Scripting capabilities for **automation and custom workflows**
+* Deep **understanding of Bitcoin's UTXO model and transaction structure**
+* Foundation **knowledge for building Bitcoin applications**
+
+### Prerequisites
+* Basic command-line comfort
+* Understanding of JSON 
+* 100MB+ disk space for our regtest experiments
 
 ## BitCoin Core (Version 0.11)
 Bitcoin Core is the GitHub hosted OpenSource sofware, that connects to the Bitcoin peer-to-peer network to download and fully validate blocks and transactions. It also includes a wallet and graphical user interface, which can be optionally built.
