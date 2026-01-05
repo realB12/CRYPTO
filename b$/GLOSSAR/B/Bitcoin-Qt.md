@@ -1,0 +1,2 @@
+# Bitcoin-Qt (Bitcoin Core GUI)
+Bitcoin-Qt is the former name for the graphical user interface (GUI) of Bitcoin Core, the original and primary Bitcoin software client, which provides a full node wallet for managing Bitcoin with a user-friendly visual interface built with the Qt framework, but now simply called Bitcoin Core since version 0.9. It's a powerful, secure, but resource-intensive desktop application that downloads the entire blockchain for full network participation, allowing users to send, receive, and manage bitcoins directly. 

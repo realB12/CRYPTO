@@ -243,8 +243,18 @@ Tolle Doks.
 SDK Provider
 Offers the "Misty Breez" App for sending and receiving bitcoin payments powered by the Breez SDK that offers a ready-made white-label solution for partners building new apps. Bietet ein paar [gehaltvolle BlogArtikel](https://blog.breez.technology/)
 
+## Phoenix Wallet
+[Phoenix Wallet](https://phoenix.acinq.co/) is a self-custodial wallet that automatically manages Lightning channels for you and is running natively on Lightning. Phoenix requires iOS 16.0 or later. 
+
+Phoenix is a real, self-contained Lightning node that runs on your phone. It does not require you to run another Lightning node at home or in the cloud. It is not a custodial wallet either, you are in full control of your funds.
+
+Phoenix wird von der Firma ACINQ betrieben, einer der Führenden Entwickler des Lightning Netzwerkes. Der Kotlin-Code ist per Dezember 2025 immer noch aktiver  [GitHub gehosteter OpenSource-Source Code](https://github.com/ACINQ/phoenix/commits/master/). 
+
+## Muun
+[Muun](https://muun.com/) is a self-custodial wallet for bitcoin and lightning.
+
 ## Bitrefill. 
-[Bitrefill](https://help.bitrefill.com/hc/en-us) 
+[Bitrefill](https://help.bitrefill.com/hc/en-us) ist ein eCommerce-Shop für den anonymen Kauf von Produkten und Dienstleistungen wie Hotelübernachtungen, Flüge, etc. via Lightning Netzwerk.
 
 ## Alternativen
 

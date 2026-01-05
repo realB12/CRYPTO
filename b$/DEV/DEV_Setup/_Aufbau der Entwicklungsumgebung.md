@@ -1,55 +1,46 @@
 # Aufbau der Crypto Entwicklungsumgebung
 
+* [BitCoinCore **Installationsanleitung**](BitCoinCore-installieren.md)
+
 * [BitCoin Buch Kapitel 3 zum Thema Entwicklungsumgebung](https://cypherpunks-core.github.io/bitcoinbook/ch03.html)
 
-If you’re a developer, you will want to set up a development environment with all the tools, libraries, and support software for writing bitcoin applications. In this document we’ll walk through that process step-by-step. 
+Diese Anleitung für Entwickler führt durch den Aufbau einer Entwicklungsumgebung für Bitcoin Apps.  
 
-## Part 1: Setting Up Your Bitcoin Laboratory
+## 1. BitcoinCore-Konten lokal installieren
+Siehe hierzu die dafür in einem eigenen Dokument erstellte -> **[BitCoinCore Installationsanleitung](BitCoinCore-installieren.md)**. 
 
-### 1. Installing Bitcoin Core
+Beachte dabei, dass die Installation, resp. die Synchronisation mit der Blockchain TAGE dauern kann und entsprechende Hardware und Connectivity vorraussetzt. Details dazu in der **[ Installationsanleitung](BitCoinCore-installieren.md)**. 
 
-Bitcoin Core provides two essential tools:
+## 2. BitCoin Daemon starten
 
-* **bitcoind**: The full node daemon (herefore the "d") that validates and relays transactions  
+1. Starte den Bitcon Daemon im Regtest-Modus
+* > bitcoind -regtest
 
-* **bitcoin-cli**: Your command-line interface (cli) to the daemon
+**Tip**: Anders als in der offiziellen Doku vermerkt kann muss man unter Windows 11 den -daemon Parameter weglassten weil man ansonsten die Fehlermeldung "-daemon is not supported on this operating system" erhält. 
 
-1. **Download the latest version from https://bitcoin.org/en/download**
+2. überprüfe ob der Daemon läuft
+* > bitcoin-cli -regtest getnetworkinfo
 
-> Intern verwende ich das "C:\me\TOOLS\BitcoinCore"-Verzeichnis
+Dies listet dir einen langen JSON-formatierten-Record mit allen wichtigen Parametern: 
 
-2. **Unzip** the such downloaded files and **delete the *.zip-file** afterwards. 
+```plaintext
+{
+  "version": 280100,
+  "subversion": "/Satoshi:28.1.0/",
+  "protocolversion": 70016,
+  "localservices": "0000000000000c09",
+  "localservicesnames": [
+    "NETWORK",
+    "WITNESS",
+    "NETWORK_LIMITED",
+    "P2P_V2"
+    ....
+  ]
+}
+```
 
-3. Remove the **bitcoin-28.1-win64-folder** by moving its containing "**/bitcoin-28.1**"-folder into the BitcoinCore-Root folder and finally deleting the now emptied bitcoin-28.1-win64-folder (to reduce click- and typing-overhead) . 
+**Pro tip**: Erstelle einen Alias damit du weniger tippen musst
 
-4. **Antivirus anhalten**: Der Download würde mit eingeschaltetem Antivirus (nicht Firewall!) Jahre dauern. Deshalb habe ich den automatischen/realtime-scanning Antivirus ausgeschaltet. Ich denke das ist safe wenn ich während dieser Zeit darauf achte nichts runterzuladen und nur Vertrauenswürdiges zu klicken. <span style="color:red; font-weight:bold">ACHTUNG</span>: bei einem nächtlichen ComputerUpdate wird der Antivirus neu gestartet!! -> Jeden Morgen checken ob er wieder ausgeschaltet ist. 
+* > alias bcli="bitcoin-cli -regtest"
 
-4. Run ***bitcoin-qt.exe*** in the above created ..\TOOLS\BitcoinCore\bitcoin-28.1 folder with the following options: ![B T C Installation Options](./zPIC/BTCInstallationOptions.png) 
-
-    * As the installation requires 620GB!! of free storage, I have put this on **a fresh external 2TeraByte Drive in the *D:\@ME\DATA\BitcoinBlockchainData*-folder**  
-
-    * I have **limited the final blockchain storage to 10 GB** (for 30 Days backup)  
-
-    * When you **click "ok"** you will be asked to **open your firewall for external apps** to connect your computer: **say NO!** (You can open it later when you know what you are doing).  
-
-    * **This downloads the entire history of Bitcoin transactions**: depending on the speed of your computer and network connection, the synchronization process can take hours to days.  
-  
-    * the following window tells you about progress and remaining download time: ![B T C Core Installation Progress](./zPIC/BTCCoreInstallationProgress.png)
-
-9. Antivirus wieder aktivieren!
-
-**Tip**: die laufende **Synchronisierung kann jederzeit beendet werden** und mit einem **Neustart der bitcoin-qt.exe** Applikation wieder angestossen werden. Die Synchronisation läuft dann automatisch dort weiter, wo sie aufgehört hat. 
-
-For this tutorial, **we'll use regtest mode—Bitcoin's built-in testing environment** where you're the only miner, blocks generate instantly, and you can experiment safely.
-
-## Starting Your Private Bitcoin Network
-
-# Start bitcoind in regtest mode
-bitcoind -regtest -daemon
-
-# Verify it's running
-bitcoin-cli -regtest getnetworkinfo
-Pro tip: Create an alias to save typing:
-
-alias bcli="bitcoin-cli -regtest"
-Now you can use bcli instead of typing the full command each time.
+Von nun an kannst du den Daemon einfach mit dem  *bcli*-Kommando starten
