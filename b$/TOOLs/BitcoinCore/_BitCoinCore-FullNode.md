@@ -14,12 +14,14 @@
 
 ## Was ist BitCoin Core?
 
-### Aus Entwicklersicht
-
+## I. Technische Sicht
 ### Dokumentation 
-Bitcoin Core Dokus finden sich an drei verschiedenen Orten: Bitcoin Core, the Bitcoin Wiki, and Bitcoin.org wie folgt: 
+BitcoinCore Dokc sind leider über drei verschiedenen Orte verteilt: 
+1. Bitcoin Core App Beschreibung, 
+2. dem Bitcoin Wiki, 
+3. auf der Webseite von Bitcoin.org wie folgt: 
 
-#### BCore Docs 
+#### BitconCore Docs 
 Das [GitHub Docs Verzeichnis auf developer.bitcoin.org](https://github.com/bitcoin-dot-org/developer.bitcoin.org) richtet sich vor allem an Entwickler und Test und weniger an Enduser.
 
 #### Bitcoin Wiki
@@ -29,14 +31,11 @@ uses the popular MediaWiki software
 #### Bitcoin.org RPC/REST API Reference
 The [Bitcoin.org developer reference](https://developer.bitcoin.org/) contains over 100 printed pages worth of documentation for the Bitcoin Core RPC and REST interfaces, which are mainly used by Bitcoin Core command line users and developers of apps depending on Bitcoin Core.
 
-
-
 #### Bandwidth Sharing Guide
 The [Bitcoin.org bandwidth sharing guide](https://bitcoin.org/en/full-node) currently provides instructions for how to install Bitcoin Core on multiple operating systems, configure it to automatically start at boot, and manually open port 8333 so it accepts incoming connections.
 
-####
 
-## BenutzerSicht
+## II. BenutzerSicht
 Die mit BitcoinCore (im Folgenden kurz BCore genannt) gebotene Wallet verfügt sowohl über eine Benutzeroberfläche als auch eine über die Kommandozeile (CLI)  zugängliche API. 
 
 Zudem unterstützt BCore  sogenannte Lightweight Wallets. 

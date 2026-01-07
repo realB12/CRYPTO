@@ -1,0 +1,57 @@
+# Das Bitcoin Core DateiSystem
+
+* [Dok zum BCore Dateisytsem auf GitHub](https://github.com/bitcoin/bitcoin/blob/master/doc/files.md)
+
+----
+
+## Inhalt
+Im Folgenden beschreibe ich das von BitCoinCore verwendet Dateisystem. 
+
+Dieses wird von allen drei BCore-Komponenten (GUI ([bitcoin qt](bitcoin-qt.md)), Daemon ([bitcoind](bitcoind.md)) und Kommandozeilentool ([bitcoin cli](bitcoin-cli.md)), gleichermassen verwendet. 
+
+#### Out of Scope
+> Nebst dem hier beschriebenen DATEN-Verzeichnis sind für den Betrieb auch noch Installationsverzeichnis und das Verzeichnis mit den Dokumentationen relevant - auf die wir hier aber nicht eingehen werden und verweisen hier auf die [BitCoinCore Installations Doku](BitCoinCore-installieren.md). 
+
+> Wir gehen hier **nur auf Windows** ein
+
+## Installationsverzeichnis
+Das sogenannte Installationsverzeichnis ist dasjenige Verzeichnis, worin man die BitCoinCore-App heruntergeladen, entpackt und installiert hat und von wo die drei Komponenten 
+1. GUI ([bitcoin qt](bitcoin-qt.md))
+
+2. Daemon ([bitcoind](bitcoind.md)) und 
+
+3. KommandozeilenTool ([bitcoin cli](bitcoin-cli.md)) 
+
+gestartet werden. 
+
+Dieses Verzeichnis darf somit nicht gelöscht werden und wird als einziges bei einem Update der BitCoinCore-App upgedated, resp. enthält es keine BlockchainDaten.
+
+<span style="color:red; font-weight:bold">ACHTUNG</span>: Die ***[bitcoin.config](bitcoin.config.md)*** Konfigurationsdatei ist nicht hier, sondern ebenfalls im nachfolgend erläuterten DATEN-Verzeichnis. 
+
+## Standardpfad für das DATEN-Verzeichnis
+Die standardmässige [BitCoinCore Installation](BitCoinCore-installieren.md) speichert unter Windows 
+
+1. Die ***[bitcoin.config](bitcoin.config.md)*** Konfigurationsdatei
+
+2. sämtliche zu synchronisierende BlockchainDaten im folgendem **Standard DatenVerzeichnis**: 
+> %LOCALAPPDATA%\Bitcoin
+
+In meinem Fall im Verzeichnis
+
+> **C:\Users\RealB12\AppData\Local\Bitcoin**
+
+Dieses umfasst nach vollständiger Synchronisation (Stand 2025) ungefähr **130 GigaByte (GB)**
+
+**Tip**: Das aktuelle Bitcoin DatenVerzeichnis findet man mit dem Kommando: > *echo %LOCALAPPDATA%\Bitcoin*
+
+### Alternativer Datenpfad
+Mittels ***-datadir Parameter*** kann man jedes der 3 Tools in einem alternativen Verzeichnis starten. Sofern dieses nicht vorhanden ist, wird es neu erstellt und der Synchronisationsprozess mit der "main"-Chain sofort von Grund auf neu gestartet (-> IBD (Initial Blockchain Download))!
+
+Entsprechend sorgfältig ist dieser ***-datadir Parameter*** zu verwenden. Zusätzlich sollten die folgenden Parameter explizit gesetzt werden, da sie die Verzeichniswahl für die zu synchronisierende Blockchain beeinflussen: 
+
+-testnet
+
+-regtest
+
+##
+

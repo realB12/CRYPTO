@@ -19,5 +19,4 @@ Non-Trading Tools umfassen die folgenden Bereiche
 
 ## Explorer Tools
 
-
-* [**BlockChain.com's eigener Explorer**](Explorer/BlockChain_Explorer.md) von Blockchain.com 
+* **[Esplora BlockStream Explorer](Explorer/Esplora%20BlockStream%20Explorer.md)**: interaktive GUI zur Analyse der life BitCoin (only) Blockchain.

@@ -2,9 +2,17 @@
 
 * ^- [Aufbau der Entwicklungsumgebung](_Aufbau%20der%20Entwicklungsumgebung.md)
 
-* [Running a Full Node von Bitcoin.org](https://bitcoin.org/en/full-node#windows-10)
+* [Running a Full Node von Bitcoin.org](https://bitcoin.org/en/full-node)
 
 * [Bit Coin Core Development Setup](BitCoinCoreDevelopmentSetup.md): BitCoin Core Konfiguration für Entwickler. 
+
+* [bitcoind](bitcoind.md): Der im Hintergrund laufende BitcoinCore Server Dienst
+
+* [bitcoin qt](bitcoin-qt.md): die Bitcoin Core Shell App
+
+* [bitcoin cli](bitcoin-cli.md) das gegen den [bitcoind](bitcoind.md)-Server laufende Kommandozeilentool (für das Programmieren von Batchprogrammen)
+
+* [BCore Verzeichnisse und Dateien](BCore_FileSystem.md)  
 
 ## 1. Hardware Setup
 Die Installation von BitcoinCore kann u.U. Tage, ja sogar WOCHEN dauern wenn die Hardware dafür nicht mitmacht: 
@@ -20,17 +28,23 @@ Die Installation von BitcoinCore kann u.U. Tage, ja sogar WOCHEN dauern wenn die
 5. **Schnelles Internet**: Dass man dafür ein stabiles und möglichst schnelles Internet benötigt, versteht sich von selbst - also nichts für unterwegs oder aus einem Hotelzimmer. Dass man nebenbei vielleicht nicht auch noch streamen sollte ebenfalls.  
 
 
-## 2. BitcoinCore installieren
+## 2. BitcoinCore-App installieren
 
-BitcoinCore biete die folgenden zwei Core-Apps:
+### Was isntalliert wird
+BitcoinCore umfasst die folgenden "Tools": :
 
-* **bitcoind**: The full node daemon (herefore the "d") that validates and relays transactions  
+* **bitcoind**: Ein in der Windows Kommandozeile gestarteter Deamon(Service) (man beachte das  "d" am Ende des Kommandos) zur Valildierung von Transaktionen. 
 
-* **bitcoin-cli**: Your command-line interface (cli) to the daemon
+* **bitcoin-cli**: das in der Winows-Console laufende Kommandozeilen-Interface (cli) für RPC-Calls gegen den zuvor gestarteten Daemon
 
+* **bitcoin core qt**: Das Bitcoin Core GUI mit dem die Blockchain synchronisiert, Wallets installiert und verwaltet werden. 
+
+Alle drei Komponenten werden über das die gleiche ***bitcoin.config* Datei** im ***C:\Users\RealB12\AppData\Local\Bitcoin*** Verzeichnis konfiguriert. 
+
+### Installationsvorgang
 1. **Download the latest version from https://bitcoin.org/en/download**
 
-> Intern verwende ich das "C:\me\TOOLS\BitcoinCore"-Verzeichnis
+> Intern verwende ich für den Download das "C:\me\TOOLS\BitcoinCore"-Verzeichnis welches nach dem Download wieder gelöscht werden kann. 
 
 2. **Unzip** the such downloaded files and **delete the *.zip-file** afterwards. 
 
@@ -107,8 +121,70 @@ Dies listet dir einen langen JSON-formatierten-Record mit allen wichtigen Parame
 
 Von nun an kannst du den Daemon einfach mit dem  *bcli*-Kommando starten
 
-## Configurations-Datei
-Die BitCoinCore Konfigurations findet man im Wurzelverzeichnis - in unserem Fall im Verzeichnis **..\TOOLS\BitcoinCore\bitcoin-28.1**
+
+## Verzeichnisse
+Nach der Installation finden sicht BitCoin-Daten in den folgenden drei Verzeichnisssen (bei denen mir noch nicht klar ist, was genau sie enthalten). 
+
+Detaillierte Infos zu den BitcoinCore Standardverzeichnissen findet man auf https://github.com/bitcoin/bitcoin/blob/master/doc/files.md
+
+### Installationsverzeichnis
+Dies ist das selbst gewählte Downloadverzeichnis mit den entpackten Executables zum Starten  die GUI-APP ([bitcoin-qt](bitcoin-qt.md)), dem Daemon/Server ([bitcoind](bitcoind.md)) und den Kommandozeilentools ([bitcoin cli](bitcoin-cli.md)) sowie der initialen (Muster) [bitcoin.config](bitcoin.config.md) Datei. 
+
+> **C:\me\TOOLS\BitcoinCore\bitcoin-28.1**
+
+Aktuell umfasste das Verzeichnis 94MB
+
+### Default BitcoinCore DATEN-Verzeichnis
+Bei der Installation werden auch dann, wenn explizit ein anderes Verzeichnis gewählt wurde, im folgenden Defaultverzeichnis massiv Daten (130GB) hinterlegt: 
+
+> **C:\Users\RealB12\AppData\Local\Bitcoin**
+
+Aktuell umfasste das Verzeichnis 127GB
+
+Das aktuelle Bitcoin DatenVerzeichnis findet man mit dem Kommando
+
+> %LOCALAPPDATA%\Bitcoin
+
+-> [Details zu den darin enthaltenen Unterverzeichnisse](BCore_FileSystem.md)
+
+### EXPLIZIT Gewähltes Datenverzeichnis
+Das folgende Verzeichnis hatte ich bei der Installation von BitcoinCore als Defaultverzeichnis angegeben und ging davon aus, dass die Blockchain in dieses Verzeichnis geladen wird. War aber nicht der Fall.  
+
+> **D:\@ME\DATA\BitcoinBlockchainData**
+
+Aktuell umfasste das Verzeichnis 10 GB
+
+Das aktuelle Bitcoin DatenVerzeichnis findet man mit dem Kommando
+
+> %LOCALAPPDATA%\Bitcoin
+
+Sowohl bitcoind als auch bitcon-qt können mit dem ***-datadir* Parameter** in einem neuen Verzeichnis starten (wobei dann automatisch wieder mit dem Synchronisieren der Blockchain begonnen wird!).
+
+
+### Dokumentationsfiles
+Die mit MarkdownMonster erstgellten Installations-  und Konfigurationsbeschreibung sowie UserGuides liegen bei mir im Verzeichnis: 
+
+> **C:\me\REPO\CRYPTO\b$\TOOLs\BitcoinCore**
+
+### Probleme mit Nicht-Default Verzeichnissen
+When the Bitcoin Core data path is different from the default, the software MIGHT not automatically find its existing data (blockchain, wallet files, configuration, etc.) in the new location. This can lead to a variety of issues, including: 
+1. Failure to load existing data: Bitcoin Core will start as if it were a fresh installation and begin the Initial Block Download (IBD) process from scratch in the default directory if you do not specify the new location!
+
+2. Data directory conflicts: You may end up with data in two places (some in the default, some in the new path), leading to confusion or errors if only parts of the data are moved.
+
+3. Wallet issues: If the wallet.dat file is in a different directory that isn't specified, the wallet will not load, and you will not see your funds or transaction history.
+
+4. Configuration file problems: Bitcoin Core typically looks for the bitcoin.conf file in the default data directory. If the .conf file is in the new data directory, it might be ignored unless the new datadir is specified via command line argument or other specific settings. 
+
+**How to Prevent Issues**:
+
+To run Bitcoin Core from a non-default data path without issues, you must use the ***-datadir=<path>*** argument to specify the new location.  
+
+
+## Konfigurations-Datei
+Die bitcoin.config datei findet man IMMER im lokalen BitCoin-Datenverzeichnis **..\Users\RealB12\AppData\Local\Bitcoin**, notabene auch dann, wenn man bei der BitcoinCore Installation einen anderen Pfad eingegeben hat! (der nur für den Pfad der bitcoin.config Datei gilt sowie nachträglich installierte Test-NetzwerkDaten, aber, so wie es aussieht nicht für die Main-Blockchain). 
+
+
 
 ## Network Configuration
 Beim Sart verbindet sich BitcoinCore automatisch mit 10 anderen FullNodes  (outbound connections), um die letzten Blocks und Transactions runterzuladen, und sich so auf den neusten Stand zu bringen. Das reicht, um den Knoten lediglich als Wallet und/oder Test- oder Schulungszwecken zu verwenden. 
