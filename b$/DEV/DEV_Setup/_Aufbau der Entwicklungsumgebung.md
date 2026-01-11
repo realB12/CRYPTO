@@ -44,3 +44,11 @@ Dies listet dir einen langen JSON-formatierten-Record mit allen wichtigen Parame
 * > alias bcli="bitcoin-cli -regtest"
 
 Von nun an kannst du den Daemon einfach mit dem  *bcli*-Kommando starten
+
+## Entwicklernetzwerke
+Um einerseits auf der Life-Chain keinen Schaden anzurichten oder echtes Geld zu verlieren und andererseits um beim Testen nicht in Echtzeit 10Minuten und mehr warten zu müssen, erstellen Entwickler auf ihren eigenen lokalen Maschinen, fix von der [_BitCoinCore Software ](../../TOOLs/BitcoinCore/_BitCoinCore-FullNode.md) zur Verfügung gestellte Testnetzwerke wie z.B. regtest (Testnet3) oder testnet4. 
+
+Bei denen ist z.B. die Difficulte zum Minen neuer Blocks defaultmässig 0 und das Mining bleibt deshalb dann auch sehr schnell. 
+
+
+

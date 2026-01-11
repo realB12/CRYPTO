@@ -1,6 +1,7 @@
 # BitCoinCore Entwickler Setup
 
 * [BitCoinCore installieren](BitCoinCore-installieren.md)
+* [BCore FileSystem](BCore_FileSystem.md)
 
 ---
 

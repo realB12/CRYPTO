@@ -2,7 +2,7 @@
 
 * [BCores **offizielle Webseite**](https://bitcoincore.org/)  
 
-* [Libra Bitcon Chat](https://web.libera.chat/#bitcoin)
+* [Libra BitcoinChat](https://web.libera.chat/#bitcoin)
 
 * [BitCoinCore **Installationsnaleitung**](BitCoinCore-installieren.md)
 
@@ -12,11 +12,20 @@
 
 * [Entwickler Docs auf GitHub](https://github.com/bitcoin-dot-org/developer.bitcoin.org)
 
-## Was ist BitCoin Core?
+## Was ist BitCoin Core Node?
 
 ## I. Technische Sicht
+### Technisch Abstrakt
+Eine auf dem lokalen PC BitCoinCore-Instanz (entweder von der Taskleiste als GUI- ([bitcoin qt](bitcoin-qt.md)) oder in einem Windows-KommandozeilenScreen als DAEMON ([bitcoind](bitcoind.md) gestartet - beide parallel nicht möglich), ist ein gleichberechtigter, aktiver Knoten DES dezentral verwalteten Bitcoin Blockchain Netzwerks (genau das Milliardenschwere Netz, von dem alle reden!), welcher sofort versucht sich von nun an laufend im Hintergrund mit diesem Netzwerk zu synchronisieren und deshalb unmmittelbar nach dem Start beginnt, sich laufende mit (bis zu 10) anderen Knoten zu vernetzen und Daten auszutauschen und zu verifizieren.
+
+Im BCore-Kontext können nun interaktiv im GUI oder via im GUI eingebauter Konsole oder in der Windows Kommandozeile Wallets erstellt oder BitCoin Informationsabfragen und Transaktionen getätigt werden, die DIREKT und damit sehr schnell mit dem lokal laufenden Knoten interagieren. 
+
+[Wallets](../../GLOSSAR/W/Wallet.md) sind dabei diejenigen Objekte mit denen man nicht nur konkret mit Blockchains interagiert (resp. man sich mit den in der Wallet gespeicherten Privaten umd Public-Keys Zugang zur Chain verschafft), sondern suchen als eine Art Filter sich aus den permanent anrollenden Transaktionsdaten die zur Wallet passenden heraus. 
+
+Zudem kann BCore mittels entsprechender Optionen/Eingabeparameter beim Start auch mit adhoc erstellten, lokalen TestNetzen verbunden werden, um so - entkoppelt von der Life Chain - verschiedene Dinge (Abfragen, Wallets, Transaktionen, etc.) zu testen ohne damit irgendwo Schaden anzurichten. 
+
 ### Dokumentation 
-BitcoinCore Dokc sind leider über drei verschiedenen Orte verteilt: 
+Die BitcoinCore-Dokumentation ist leider über drei verschiedenen Orte verteilt: 
 1. Bitcoin Core App Beschreibung, 
 2. dem Bitcoin Wiki, 
 3. auf der Webseite von Bitcoin.org wie folgt: 

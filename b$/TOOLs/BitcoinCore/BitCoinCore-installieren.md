@@ -27,10 +27,9 @@ Die Installation von BitcoinCore kann u.U. Tage, ja sogar WOCHEN dauern wenn die
 
 5. **Schnelles Internet**: Dass man dafür ein stabiles und möglichst schnelles Internet benötigt, versteht sich von selbst - also nichts für unterwegs oder aus einem Hotelzimmer. Dass man nebenbei vielleicht nicht auch noch streamen sollte ebenfalls.  
 
-
 ## 2. BitcoinCore-App installieren
 
-### Was isntalliert wird
+### Was installiert wird
 BitcoinCore umfasst die folgenden "Tools": :
 
 * **bitcoind**: Ein in der Windows Kommandozeile gestarteter Deamon(Service) (man beachte das  "d" am Ende des Kommandos) zur Valildierung von Transaktionen. 

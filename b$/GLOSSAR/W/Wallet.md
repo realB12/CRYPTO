@@ -20,7 +20,9 @@
 ## Intro
 Aus **EndUser Sicht** bezeichnet eine "Wallet" i.d.R eine zugangsgesicherte lokal installierte oder remote betriebene **Software** oder **App** mit der man die **BitCoin-Blockchain lesen und Transaktionen signieren kann**, die über den sogenannten [Mempool](../M/Mempool.md) mittels Mining-Prozesse für immer auf der Blockchain verbucht werden. Wallet-Technologie ist sozusagen das **unverzichtbare FrontEnd des ganzen BitCoin-Systems** um z.B. Bitcoins zu erhalten, zu kaufen oder mit Satoshis (SATS) zu bezahlen.  
 
-Technisch gesehen, ist eine "Wallet" primär mal nichts anderes als eine (i.d.R. mittels Wallet-App verwaltete) Datei oder Datenbank für [Private Keys](../P/Private%20Key.md) und die daraus generierten [Public Keys](../P/Public%20Key.md), welche über eine ebenfalls mit dieser Wallet generierte [SeedPhrase](../S/Seed.md) wieder hergestellt werden können. Im täglichen Umgang mit Wallet-Apps sieht man diese Schlüssel aber kaum, das sie implizit von der WalletApp verwaltet und benutzt werden - was wiederum heisst - dass JEDER der auf deine WalletApp zugreifen kann, auch ohne dass er die Seedphrase oder den Private Key kennt sich deine Coins auf sein Konto überweisen kann!
+Technisch gesehen, ist eine "Wallet" primär mal nichts anderes als eine (i.d.R. mittels Wallet-App verwaltete) Datei oder eine Datenbank für [Private Keys](../P/Private%20Key.md) und die daraus generierten [Public Keys](../P/Public%20Key.md), welche über eine ebenfalls mit dieser Wallet generierte [SeedPhrase](../S/Seed.md) wieder hergestellt werden könnten. 
+
+Im täglichen Umgang mit Wallet-Apps sieht man diese Schlüssel aber kaum, das sie implizit von der WalletApp verwaltet und benutzt werden - was wiederum heisst - dass JEDER der auf deine WalletApp zugreifen kann, auch ohne dass er die Seedphrase oder den Private Key kennt, sich deine Coins auf sein Konto überweisen kann!
 
 Aus diesem Grunde sind WalletApps meist zusätzlich durch ein Passwort oder biometrische Zugangsprüfung wie z.B. Gesichtserkennung geschützt. Wer es sicherer braucht und nur selten auf seine ANLAGE-Coins zugreifen muss, sollte dies auf eine sogenannte Cold-Wallet transferieren: offline-only Hardwarelösung die lediglich die Keys aufbewahren aber ansonsten keine Coins kaufen oder transferieren können.
 
@@ -28,7 +30,11 @@ Weil praktisch jede User-Interaktionen über eine Wallet läuft (Authentication)
 
 Entsprechend gross ist meine persönliche Motivation dieses Kerntechnologie und vor allem deren Sicherheitsaspekte von Grund auf zu verstehen (was mich im Sept 2025 veranlasste mir eine [eigene Wallet-App zu programmieren](../../DEV/WalDev/_Wallet%20selber%20programmieren.md). 
 
+### Wallettypen
 Wallet-Apps - sogenannte Hot Wallets - gibt es in allem möglichen Formen als WebExtension, Mobile- und Desktop-Apps von hunderten von verschiedenen Herstellern. Die bekanntesten Wallets sind vermutlich die Metamask Wallet und für die Schweizer die [Relai App](../../../../PRIV/_KEY/Assets/Services/R/Relai/_Relai.md). 
+
+### Wallets als Filter
+Wenn Wallets direkt mit einem eigenen, lokal installierten Knoten (Bitcoin Core) verbunden werden, diesen sie zusätzlich als Filter um aus der Menge aller anbrausenden Transaktionen nur die auf die Wallet passenden herauszufiltern. 
 
 ### ReferenzWallet
 Die erste und damit auch Referenzwallet geltende, [ "Satoshi Client" oder "Bitcoin Core"](../B/BitCoin%20Core.md) benannte, direkt von Satoshi Nakamoto's OriginalApp abgeleitete OpenSource-App, wird in der Praxis nur noch selten verwendet.  
