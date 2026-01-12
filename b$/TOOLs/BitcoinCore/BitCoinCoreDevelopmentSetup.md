@@ -3,6 +3,25 @@
 * [BitCoinCore installieren](BitCoinCore-installieren.md)
 * [BCore FileSystem](BCore_FileSystem.md)
 
+* [Bitcoin Programming (in Phyton 3.5) by Billy Song](https://github.com/jimmysong/programmingbitcoin)
+
+* [O'Reilly Bitcoin Entwickler Buch von Jimmy Song](https://www.oreilly.com/library/view/programming-bitcoin/9781492031482/preface01.html#setting_up)
+    
+    ![Bit Coin Programieren Cover](./zPIC/BitCoinProgramierenCover.png)
+
+* [Bitcoin Kommandozeilenprogrammierung](https://github.com/cmdruid/bitcoin-programming)
+
+* [List of Bitcoin Resources](https://github.com/igorbarinov/awesome-bitcoin)
+
+* [Bitcoiner.guide](https://bitcoiner.guide)
+
+* [Bitcoin Optech Newsletter](https://bitcoinops.org)
+
+* [Bitcointalk Forums](https://bitcointalk.org): Original Bitcoin discussion forum, founded by Theymos and Satoshi Nakamoto.
+
+* [Bitcoin Developer's Mailing List](https://lists.linuxfoundation.org/mailman/listinfo/bitcoin-dev)
+
+
 ---
 
 

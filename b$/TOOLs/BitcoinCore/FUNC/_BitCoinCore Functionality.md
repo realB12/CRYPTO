@@ -22,9 +22,17 @@ In der BitCoinCore Wallet ist es sehr einfach sich selber Bitcoins zu überweise
 
 * **Custom Transaction Fee**: Im Testsystem kann man hier was Beliebibes eingeben. 1000 Satoshisi haben sich hier als "normal" eingebürgert. 
 
-5. Mit der Betätigung des **SEND-Buttons**, werden zwei Transaktionen mit jeweils identischem Betrag eine Sender- und eine Receiver Transaktion erstellt und gelistet: 
+5. Mit der Betätigung des **SEND-Buttons**, werden eine Sender- und eine andere Receiver- Transaktion mit jeweils identischem Betrag erstellt:  
 
-Nach der Ueberweisung fehlen dann natürlich die Transaktionskosten im Konto (obwohl die Transaktion noch gar nicht auf die Blockchain geschrieben wurde). 
+Nach der Ueberweisung fehlen dann natürlich die Transaktionskosten im Konto (weil die Transaktion noch nicht auf die Blockchain geschrieben wurde, können die diesbezüglichen  Transaktionsfees auch noch nicht dem Miner gutgeschrieben werden). 
+
+## Echte Bitcoin auf der RealChain senden
+Wenn man Bitcoin auf der LifeBlockchain versenden möchte, dann ist das analog zu oben mit den folgenden Unterschieden: 
+1. BCore im LifeModus starten (dabei erscheint as Icon organe, statt blau)
+2. Sicherstellen dass Du eine gültige Empfängeradresse (Public Key des Empfängers) hast (verifiziere ob diese tatsächlich existiert)
+3. Die Transactionfee kannst du zwar immer noch selbst bestimmen aber du bekommst aktuelle Fees vorgeschlagen 
+4. Die Transaktion wird nicht gleich lokal ausgeführt sondern geht in den Mempool wo sie verifiziert und dann mal in einen neu zu erstellenden Block in die LifeBlockchian übernommen wird. 
+
 
  
 

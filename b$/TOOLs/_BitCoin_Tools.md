@@ -20,3 +20,6 @@ Non-Trading Tools umfassen die folgenden Bereiche
 ## Explorer Tools
 
 * **[Esplora BlockStream Explorer](Explorer/Esplora%20BlockStream%20Explorer.md)**: interaktive GUI zur Analyse der life BitCoin (only) Blockchain.
+
+## Diverse Tools
+* [Satoshi/BTC Umrechner vom Blocktrainer](https://www.blockchaincenter.net/rechner)

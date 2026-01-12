@@ -2,6 +2,8 @@
 
 * ^- [Aufbau der Entwicklungsumgebung](_Aufbau%20der%20Entwicklungsumgebung.md)
 
+* [Config-File Generator](https://jlopp.github.io/bitcoin-core-config-generator)
+
 * [Running a Full Node von Bitcoin.org](https://bitcoin.org/en/full-node)
 
 * [Bit Coin Core Development Setup](BitCoinCoreDevelopmentSetup.md): BitCoin Core Konfiguration für Entwickler. 

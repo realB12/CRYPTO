@@ -1,5 +1,7 @@
 # Remote Procedure Call (RPC) Kommandos für BitCoinCore (BCore)
 
+* [Offizielle und vollständige RPC Dokumentation](https://developer.bitcoin.org/reference/rpc/index.html#)
+
 * **[BitCoinCore FullNode](../_BitCoinCore-FullNode.md)**: Eine **Uebersicht was BitCoinCore ist** und wofür man einen eigenen Knoten verwendet: 
 
 ---

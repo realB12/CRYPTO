@@ -4,6 +4,8 @@ Das generateToAddress Kommando **generiert** die im ersten Parameter angegebene 
 
 Dieser Vorgang wird **Mining** genannt
 
+Der MiningVorgang versucht dann die ev. im lokalen Mainpool vorhandenen Transaktionen in den Block zu schreiben. Sind keine Transaktionen vorhanden, dann bleiben diese Blocks einfach leer - werden aber trotzdem erstellt und werden as is - resp. als leere Blocks der aktuellen Blockchain angehängt und verifiziert.
+
 Diese Funktion gibt die Kontrolle erst nach erfolgreicher Beendigung des MiningProzesses (oder einem implizit festgelegten Timeout) wieder an die Konsole zurück. Bis dahin bleibt die Konsole (entsprechend lange) blockiert und zeigt den Text "Executing...". 
 
 Für 100 Adressen auf dem regtest-Netz dauert das Minen dieser 100 Adressen dann trotzdem gute 2 Minuten!
