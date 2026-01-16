@@ -1,5 +1,15 @@
 # BitCoinCore Funktionalität
 
+> [CRYPTO/b$/TOOLs/BitcoinCore/FUNC]
+
+---
+
+* [BitCoinCore FullNode](../_BitCoinCore-FullNode.md): SPE Doc mit Gesamtübersicht zum BCore Thema
+
+---
+
+In diesem Dokument beschreiben wir einige KernFunktionen der lokal installierten [BitCoinCore APP](../_BitCoinCore-FullNode.md) aus EnduserSicht. 
+
 ## Bitcoins an sich selbst überweisen
 In der BitCoinCore Wallet ist es sehr einfach sich selber Bitcoins zu überweisen. 
 

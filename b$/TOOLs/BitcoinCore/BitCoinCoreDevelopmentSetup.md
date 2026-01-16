@@ -1,11 +1,10 @@
 # BitCoinCore Entwickler Setup
 
-* [BitCoinCore installieren](BitCoinCore-installieren.md)
-* [BCore FileSystem](BCore_FileSystem.md)
+* ! [**BitCoinCore installieren**](BitCoinCore-installieren.md): Voraussetzung!
 
-* [Bitcoin Programming (in Phyton 3.5) by Billy Song](https://github.com/jimmysong/programmingbitcoin)
+* [BCore FileSystem](BCore_FileSystem.md): eine Uebersicht über die standardmässig installierten, Chain spezifischen Verzeichnisse und ([Konfigurations-](bitcoin.config.md)) Dateien.
 
-* [O'Reilly Bitcoin Entwickler Buch von Jimmy Song](https://www.oreilly.com/library/view/programming-bitcoin/9781492031482/preface01.html#setting_up)
+
     
     ![Bit Coin Programieren Cover](./zPIC/BitCoinProgramierenCover.png)
 
@@ -25,10 +24,12 @@
 ---
 
 
-Im folgenden erläutere ich **wie wir die GUI-Konsole in den für Entwickler benötigten RegTest-Modus schalten** resp. wir wir damit lokale **eine rein private, nicht synchronisierte und damit leere Test-Blockchain erstellen**. 
+Im folgenden erläutere ich **wie wir BitCoinCore in der für Entwickler benötigten RegTest-Chain starten** resp. wir wir damit lokal **eine rein private, nicht synchronisierte und damit leere und deshalb höchst performante Test-Blockchain erstellen**. 
+
+Danach erläutere ich die verschieden Art und Weisen wie man mittels Tools und HTTP RCP-Requests direkt auf den BCore Server zu greifen kann. 
 
 
-## 1. GUI in den Entwicklermodus switchen
+## 1. BCore mit RegTest-Chain starten. 
 Nachdem man BitCoinCore gem. [Installationsanleitung](BitCoinCore-installieren.md) installiert hat, kann man das **GUI in den EntwicklerModus switchen** indem man die ***bitcoin.conf*-Datei** (bei mir aktuell im *D:\@ME\DATA\BitcoinBlockchainData* Verzeichnis) **mit folgenden Werten überschreibt**:
 
 
@@ -41,12 +42,12 @@ txindex = 1
 
 > Den **aktuellen Pfad** für die bitcoin.config KonfigDatei erhält man indem man im GUI auf "**Settings**" -> "**Options**" und dort auf dem  Button **[Open Configuratoin File]** klickt. 
 
-Nach einem **Restart** des BitCoin GUIS (ACHTUNG: nicht mit dem in der Windows Konsole mit bitcoind gestarteten Daemons verwechseln, der nach wie vor auf das "main"-Netz zeigt) erscheint nun an Stelle des orangen Startschirms (main-Netz) ein blauer, resp. **zeigt das GUI oben links nun ein BLAUES Icon**. 
+Nach einem **Restart** des BCore GUIS (ACHTUNG: nicht mit dem in der Windows Konsole mit [bitcoind](bitcoind.md) gestarteten Daemons verwechseln, der nach wie vor auf das "main"-Netz zeigt) erscheint nun an Stelle des orangen Startschirms (main-Netz) ein blauer, resp. **zeigt das GUI oben links nun ein BLAUES Icon**. 
 
-Die dabei aufpoppenden OutOfSync Warnung beim Starten einfach wegklicken!
+Die dabei jeweils beim Starten aufpoppenden OutOfSync Warnung muss man dann (leider wiederholt) wegklicken!
 
 ## 2. Eine Wallet erstellen
-* Im Menu des GUIS "**File**" wählen und darin -> "**Create Wallet**"
+* Im Menu des GUIs "**File**" wählen und darin -> "**Create Wallet**" wählen
 * Ich nenne sie "***myTestWallet***"
 
 ## 3. GUI Kommandozeilen Konsole
@@ -82,7 +83,7 @@ erhälte man den folgenden Output
 }
 ```
 
-Wichtig ist hier, **dass wir bei "chain" den Wert "regtest" stehen haben** um so sicher zu gehen dass wir nicht auf der life-chain sind. 
+Wichtig ist hier, **dass wir bei "chain" den Wert "regtest" stehen haben** um so sicher zu gehen, dass wir nicht auf der life main-chain sind. 
 
 
 

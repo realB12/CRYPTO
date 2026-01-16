@@ -1,4 +1,10 @@
-# BitCont Entwickler-Infos
+# BitCoin Entwickler-Infos
+
+* [BitCoinCore FullNode](../TOOLs/BitcoinCore/_BitCoinCore-FullNode.md): Eine Uebersicht was BCore ist und SPE Doc für alles was mit BCore zusammenhängt. 
+
+* [BCore installieren](../TOOLs/BitcoinCore/BitCoinCore-installieren.md): Installation eines mit der Life Blockchain zu synchronisierenden FullNodes
+
+* [BCore Entwickler Konfiguration](../TOOLs/BitcoinCore/BitCoinCoreDevelopmentSetup.md): Wie man eine eigene TestChain für BCore konfiguriert. 
 
 * [GitHub Repo](https://github.com/bitcoin/bitcoin)
 * [Bitcoin Wiki](https://en.bitcoin.it/wiki/Main_Page)
@@ -9,6 +15,20 @@
 
 * [The Bitcoin Source Code: A Guided Tour - Part 1, Block Time and Spacing](https://www.youtube.com/watch?v=duAcEElZpNk&list=PLGIz-blhWiP80wXffE1nDQz_BKMhUSBDF)
 
+* [Bitcoin Programming (in Phyton 3.5) by Billy Song](https://github.com/jimmysong/programmingbitcoin)
+
+* [O'Reilly Bitcoin Entwickler Buch von Jimmy Song](https://www.oreilly.com/library/view/programming-bitcoin/9781492031482/preface01.html#setting_up)
+
+---
+
+## Scope of Document
+In diesem UEBERSICHT- und SPE-Dokument für BitCoin Entwickler verweisen wir auf externe Quellen und interne Docs zur Programmierung eigener Tools im Zusammenhang mit Blockchains. 
+
+Die Installation, Konfiguration und Maintenance von 3rd-Party-Tools und Services wird in den jeweiligen [Tools- und Serviceverzeichnissen](../TOOLs/_BitCoin_Tools.md) beschrieben. 
+
+Ziel ist es nicht primär den BCore Source weiter zu entwicklen, sondern dessen Schnittstellen und bereits bestehende Tools zu kennen um auf dieser Basis eigene Anwendungstools zu schreiben. 
+
+## BCore SourceCode
 Erste Anlaufstelle und Quelle der Wahrheit für Entwickler ist immer das öffentlich zugängliche [BitCoin GitHub Repo](https://github.com/bitcoin/bitcoin)
 
 The contribution workflow is described in [CONTRIBUTING.md](https://github.com/bitcoin/bitcoin/blob/master/CONTRIBUTING.md) and useful hints for developers can be found in [doc/developer-notes.md](https://github.com/bitcoin/bitcoin/blob/master/doc/developer-notes.md).

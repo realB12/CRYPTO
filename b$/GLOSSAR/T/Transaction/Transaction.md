@@ -14,22 +14,22 @@
 ## BenutzerSicht
 Rein bildlich gesprochen, teilt eine Transaktion dem Netzwerk mit, eine gewisse Menge Satoschis (Betrag) an die [Address](../A/Address.md) resp. in die [Wallet](../W/Wallet.md) eines anderen zu überweisen. 
 
-Der neue Besitzer kann dann diesen Betrag wieder an einen anderen Owner senden, und so weiter, und ergänzt so die bestehende TransaktionsKette um ein weiteres Glied. 
+Der neue Besitzer kann dann diesen Betrag wieder an einen anderen Owner senden, und so weiter, und ergänzt somit die Transaktionskette um einen weiteren Eintrag (resp. die Blockchain um ein weiteren Block den die Transaktion i.d.R. mit anderen teilt).  
 
 <span style="color:red; font-weight:bold">ACHTUNG</span>: 
-Das bildliche Erklärungsmodell für Anwender (in Anlehnung an den Umgang mit FIAT Geld) weicht beträchtlich von der technischen Implementierung ab (z.B. enthalten Wallets keine Coins und es werden auch KEINE Satoshis verschoben resp. sind das einzig real in der BitCoinBlockchain Sichtbare die an einer Transaktion beteiligten UTXOs die ihren "Besitzer" wechseln!)!
+Das bildliche Erklärungsmodell einer Transaktion für Anwender (in Anlehnung an den Umgang mit FIAT Geld) weicht damit beträchtlich von der technischen Implementierung ab (z.B. enthalten Wallets keine Coins und es werden auch KEINE Satoshis verschoben sonder es lediglich ein paar an einer Transaktion beteiligten UTXOs wechseln ihren "Besitzer")!
 
-Für normale Anwender ist eine Transaktion damit nichts weiter als die simple Eingabe einer [Empfänger-Adresse](../A/Address.md) und eines Bitcoin-Betrages in einer [Wallet-App](../W/Wallet.md), die diese Transaktion dann auf der Blockchain fälschungssicher vermerkt, resp. können diese Daten an der Kasse mit Hilfe eines sogenannten [Payment request QR code](../P/Payment%20request%20QR%20code.md) eingescannet werden.
+Für normale Anwender ist eine Transaktion damit nichts weiter als die simple Eingabe einer [Empfänger-Adresse](../A/Address.md), eines Bitcoin-Betrages und ev. noch einer Transaktionsfee in einer [Wallet-App](../W/Wallet.md), die diese Transaktion dann in den MemPool schickt wo sie von einem Miner (sofern die Transaktionsfee genügt) in einen neuen Block gepackt und damit fälschungssicher an die Blockchain angehängt wird. Diese Daten könnten dann an einer Kasse mit Hilfe eines sogenannten [Payment request QR code](../P/Payment%20request%20QR%20code.md) eingescannet werden.
 
-So weit so simpel. Das böse Erwachen kommt dann mit den [Transaktionskosten][BTC TransactionFees](../../../b$TECH/Fees/BTC_TransactionFees.md) wo man dann schnell zur Einsicht kommt, sich das BitCoin LayerOne Netz nicht für  Transaktionen mit kleinen Beträgen eignet, sondern diese besser auf dem Layer-Two z.B. mittels Lightning ausgeführt werden sollten.  
+Mit den [Transaktionskosten][BTC TransactionFees](../../../b$TECH/Fees/BTC_TransactionFees.md) reift dann auch die Einsicht, dass sich BitCoin auf dem Layer One nicht für kleine Beträgen eignet, sondern besser auf dem Layer-Two z.B. mittels Lightning ausgeführt werden.  
 
 --- 
 ## Technische Sicht
 
 ### Abstrakt
-Es gibt KEINE einzelnen Bitcoins: weder physisch als Münze noch digital als Dateneintrag. Physisch auf der Blockchain gibt es lediglich sogenannte UTXOs die bestimmten Personen bestimmte BitCoin-BETRAEGE zuerkennen. Solche UTXOs entstehen 
-1. als Lohn fürs erfolgreiche Mining und
-2. bei jeder Transaktion wo eine Person A eine beliebige Menge seiner UTXOs an einen Empfänger sendet der daraus genau EINEN (quasi konsolidiertn) UTXO erhält. 
+Es gibt KEINE einzelnen Bitcoins: weder physisch als Münze noch digital als Dateneintrag. Physisch auf der Blockchain gibt es lediglich sogenannte UTXOs die bestimmten Personen bestimmte BitCoin-BETRAEGE zuerkennen. Solche UTXOs erhält man  
+1. entweder als Lohn fürs erfolgreiche Mining (CoinBase) 
+2. oder bei jeder Transaktion wo eine Person A eine beliebige Menge seiner UTXOs an einen Empfänger sendet der daraus genau EINEN (quasi konsolidierten) "unspent" UTXO erhält währenddem die alten als "spent" gekennzeichnet werden. 
 
 Es ist wie mit Land welches man "besitzt" weil irgendwo in einem Register festgehalten wird, wem welcher Anteil von Land gehört ohne dass das Land per se angeschrieben wäre wem es gehört oder sichtbar wäre welchen Quadratmeter man nun genau meint wenn man ihn "besitzt". Genau wie bei Land wird nicht physisches oder symbolisches Land übertragen, sondern lediglich die verbriefte Urkunde wo drin steht um welches Land es sich genau handelt und wem es nun gehört.   
 
@@ -273,6 +273,7 @@ Physisch werden diese Ver- und Entschlüsselungen mittels Locking- und UnLocking
 
 
 ### Bitcoin Core’s serialization format
+
 Every transaction is serialised and can be looked up with the following `getrawtransaction` CLI-Command: 
 
 `$ bitcoin-cli getrawtransaction 466200308696215bbc949d5141a49a41\
@@ -291,16 +292,38 @@ e739df2f899c49dc267c0ad280aca6dab0d2fa2b42a45182fc83e81713010000
 0000
 </pre>
 
-**Bitcoin Core’s serialization format** is special because it’s the format used to make commitments to transactions and to relay them across Bitcoin’s P2P network, but otherwise programs can use a different format as long as they transmit all of the same data. However, Bitcoin Core’s format is reasonably compact for the data it transmits and simple to parse, so many other Bitcoin programs use this format.
+At a high level, a transaction really only has four components. They are:
+
+1. **Version**: what additional features the transaction uses
+
+2. **Inputs**: what bitcoins are being spent
+
+3. **Outputs**: where the bitcoins are going
+
+4. **Locktime**:  when this transaction starts being valid
+
+5. **Network**: network to be validated against (main- or testnet)
+
+6. **ID**: The id is what block explorers use for looking up transactions. It’s the hash256 of the transaction in hexadecimal format.
+
+7. 
+
+> **Bitcoin Core’s serialization format** is special because it’s the format used to make commitments to transactions and to relay them across Bitcoin’s P2P network, but otherwise programs can use a different format as long as they transmit all of the same data. However, Bitcoin Core’s format is reasonably compact for the data it transmits and simple to parse, so many other Bitcoin programs use this format.
 
 That are organized as follows: 
-![Transaction Byte Map](../zPIC/TransactionByteMap.png)
+![Transaction Byte Map](../../zPIC/TransactionByteMap.png)
 
 resp. in Byte-representation: 
-![Transaction As Byte Rep](../zPIC/TransactionAsByteRep.png)
+![Transaction As Byte Rep](../../zPIC/TransactionAsByteRep.png)
 
 ### 1. Version 
-The first four bytes of a serialized Bitcoin transaction are its version. Currently we only have version 1 and 2 with 3 under discussoin. 
+The first 4 bytes of a serialized Bitcoin transaction are its version. Currently we only have version 1 and 2 with version 3 under discussion. 
+
+Note that **the actual value in hexadecimal is 01 00 00 00**. Interpreted as a little-endian integer, this number is actually 1.
+
+Specifying the version number defines supported features and the APIs we can program against.
+
+
 
 #### Version 1
 The original version of Bitcoin transactions was **version 1** (0x01000000). All transactions in Bitcoin must follow the rules of version 1 transactions.
@@ -311,8 +334,7 @@ Bitcoin transactions were introduced in the BIP68 soft fork change to Bitcoin’
 #### Version 3
 As of this writing, a proposal to begin using version 3 transactions is being widely considered. That proposal does not seek to change the consensus rules but only the policy that Bitcoin full nodes use to relay transactions. Under the proposal, version 3 transactions would be subject to additional constraints in order to prevent certain denial of service (DoS) attacks.
 
-#### **Protecting Presigned Transactions**: 
-
+**Protecting Presigned Transactions**: 
 The last step before broadcasting a transaction to the network for inclusion in the blockchain is to sign it. However, it’s possible to sign a transaction without broadcasting it immediately. You can save that presigned transaction for months or years in the belief that it can be added to the blockchain later when you do broadcast it. In the interim, you may even lose access to the private key (or keys) necessary to sign an alternative transaction spending the funds. This isn’t hypothetical: **several protocols built on Bitcoin, including Lightning Network, depend on presigned transactions.**
 
 This creates a challenge for protocol developers when they assist users in upgrading the Bitcoin consensus protocol. Adding new constraints—such as BIP68 did to the sequence field—may invalidate some presigned transactions. If there’s no way to create a new signature for an equivalent transaction, then the money being spent in the presigned transaction is permanently lost.
@@ -324,11 +346,11 @@ If you implement a protocol that uses presigned transactions, ensure that it doe
 ### 2. Extended Marker and Flag
 The next two fields of the example serialized transaction were added as part of the segregated witness (segwit) soft fork change to Bitcoin’s consensus rules. The rules were changed according to BIPs 141 and 143, but the extended serialization format is defined in BIP144.
 
-If the transaction includes a witness structure, the marker must be zero (0x00) and the flag must be nonzero. 
+**If the transaction includes a witness structure, the marker must be zero (0x00) and the flag must be nonzero**. 
 
 In the current P2P protocol, the flag should always be one (0x01); alternative flags are reserved for later protocol upgrades.
 
-If the transaction doesn’t need a witness stack, the marker and flag must not be present. This is compatible with the original version of Bitcoin’s transaction serialization format, now called legacy serialization.
+**If the transaction doesn’t need a witness stack, the marker and flag must not be present.** This is compatible with the original version of Bitcoin’s transaction serialization format, now called legacy serialization.
 
 In legacy serialization, the marker byte would have been interpreted as the number of inputs (zero). A transaction can’t have zero inputs, so the marker signals to modern programs that extended serialization is being used. The flag field provides a similar signal and also simplifies the process of updating the serialization format in the future.
 
@@ -336,9 +358,14 @@ In legacy serialization, the marker byte would have been interpreted as the numb
 The inputs field contains several other fields: 
 ![InputField FieldMap](../zPIC/InputField-FieldMap.png)
 
+Each input points to an output of a previous transaction
+
 #### Length of Transaction Input List
 The transaction input list starts with an integer indicating the number of inputs in the transaction. The minimum value is one. There’s no explicit maximum value, but restrictions on the maximum size of a transaction effectively limit transactions to a few thousand inputs. The number is encoded as a compactSize unsigned integer (that can vary and threfore is tricky to be en- and decoded with certain programming languages!). 
 
+### 4. Outputs
+
+### 5. 
 
 ## Annotations
 

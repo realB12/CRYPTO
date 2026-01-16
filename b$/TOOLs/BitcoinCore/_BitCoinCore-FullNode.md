@@ -1,20 +1,52 @@
-# BitCoin-Core (BCore)
+# BitCoin-Core (BCore) SPE Doc für Enduser
+
+> [CRYPTO/**b$/TOOLs/BitCoinCore**-Verzeichnis]
+---
+
+**Bitcoin.org OriginalQuellen**
 
 * [BCores **offizielle Webseite**](https://bitcoincore.org/)  
 
 * [Libra BitcoinChat](https://web.libera.chat/#bitcoin)
 
-* [BitCoinCore **Installationsnaleitung**](BitCoinCore-installieren.md)
-
 * [UserInterface](https://bitcoin.org/en/bitcoin-core/features/user-interface)  
 
-* [Entwickler Seite](https://developer.bitcoin.org/devguide/index.html)
+**eigene BCore Docs**
+* [BitCoinCore **Installationsanleitung**](BitCoinCore-installieren.md): wie man sich auf dem lokalen Rechner einen eigenen Full-Node instlalliert. 
 
-* [Entwickler Docs auf GitHub](https://github.com/bitcoin-dot-org/developer.bitcoin.org)
+* [BitCoinCore Functionality](FUNC/_BitCoinCore%20Functionality.md): BCore Funktionalität aus Benutzersicht
 
-## Was ist BitCoin Core Node?
+
+**SoftwareEntwicklung**: 
+
+* [EntwicklerInfos](../../DEV/_EntwicklerInfos.md): Programmieranleitungen auf Basis der hier beschriebenen CryptoTools. 
+
+* Lokale [BCore Development Setup](BitCoinCoreDevelopmentSetup.md) konfigurieren
+
+* [BCore Dateisystem](BCore_FileSystem.md): was ist wo
+
+* [bitcoin cli](bitcoin-cli.md): Kommandozeilen Tool
+
+* [bitcoin qt](bitcoin-qt.md): die GUI-APP
+
+* [bitcoind](bitcoind.md): der BCore-Server
+
+* [RPC-Kommandos für BitCoinCore](RPC-Calls/_RPC-Kommandos%20für%20BitCoinCore.md)
+
+* [Github: Original Entwickler Docs](https://github.com/bitcoin-dot-org/developer.bitcoin.org)
+
+* [Original Bitcoin.org Developer-Page](https://developer.bitcoin.org/devguide/index.html)  
+
+---
+
+**SPE Doc zum Thema BitCoinCore**. In diesem Dokument beschränken wir uns primär auf eine reine Benutzersicht. Auf Technische Docs und Docs für Entwickler wird obenstehend in der Linkliste verwiesen.
+
+---
+
+## Was ist ein BitCoin Core Full-Node?
 
 ## I. Technische Sicht
+    
 ### Technisch Abstrakt
 Eine auf dem lokalen PC BitCoinCore-Instanz (entweder von der Taskleiste als GUI- ([bitcoin qt](bitcoin-qt.md)) oder in einem Windows-KommandozeilenScreen als DAEMON ([bitcoind](bitcoind.md) gestartet - beide parallel nicht möglich), ist ein gleichberechtigter, aktiver Knoten DES dezentral verwalteten Bitcoin Blockchain Netzwerks (genau das Milliardenschwere Netz, von dem alle reden!), welcher sofort versucht sich von nun an laufend im Hintergrund mit diesem Netzwerk zu synchronisieren und deshalb unmmittelbar nach dem Start beginnt, sich laufende mit (bis zu 10) anderen Knoten zu vernetzen und Daten auszutauschen und zu verifizieren.
 
@@ -30,7 +62,7 @@ Die BitcoinCore-Dokumentation ist leider über drei verschiedenen Orte verteilt:
 2. dem Bitcoin Wiki, 
 3. auf der Webseite von Bitcoin.org wie folgt: 
 
-#### BitconCore Docs 
+#### BitcoinCore Docs 
 Das [GitHub Docs Verzeichnis auf developer.bitcoin.org](https://github.com/bitcoin-dot-org/developer.bitcoin.org) richtet sich vor allem an Entwickler und Test und weniger an Enduser.
 
 #### Bitcoin Wiki
@@ -45,13 +77,13 @@ The [Bitcoin.org bandwidth sharing guide](https://bitcoin.org/en/full-node) curr
 
 
 ## II. BenutzerSicht
-Die mit BitcoinCore (im Folgenden kurz BCore genannt) gebotene Wallet verfügt sowohl über eine Benutzeroberfläche als auch eine über die Kommandozeile (CLI)  zugängliche API. 
+Mit BitcoinCore (im Folgenden kurz BCore genannt) kann mittels Benutzeroberfläche einfach eigene Wallets erstellen und verwalten, BTC überweisen und in einer eigenen Konsole auch noch spezifischere Kommandos ausführen.  
 
-Zudem unterstützt BCore  sogenannte Lightweight Wallets. 
+Zudem unterstützt der BCore-Server-Dienst auch externe Lightweight Wallets. 
 
 ![BCoreUI](./zPIC/BCoreUI.png)
 
-> <span style="color:red; font-weight:bold">ACHTUNG</span>:: you only get the security and privacy benefits in supported lightweight wallets if they make a secure and private connection to your Bitcoin Core every time you use them. This usually requires special configuration.
+> <span style="color:red; font-weight:bold">ACHTUNG</span>:: you only get the security and privacy benefits in supported lightweight wallets if they make a secure and private connection to your Bitcoin Core every time you use them. This usually requires special configuration!
 
 ### Funktionalität der grafischen Benutzeroberläche 
 #### Konto-Uebersicht
@@ -79,18 +111,10 @@ Ueberwachung der von dir beanspruchten Netzkapazität
 Verwalten von Offline gespeicherten Coins -> Cold Wallets
 
 
-### Funktionalität der API
-#### Neue Receiver-Adressen erstellen
+### Funktionalität der GUI-Konsole
+Die BCore GUI/Bentuzeroberfläche enthält eine eigene Konsole, wo man sämtliche durch BCore zur Verfügung gestellten API-Kommandos ausführen kann. Im Gegensatz zur Kommandozeilen-API verfügt die eingebaute Konsole um eine automatische AutoComplete-Funktion was Eingabefehler verhindert. Zudem hat man mit der GUI-Konsole auch alles zur Hand was man braucht, resp. kann man sich die Auswirkungen der Kommandos dann auch im GUI bestätigen lassen. 
 
-
-#### BitCoin Konto überblicken
-    
-#### Geld versenden
-
-#### List Unspent
-Welche UXTOs Du noch ausgeben kannst
-
-
+Diese Kommandos werden im [Doc "RPC-Kommandos für BitCoinCore" ](RPC-Calls/_RPC-Kommandos%20für%20BitCoinCore.md) beschrieben während man im Dokument ["EntwicklerInfos"](../../DEV/_EntwicklerInfos.md) Tips und Tricks zur generellen BitCoin-Entwicklung findet. 
 
 
 

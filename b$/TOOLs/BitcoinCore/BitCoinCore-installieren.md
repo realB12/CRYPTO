@@ -193,5 +193,9 @@ Beim Sart verbindet sich BitcoinCore automatisch mit 10 anderen FullNodes  (outb
 ### Port 8333 für Outbound Connections
 Um aber AKTIVER Knoten im globalen Netzwerk zu werden und um damit mit eigenen Resourcen das BitCoin-Ding zu unterstützen, oder um LightWeight Clients zu unterstützen, müssen wir zusätzlich sogenannte **Inbound Connections** definieren, damit diese "von aussen" dediziert und kontrolliert auf unseren Knoten zugreifen können: Konkret müssen wir den Poert 8333 dafür öffnen: 
 
+## JSON-RPC Konfiguration
+
+
+
 
  
