@@ -10,7 +10,7 @@ Dabei ist lediglich die SUMME, resp. der WERT (in [Satoschis](../S/sat.md)) des 
 
 > Der Name "Unspent Transaction Output" kommt daher, weil jeder UTXO als Output einer normalen [Geldüberweisungs Transaktion](../T/Transaction.md) oder einer [CoinBase Transaction](../C/CoinBase-Transaction.md) erstellt, aber noch nicht als Input einer FolgeTransaktion verwendet wurde. 
 
-**Jeder UTXO kann nur genau einmal (als Transaktionsinput) verwendet werden,** resp. sobald ein UTXO auf der Blockchain als Input einer Transaktion vermerkt wird, gilt er als "ausgegeben" (bleibt aber "as is" in der Blockchain auf immer und ewig erhalten um so jeden neu erstellten Output zu seiner Quelle zurückverfolgen zu können). 
+**Jeder UTXO kann nur genau einmal (als Transaktionsinput) verwendet werden,** resp. sobald ein UTXO auf der Blockchain als Input einer Transaktion vermerkt wird, gilt er als "ausgegeben" (bleibt aber "as is" in der Blockchain auf immer und ewig erhalten um so jeden neu auf dieser Basis erstellten Folge-Output zu seiner Quelle zurückverfolgen zu können). 
 
 ### Beispiel
 If Alice owns a UTXO worth 1 BTC and wishes to pay Bob 0.4 BTC, she must spend her entire 1 BTC for this transaction's input. 

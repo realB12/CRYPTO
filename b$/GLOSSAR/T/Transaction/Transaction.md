@@ -272,18 +272,19 @@ Physisch werden diese Ver- und Entschlüsselungen mittels Locking- und UnLocking
 
 
 
-### Bitcoin Core’s serialization format
+### BitcoinCores DatenFormat für Transaktionen
+Jede Transaktion auf der Blockchain ist nach dem selben Schema serialisiert und kann mit dem `getrawtransaction`-Kommando wie folgt betrachtet werden:
 
-Every transaction is serialised and can be looked up with the following `getrawtransaction` CLI-Command: 
+> bitcoin-cli getrawtransaction 466200308696215bbc949d5141a49a41\
+38ecdfdfaa2a8029c1f9bcecd1f96177
 
-`$ bitcoin-cli getrawtransaction 466200308696215bbc949d5141a49a41\
-38ecdfdfaa2a8029c1f9bcecd1f96177`
-
-which produces the following hexadecimal output:
+was dann folgenden Output generiert:
 
 <pre>
-
-01000000000101eb3ae38f27191aa5f3850dc9cad00492b88b72404f9da13569
+01000000 (Version)
+00 (Marker Flag)
+01 (Anzahl der Inputs)
+01eb3ae38f27191aa5f3850dc9cad00492b88b72404f9da13569
 8679268041c54a0100000000ffffffff02204e0000000000002251203b41daba
 4c9ace578369740f15e5ec880c28279ee7f51b07dca69c7061e07068f8240100
 000000001600147752c165ea7be772b2c0acb7f4d6047ae6f4768e0141cf5efe
@@ -292,7 +293,9 @@ e739df2f899c49dc267c0ad280aca6dab0d2fa2b42a45182fc83e81713010000
 0000
 </pre>
 
-At a high level, a transaction really only has four components. They are:
+Dieser Output ist kaum lesbar, da die Entwickler viel Mühe darauf verwendet haben bei der Serialisierung der Daten (Angesichts der riesigen Datenmenge der Blockchain auf Kosten der Lesbarkeit) möglichst wenig Speicherplatz zu beanspruchen.
+
+Grob gesehen besteht eine Transakton aus den folgenden Hauptbestandteilen:
 
 1. **Version**: what additional features the transaction uses
 
@@ -306,14 +309,14 @@ At a high level, a transaction really only has four components. They are:
 
 6. **ID**: The id is what block explorers use for looking up transactions. It’s the hash256 of the transaction in hexadecimal format.
 
-7. 
 
-> **Bitcoin Core’s serialization format** is special because it’s the format used to make commitments to transactions and to relay them across Bitcoin’s P2P network, but otherwise programs can use a different format as long as they transmit all of the same data. However, Bitcoin Core’s format is reasonably compact for the data it transmits and simple to parse, so many other Bitcoin programs use this format.
+> Dieses **Bitcoin Core serialization format** ist nur für die Validierung auf der Blockchain zwingend. Resp. übertragen Programme Transaktionsdaten auch in anderen, lesbareren Formaten.  
 
-That are organized as follows: 
+**in abstrakter/schematischer Darstellung**: 
 ![Transaction Byte Map](../../zPIC/TransactionByteMap.png)
 
-resp. in Byte-representation: 
+**in Byte-representation**:
+
 ![Transaction As Byte Rep](../../zPIC/TransactionAsByteRep.png)
 
 ### 1. Version 
@@ -343,29 +346,106 @@ This problem is solved by reserving some transaction features for upgrades, such
 
 If you implement a protocol that uses presigned transactions, ensure that it doesn’t use any features that are reserved for future upgrades. Bitcoin Core’s default transaction relay policy does not allow the use of reserved features. You can test whether a transaction complies with that policy by using Bitcoin Core’s `testmempoolaccept` RPC on Bitcoin mainnet.
 
-### 2. Extended Marker and Flag
-The next two fields of the example serialized transaction were added as part of the segregated witness (segwit) soft fork change to Bitcoin’s consensus rules. The rules were changed according to BIPs 141 and 143, but the extended serialization format is defined in BIP144.
+### 2. Extended Marker and Flag (optional)
+The next two fields define whether the transaction includes some advanced "witness structure" that has been introduced just recently. When present the marker must be zero (0x00) and the flag must be curently be one (0x01) as alternative flags are reserved for later protocol upgrades.
 
-**If the transaction includes a witness structure, the marker must be zero (0x00) and the flag must be nonzero**. 
+**If the transaction doesn’t need a witness stack, the marker and flag must not be present.** which is now called **legacy serialization**.
 
-In the current P2P protocol, the flag should always be one (0x01); alternative flags are reserved for later protocol upgrades.
-
-**If the transaction doesn’t need a witness stack, the marker and flag must not be present.** This is compatible with the original version of Bitcoin’s transaction serialization format, now called legacy serialization.
-
-In legacy serialization, the marker byte would have been interpreted as the number of inputs (zero). A transaction can’t have zero inputs, so the marker signals to modern programs that extended serialization is being used. The flag field provides a similar signal and also simplifies the process of updating the serialization format in the future.
+**In legacy serialization, the marker byte would have been interpreted as the number of inputs**. A transaction can’t have zero inputs, so the marker signals to modern programs that extended serialization is being used. 
 
 ### 3. Inputs
+![Transaction Input Fields](../../zPIC/TransactionInputFields.png)
+
 The inputs field contains several other fields: 
-![InputField FieldMap](../zPIC/InputField-FieldMap.png)
+![InputField FieldMap](../../zPIC/InputField-FieldMap.png)
 
-Each input points to an output of a previous transaction
+Each input requires:
+1. reference to bitcoins you received (so called TXOs, resp. are outputs of previous transactions
 
-#### Length of Transaction Input List
-The transaction input list starts with an integer indicating the number of inputs in the transaction. The minimum value is one. There’s no explicit maximum value, but restrictions on the maximum size of a transaction effectively limit transactions to a few thousand inputs. The number is encoded as a compactSize unsigned integer (that can vary and threfore is tricky to be en- and decoded with certain programming languages!). 
+2. Signatures proofing that you are the owner of the private keys they have been signed with. 
+
+Der Input Abschnitt enthält einen oder mehrer InputBlöcke je nachdem ob Du die Rechnung über 70.-- mit einer 100er Note bezahlst oder einer 20er und einer 50er. 
+
+
+Each input contains four fields. The first two fields point to the previous transaction output and the last two fields define how the previous transaction output can be spent. The fields are as follows:
+
+1. Anzahl der Input Blöcke
+
+2. ID der VorgängerTransaktion
+
+3. Index der VorgängerTransaktion
+
+4. ScriptSig
+
+5. Sequence & Locktime
+
+#### 1. Anzahl der Input-Blöcke (1-8 bytes)
+The first bytes in the inputs-field represents the number of inputs encoded in the so called [varints format](../../V/VarInts.md) which is 1, 2, 4 or 8 bytes depending on how big the number. 
+
+> **Varints** sind Integer von 0 bis 2^64 – 1 und werden je nach Grösse der Zahl nach den folgenden Regeln in 1,2,4 oder 8 Bytes gespeichert. Varints werden nicht von alln Programmiersprachen unterstützt und deshalb empfielt es sich die Deserialisierung dier Varints selber auf ByteLevel zu programmieren! 
+
+Diese Zahl ist mindestens 1 und in der Theorie maximal 2^64 – 1 wobei eine Transaktion rein wegen der maximal möglichen Datengrösse und (ev. der beim Mining zur Verfügung stehenden Zeit) nich mehr als ein paar Tausend Transaktionen beinhalten kann. 
+
+#### 2. ID der VorgängerTransaktion (32 bytes)
+Each input (OTX) has a reference to a previous transaction’s output. **The previous transaction ID (OTXID) is the hash256 of the previous transaction’s 32 bytes little-endian contents**. 
+
+The previous transaction ID is.
+
+#### 3. INDEX der VorgängerTransaktion (4 bytes)
+Each transaction may have many outputs. Thus, the previous transaction index defines which output within a transaction we are referring to. 
+
+Note that the previous transaction ID is 32 bytes and that the previous transaction index is 4 bytes. Both are in little-endian.
+
+The previous transaction index is **4 bytes in little-endian**
+
+
+#### 4. ScriptSig
+
+#### 5. Sequence and Locktime (ausser Betrieb!)
+Originally, Satoshi wanted the sequence and locktime fields to be used for something called “high-frequency trades.” What Satoshi envisioned was a way to do payments back and forth with another party without making lots of on-chain transactions. For example, if Alice pays Bob x bitcoins for something and then Bob pays Alice y bitcoins for something else (say, if x > y), then Alice can just pay Bob x – y, instead of there being two separate transactions on-chain. We could do the same thing if Alice and Bob had 100 transactions between them—that is, compress a bunch of transactions into a single transaction.
+
+That’s the idea that Satoshi had: a continuously updating mini-ledger between the two parties involved that gets settled on-chain. Satoshi’s intent was to use the sequence and locktime fields to update the high-frequency trade transaction every time a new payment between the two parties occurred. The trade transaction would have two inputs (one from Alice and one from Bob) and two outputs (one to Alice and one to Bob). The trade transaction would start with sequence at 0 and with a far-away locktime (say, 500 blocks from now, so valid in 500 blocks). This would be the base transaction where Alice and Bob get the same amounts as they put in.
+
+After the first transaction, where Alice pays Bob x bitcoins, the sequence of each input would be 1. After the second transaction, where Bob pays Alice y bitcoins, the sequence of each input would be 2. Using this method, we could have lots of payments compressed into a single on-chain transaction as long as they happened before the locktime became valid.
+
+Unfortunately, as clever as this is, it turns out that it’s quite easy for a miner to cheat. In our example, Bob could be a miner; he could ignore the updated trade transaction with sequence number 2 and mine the trade transaction with sequence number 1, cheating Alice out of y bitcoins.
+
+A much better design was created later with “payment channels,” which is the basis for the Lightning Network.  
+  
 
 ### 4. Outputs
+Outputs define where the bitcoins are going. Each transaction must have one or more outputs ( when for instance an exchange has batched transactions and will have to pay a lot of people at once) and contains after an initial "Number of Outputs", Output Records with fields for 1. an Amount (BTC to be payed) and a ScriptPubKey. 
 
-### 5. 
+#### Initial Number of Output Records
+Like Input, output **starts with a [varint](../../V/VarInts.md) (1 - 8 bytes) that defines this transaction's amount of output records** followed by fields for an **Amount** and another for its **ScriptPubKey**. 
+
+#### Amount 
+The amount is the amount of bitcoins being assigned and is specified in satoshis, or 1/100,000,000ths of a bitcoin. The absolute maximum for the amount is the asymptotic limit of 21 million bitcoins in satoshis, which is 2,100,000,000,000,000 (2,100 trillion) satoshis. This number is greater than 232 (4.3 billion or so) and is thus stored in 64 bits, or 8 bytes. The amount is serialized in little-endian.
+
+#### ScriptPubKey
+The ScriptPubKey, like the ScriptSig, has to do with Bitcoin’s smart contract language, Script. Think of the ScriptPubKey as the locked box that can only be opened by the holder of the key. It’s like a one-way safe that can receive deposits from anyone, but can only be opened by the owner of the safe. ScriptPubKey is a variable-length field and is preceded by the length of the field in a [varint](../../V/VarInts.md).
+
+#### Locktime
+A transaction with a locktime of 600,000 cannot go into the blockchain until block 600,001. If the locktime is greater than or equal to 500,000,000, it’s a Unix timestamp. If it’s less than 500,000,000, it’s a block number. This way, transactions can be signed but unspendable until a certain point in Unix time or block height is reached.
+
+Note that locktime is ignored if the sequence numbers for every input are ffffffff.
+
+**The main problem with using locktime is that the recipient of the transaction has no certainty that the transaction will be good when the locktime comes**. This is similar to a postdated bank check, which has the possibility of bouncing. The sender can spend the inputs prior to the locktime transaction getting into the blockchain, thus invalidating the transaction at locktime.
+
+BIP0065 introduced OP_CHECKLOCKTIMEVERIFY, which makes locktime more useful by making an output unspendable until a certain locktime.
+
+#### Transaktion Fee
+The transaction fee is simply the sum of the inputs minus the sum of the outputs. This difference is what the miner gets to keep.
+
+Transactions not in blocks (the so-called mempool transactions) are not part of the blockchain and are therefore neither final nor confirmed.
+
+As inputs don’t have an amount field, we have to look up the amount. This requires access to the blockchain, specifically the UTXO set. If you are not running a full node, this can be tricky, as you now need to trust some other entity to provide you with this information.
+
+You may be wondering why we don’t get just the specific output for the transaction and instead get the entire transaction. This is because we don’t want to be trusting a third party! By getting the entire transaction, we can verify the transaction ID (the hash256 of its contents) and be sure that we are indeed getting the transaction we asked for. This is impossible unless we receive the entire transaction.
+
+
+### 5. Script
+Das Script behandle ich in einem separaten Dokument -> 
 
 ## Annotations
 
