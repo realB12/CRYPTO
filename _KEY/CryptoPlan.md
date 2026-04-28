@@ -1,4 +1,4 @@
-# Mein aktueller Plan fürs Cryptosparen und -Handeln
+# Mein aktueller Plan fürs CryptoSparen und -Handeln
 
 **Konkreter und persönlicher Vorgehensplan um mit Cryptos Geld zu verdienen**, 
 
@@ -7,7 +7,7 @@
 > 2. die damit zu erreichenden Lern- und Finanz-**Ziele**
 > 3. Konkret zu verwendende Services (Relai, Swissborg, Binance)
 
-**Dieser Plan wird laufend aktualisiert**. Letzter Stand: Dezember 2025
+**Dieser Plan wird laufend aktualisiert**. Letzter Stand: April 2026
 
 ---
 
@@ -17,13 +17,14 @@
 
 * [BTC kaufen](../b$/PROC/BTC%20kaufen.md): Wie und wo ich konkret Bitcoins kaufe und Liste weiterer oder alternativer "Quellen"  
 
-* [Selbstverwahrung](../b$/PROC/Selbstverwahrung.md)
+* [Selbstverwahrung](../b$/PROC/Selbstverwahrung.md)  
+
 * [Relai](../b$/SERVICEs/MIX/R/Relai/_Relai.md)  
 
-* [_eMail Konzept](../../PRIV/08_COLAB/eMail/_eMail-Konzept.md)
-* [eMail Typen](../../PRIV/08_COLAB/eMail/eMail-Typen.md)
-* [PasswortManagement](../../PRIV/_KEY/Admin/PW/_PasswortManagement.md)
-* [Seed Verwaltung](../../PRIV/_KEY/Admin/PW/SeedVerwaltung.md)  
+* **Kryptoverwaltung**: * [_eMail Konzept](../../PRIV/08_COLAB/eMail/_eMail-Konzept.md) 
+// [eMail Typen](../../PRIV/08_COLAB/eMail/eMail-Typen.md) 
+// [PasswortManagement](../../PRIV/_KEY/Admin/PW/_PasswortManagement.md)
+// [Seed Verwaltung](../../PRIV/_KEY/Admin/PW/SeedVerwaltung.md)  
 
 ---
 
@@ -33,7 +34,6 @@
 1. [Alternative BTC Wallet aufsetzen](#4-alternative-btc-wallet-aufsetzen) um damit auf das Relai-Konto zugreifen zu können (PC-Backup falls Relai nicht mehr funzt). 
 
 2. Wiederherstellung der Relai-Seedphrase in die List der wöchentlichen Aktivitäten aufnehmen
-
 
 ## Cryptoziele
 **ZIEL** meines Engagements ins Crypto-Thema, ist es: 

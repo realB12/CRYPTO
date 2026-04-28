@@ -445,7 +445,7 @@ You may be wondering why we don’t get just the specific output for the transac
 
 
 ### 5. Script
-Das Script behandle ich in einem separaten Dokument -> 
+Das Script behandle ich in einem separaten **-> [Script Dokument](../../S/Script.md)**
 
 ## Annotations
 

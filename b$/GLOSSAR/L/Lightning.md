@@ -1,5 +1,4 @@
-# Lightning Network
-
+# Lightning Network (LN)
 
 ## Lektionen und Links
 * [Originales LN White Paper 2016](https://lightning.network/lightning-network-paper.pdf)
@@ -20,78 +19,79 @@
 
 
 ## Uebersicht
-Das Lightning Netzwerk, abgekürzt LN, ist ein auf der BTC-Blockchain basierendes Layer2  Routing-Neztwerk (also KEINE Blockchain) zur Skalierung des auf 7 Transaktionen pro Sekunden limitierten BTC-Layers und zur **Reduktion der Transaktionskosten** auf Cents-Bruchteile statt bis zu 50$ für jede einzelen BTC-Transaktion. Fehlverhalten der Teilnehmer wird durch automatisch ausgelöste "Zahlungen" an Betroffene geahndet. 
+Das Lightning Netzwerk, abgekürzt **LN**, ist ein auf der BTC-Blockchain basierendes Layer2-Routing-Neztwerk (also per se KEINE Blockchain) zur Skalierung des ansonsten auf 7 Transaktionen pro Sekunden limitierten BTC-Layers und zur **Reduktion der Transaktionskosten** auf Cents-Bruchteile anstatt bis zu 50$ für jede einzelen BTC-Transaktion. 
 
-Hauptsächlich als Peer to Peer Micropayment-system konzipiert, kann das LN zukünftig auch für andere Dienste verwendet werden. Zudem ist das LN nicht auf BTC beschränkt solange alle Implementierungen den sogenannt COLT-Standard implementieren. 
+Fehlverhalten der Teilnehmer wird durch automatisch ausgelöste "Zahlungen" an Betroffene geahndet. 
 
-Nach einem initialen "Hochladen" (eine sogenannten time-locked, dualsig "funding transaction" auf dem BitcoinNetzwerk) eines damit geblockten BTC-Betrags kann man diesen BTC-Betrag (Satoshis) anonym über sogenannte "Channels" - direkte oder indirekt über "Hopps" geroutete LN Verbindungen - an andere Teilnehmer versenden. Dieses LN-Konto kann dabei jederzeit wieder "gelöscht" und damit das dann aktuelle BTC-Guthaben wieder über eine zweite (sogenannte BTC "Settlement Transaction") in die BTC-Blockchain zurückgeführt werden. Funding- und Settlement-Transaktion verlangen natürlich die betragsunaghängigen üblichen BTC-TransactionFeed zwischen 5-50$. 
+Hauptsächlich als Peer to Peer Micropayment-system konzipiert, kann das LN zukünftig auch für andere Dienste verwendet werden. Zudem ist das LN **nicht auf BTC beschränkt**, solange alle Implementierungen den sogenannt **COLT-Standard** implementieren. 
 
-Da jeder an einer LN-Transaktion beteiltigte Knoten selbst mindestens über den zu transferierenden Betrag auf seinem Konto haben muss, ist LN für grössere adhoc Beträge an beliebige Personen noch nicht geeignet. Dedizierte LN-Anbieter die ihre "Kunden" direkt verbinden, springen hier einerseits in die Bresche aber führen auch zu einer gewissen Zentralisierung und mittels entsprechender KYC-Verfahren auch zur Auflösung der Anonymität. 
+Nach einem initialen "Hochladen" (eine sogenannten time-locked, dualsig "funding transaction" auf dem BitcoinNetzwerk) eines damit geblockten BTC-Betrags kann man diesen BTC-Betrag (Satoshis) anonym über sogenannte "Channels" - direkt oder indirekt über "Hopps" geroutete LN Verbindungen - an andere Teilnehmer versenden. Dieses LN-Konto kann dabei jederzeit wieder "gelöscht" und damit das dann aktuelle BTC-Guthaben wieder über eine zweite (sogenannte BTC "Settlement Transaction") in die BTC-Blockchain zurückgeführt werden. **Funding- und Settlement-Transaktion verlangen natürlich die betragsunaghängigen üblichen BTC-TransactionFeed zwischen 5-50$.** 
 
-Started 2016 it fully launched in 2018 but did not got adoption before 2024. 2025 Lightning payments are now integrated into large exchanges such as Kraken and Coinbase.
+**Da jeder an einer LN-Transaktion beteiltigte Knoten selbst mindestens über den zu transferierenden Betrag auf seinem Konto haben muss, ist LN für grössere adhoc Beträge an beliebige Personen noch nicht geeignet.**
+
+Dedizierte LN-Anbieter die ihre "Kunden" direkt verbinden, springen hier einerseits in die Bresche, aber führen auch zu einer gewissen Zentralisierung und mittels entsprechender KYC-Verfahren auch zur Auflösung der Anonymität. 
+
+Obewohl schon 2016 initialisiert und 2018 ausgerollt ist LN auch 2026 noch nicht in der Breite akzeptiert obwohl sie in die grossen Börsen wie Kraken oder Coinbase integriert wurde.
 
 To preserve privacy and security, the network employs an onion routing protocol, wherein each node in the path decrypts only enough information to determine the next hop, without knowledge of the payment's origin or final destination
 
-Several cryptocurrency wallets offer support for the Lightning Network.
+Immerhin wird LN bereits von einigen CryptoWallets unterstützt. 
 
 ## Key Lessons
-1. Um am LN teilzunehmen, muss man immer zuersts mal eigene **BTCs ins LN "hochladen"** und damit parkieren, wo es dann bis um finalen "Settlement" bleibt (**locked BTC**), resp. kann man über diese BTCs bis zum Settlement (was dauern kann) nicht verfügen.   
-Alternativ kann man auch über einen entsprechenden **LN-OnRamper** wie z.B. Cryptobörsen gehen,  an dessen LN-Pool man partizipiert aber damit natürlich a) die Anonymität aufgibt und b) man dem Anbieter vertrauen muss dass er sich nicht einfach verabschiedet. 
+1. Um am LN teilzunehmen, muss man immer zuersts mal eigene **BTCs ins LN "hochladen"** und damit parkieren, wo diese BTC dann bis um finalen "Settlement" geparkt bleiben (**locked BTC**), resp. kann man über diese BTCs bis zum Settlement (was dauern kann) nicht verfügen.   
 
-2. Um zum Beispiel 1 BTC an einen Empfänger zu senden muss jeder Knoten dazwischen mindestens 1 BTC auf seinem Konto haben. Damit nimmt die Anzahl Knoten mit der Höhe des Transaktionswerts ab. 
+Alternativ kann man auch über einen entsprechenden **LN-OnRamper** wie z.B. Cryptobörsen gehen, an desseren LN-Pools man auf Kosten der Anonymität partizipiert und an deren Pleiterisiko man sich beteiligt. 
 
-3. Lightning Network is a peer-to-peer payment network and not a blockchain,
+2. Um zum Beispiel 1 BTC an einen Empfänger zu senden, muss jeder an der Transaktion teilnehmende Knoten mindestens 1 BTC auf seinem Konto haben. Damit nimmt die Anzahl verfügbarer Knoten mit der Höhe des Transaktionswerts ab. 
 
-4. **Fees**: in the Lightning Network, each user can decide the fees they are willing to pay and deploy channels to achieve it. 2025 fees did vary drastically between nodes or even between
-payments. This means it is possible to pay no fee whatsoever or under 0.5% fees on payments on the Lightning Network. Alternatively, if users do not have a proper channel management strategy, they could pay a high amount of fees.
+3. Das Lightning Network ist ein peer-to-peer payment network und KEINE Blockchain!
 
-2. Jeder Knoten der eine Transaktion weiterleiter erhält einen Bruchteil von einem Rappen **Transactionfees**. Im LN kann man also als blosser "Router" Geld verdienen!
+4. **Fees**: in the Lightning Network, each user can decide the fees they are willing to pay and deploy channels to achieve it. 2025 fees did vary drastically between nodes or even between payments. This means it is possible to pay no fee whatsoever or under 0.5% fees on payments on the Lightning Network. Alternatively, **if users do not have a proper channel management strategy, they could pay a high amount of fees!**
+
+2. Jeder Knoten der eine Transaktion weiterleitet erhält einen Bruchteil von einem Rappen **Transactionfees**. Im LN kann man also als blosser "Router" Geld verdienen!
 
 3. Die LN App muss für die Dauer von Transaktionen offen resp. permanent am Laufen gehalten werden. (to be checked)
 
-4. Lightning funzt nicht nur für BTC sondern akzeptiert auch ETC und andere Cryptowährungen. 
+4. Lightning funzt nicht nur für BTC,, sondern akzeptiert auch ETC und andere Cryptowährungen. 
 
-5. Granularity – According to Andreas Antonopoulos, some implementations of the Lightning Network allow for payments that are smaller than a satoshi, the smallest unit on the base layer of bitcoin.
+5. **Granularity** – According to Andreas Antonopoulos, some LN implementations allow **payments that are smaller than a satoshi**, the smallest unit on the base layer of bitcoin.
 
-Privacy – Lightning network payments may be routed through many sequential channels where each node operator will be able to see payments across their channels, but they will not be able to see the source nor destination of those funds if they are non-adjacent.
+6. Privacy – Lightning network payments may be routed through many sequential channels where each node operator will be able to see payments across their channels, but they will not be able to see the source nor destination of those funds if they are non-adjacent.
 
-5. Alternativ zu Lightning gibt es das sogenannte MONERO Netzwerk
+5. Alternativ zu Lightning gibt es das sogenannte **MONERO Netzwerk**
 
 6. Centralization doesn't really have any effect on the lightning network. The big hubs would have no advantage over smaller hubs, since they can't see the transaction info routing through. Also people can choose nodes to connect to, and thus it is much more likely that many medium sized hubs will be created because people will connect to multiple different hubs in case one is down for some reason.
 
-7. Strike ist eine Schlüsselapplikation für Lightning
+7. **Strike** ist eine Schlüsselapplikation für Lightning
 
-8. LN interne "Watchtowers" kontrollieren die Channels für Missbrauch
+8. **LN interne "Watchtowers"** kontrollieren die Channels für Missbrauch
 
 9. Grosse Firmen würden es lieben herauszufinden wer wem Geld sendet. 
 
 10. **Mangelnde Messbarkeit und Transparenz**: Scheinbar ist es schwierig die Anzahl der Knoten, Channels und Transaktionen zu messen da jeder "Messer" einzig und allein Zugriff auf seine eigenen Kanäle hat und nicht sieht was er selber routet oder was ausserhalb seiner eigenen Kanäle passiert resp. gibt es für Lightning keine Chain oder MemPool oder anderes Objekt wo alles zusammenläuft sondern alles läuft hier ohne Lod oder Ledger strikt Peer2peer.
 
-11. The Lightning Network permits permissionless unilateral exits as a part of the protocol.n other words, any participant in a Lightning channel may close the channel and reclaim
-their capital as on-chain bitcoin at any time without third-party permission. Bei noch offen contracten fallen dabei eventuell Gebühren oder Strafen an (Collaterals). 
+11. The Lightning Network permits permissionless unilateral exits as a part of the protocol. In other words, any participant in a Lightning channel may close the channel and reclaim
+their capital as on-chain bitcoin at any time without third-party permission. Bei noch offen Kontracten fallen dabei eventuell Gebühren oder Strafen an (Collaterals). 
 
 ## LN Use Cases
 * Anonyme Finanztransaktionen über Ländergrenzen hinweg
 * InGame Payments
-* Als "Router" Transactionfees kassieren (zur Zeit sehr wenig)
+* Als "Router" selber Transactionfees kassieren (zur Zeit sehr wenig)
 
 ## Transaction Fees
-Given that the Lightning Network is a peer-to-peer payment network and not a blockchain,
-the fee rates experienced in the network can vary drastically between nodes or even between
-payments. Across most of the digital asset ecosystem, participants are accustomed to having a
-global fee rate that all users must conform to. However, in the Lightning Network, each user can decide the fees they are willing to pay and deploy channels to achieve it.
+Given that the Lightning Network is a peer-to-peer payment network and not a blockchain, the fee rates experienced in the network can vary drastically between nodes or even between payments. 
 
-This means it is possible to pay no fee whatsoever or under 0.5% fees on payments on the
-Lightning Network. Alternatively, if users do not have a proper channel management strategy,
-they could pay a high amount of fees.
+Across most of the digital asset ecosystem, participants are accustomed to having a global fee rate that all users must conform to. However, in the Lightning Network, each user can decide the fees they are willing to pay and deploy channels to achieve it.
 
-An aspect of Lightning transactions that can be attributed to fees is the number of “hops” a
-transaction requires to find the end address. If one was to consider the Lightning Network as a subway system, each “hop” can be compared to a rider having to get off and on to another train, paying a separate fee for each.
+This means it is possible to pay no fee whatsoever or under 0.5% fees on payments on the Lightning Network. Alternatively, if users do not have a proper channel management strategy, they could pay a high amount of fees.
 
-The payment rails in the Lightning Network are channels created between nodes. Each node
-sets their individual fee rate and charges the user for forwarding the transaction to the next node. The forwarding of a payment is known as a “hop.”
+An aspect of Lightning transactions that can be attributed to fees is the number of “hops” a transaction requires to find the end address. If one was to consider the Lightning Network as a subway system, each “hop” can be compared to a rider having to get off and on to another train, paying a separate fee for each.
 
-The more hops a payment uses, the higher the fee will likely be. However, it is possible to pay no fees for a payment if you are paying directly to your channel counterparty. This is why having an effective channel strategy is key to achieving low fees.
+The payment rails in the Lightning Network are channels created between nodes. Each node sets their individual fee rate and charges the user for forwarding the transaction to the next node. The forwarding of a payment is known as a “hop.”
+
+The more hops a payment uses, the higher the fee will likely be.
+
+However, it is possible to pay no fees for a payment if you are paying directly to your channel counterparty. This is why having an effective channel strategy is key to achieving low fees.
 
 Users must be mindful of the channels they open to ensure the fewest number of hops.
 Channels are becoming fewer but more substantial, indicating channel consolidation.
@@ -100,33 +100,22 @@ Channels are becoming fewer but more substantial, indicating channel consolidati
 
 Using the dataset from Voltage, we can see that larger Lightning transactions experienced lower fee rates. While this may seem counterintuitive, it is likely due to nodes in the network using a fixed cost or flat rate for their base fee.
 
-In other words, nodes are size agnostic. They are assigning the same base fee for sending
-$5 and $1,000, then additionally a percent of payment size. At the time of writing, Lightning
-appears to be one of the most cost-effective protocols for sending substantial amounts of value.
+In other words, nodes are size agnostic. They are assigning the same base fee for sending $5 and $1,000, then additionally a percent of payment size. At the time of writing, Lightning appears to be one of the most cost-effective protocols for sending substantial amounts of value.
 
-However, this does not imply that transactions such as micropayments are impossible to
-conduct on the Lightning Network. Instead, it simply suggests that users and entities supporting this ecosystem need to be intentional when opening channels to perform that use case. 
+However, this does not imply that transactions such as micropayments are impossible to conduct on the Lightning Network. Instead, it simply suggests that users and entities supporting this ecosystem need to be intentional when opening channels to perform that use case. 
 
 ![LN TransactionFees2025 2](../zPIC/LN-TransactionFees2025-2.png)
 
-It is possible the Lightning Network could further entrench itself as one of the most cost-
-effective methods of transacting within the entire digital asset ecosystem when properly
-configured. This would fulfill its original intent of processing payments at a significantly
-lower cost compared to on-chain transactions. Users paying high fees in the Lightning
-Network could easily avoid doing so with proper analysis and configuration.
-It is also important to consider that payments to in-demand destinations often incur higher
-fees. This is due to routing and fee market dynamics inherent to the network.
-Through a well-connected self-hosted node, transactions that required an average of one
-to three hops paid a fee of 0.04%. In other words, transactions over 1,000,000 satoshis
-(~$1,000) have cost between $0.39 and $1.27. This fee-to-transaction settlement ratio is rare
-within the traditional payment processing sector and across other digital asset networks.
+It is possible the Lightning Network could further entrench itself as one of the most cost-effective methods of transacting within the entire digital asset ecosystem when properly configured. This would fulfill its original intent of processing payments at a significantly lower cost compared to on-chain transactions. Users paying high fees in the Lightning Network could easily avoid doing so with proper analysis and configuration.
+It is also important to consider that payments to in-demand destinations often incur higher fees. This is due to routing and fee market dynamics inherent to the network.
+
+Through a well-connected self-hosted node, transactions that required an average of one to three hops paid a fee of 0.04%. In other words, transactions over 1,000,000 satoshis (~$1,000) have cost between $0.39 and $1.27. This fee-to-transaction settlement ratio is rare within the traditional payment processing sector and across other digital asset networks.
 
 
 ## Warum Lightning ev. nicht funktioniert
 * **OnRamp zu teuer**: Da L1 BTC-Transaktionen immer teurer werden (bis zu 50$ pro Transaktion) ist es nicht wahrscheinlich, dass Individuen einfach schnell mal einen Channel mit 100$ eröffnen werden. Und wenn sie es tun, dann werden sie diese 100$ bei fallenden BTC-Kurs abschreiben müssen und erst wieder über dieses BTC verfügen können, resp. den Channel schliessen wenn der BTC Kurs so hoch gestiegen ist, dass sich der Cashout minus Fees für die zwei UpRamp und Closing-Transaktion lohnt. 
 
-
-* **Kein Incentive**: Da man zuerst initial echte BTCs ins LN pumpen muss die dort solange parkiert bleiben bis man den Channel wieder auflöst, führt das natürlich zu massivem de-channeling wenn der BTC-Kurs fällt und BTC-Owners ihre BTCs auf der Level1 Blockchain verkaufen wollen. Wenn das passiert und damit massiv Routing-Knoten fehlen sind schnell mal gewisse Zahlungen nicht mehr möglich weil einfach kein Route mehr gefunden werden kann, zu langsam und zu teuer (weil bei jedem Hopp eine Fees gezahlt werden muss (Burchteile von Rappen aber immerhin). So muss man sich schon fragen ob man seine BTC wirklich im LN parkieren will nur um Dienstleistungen zu bezahlen die man auch einfacher, schneller und transparenter auch mit FIAT bezahlen könnte. 
+* **Kein Incentives**: Da man zuerst initial echte BTCs ins LN pumpen muss die dort solange parkiert bleiben bis man den Channel wieder auflöst, führt das natürlich zu massivem de-channeling wenn der BTC-Kurs fällt und BTC-Owners ihre BTCs auf der Level1 Blockchain verkaufen wollen. Wenn das passiert und damit massiv Routing-Knoten fehlen sind schnell mal gewisse Zahlungen nicht mehr möglich weil einfach kein Route mehr gefunden werden kann, zu langsam und zu teuer (weil bei jedem Hopp eine Fees gezahlt werden muss (Burchteile von Rappen aber immerhin). So muss man sich schon fragen ob man seine BTC wirklich im LN parkieren will nur um Dienstleistungen zu bezahlen die man auch einfacher, schneller und transparenter auch mit FIAT bezahlen könnte. 
 
 * **Drohende Regulierung**: Staaten könnten versuchen wichtige auf Lightning basierende Infrastrukturanbieter (Onramper) und Geschäftsmodelle (IOY-Provider) zur Aufgabe oder zur Offenlegung der Transaktionsteilnehmer zwingen. 
 
@@ -213,7 +202,9 @@ This second-layer solution, built on the current most secure digital asset netwo
 
 ## Diskussionen
 
-I am convinced that Bitcoin will die, when we do not succeed in making it the backbone/foundation of an openly and publicly accessible payment system that provides the same level of anonymity as BTC but not necessarily the same security standards. Having said this, I am wondering why developers are not making more efforts to control and standardize the (Layer 1 detached) IOY-business (Level 3) on top of the Lightning Network. Rather than criticizing Lightning, we should put efforts into Layer3 protocol standards that ensure fully transparent BTC-coverage for IOY-Lightning-providers. 
+I am convinced that Bitcoin will die, when we do not succeed in making it the backbone/foundation of an openly and publicly accessible payment system that provides the same level of anonymity as BTC but not necessarily the same security standards. 
+Having said this, I am wondering why developers are not making more efforts to control and standardize the (Layer 1 detached) IOY-business (Level 3) on top of the Lightning Network. 
+Rather than criticizing Lightning, we should put efforts into Layer3 protocol standards that ensure fully transparent BTC-coverage for IOY-Lightning-providers. 
 
 ### [Lightning Network has Failed](https://www.youtube.com/watch?v=5Cq0C0SpbkY)
 
@@ -231,6 +222,11 @@ So, my  conclusion here is that most probably we are having the wrong discussion
 
 ## LN Provider (LSP)
 Lightning Service Providers (LSPs) are companies or entities that act like ISPs for the Bitcoin Lightning Network, providing essential liquidity and connectivity for users, especially newcomers, by opening channels, managing inbound/outbound funds, routing payments, and handling complex tasks so users get instant, reliable transactions without managing nodes themselves, with key examples including providers like Voltage, Lightspark, Breez, and Bitrefill. 
+
+### [Mt. Pelerin / Bridge ](../../SERVICEs/Wallet/PROVIDER/MtPerlen/_Mt.%20Pelerin.md)
+Currently my actual Lightning-Wallet for day2day transactions that provides its own IBAN-Number so, that for a custimer, the payment account looks like a normal BankAddress. 
+
+
 
 ### Voltage
 richtet sich for allem an Geschäftskunden die eine einfache ReadyMade-Lösung suchen
