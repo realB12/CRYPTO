@@ -19,20 +19,5 @@ categories: ["Hugo", "Intern"]
 
 > **"Liste von grösseren BTC-ServiceAnbietern die ein breites Portfolio an Produkten anbieten"**
 
----
 
-<div style="background-color:#DFFF00; border-style:solid; border-color:#DFFF00; border-width:20px;">
-<span style="font-weight:bold">Links</span>
-
-* [Markdown](.md)
-
-* [externalLink]() -> 
-
-* [Backlink]() <- 
-
-* **Glossary**: [x](x.md) //
-
-</div>
-
----
-
+Die akutelle Liste findet man im Verzeichnis -> [**CryptoVerwaltung**](../../../../PRIV/_KEY/Assets/Crypto/_CryptoVerwaltung.md)

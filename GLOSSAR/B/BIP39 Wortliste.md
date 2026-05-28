@@ -1,10 +1,10 @@
 # BIP39 Wortliste (Crypto-Glossar)
 
+* [**Wortliste als PDF**](BIP39_Wordlist.pdf)b
+
 * [SeedPhrase](../S/SeedPhrase.md)
 
 * [Fachartikel dazu](https://pleb.style/pages/wortliste-bip39)
-
-* [Wortliste als PDF](BIP39_Wordlist.pdf)
 
 * [Wortliste aus dem Original BIP39 SourceCode](https://github.com/trezor/python-mnemonic/blob/master/src/mnemonic/wordlist/english.txt) auf GitHub
 
@@ -25,7 +25,7 @@ Weil sich kein Mensch diese 64 Zeichen  merken oder auch nur fehlerfrei von Hand
 > Bei der Seedphrase erzeug man Entropie über 256 bit und für alle 32 bit fließt 1bit in die Checksumme die damit 8 Bit lang ist. Insgesamt unfasst die Seedphrase damit total 264 bit. Diese 264 Buit werden in „Stücke“ von je 11 bit aufgeteilt, was 24 Wörter ergibt. Im 24. Wort stecken also neben 8bit checksumme auch noch 3 weitere bit der Ausgangs-Entropie. Es sind übrigens deswegen genau 2048 Wörter, weil man mit 11 Bit Zahlen zwischen 0 und 2047 darstellen kann.
 
 ## Wortlisten in anderen Sprachen
-BIP39 bietet auch Wortlisten in anderen Sprachen wie z.B. Französisch oder Spanisch. Aber keine Deutsche. Grundsätzlich wird jedem Wallet-Provider empfohlen die Englische Wortliste zu verwenden. 
+BIP39 bietet auch Wortlisten in anderen Sprachen wie z.B. Französisch oder Spanisch. Aber keine Deutsche. Grundsätzlich wird jedem Wallet-Provider **empfohlen, die Englische Wortliste zu verwenden**. 
 
 ## Seedphrase Beispiel
 ![Seedphrase Beispiel](../zPIC/Seedphrase%20Beispiel.jpg)

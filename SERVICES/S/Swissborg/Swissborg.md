@@ -1,28 +1,15 @@
----
-locpath: C:\me\REPO\CRYPTO\SERVICES\S\Swissborg.md
-
-author: rene.baron@baronsolutions.ch
-created: 06.12.2024 16:48:59
-version: draft v0.0.1
-draft: true
-private: false
-disqid: DiscussID
-tags: ["aktiv", "***", "bré"]
-categories: ["Crypto", "Credentials"]
----
-
 # Swissborg (Uebersicht)
-`rene.baron@baronsolutions.ch | bré | Dez. 06, 2024 | draft work in progress v0.0.1 | updated Dez. 06, 2024`
 
 ---
-Swissborg ist momentan meine **CryptoExchange Platform meines Vertrauens**. 
+
+Swissborg ist momentan meine online **CryptoExchange/Trading Platform meines Vertrauens**. 
 
 ---
 
 <div style="background-color:#DFFF00; border-style:solid; border-color:#DFFF00; border-width:20px;">
 <span style="font-weight:bold">Links</span>
 
-* [CREDENTIALS](../../../../PRIV/_KEY/Services/S/Swissborg_KontoZugriff.md): Infos für den Zugriff auf die mit Swissborg verwalteten Kryptowährungen.
+* [**KONTO-Zugriff**](../../../../PRIV/_KEY/Assets/Services/S/Swissborg_KontoZugriff.md): Infos für den Zugriff und 12-Wörter-RestorePhrase auf die mit Swissborg verwalteten Kryptowährungen.
 
 * [BORG **Einzahlen**](BORG_Einzahlen.md)
 
@@ -30,13 +17,13 @@ Swissborg ist momentan meine **CryptoExchange Platform meines Vertrauens**.
 
 * [BORG **Transactions** Log](../../../PORTFOLIO/TRANS/_Transaktionen.md)
 
+* **[CryptoVerwaltung](../../../../PRIV/_KEY/Assets/Crypto/_CryptoVerwaltung.md)**: Uebersicht
+
 </div>
 
 ---
 
-<span style="color:red; font-weight:bold">ACHTUNG</span>: Die [CREDENTIALS](../../../../PRIV/_KEY/Services/S/Swissborg.md) findet man aus Sicherheitsgründen nicht in DIESEM Dokument, sondern separat im [PRIV-REPO](../../../PRIV/_PrivateRepo.md) ins den  [KEY/Services](../../../PRIV/_KEY/Services/_Services.md)
-
-* [Testbericht vom Juli 2024](https://bitcoin-2go.de/swissborg-erfahrungen/)
+<span style="color:red; font-weight:bold">ACHTUNG</span>: Die [CREDENTIALS](../../../../PRIV/_KEY/Services/S/Swissborg.md) findet man aus Sicherheitsgründen nicht in DIESEM Dokument, sondern separat im [PRIV-REPO](../../../PRIV/_PrivateRepo.md) im   [KEY/Services](../../../PRIV/_KEY/Services/_Services.md) Verzeichnis
 
 ---
 

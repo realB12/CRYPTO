@@ -1,5 +1,7 @@
 # Bitcoin Wallets
 
+* **[Generisches Intro zum Thema Wallets](../../../GLOSSAR/W/Wallet.md)**: Intro und generische Einführung über Sinn und Zweck von Wallets für Enduser. 
+
 * [UTXOs in Bitcoin Wallets](#utxos-in-bitcoin-wallets)
 * [Choosing a Bitcoin Wallet](#choosing-a-bitcoin-wallet)
 
@@ -18,62 +20,86 @@
 * [Private Key](../P/Private%20Key.md) // [Public Key](../P/Public%20Key.md)  
 
 ## Intro
-Aus **EndUser Sicht** bezeichnet eine "Wallet" i.d.R eine zugangsgesicherte lokal installierte oder remote betriebene **Software** oder **App** mit der man die **BitCoin-Blockchain lesen und Transaktionen signieren kann**, die über den sogenannten [Mempool](../M/Mempool.md) mittels Mining-Prozesse für immer auf der Blockchain verbucht werden. Wallet-Technologie ist sozusagen das **unverzichtbare FrontEnd des ganzen BitCoin-Systems** um z.B. Bitcoins zu erhalten, zu kaufen oder mit Satoshis (SATS) zu bezahlen.  
+Aus **EndUserSicht** bezeichnet eine "Wallet" i.d.R eine zugangsgesicherte lokal installierte oder remote betriebene **Software** oder **App** mit der man die **BitCoin-Blockchain lesen und Transaktionen signieren kann**, die über den sogenannten [Mempool](../M/Mempool.md) mittels Mining-Prozess für immer auf der Blockchain verbucht werden. Wallet-Technologie ist sozusagen das **unverzichtbare FrontEnd des ganzen BitCoin-Systems** um z.B. Bitcoins zu erhalten, zu kaufen oder mit Satoshis (SATS) oder [Lightning](../L/Lightning.md) zu bezahlen.  
 
-Technisch gesehen, ist eine "Wallet" primär mal nichts anderes als eine (i.d.R. mittels Wallet-App verwaltete) Datei oder eine Datenbank für [Private Keys](../P/Private%20Key.md) und die daraus generierten [Public Keys](../P/Public%20Key.md), welche über eine ebenfalls mit dieser Wallet generierte [SeedPhrase](../S/Seed.md) wieder hergestellt werden könnten. 
+Technisch gesehen, ist eine "Wallet" primär mal nichts anderes als eine (i.d.R. mittels Wallet-App verwaltete) Datei oder eine Datenbank für [Private Keys](../P/Private%20Key.md) und die daraus generierten [Public Keys](../P/Public%20Key.md), welche über eine ebenfalls mit dieser Wallet generierte [SeedPhrase](../S/Seed.md) und einem daraus ersteller MasterKey wieder hergestellt werden könnten. 
 
-Im täglichen Umgang mit Wallet-Apps sieht man diese Schlüssel aber kaum, das sie implizit von der WalletApp verwaltet und benutzt werden - was wiederum heisst - dass JEDER der auf deine WalletApp zugreifen kann, auch ohne dass er die Seedphrase oder den Private Key kennt, sich deine Coins auf sein Konto überweisen kann!
+Im täglichen Umgang mit Wallet-Apps sieht man diese Schlüssel aber kaum, da sie implizit von der WalletApp verwaltet und benutzt werden und in der App nur verschlüsselt vorliegen. 
 
-Aus diesem Grunde sind WalletApps meist zusätzlich durch ein Passwort oder biometrische Zugangsprüfung wie z.B. Gesichtserkennung geschützt. Wer es sicherer braucht und nur selten auf seine ANLAGE-Coins zugreifen muss, sollte dies auf eine sogenannte Cold-Wallet transferieren: offline-only Hardwarelösung die lediglich die Keys aufbewahren aber ansonsten keine Coins kaufen oder transferieren können.
+Das heisst aber auch, dass JEDER der auf deine WalletApp zugreifen kann, auch ohne dass er die Seedphrase oder deine Private Keys kennt, sich deine Coins auf sein Konto überweisen kann!
 
-Weil praktisch jede User-Interaktionen über eine Wallet läuft (Authentication) muss auch praktisch jede Bitcoin-App im Sinne eines Single-Point of Entry- über eine Wallet laufen.
-
-Entsprechend gross ist meine persönliche Motivation dieses Kerntechnologie und vor allem deren Sicherheitsaspekte von Grund auf zu verstehen (was mich im Sept 2025 veranlasste mir eine [eigene Wallet-App zu programmieren](../../DEV/WalDev/_Wallet%20selber%20programmieren.md). 
+Aus diesem Grunde sind WalletApps meist zusätzlich durch ein Passwort und/oder eine biometrische Zugangsprüfung wie z.B. Gesichtserkennung geschützt. Wer es sicherer braucht und nur selten auf seine Assets zugreifen muss, sollte dies auf eine sogenannte Cold-Wallet transferieren, resp. offline-only Hardwarelösungen, die lediglich die Seedphrase aufbewahren, aber mit denen man ansonsten keine Coins kaufen oder transferieren kann.
 
 ### Wallettypen
 Wallet-Apps - sogenannte Hot Wallets - gibt es in allem möglichen Formen als WebExtension, Mobile- und Desktop-Apps von hunderten von verschiedenen Herstellern. Die bekanntesten Wallets sind vermutlich die Metamask Wallet und für die Schweizer die [Relai App](../../../../PRIV/_KEY/Assets/Services/R/Relai/_Relai.md). 
 
 ### Wallets als Filter
-Wenn Wallets direkt mit einem eigenen, lokal installierten Knoten (Bitcoin Core) verbunden werden, diesen sie zusätzlich als Filter um aus der Menge aller anbrausenden Transaktionen nur die auf die Wallet passenden herauszufiltern. 
+Wenn Wallets direkt mit einem eigenen, lokal installierten Knoten (Bitcoin Core) verbunden werden, dienen sie zusätzlich als Filter um aus der Menge aller anbrausenden Transaktionen nur die zur eigenen Wallet passenden herauszufiltern. 
 
 ### ReferenzWallet
-Die erste und damit auch Referenzwallet geltende, [ "Satoshi Client" oder "Bitcoin Core"](../B/BitCoin%20Core.md) benannte, direkt von Satoshi Nakamoto's OriginalApp abgeleitete OpenSource-App, wird in der Praxis nur noch selten verwendet.  
+Die erste und damit auch Referenzwallet geltende, [ "Satoshi Client" oder "Bitcoin Core"](../B/BitCoin%20Core.md) benannte, direkt von Satoshi Nakamoto's OriginalApp abgeleitete OpenSource-App, wird in der Praxis **nur noch selten verwendet** die sie viele neuere Funktionen und die Verwaltung von 2nd Layer Networks wie z.B.  [Lightning](../L/Lightning.md) die die Verwaltung von Altcoins with z.B. ETH nicht unterstützt. 
 
-### Wiederherstellung einer Wallet mittels Seed
-Bei Verlust der WalletApp (z.B. durch das Verlieren des Handys) kann man die selbe oder eine andere kompatible WalletSoftware runterladen, und den impliziten Private Key in der WalletApp durch die Eingabe der Seedphrase wieder herstellen, woraus dann die WalletApp wieder den Public Key generiert, um daraus dann wieder die öffenltiche BTC-Adresse zu erstellen: ![Wiederherstellung der Schlüssel mittels Seed](../zPIC/Wiederherstellung%20der%20Schlüssel%20mittels%20Seed.png)
+## Wiederherstellung einer Wallet mittels Seedphrase
+Bei Verlust der WalletApp (z.B. durch das Verlieren des Handys) kann man die selbe oder eine andere kompatible WalletSoftware runterladen um durch die Eingabe der  [Seedphrase](../S/Seed.md) in einem mehrstufigen, kryptografischen Prozess wieder wie folgt den Zugriff auf die ursprünglichen BTC-Adressen zu erlangen:  
+
+
+, woraus dann die WalletApp wieder MasterKey-generiert, um daraus dann wieder die verschiedenen Privaten und Oeffenltichen Schlüsselpaare abzuleiten von denen dann wiederum die öffentlichen BTC-Adresse generiert werden:
+
+![Seed Phrase And How It Relates To Block Chain Tech](../zPIC/SeedPhraseAndHowItRelatesToBlockChainTech.jpg)
+
+![Wiederherstellung der Schlüssel mittels Seed](../zPIC/Wiederherstellung%20der%20Schlüssel%20mittels%20Seed.png)
+
+### Wiederherstellung einer Wallet
+
+Der ganze Prozess zur Wiederherstellung der Wallet auf der Basis einer hoffentlich zuvor verschlüsselt offline gespeicherten [Seed Phrase](../../../GLOSSAR/S/SeedPhrase.md) ist im Dokument [[WiederHerstellen einer BTC Wallet](../../PROC/WiederHerstellen_einer_BTC_Wallet.md) beschrieben.
+
+## Motivation Wallets zu verstehen
+Weil praktisch jede User-Interaktion über eine Wallet laufen muss, muss auch praktisch jede Bitcoin-App im Endeffekt über eine Wallet laufen.
+
+Entsprechend gross ist meine persönliche Motivation dieses Kerntechnologie und vor allem deren Sicherheitsaspekte von Grund auf zu verstehen (was mich im Sept 2025 veranlasste mir eine [eigene Wallet-App zu programmieren](../../DEV/WalDev/_Wallet%20selber%20programmieren.md). 
+
+## Where the “knowledge” lives
+Die Blockchain speichert lediglich UTXOs auf Adressen und hat selber keine Ahnung über welche Wallets diese verwaltet werden noch wem diese Adressen gehören. Hingegen kann man aber jederzeit und für immer! feststellen von welcher Absender-Adresse UTXS an welche Empfänger-Adressen gesendet wurden. Dh. Sobald eine ein Adresse die du einmal verwerndet hast DIR zugeordnet werden kann, dann wird man dein darauf gespeicherten "Coins" lebenslang verfolgen können. 
+
+Your wallet’s job is to map “this seed → these derivation paths → these addresses” and then look up which UTXOs belong to those addresses, caching them locally so it does not need to rescan the entire chain every time.
+
+So the wallet doesn’t have a preloaded list of “used addresses”; it recomputes them from your seed and discovers usage by scanning, using rules like the gap limit to decide when it has found all relevant UTXOs.
 
 ## Bitcoin Addresse mit QR Code
-The most important part of a wallet is its [bitcoin address](../A/Address.md) such as: `1Cdid9KFAaatwczBwBttQcwXYCpvK8h7FK`. 
+Der in der Praxis relevantest Teil einer Wallet die die Anzeige von BlockChain/BitCon Adressen auf die man Dir Geld senden kann, resp, von der Du Geld überweisen kannst. 
 
-Next to it we normally find a **QR code** that can be scanned by a smartphone camera. 
+Diese [bitcoin address](../A/Address.md) sehen z.B wie folgt aus:
 
-**Tip**: Tapping the QR code on the screen might magnify it for easier scanning.
+> `**1Cdid9KFAaatwczBwBttQcwXYCpvK8h7FK**`. 
 
-> <span style="color:red; font-weight:bold">ACHTUNG</span>: 
-Keeping private keys and seed phrases secure is essential!
+Daneben zeigt die Wallet i.d.R. einen **QR code** den Du oder jemand der dir Geld senden möchgte mit der Kamera scannen kanns.  
+
+**Tip**: Tippe in der App auf den angezeigten QR Code um ihn zu vergrössern. 
+
+> <span style="color:red; font-weight:bold">ACHTUNG</span>: Die so angezeigten Adressen sind KEINE PRIVATE KEYS!
 
 ### Generieren von neuen Keys und Addressen
 
 WalletApp generieren i.d.R. bei der Installation 
 
-1. einen zufälligen **[Private Key](../P/Private%20Key.md)**
+1. einen Satz unterschiedlicher **[Private Keys](../P/Private%20Key.md)**
 
-2. daraus mittels EllipsenKurvenAlgorithmus einen **[Public Key](../P/Public%20Key.md)** und  damit die öffentlich bekannte **WALLET-Adresse**. 
+2. daraus, mittels EllipsenKurvenAlgorithmus, zugehörige **[Public Keys](../P/Public%20Key.md)** und daraus wiederum mittels einer HashFunktion **Crypto-Adressen** generiert, die Du veröffentlichen kannst damit dir Leute darauf Cryptos überweisen.  (ACHTUNG: Public Keys und BlockchainAdressen sind verschiedene Dinge!) 
 
-3. Mittels Hashfunktion wird anschliessend die kürzere, öffentlich zu teilende **[BLOCKCHAIN-Addresse](../A/Address.md)** des damit assozierten BTC Kontos abgeleitet (ACHTUNG: Der Public Key ist NICHT gleich der BlockchainAdresse!) 
-
-4. Last but not least generiert die Wallet eine **24-stellige [SeedPhrase](../S/Seed.md)** welche es geheim zu halten gilt da damit die Wallet (z.B. beim Verlust Deines Handys) wieder hergestellt werden kann und damit jeder, der das macht, auch Zugriff auf deine Schlüssel und damit deine Coins erhält! 
+3. Last but not least generiert die Wallet eine **[SeedPhrase](../S/Seed.md)** aus 12 oder 24 aus einer Liste von 2024 standardisierten, englischen Wörtern, welche man verschlüsselt offline verwahren sollte, um damit die Wallet (z.B. beim Verlust Deines Handys) wieder hergestellen zu können (Details dazu findet man im Dokument -> [Seed Verwaltung](../../../../PRIV/_KEY/Admin/PW/SeedVerwaltung.md))
 
 #### Wann wird eine BTC-Addresse sichtbar
-Zu diesem Zeitpujnkt sind diese so neu generierten [Adressen](../A/Address.md) weder in der Blockchain, noch sonst irgendwo (z.B. bei einem Servic- oder Walletprovider) bekannt, und bleiben es auch, bis jemand BTC auf diese Adresse sendet (oder du die Adressen ausplauderst oder - falls du sie gespeichert hast - gehackt oder geklaut wurden). Bis dahin ist diese Bitcoin Adresse lediglich eine zufällige Nummer mit einem dazu gehörenden, nur Dir bekannten Privat Key, mit dem Du, sollten dann mal jemand BTCs auf diese Adresse überwiesen, Du auf diese zugreifen und über diese verfügen kannst. Auch stehen diese Adressen in keinster Weise mit deiner Person in Verbindung. 
- 
-> Until the moment this address is referenced as the recipient of value in a transaction posted on the bitcoin ledger, the bitcoin address is simply part of the vast number of possible addresses that are valid in a bitcoin address space. Only once it has been associated with a transaction it become part of the known addresses in the network. Before it is just a locally generated but otherwise totally unknown number to the world. 
+Unmittelbar nach der Generierung (aber nicht nach der Wiederherstellung) sind diese so neu generierten [Adressen](../A/Address.md) weder in der Blockchain, noch sonst irgendwo (z.B. bei einem Service- oder Walletprovider) bekannt, und bleiben es auch, bis jemand BTC auf diese Adresse sendest. 
 
-Damit ist auch klar dass man jederzeit auch eine nur durch die Rechenpower beschränkte Anzahl Wallets erstellen könnte um einfach mal Millionen von BlockchainAdressen durchzuchecken ob man ev. zufällig auf eine bereits erstellte trifft. 
+Bis dahin ist diese Bitcoin Adresse lediglich eine zufällige Nummer mit einem dazu gehörenden, nur Dir bekannten Privat- und Public Key, mit dem Du, sollten dann mal jemand BTCs auf diese Adresse überwiesen, Du auf diese Coins zugreifen und über diese verfügen kannst. Auch stehen diese Adressen, sofern du sie in einer lokalen Wallet generiert hast, in keinster Weise mit deiner Person in Verbindung.  
 
-Die Blockchain selber führt nur eine Liste aller Transaktionen aber keine mit WalletAdressen resp. PublicKeys (die man natürlich auch nicht von den mittels Hashfunktion aus den PublicKeys asymetrisch one-way-generierten Blockchain-Adressen ableiten kann) und funktional ist es der Blockchain egal ob die bei einer Transaktion angegebene Adresse bereits existiert oder nicht (was wiederum heisst, dass wenn du deine Coins an eine falsche Adresse sendest (von der weder du noch dein Empfänger den Schlüssel hat) sind diese Coins für immer und ewig für jedermann futsch. Wichtig: Es wird Dich nichts und niemand daran hindern, deine Coins auf eine falsche Adresse zu senden. Das geht durch wie Butter, so wie jeder andere Transaktion auch! Falls die Adresse nicht existiert, wird einfach eine neue erstellt (auf die dann natürlich niemand Zugriff hat). 
+Damit ist auch klar dass man jederzeit auch eine nur durch die Rechenpower beschränkte Anzahl Wallets erstellen könnte, ums so einfach mal Millionen von BlockchainAdressen und dazu gehörender SchlüsselPaare durchzuchecken, ob man darauf ev. zufällig auf UTXO's trifft. Eine solche Adresse zu finden ist so wahrscheinlich wie zufällig ein bestimmtes Sandkorn in einem Sandhaufen zu finden der grösser als die Sonne ist. Ist zwar möglich, aber die dafür benötigte Energie, dürfte den Wert der damit gefunden Coins momentan weit übersteigen. 
 
--> for more details see -> [Address](../A/Address.md)
+Die Blockchain selber führt nur eine Liste aller Transaktionen, aber keine Liste der mit Wallets erstellen Adressen oder Keys (die man natürlich auch nicht von den mittels Hashfunktion aus den PublicKeys asymetrisch one-way-generierten Blockchain-Adressen ableiten kann). Auch funktional ist es der Blockchain egal, ob die bei einer Transaktion angegebene Adresse bereits existiert oder nicht (was wiederum heisst, dass, wenn du deine Coins an eine falsche Adresse sendest (von der weder du noch dein Empfänger den Schlüssel hat) diese Coins für immer und ewig verloren sind. 
+
+**Wichtig**: Es wird Dich nichts und niemand daran hindern, deine Coins auf eine falsche Adresse zu senden. Das geht durch wie Butter, so wie jeder andere Transaktion auch! Falls die Adresse nicht existiert, wird einfach eine neue erstellt (auf die dann aber natürlich niemand Zugriff hat). 
+
+-> Für weitere Details siehe -> [Address](../A/Address.md)
 
 ## UTXOs in Bitcoin Wallets
 Auch eine Wallet-App speichert keine Bitcoins, sondern managed die mit einer bestimmten Crypto-Addresse assozierten [UTXOs](../U/UTXO.md): 

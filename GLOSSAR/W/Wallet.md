@@ -4,23 +4,25 @@ Uebersicht über Sinn, Zweck und den Gebrauch von (Bitcoin)Wallets
 -> [BTC Wallet](../../b$/GLOSSAR/W/Wallet.md)
 -> [Paper Wallet](../P/PaperWallet.md)
 
-Technisch gesehen ist eine "Wallet" mal primär nichts anderes als die Speicherung eins [Public](../P/PublicKey.md) und eines dazu passenden [Private Keys](../P/PrivateKey.md). 
+Technisch gesehen ist eine "Wallet" mal primär nichts anderes als die Speicherung von einem oder mehreren [Private](../P/PrivateKey.md) und dazugehörenden [Public Keys](../P/PublicKey.md) in Form einer lokal installierten oder online abrufbaren App. 
 
+Diese Keys werden für den Zugriff auf Kryptowährungen und andere Tokens und dem signieren entsprechender Transaktionen benötigt.  
 
-Zur Verwaltung von Kryptowährungen und anderen Token braucht es eine Wallet. Bei der Wallet handelt es sich um einen Speicherort für Adressen, Public und/oder Private Keys. Das heisst, die Kryptos liegen nicht in der Wallet, sondern die Wallet beinhaltet die Zugangsdaten für den Zugriff auf die Kryptos, welche wiederum auf der Blockchain liegen. In einer Wallet können mehrere Zugangsdaten gespeichert werden. Aus Sicherheitsgründen entscheiden sich Krypto-Besitzer:innen allerdings eher für mehrere Wallets. Es gibt verschiedene Typen von Wallets, die gängigsten zwei sind:   
+Dabei liegen die Crypto-Token selbst nicht in der Wallet sondern immer nur und auschliesslich auf der Blockchain. Die Wallet enthält lediglich die Schüssel um auf dort auf diese Assets zuzugreifen zu können. 
+
+In einer Wallet können mehrere Schlüssel generiert und gespeichert werden. Aus Sicherheitsgründen entscheiden sich Krypto-Besitzer:innen allerdings eher für mehrere Wallets.    
 
 ### Wiederherstellung
-Gehen Wallets verloren können sie mittels Seedphrases wieder hergestellt werden. 
+Gehen Wallets, und damit die in ihnen gespeicherten Schlüssel und damit die Zugriffe auf die Assets verloren, können sie mittels, von der Wallet initial angezeigten und vom Owner sorgfältig zu verwahrenden [Seed Phrasen](../S/SeedPhrase.md)wieder hergestellt werden. 
+
+
 
 ## Need
 Derzeit **bieten Schweizer Banken keine direkten Aufbewahrungslösungen für Kryptowährungen** an, daher wird empfohlen, eine Hardware-Wallet oder eine vertrauenswürdige digitale Wallet zu verwenden.
 
 ## Wallet-Typen
 
-
-
-
-## Hierarchical Deterministic (HD) Wallets
+### Hierarchical Deterministic (HD) Wallets
 Wallet software may use a BIP 32 seed to generate many private keys and corresponding public keys from a single secret value. This is called a hierarchical deterministic wallet, or HD wallet for short. The seed value, or master extended key, consists of a 256-bit private key and a 256-bit chain code, for 512 bits in total. The seed value should not be confused with the private keys used directly to sign Bitcoin transactions.
 
 **Users are strongly advised to use HD wallets, for safety reasons**: An HD wallet only needs to be backed up once typically using a seed phrase; thereafter in the future, that single backup can always deterministically regenerate the same private keys. Therefore, it can safely recover all addresses, and all funds sent to those addresses. 
@@ -47,12 +49,28 @@ Ausfall durch Materialfehler oder veraltete Software. Auch könnte das Medium ge
 
 ### Backup
 Deshalb ist es **ratsam Backups von Cold Wallets auf unterschiedlichen Medien an verschiedenen Orten aufzubewahren und deren Lesbarkeit regelmässig zu überprüfen**. 
+## Multi-Signatur-Wallets
+Moderne Multi-Signatur-Wallets benötigen für die Wiederherstellung und das Signieren von Transaktionen die Genehmigungen mehrer Personen und bieten deshalb - insbesondere für Firmen - zusätzliche Sicherheit nach dem vier-Augen-Prinzip. 
 
-### Multi-Signatur-Wallets
-Moderne Multi-Signatur-Wallets benötigen die Genehmigungen mehrer an Transaktionen beteiligten Personen und bieten deshalb zusätzliche Sicherheit. 
+## Paper Wallets
+Paper Wallets sind keine eigentlichen Wallets mit denen man Transaktionen tätigen kann, sondern beinhalten lediglich die 12/18/24 Wörter der [Seed Phrase](../S/SeedPhrase.md) für die Wiederherstellung einer Wallet mit der man dann wieder auf die entsprechenden Assets zugreifen kann. 
+
+In diesem Sinne hat man auch über Paper Wallets (nach dem Wiederherstellen einer Wallet) den vollen Zugriff auf Assets - aber einfach nicht ready-made. 
+
+Paper Wallet sind zwar durch ihre 100% Offline-Natur vor Hackern geschützt, gehen aber in der Praxis schneller und öfters verloren als Wallets die man, optisch immer Präsent, z.B. auf dem Handy oder PC mitführt. 
+
+
 ---
 
 ## Benötige ich denn überhaupt eine Wallet?
-Technisch gesehen, nein. Man kann seine Kryptos auch auf einer Kryptobörse liegen lassen. Diese wurden leider schon mehrmals gehackt oder deren Bestände wurden veruntreut oder gingen sonstwie verloren. Einige Cryptobörsen wie z.B.  [Swissborg](../../SERVICES/S/Swissborg.md) verfügen über eine Einlagensicherung. 
+Um Cryptos zu kaufen und zu halten braucht man, technisch gesehen, keine eigene Wallet sondern kann "sie" bei einer CryptoBörse wie z.B. [Swissborg](../../SERVICES/S/Swissborg/Swissborg.md) oder [Binance](../../SERVICES/B/Binance/Binance.md) kaufen. 
 
-There are also the risks of exchange hacks. We always recommend using a self-custodial wallet, you can learn more about the safest ways to store crypto in our Crypto Safety 101 Guide.
+Damit erhält man aber keine EIGENEN Crypto-Tokens sondern lediglich eine Bescheinigung, dass Du den Gegenwert deiner Cryptos jederzeit in deiner FIAT-Währung ausbezahlt bekommst. 
+
+Dabei muss dein Crypto-Provider nicht mal eigene Cryptos besitzen. 
+
+Entsprechend erhältst du auch keine Seedphrase oder kannst auch nicht einfach "deine Cryptos" auf eine andere Wallet verschieben oder mit diesen Cryptos bezahlen. Demgegenüber ist die Verwaltung einfacher da du dir einzig und allein - analog zu einer klassischen Bank - lediglich die Zugriffsdaten für den Provider zu merken brauchst, ohne dass Du dich um Seedphrasen, Wallets, Aufbewahrung etc. kümmern musst. 
+
+Leider wurden solche OnlineBörsen, wie z.B. der Fall FTX zeigt, schon mehrmals gehackt oder deren Bestände wurden veruntreut oder gingen sonstwie verloren.
+
+Einige Cryptobörsen wie z.B.  [Swissborg](../../SERVICES/S/Swissborg.md) verfügen immerhin über eine Einlagensicherung.
