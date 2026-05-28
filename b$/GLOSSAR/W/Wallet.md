@@ -101,10 +101,25 @@ Die Blockchain selber führt nur eine Liste aller Transaktionen, aber keine List
 
 -> Für weitere Details siehe -> [Address](../A/Address.md)
 
-## UTXOs in Bitcoin Wallets
-Auch eine Wallet-App speichert keine Bitcoins, sondern managed die mit einer bestimmten Crypto-Addresse assozierten [UTXOs](../U/UTXO.md): 
 
-1. **Konto**: Der in einer Wallet gespeicherte Wert (resp. der für eine Transaktion zur Verfügung stehende Betrag) ist die Summe aller darin enthaltenen UTXOs (resp. die Summe aller mit der Wallet-Addresse assoziierten UTXOs). 
+#### Wie Die Wallet bei einer Wiederherstellung wieder Deine Tokens findet
+Each HD wallet derives a predictable sequence of addresses from your SeedPhrase (via BIP32 paths like m/84′/0′/0′/0/n), so it can regenerate the same addresses every time without storing them all.
+
+The wallet then queries the blockchain or an UTXO index to find all transactions that pay to those addresses, builds a list of their UTXOs, and marks which ones have later been spent; whatever remains unspent is your balance.
+
+For example, if address A received 0.02 BTC and 0.03 BTC, those are two UTXOs; when you send 0.015 BTC, the wallet spends one or more of those UTXOs and creates new UTXOs (including change) which it again tracks.
+
+**Gap limit and “used address” discovery**
+To avoid scanning an infinite address space, HD wallets implement a “gap limit”: they derive addresses sequentially and keep going until they see a certain number (e.g. 20) of consecutive unused addresses, then stop.
+
+Any address before that unused gap that has ever appeared in a blockchain transaction is considered “used,” and its UTXOs are added to the wallet’s internal database; addresses beyond the gap are assumed unused, so the wallet doesn’t waste resources scanning forever.
+
+This is why, if you manually generate many addresses far ahead and use them, you sometimes must increase the gap limit or rescan so the wallet discovers them
+
+## UTXOs in Bitcoin Wallets
+Die Wallet-App speichert lokal keine Bitcoins, sondern managed die mit einer bestimmten Crypto-Addresse assozierten [UTXOs](../U/UTXO.md) und zeigt die damit ermittelten Daten wie folgt: 
+
+1. **Konto**: Der in einer Wallet gespeicherte Wert (resp. der für eine Transaktion zur Verfügung stehende Betrag) ist die Summe aller damit referenziernt UTXOs (resp. die Summe aller mit Wallet-Addressen assoziierten UTXOs). 
 
 2. **Transaction**: When you initiate a transaction, your wallet software selects appropriate UTXOs to use as inputs where their sum is equal or higher the amount of the "money" sent + transaction-fees.
 
@@ -114,24 +129,28 @@ Auch eine Wallet-App speichert keine Bitcoins, sondern managed die mit einer bes
 
 5. **Privacy**: Fortgeschrittene wallets wit z.B. "CoinJoin" können UTXOs von mehreren Usern zusammenlegen, um so die Anonymität zu wahren, resp. Absender und Empfänger von Transaktionen zu verschleiern. 
 
-### Wallets gestalten Transaktionen "behind the scene"
-All the logic for selecting appropriate inputs and outputs to build a transaction is normally hidden by the wallet. Users  only specify a destination and an amount, and the rest happens in the wallet application without seeing the details. Importantly, a wallet application can construct transactions even if it is completely offline. Like writing a check at home and later sending it to the bank in an envelope, the transaction does not need to be constructed and signed while connected to the bitcoin network.
+### Wallets gestalten Transaktionen "behind the scene" (auch offline)
+All the logic for selecting appropriate inputs and outputs to build a transaction is normally hidden by the wallet. 
+
+Users only specify a destination and an amount, and the rest happens in the wallet application without seeing the details. 
+
+Importantly, a wallet application can construct transactions even if it is completely offline. Like writing a check at home and later sending it to the bank in an envelope, the transaction does not need to be constructed and signed while connected to the bitcoin network.
 
 ---
 
-## Klassifikation von Bitcoin Wallet
+## Klassifikation von Bitcoin Wallets
 Bitcoin wallets are one of the **most actively developed applications** in the bitcoin ecosystem and where a new wallet is probably being developed right now, **several wallets from last year are no longer actively maintained**. 
 
 Many wallets focus on specific platforms or specific uses and some are more suitable for beginners while others are filled with features for advanced users. 
 
-However, **moving keys or seeds between bitcoin wallets is relatively easy**. So it is worth trying out several wallets until you find your personal best.
+However, **moving keys or seeds between bitcoin wallets of any kind is relatively easy**. So it is worth trying out several wallets until you find your personal best!
 
+Nebst der klassischen Unterscheidung zwischen **HOT online Wallet(Apps)** und **COLD offline-only Speicherlösungen** können wir Wallets auch nach folgendne Kriterien unterscheiden: 
 
+1. [**GenerierungsArt** Non-Determistic versus Seed Wallets](#1-non-determistic-versus-seed-wallets)  
 
-Nebst der klassischen Unterscheidung zwischne **HOT online Wallet(Apps)** und **COLD offline-only Speicherlösungen** können wir Wallets auch nach folgendne Kriterien unterscheiden: 
+2. [**Platform**: Mobile, Desktop, Web, Hardware, Paper](#2-platform-typen)  
 
-1. [**GenerierungsArt** Non-Determistic versus Seed Wallets](#1-non-determistic-versus-seed-wallets)
-2. [**Platform**: Mobile, Desktop, Web, Hardware, Paper](#2-platform-typen)
 3. [**Autonomie**: Full-/LightWeight Client oder ThirdParty API App](#3-autonomy-types)
 
 ### 1. Non-Determistic versus Seed Wallets
@@ -139,23 +158,23 @@ Nebst der klassischen Unterscheidung zwischne **HOT online Wallet(Apps)** und **
 <span style="color:red; font-weight:bold">ACHTUNG</span>: 
 **The use of nondeterministic wallets is discouraged for anything other than simple tests**. 
 
-They are simply too cumbersome to back up and use. Instead, use an industry-standard–based [HD wallet]() with a mnemonic seed for backup.
+They are simply too cumbersome to back up and use. Instead, use an industry-standard–based [HD wallet]() with a mnemonic seedphrase for backup.
 
-#### Nondetermistic Wallets (outdated)
+#### 1. Nondetermistic Wallets (outdated)
 In a **nondeterministic wallet each key is independently generated** from a random number.
 
-The keys are not related to each other. This type of wallet is also known as a **JBOK** wallet from the phrase `"Just a Bunch Of Keys."`
+The keys in a wallet are not related to each other. This type of wallet is also known as a **JBOK-Wallet** from the phrase `"Just a Bunch Of Keys."`
 
-<span style="color:red; font-weight:bold">ACHTUNG</span>: Dieser Wallet Typ sollte aus Sicherheitsgründen nicht mehr verwendet werden!
+<span style="color:red; font-weight:bold">ACHTUNG</span>: Dieser WalletTyp sollte aus Sicherheitsgründen nicht mehr verwendet werden!
 
-#### Deterministic-Wallets
-In a deterministic wallet - also called seeded wallet - **all the keys are derived from a single master key**, known as the [seed](../S/Seed.md), through the use of a one-way hash function. 
+#### 2. Seed-Wallets
+In a deterministic wallet - also called seeded wallet - **all the keys are derived from a single master-key**, known as the [seed](../S/Seed.md), through the use of a one-way hash function. 
 
 All the keys in this type of wallet are related to each other and can be generated again if one has the original [SeedPhrase](../S/Seed.md).
 
 There are a number of different key derivation methods used in deterministic wallets. The most commonly used derivation method uses a tree-like structure and is known as a `hierarchical deterministic` or `**HD wallet**`.
 
-The seed is a randomly Wallet-generated number encoded as a set of 24 English words, also known as mnemonic code words. 
+The seed is a randomly Wallet-generated number encoded as a set of 12 or 24 English words, also known as mnemonic code words. 
 
 This seed then is combined with other data, such as an index number or "chain code" (see HD Wallets (BIP-32/BIP-44)) to derive the private keys from which the public keys and finally the blockchain addresses will be derived.
 
